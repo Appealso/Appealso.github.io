@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>etc on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/categories/etc/</link>
+    <description>Recent content in etc on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Sun, 20 Dec 2020 20:19:13 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/etc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>마크다운 작성법</title>
+      <link>https://appealso.github.io/posts/markdownlanguage/</link>
+      <pubDate>Sun, 20 Dec 2020 20:19:13 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/markdownlanguage/</guid>
+      <description>1. 제목 # h1제목 ## h2제목 ### h3제목 #### h4제목 ##### h5제목 ###### h6제목 h1제목 h2제목 h3제목 h4제목 h5제목 h6제목  2.</description>
+    </item>
+    
+  </channel>
+</rss>
