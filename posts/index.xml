@@ -6,14 +6,23 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 20 Dec 2020 17:10:49 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 18:09:04 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Md</title>
-      <link>https://appealso.github.io/posts/my-first-md/</link>
-      <pubDate>Sun, 20 Dec 2020 17:10:49 +0900</pubDate>
+      <title>Commnettest</title>
+      <link>https://appealso.github.io/posts/commnettest/</link>
+      <pubDate>Sun, 20 Dec 2020 18:09:04 +0900</pubDate>
       
-      <guid>https://appealso.github.io/posts/my-first-md/</guid>
-      <description>내블로그 첫 글이다!!</description>
+      <guid>https://appealso.github.io/posts/commnettest/</guid>
+      <description>코멘트야 달려라 얍!</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://appealso.github.io/posts/my-first-post/</link>
+      <pubDate>Sun, 20 Dec 2020 17:17:19 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/my-first-post/</guid>
+      <description>My first Post in Blog!!</description>
     </item>
     
   </channel>
