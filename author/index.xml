@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/author/</link>
+    <description>Recent content in Authors on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Sun, 20 Dec 2020 17:03:29 +0900</lastBuildDate><atom:link href="https://appealso.github.io/author/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Appealso</title>
+      <link>https://appealso.github.io/author/appealso/</link>
+      <pubDate>Sun, 20 Dec 2020 17:03:29 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/author/appealso/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
