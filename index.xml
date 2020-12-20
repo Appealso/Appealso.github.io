@@ -5,6 +5,34 @@
     <link>https://appealso.github.io/</link>
     <description>Recent content on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko</language>
+    <lastBuildDate>Sun, 20 Dec 2020 20:19:13 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>마크다운 작성법</title>
+      <link>https://appealso.github.io/posts/markdownlanguage/</link>
+      <pubDate>Sun, 20 Dec 2020 20:19:13 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/markdownlanguage/</guid>
+      <description>&amp;lt;h1&amp;gt;h1제목 &amp;lt;h2&amp;gt;h2제목 &amp;lt;h3&amp;gt;h3제목 &amp;lt;h4&amp;gt;h4제목 &amp;lt;h5&amp;gt;h5제목 &amp;lt;h6&amp;gt;h6제목  * * * *** _ _ _ ---  **굵게** __이탤릭__ ~~취소선~~ 굵게</description>
+    </item>
+    
+    <item>
+      <title>Commnettest</title>
+      <link>https://appealso.github.io/posts/commnettest/</link>
+      <pubDate>Sun, 20 Dec 2020 18:09:04 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/commnettest/</guid>
+      <description>코멘트야 달려라 얍!</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://appealso.github.io/posts/my-first-post/</link>
+      <pubDate>Sun, 20 Dec 2020 17:17:19 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/my-first-post/</guid>
+      <description>My first Post in Blog!!</description>
+    </item>
+    
   </channel>
 </rss>
