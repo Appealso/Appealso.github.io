@@ -15,7 +15,7 @@
 <meta itemprop="description" content="1. hugo 설치 % brew isntall hugo % hugo version // 휴고 버전 확인 2.">
 <meta itemprop="datePublished" content="2020-12-21T20:45:37+09:00" />
 <meta itemprop="dateModified" content="2020-12-21T20:45:37+09:00" />
-<meta itemprop="wordCount" content="212">
+<meta itemprop="wordCount" content="291">
 
 
 
@@ -254,7 +254,7 @@
   
 
   <div class="post-date">
-    <time datetime="2020-12-21T20:45:37&#43;0900">Dec 21, 2020</time> &middot; 1 min read
+    <time datetime="2020-12-21T20:45:37&#43;0900">Dec 21, 2020</time> &middot; 2 min read
   </div>
 
   <div>
@@ -269,17 +269,30 @@
 ├── layouts
 ├── static //image 저장 위치 인듯...?
 └── themes // 테마 저장 폴더
-</code></pre><h2 id="3-hugo로-웹-사이트-생성">3. hugo로 웹 사이트 생성</h2>
-<pre><code>% hugo new site &lt;디렉토리명&gt;
-</code></pre><h2 id="4-테마-다운로드">4. 테마 다운로드</h2>
-<pre><code>% cd theme
-theme % git clone
+</code></pre><h2 id="3-hugo로-웹-사이트-생성--테마-다운로드">3. hugo로 웹 사이트 생성 &amp; 테마 다운로드</h2>
+<pre><code>% hugo new site &lt;hugo디렉토리명&gt;
+
+% cd theme
+theme % git submodule add &lt;테마git 주소&gt; themes/&lt;테마명&gt;
+
+</code></pre><h3 id="테마다운로드주소--httpsthemesgohugoio"><strong>테마다운로드주소 : <a href="https://themes.gohugo.io">https://themes.gohugo.io</a></strong></h3>
+<!-- raw HTML omitted -->
+<h2 id="4-hugo-테마-적용">4. hugo 테마 적용</h2>
+<p>hugo 테마는 github repository가 2개 필요함. hugo 설정파일 repository와 실제 사이트 repository 두개를 생성해야함.</p>
+<pre><code>% cd &lt;hugo디렉토리명&gt;
+&lt;hugo디렉토리명&gt; % git init
+&lt;hugo디렉토리명&gt; % git remote add origin &lt;hugo repository 주소&gt;
+&lt;hugo디렉토리명&gt; % git submodule add -b master &lt;github.io repository 주소&gt; public //실제 사이트는 public 폴더에서 볼 수 있음.
+&lt;hugo디렉토리명&gt; % hugo -t &lt;테마명&gt;
 </code></pre><h2 id="5-configtoml-설정">5. config.toml 설정</h2>
 <pre><code>% vi config.toml
 theme = &quot;테마명&quot; //적용할 테마명을 넣는다.(필수!!)
-# 나머지는 테마에 따라 설정이 달라진다. theme에 저장한 theme의 config.toml을 참조해서 수정해야 함.
+// 나머지 설정은 테마에 따라 설정이 달라진다.
+// theme에 저장한 theme의 config.toml을 참조해서 수정하면 될 듯 하다.
 </code></pre><h2 id="6-글작성">6. 글작성</h2>
-<pre><code>% hugo new &lt;폴더명&gt;/[md파일명].md // content/&lt;폴더명&gt;/[md파일명].md 에 파일 생성 됨.
+<pre><code>% hugo new &lt;폴더명&gt;/[md파일명].md //content/&lt;폴더명&gt;/[md파일명].md 에 파일 생성 됨.
+% vi content/&lt;폴더명&gt;/[md파일명].md //글 쓰기
+% hugo -D //static 파일을 생성한다. md파일을
 </code></pre><p>명령어 실행 후 아래와 같이 파일 내용이 작성된다. <strong>categories,tags</strong>는 원할 경우 아래와 같이 추가해서 사용해야함.</p>
 <!-- raw HTML omitted -->
 <blockquote>
