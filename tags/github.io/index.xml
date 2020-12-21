@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github.io on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/github.io/</link>
+    <description>Recent content in github.io on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 21 Dec 2020 20:45:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Githubio&#43;hugo Theme Blog 구축기.</title>
+      <link>https://appealso.github.io/posts/hugo-githubio/</link>
+      <pubDate>Mon, 21 Dec 2020 20:45:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/hugo-githubio/</guid>
+      <description>1. hugo 설치 % brew isntall hugo % hugo version // 휴고 버전 확인 2.</description>
+    </item>
+    
+  </channel>
+</rss>

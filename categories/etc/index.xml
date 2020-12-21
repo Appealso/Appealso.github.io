@@ -6,7 +6,16 @@
     <description>Recent content in etc on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 20 Dec 2020 20:19:13 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/etc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Dec 2020 20:45:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/etc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Githubio&#43;hugo Theme Blog 구축기.</title>
+      <link>https://appealso.github.io/posts/hugo-githubio/</link>
+      <pubDate>Mon, 21 Dec 2020 20:45:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/hugo-githubio/</guid>
+      <description>1. hugo 설치 % brew isntall hugo % hugo version // 휴고 버전 확인 2.</description>
+    </item>
+    
     <item>
       <title>마크다운 작성법</title>
       <link>https://appealso.github.io/posts/markdownlanguage/</link>
@@ -14,6 +23,24 @@
       
       <guid>https://appealso.github.io/posts/markdownlanguage/</guid>
       <description>1. 제목 # h1제목 ## h2제목 ### h3제목 #### h4제목 ##### h5제목 ###### h6제목 h1제목 h2제목 h3제목 h4제목 h5제목 h6제목  2.</description>
+    </item>
+    
+    <item>
+      <title>Commnettest</title>
+      <link>https://appealso.github.io/posts/commnettest/</link>
+      <pubDate>Sun, 20 Dec 2020 18:09:04 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/commnettest/</guid>
+      <description>코멘트야 달려라 얍!</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://appealso.github.io/posts/my-first-post/</link>
+      <pubDate>Sun, 20 Dec 2020 17:17:19 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/my-first-post/</guid>
+      <description>My first Post in Blog!!</description>
     </item>
     
   </channel>
