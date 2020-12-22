@@ -5,70 +5,84 @@
   <url>
     <loc>https://appealso.github.io/categories/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/categories/etc/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/tags/github.io/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/posts/hugo-githubio/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/tags/hugo/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/tags/hugo-theme/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/posts/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/tags/</loc>
     <lastmod>2020-12-21T20:45:37+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/tags/markdown/</loc>
     <lastmod>2020-12-20T20:19:13+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/posts/markdownlanguage/</loc>
     <lastmod>2020-12-20T20:19:13+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/posts/commnettest/</loc>
     <lastmod>2020-12-20T18:09:04+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/posts/my-first-post/</loc>
     <lastmod>2020-12-20T17:17:19+09:00</lastmod>
+    <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/series/</loc>
+    <changefreq>weekly</changefreq>
   </url>
   
 </urlset>
