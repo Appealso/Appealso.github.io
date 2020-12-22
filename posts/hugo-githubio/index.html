@@ -15,7 +15,7 @@
 <meta itemprop="description" content="1. hugo 설치 % brew isntall hugo % hugo version // 휴고 버전 확인 2.">
 <meta itemprop="datePublished" content="2020-12-21T20:45:37+09:00" />
 <meta itemprop="dateModified" content="2020-12-21T20:45:37+09:00" />
-<meta itemprop="wordCount" content="294">
+<meta itemprop="wordCount" content="355">
 
 
 
@@ -307,31 +307,44 @@ tags: [&ldquo;tag명&rdquo;]<br>
 <hr>
 </blockquote>
 <!-- raw HTML omitted -->
-<h2 id="7-disqus-comment-추가하기">7. Disqus Comment 추가하기</h2>
-<h3 id="71-disqus-가입-후-setting-클릭">7.1 Disqus 가입 후 Setting 클릭</h3>
+<h2 id="7-hugo-git에-반영">7. hugo git에 반영</h2>
+<p>아래 명령어 순서대로 입력</p>
+<pre><code>&lt;hugo디렉토리명&gt; % hugo -t soho
+&lt;hugo디렉토리명&gt; % hugo -D
+&lt;hugo디렉토리명&gt; % cd ./public
+&lt;hugo디렉토리명&gt;/public % git add .
+&lt;hugo디렉토리명&gt;/public % git commit -m &quot;$msg&quot;
+&lt;hugo디렉토리명&gt;/public % git push origin master
+&lt;hugo디렉토리명&gt;/public % cd ..
+&lt;hugo디렉토리명&gt; % git add .
+&lt;hugo디렉토리명&gt; % git commit -m &quot;$msg&quot;
+&lt;hugo디렉토리명&gt; % git push origin master
+
+</code></pre><h2 id="8-disqus-comment-추가하기">8. Disqus Comment 추가하기</h2>
+<h3 id="81-disqus-가입-후-setting-클릭">8.1 Disqus 가입 후 Setting 클릭</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus1.png?raw=true" alt="Disqus"></p>
-<h3 id="72-profile-account-작성">7.2 Profile, Account 작성</h3>
+<h3 id="82-profile-account-작성">8.2 Profile, Account 작성</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus2.png?raw=true" alt="Disqus"></p>
-<h3 id="73-home으로-이동-후-get-started-클릭">7.3 Home으로 이동 후 Get Started 클릭</h3>
+<h3 id="83-home으로-이동-후-get-started-클릭">8.3 Home으로 이동 후 Get Started 클릭</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus3.png?raw=true" alt="Disqus"></p>
-<h3 id="74-i-want-to-install-disqus-on-my-site-클릭">7.4 I want to install Disqus on my site 클릭</h3>
+<h3 id="84-i-want-to-install-disqus-on-my-site-클릭">8.4 I want to install Disqus on my site 클릭</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus4.png?raw=true" alt="Disqus"></p>
-<h3 id="75-create-a-new-site-작성">7.5 Create a new site 작성</h3>
+<h3 id="85-create-a-new-site-작성">8.5 Create a new site 작성</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus5.png?raw=true" alt="Disqus"></p>
-<h3 id="76-화면을-조금-내리서-basic에-subscribe-now-클릭돈많으면돈내고쓰세요ㅠㅠ">7.6 화면을 조금 내리서 Basic에 Subscribe Now 클릭(돈많으면&hellip;돈내고쓰세요&hellip;ㅠㅠ)</h3>
+<h3 id="86-화면을-조금-내리서-basic에-subscribe-now-클릭돈많으면돈내고쓰세요ㅠㅠ">8.6 화면을 조금 내리서 Basic에 Subscribe Now 클릭(돈많으면&hellip;돈내고쓰세요&hellip;ㅠㅠ)</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus6.png?raw=true" alt="Disqus"></p>
-<h3 id="77-화면을-조금-내려서-아래-버튼-클릭hugo는-지원목록에-없다-추가될수도">7.7 화면을 조금 내려서 아래 버튼 클릭(hugo는 지원목록에 없다. 추가될수도..?)</h3>
-<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus7.png?raw=true" alt="Disqus"></p>
-<h3 id="78-configure-클릭">7.8 configure 클릭</h3>
+<h3 id="87-화면을-조금-내려서-아래-버튼-클릭hugo는-지원목록에-없다-추가될수도">8.7 화면을 조금 내려서 아래 버튼 클릭(hugo는 지원목록에 없다. 추가될수도..?)</h3>
+<p>![Disqus](<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqu">https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqu</a> 8.png?raw=true)</p>
+<h3 id="88-configure-클릭">8.8 configure 클릭</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus8.png?raw=true" alt="Disqus"></p>
-<h3 id="79-사이트-정보-기입">7.9 사이트 정보 기입</h3>
+<h3 id="89-사이트-정보-기입">8.9 사이트 정보 기입</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus9.png?raw=true" alt="Disqus"></p>
-<h3 id="710-완료">7.10 완료!</h3>
+<h3 id="810-완료">8.10 완료!</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus10.png?raw=true" alt="Disqus"></p>
-<h3 id="711-configtoml-수정">7.11 config.toml 수정</h3>
+<h3 id="811-configtoml-수정">8.11 config.toml 수정</h3>
 <pre><code>% vi config.toml
 disqusShortname = &quot;&lt;Disqus shortname&gt;&quot;
-</code></pre><h3 id="7111-short-name-확인방법">7.11.1 short name 확인방법</h3>
+</code></pre><h3 id="8111-short-name-확인방법">8.11.1 short name 확인방법</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus11.png?raw=true" alt="Disqus"><br>
 <img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus12.png?raw=true" alt="Disqus"></p>
 <hr>
