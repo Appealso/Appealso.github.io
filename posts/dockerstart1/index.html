@@ -16,7 +16,7 @@
 1. 젠킨스 이미지 다운로드 % docker pull jenkins/jenkins:lts 2.">
 <meta itemprop="datePublished" content="2021-04-05T21:10:40+09:00" />
 <meta itemprop="dateModified" content="2021-04-05T21:10:40+09:00" />
-<meta itemprop="wordCount" content="72">
+<meta itemprop="wordCount" content="111">
 
 
 
@@ -285,8 +285,17 @@ PRD: Pruduct서버(운영서버)</p>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker5.png?raw=true" alt="Docker"></p>
 <h3 id="6-빌드-세팅java">(6) 빌드 세팅(Java)</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker6.png?raw=true" alt="Docker"></p>
+<h3 id="--add-jdk-선택-후-install-automatically-선택">- Add JDK 선택 후 install automatically 선택</h3>
+<h3 id="--name입력-후-원하는-jdk-버전-선택-후-save">- Name입력 후 원하는 JDK 버전 선택 후 Save</h3>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker7.png?raw=true" alt="Docker"></p>
-<h2 id="4빌드-세팅">4.빌드 세팅</h2>
+<h2 id="4-깃헙-연동">4. 깃헙 연동</h2>
+<h3 id="1-ssh-key-setting">(1) SSH Key Setting</h3>
+<h3 id="-jenkins-docker의-cli에서-생성">※ Jenkins Docker의 CLI에서 생성</h3>
+<pre><code>$ ssh-keygen -t rsa
+</code></pre><h3 id="2-github에-deploykey-등록">(2) Github에 Deploykey 등록</h3>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker8.png?raw=true" alt="Docker"></p>
+<h3 id="3-githubdp-webhook-설정">(3) Githubdp WebHook 설정</h3>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker9.png?raw=true" alt="Docker"></p>
 
   </div>
 
