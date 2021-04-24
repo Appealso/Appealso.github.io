@@ -12,10 +12,10 @@
   
 
 <meta itemprop="name" content="Git-Flow 정리">
-<meta itemprop="description" content="Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch))  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch))  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge   master 와 devleop브랜치 master와 develop브랜치가 존재하고, develop브랜치는 master 브랜치에서 시작된 브랜치 입니다.">
+<meta itemprop="description" content="Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch)) 개발 완료 후 release 브랜치에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch)) 테스트 완료 후 master 브랜치에 merge  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge 및 해당 브랜치 삭제  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge 및 해당 브랜치 삭제  Git flow 설치하기 brew install git-flow-avh 초기화 git flow init 메인 브랜치  materst branch   origin/master에 두고 관리 master 브랜치에 merge는 새로운 버전을 의미  develop branch   origin/develop에 두고 관리 개발자들이 개발한 소스를 반영하는 브랜치 develop 브랜치는 master에서 파생됨 release (QA 브랜치)를 사용하지 않을 경우 master에 merge하고 배포 버전으로 태그를 담  보조 브랜치  feature 브랜치   develop에서 파생된 브랜치 개발 완료 후 develop 브랜치에 merge  release 브랜치   develop에서 파생된 브랜치 master에 merge하기 전 테스트 진행 release 브랜치에서는 기능 개발은 X 버그 수정 및 출시 준비 작업만 수행 완료되면 master와 develop에 merge 수행  hotfix 브랜치   master에서 파생된 브랜치 master에 배포한 제품에 버그를 즉각 대응할 때 생성 버그 수정 후 master와 develop에 merge 수행  참고 https://dahye-jeong.">
 <meta itemprop="datePublished" content="2021-04-24T18:51:40+09:00" />
 <meta itemprop="dateModified" content="2021-04-24T18:51:40+09:00" />
-<meta itemprop="wordCount" content="148">
+<meta itemprop="wordCount" content="194">
 
 
 
@@ -24,11 +24,11 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Git-Flow 정리"/>
-<meta name="twitter:description" content="Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch))  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch))  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge   master 와 devleop브랜치 master와 develop브랜치가 존재하고, develop브랜치는 master 브랜치에서 시작된 브랜치 입니다."/>
+<meta name="twitter:description" content="Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch)) 개발 완료 후 release 브랜치에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch)) 테스트 완료 후 master 브랜치에 merge  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge 및 해당 브랜치 삭제  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge 및 해당 브랜치 삭제  Git flow 설치하기 brew install git-flow-avh 초기화 git flow init 메인 브랜치  materst branch   origin/master에 두고 관리 master 브랜치에 merge는 새로운 버전을 의미  develop branch   origin/develop에 두고 관리 개발자들이 개발한 소스를 반영하는 브랜치 develop 브랜치는 master에서 파생됨 release (QA 브랜치)를 사용하지 않을 경우 master에 merge하고 배포 버전으로 태그를 담  보조 브랜치  feature 브랜치   develop에서 파생된 브랜치 개발 완료 후 develop 브랜치에 merge  release 브랜치   develop에서 파생된 브랜치 master에 merge하기 전 테스트 진행 release 브랜치에서는 기능 개발은 X 버그 수정 및 출시 준비 작업만 수행 완료되면 master와 develop에 merge 수행  hotfix 브랜치   master에서 파생된 브랜치 master에 배포한 제품에 버그를 즉각 대응할 때 생성 버그 수정 후 master와 develop에 merge 수행  참고 https://dahye-jeong."/>
 
 
 <meta property="og:title" content="Git-Flow 정리" />
-<meta property="og:description" content="Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch))  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch))  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge   master 와 devleop브랜치 master와 develop브랜치가 존재하고, develop브랜치는 master 브랜치에서 시작된 브랜치 입니다." />
+<meta property="og:description" content="Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch)) 개발 완료 후 release 브랜치에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch)) 테스트 완료 후 master 브랜치에 merge  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge 및 해당 브랜치 삭제  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge 및 해당 브랜치 삭제  Git flow 설치하기 brew install git-flow-avh 초기화 git flow init 메인 브랜치  materst branch   origin/master에 두고 관리 master 브랜치에 merge는 새로운 버전을 의미  develop branch   origin/develop에 두고 관리 개발자들이 개발한 소스를 반영하는 브랜치 develop 브랜치는 master에서 파생됨 release (QA 브랜치)를 사용하지 않을 경우 master에 merge하고 배포 버전으로 태그를 담  보조 브랜치  feature 브랜치   develop에서 파생된 브랜치 개발 완료 후 develop 브랜치에 merge  release 브랜치   develop에서 파생된 브랜치 master에 merge하기 전 테스트 진행 release 브랜치에서는 기능 개발은 X 버그 수정 및 출시 준비 작업만 수행 완료되면 master와 develop에 merge 수행  hotfix 브랜치   master에서 파생된 브랜치 master에 배포한 제품에 버그를 즉각 대응할 때 생성 버그 수정 후 master와 develop에 merge 수행  참고 https://dahye-jeong." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://appealso.github.io/posts/git/" />
 <meta property="article:published_time" content="2021-04-24T18:51:40+09:00" />
@@ -76,7 +76,7 @@
       },
       "datePublished": "2021-04-24T18:51:40+09:00",
       "dateModified": "2021-04-24T18:51:40+09:00",
-      "description": "Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch))  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch))  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge   master 와 devleop브랜치 master와 develop브랜치가 존재하고, develop브랜치는 master 브랜치에서 시작된 브랜치 입니다.",
+      "description": "Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch)) 개발 완료 후 release 브랜치에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch)) 테스트 완료 후 master 브랜치에 merge  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge 및 해당 브랜치 삭제  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge 및 해당 브랜치 삭제  Git flow 설치하기 brew install git-flow-avh 초기화 git flow init 메인 브랜치  materst branch   origin/master에 두고 관리 master 브랜치에 merge는 새로운 버전을 의미  develop branch   origin/develop에 두고 관리 개발자들이 개발한 소스를 반영하는 브랜치 develop 브랜치는 master에서 파생됨 release (QA 브랜치)를 사용하지 않을 경우 master에 merge하고 배포 버전으로 태그를 담  보조 브랜치  feature 브랜치   develop에서 파생된 브랜치 개발 완료 후 develop 브랜치에 merge  release 브랜치   develop에서 파생된 브랜치 master에 merge하기 전 테스트 진행 release 브랜치에서는 기능 개발은 X 버그 수정 및 출시 준비 작업만 수행 완료되면 master와 develop에 merge 수행  hotfix 브랜치   master에서 파생된 브랜치 master에 배포한 제품에 버그를 즉각 대응할 때 생성 버그 수정 후 master와 develop에 merge 수행  참고 https://dahye-jeong.",
       "inLanguage": "ko",
       "potentialAction": [
         {
@@ -258,7 +258,8 @@
   </div>
 
   <div>
-  <h1 id="branch-종류">Branch 종류</h1>
+  <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/gitflow/gitflow1.png?raw=true" alt="Git-Flow"></p>
+<h1 id="branch-종류">Branch 종류</h1>
 <h2 id="git-flow는-5가지-브랜치를-사용">Git-Flow는 5가지 브랜치를 사용</h2>
 <ol>
 <li>master</li>
@@ -273,21 +274,23 @@
 <ul>
 <li>유지 브랜치</li>
 <li>개발 브랜치 (Develop(개발 Branch))</li>
+<li>개발 완료 후 release 브랜치에 merge</li>
 </ul>
 <ol start="3">
-<li>feature</li>
-</ol>
-<ul>
-<li>보조 브랜치</li>
-<li>기능 개발 브랜치 (실제 개발)</li>
-<li>일정에 맞춰 develop에 merge</li>
-</ul>
-<ol start="4">
 <li>release</li>
 </ol>
 <ul>
 <li>유지 브랜치</li>
 <li>QA 테스트 브랜치 (Staging (품질 테스트 Branch))</li>
+<li>테스트 완료 후 master 브랜치에 merge</li>
+</ul>
+<ol start="4">
+<li>feature</li>
+</ol>
+<ul>
+<li>보조 브랜치</li>
+<li>기능 개발 브랜치 (실제 개발)</li>
+<li>일정에 맞춰 develop에 merge 및 해당 브랜치 삭제</li>
 </ul>
 <ol start="5">
 <li>hotfix</li>
@@ -295,23 +298,63 @@
 <ul>
 <li>보조 브랜치</li>
 <li>긴급 오류 해결을 위한 브랜치 (운영 버그 수정)</li>
-<li>오류 수정 후 master에 merge</li>
+<li>오류 수정 후 master에 merge 및 해당 브랜치 삭제</li>
 </ul>
-<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/gitflow/gitflow1.png?raw=true" alt="Git-Flow"></p>
-<h1 id="heading"></h1>
-<p>master 와 devleop브랜치
-master와 develop브랜치가 존재하고, develop브랜치는 master 브랜치에서 시작된 브랜치 입니다.
-Develop브랜치
-develop브랜치에는 상시로 버그를 수정한 커밋들이 추가되게 됩니다.
-새로운 기능을 추가하는 경우 develope 브랜치에서 시작하는 feature브랜치를 생성합니다
-Feature브랜치
-이 feature브랜치는 기능 추가 작업이 완료되었다면, develop 브랜치로 merge 합니다.
-새로운 기능을 추가하는 경우 develope 브랜치에서 시작하는 feature브랜치를 생성합니다
-release 브랜치
-develop브랜치에 이번 버전에 포함하는 모든 기능이 merge되었다면 , QA를 위해 develop브랜치에서 release브랜치를 생성합니다.
-QA를 무사히 통과하게되면 relase브랜치를 master와 develop브랜치로 merge 합니다.
-QA를 진행하면서 발생한 버그들은 모두 release브랜치에 수정되게 됩니다
-마지막으로 출시된 master 브랜치에서 버전 태그를 추가합니다.</p>
+<h2 id="git-flow-설치하기">Git flow 설치하기</h2>
+<pre><code>brew install git-flow-avh
+</code></pre><h2 id="초기화">초기화</h2>
+<pre><code class="language-git" data-lang="git">git flow init
+</code></pre><h2 id="메인-브랜치">메인 브랜치</h2>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/gitflow/gitflow2.png?raw=true" alt="Git-Flow"></p>
+<ol>
+<li>materst branch</li>
+</ol>
+<ul>
+<li>origin/master에 두고 관리</li>
+<li>master 브랜치에 merge는 새로운 버전을 의미</li>
+</ul>
+<ol start="2">
+<li>develop branch</li>
+</ol>
+<ul>
+<li>origin/develop에 두고 관리</li>
+<li>개발자들이 개발한 소스를 반영하는 브랜치</li>
+<li>develop 브랜치는 master에서 파생됨</li>
+<li>release (QA 브랜치)를 사용하지 않을 경우 master에 merge하고 배포 버전으로 태그를 담</li>
+</ul>
+<h2 id="보조-브랜치">보조 브랜치</h2>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/gitflow/gitflow3.png?raw=true" alt="Git-Flow"></p>
+<ol>
+<li>feature 브랜치</li>
+</ol>
+<ul>
+<li>develop에서 파생된 브랜치</li>
+<li>개발 완료 후 develop 브랜치에 merge</li>
+</ul>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/gitflow/gitflow4.png?raw=true" alt="Git-Flow"></p>
+<ol start="2">
+<li>release 브랜치</li>
+</ol>
+<ul>
+<li>develop에서 파생된 브랜치</li>
+<li>master에 merge하기 전 테스트 진행</li>
+<li>release 브랜치에서는 기능 개발은 X</li>
+<li>버그 수정 및 출시 준비 작업만 수행</li>
+<li>완료되면 master와 develop에 merge 수행</li>
+</ul>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/gitflow/gitflow5.png?raw=true" alt="Git-Flow"></p>
+<ol start="3">
+<li>hotfix 브랜치</li>
+</ol>
+<ul>
+<li>master에서 파생된 브랜치</li>
+<li>master에 배포한 제품에 버그를 즉각 대응할 때 생성</li>
+<li>버그 수정 후 master와 develop에 merge 수행</li>
+</ul>
+<h4 id="참고">참고</h4>
+<p><a href="https://dahye-jeong.gitbook.io/git/git/2019-01-27-git-flow?">https://dahye-jeong.gitbook.io/git/git/2019-01-27-git-flow?</a></p>
+<p><a href="https://88240.tistory.com/489">https://88240.tistory.com/489</a></p>
+<p><a href="https://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html#comment-4550019179?">https://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html#comment-4550019179?</a></p>
 
   </div>
 
