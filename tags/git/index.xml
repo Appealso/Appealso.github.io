@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github on SooHo&#39;s Blog</title>
-    <link>https://appealso.github.io/tags/github/</link>
-    <description>Recent content in github on SooHo&#39;s Blog</description>
+    <title>git on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/git/</link>
+    <description>Recent content in git on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 24 Apr 2021 18:51:40 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Apr 2021 18:51:40 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git-Flow 정리</title>
       <link>https://appealso.github.io/posts/git/</link>
@@ -14,16 +14,6 @@
       
       <guid>https://appealso.github.io/posts/git/</guid>
       <description>Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch))  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch))  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge   master 와 devleop브랜치 master와 develop브랜치가 존재하고, develop브랜치는 master 브랜치에서 시작된 브랜치 입니다.</description>
-    </item>
-    
-    <item>
-      <title>Docker통한 젠킨스(Jenkins) 설치 </title>
-      <link>https://appealso.github.io/posts/dockerstart1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://appealso.github.io/posts/dockerstart1/</guid>
-      <description>DEV:개발서버 STG: Stagging 서버(품질서버) PRD: Pruduct서버(운영서버)
-1. 젠킨스 이미지 다운로드 % docker pull jenkins/jenkins:lts2.</description>
     </item>
     
   </channel>

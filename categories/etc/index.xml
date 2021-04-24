@@ -6,7 +6,16 @@
     <description>Recent content in etc on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Mon, 21 Dec 2020 20:45:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/etc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Apr 2021 18:51:40 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/etc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git-Flow 정리</title>
+      <link>https://appealso.github.io/posts/git/</link>
+      <pubDate>Sat, 24 Apr 2021 18:51:40 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/git/</guid>
+      <description>Branch 종류 Git-Flow는 5가지 브랜치를 사용  master   유지 브랜치 실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))  develop   유지 브랜치 개발 브랜치 (Develop(개발 Branch))  feature   보조 브랜치 기능 개발 브랜치 (실제 개발) 일정에 맞춰 develop에 merge  release   유지 브랜치 QA 테스트 브랜치 (Staging (품질 테스트 Branch))  hotfix   보조 브랜치 긴급 오류 해결을 위한 브랜치 (운영 버그 수정) 오류 수정 후 master에 merge   master 와 devleop브랜치 master와 develop브랜치가 존재하고, develop브랜치는 master 브랜치에서 시작된 브랜치 입니다.</description>
+    </item>
+    
     <item>
       <title>Githubio&#43;hugo Theme Blog 구축기.</title>
       <link>https://appealso.github.io/posts/hugo-githubio/</link>
