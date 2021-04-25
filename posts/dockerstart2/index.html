@@ -15,7 +15,7 @@
 <meta itemprop="description" content="1. Personal access Token 발급  Github 접속 후 프로필 클릭 [setting] - [Developer settings] 선택    [Personal access tokens] - [Generate new token] 클릭   토큰 명 입력">
 <meta itemprop="datePublished" content="2021-04-24T22:06:22+09:00" />
 <meta itemprop="dateModified" content="2021-04-24T22:06:22+09:00" />
-<meta itemprop="wordCount" content="133">
+<meta itemprop="wordCount" content="181">
 
 
 
@@ -296,18 +296,23 @@
 </ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker7.png?raw=true" alt="Jenkins"></p>
 <h2 id="3-프로젝트-생성">3. 프로젝트 생성</h2>
-<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker14.png?raw=true" alt="Jenkins"></p>
 <ul>
 <li>
 <p>[Freestyle Project] 선택
 <img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker8.png?raw=true" alt="Jenkins"></p>
 </li>
 <li>
-<p>소스 코드 관리에서 [Git] 선택 후 Git주소를 [Repository URL]에 입력</p>
+<p>General에서 [Github Project]선택 후 Github 주소 입력</p>
 </li>
 <li>
-<p>Credentials 등록 위해 [Add] 클릭</p>
+<p>** ※ .git 까지 입력해야함 ! **</p>
 </li>
+</ul>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker14.png?raw=true" alt="Jenkins"></p>
+<ul>
+<li>소스 코드 관리에서 [Git] 선택 후 Git주소를 [Repository URL]에 입력</li>
+<li>** ※ .git 까지 입력해야함 ! **</li>
+<li>Credentials 등록 위해 [Add] 클릭</li>
 </ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker9.png?raw=true" alt="Jenkins"></p>
 <ul>
@@ -322,8 +327,22 @@
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker11.png?raw=true" alt="Jenkins"></p>
 <h2 id="4-github-webhook-설정">4. Github Webhook 설정</h2>
 <ul>
-<li>Webhooks를 설정 할
-<img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker12.png?raw=true" alt="Jenkins"></li>
+<li>
+<p>Webhooks를 설정 할 Project에서 [Setting]-[Webhooks]-[Add Webhook] 선택
+<img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker12.png?raw=true" alt="Jenkins"></p>
+</li>
+<li>
+<p>Payload URL에 [Jenkins주소+/github-webhook/] 입력</p>
+</li>
+<li>
+<p>Content type에 [application/json] 선택</p>
+</li>
+<li>
+<p>Webhook 걸 이벤트 선택 후 [Add Webhook] 선택</p>
+</li>
+<li>
+<p>아래 사진은 이미 등록이 되어있어서 update로 표시됨</p>
+</li>
 </ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker13.png?raw=true" alt="Jenkins"></p>
 
