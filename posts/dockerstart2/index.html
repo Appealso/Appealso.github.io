@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.79.0" />
 
-  <title>Dockerstart2 &middot; SooHo&#39;s Blog</title>
+  <title>Jenkins &#43; Github 연동 방법 &middot; SooHo&#39;s Blog</title>
 
   <meta name="description" content="" />
 
   
 
-<meta itemprop="name" content="Dockerstart2">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="Jenkins &#43; Github 연동 방법">
+<meta itemprop="description" content="1. Personal access Token 발급  Github 접속 후 프로필 클릭 [setting] - [Developer settings] 선택    [Personal access tokens] - [Generate new token] 클릭   토큰 명 입력">
 <meta itemprop="datePublished" content="2021-04-24T22:06:22+09:00" />
 <meta itemprop="dateModified" content="2021-04-24T22:06:22+09:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="133">
 
 
 
@@ -23,12 +23,12 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Dockerstart2"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Jenkins &#43; Github 연동 방법"/>
+<meta name="twitter:description" content="1. Personal access Token 발급  Github 접속 후 프로필 클릭 [setting] - [Developer settings] 선택    [Personal access tokens] - [Generate new token] 클릭   토큰 명 입력"/>
 
 
-<meta property="og:title" content="Dockerstart2" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="Jenkins &#43; Github 연동 방법" />
+<meta property="og:description" content="1. Personal access Token 발급  Github 접속 후 프로필 클릭 [setting] - [Developer settings] 선택    [Personal access tokens] - [Generate new token] 클릭   토큰 명 입력" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://appealso.github.io/posts/dockerstart2/" />
 <meta property="article:published_time" content="2021-04-24T22:06:22+09:00" />
@@ -67,7 +67,7 @@
       "@type": "WebPage",
       "@id": "https://appealso.github.io/posts/dockerstart2/#webpage",
       "url": "https://appealso.github.io/posts/dockerstart2/",
-      "name": "Dockerstart2",
+      "name": "Jenkins + Github 연동 방법",
       "isPartOf": {
         "@id": "https://appealso.github.io#website"
       },
@@ -76,7 +76,7 @@
       },
       "datePublished": "2021-04-24T22:06:22+09:00",
       "dateModified": "2021-04-24T22:06:22+09:00",
-      "description": "",
+      "description": "1. Personal access Token 발급  Github 접속 후 프로필 클릭 [setting] - [Developer settings] 선택    [Personal access tokens] - [Generate new token] 클릭   토큰 명 입력",
       "inLanguage": "ko",
       "potentialAction": [
         {
@@ -95,7 +95,7 @@
       "mainEntityOfPage": {
         "@id": "https://appealso.github.io/posts/dockerstart2/#webpage"
       },
-      "headline": "Dockerstart2",
+      "headline": "Jenkins + Github 연동 방법",
       "datePublished": "2021-04-24T22:06:22+09:00",
       "dateModified": "2021-04-24T22:06:22+09:00",
       "publisher": {
@@ -251,26 +251,80 @@
 
   <main class="content container">
   <div class="post">
-  <h1 class="title">Dockerstart2</h1>
+  <h1 class="title">Jenkins &#43; Github 연동 방법</h1>
   
 
   <div class="post-date">
-    <time datetime="2021-04-24T22:06:22&#43;0900">Apr 24, 2021</time> &middot; 0 min read
+    <time datetime="2021-04-24T22:06:22&#43;0900">Apr 24, 2021</time> &middot; 1 min read
   </div>
 
   <div>
-  <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker1.png?raw=true" alt="Jenkins"></p>
-<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker2.png?raw=true" alt="Jenkins"></p>
+  <h2 id="1-personal-access-token-발급">1. Personal access Token 발급</h2>
+<ul>
+<li>Github 접속 후 프로필 클릭</li>
+<li>[setting] - [Developer settings] 선택</li>
+</ul>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker1.png?raw=true" alt="Jenkins"></p>
+<ul>
+<li>
+<p>[Personal access tokens] - [Generate new token] 클릭
+<img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker2.png?raw=true" alt="Jenkins"></p>
+</li>
+<li>
+<p>토큰 명 입력</p>
+</li>
+<li>
+<p>토큰에서 사용할 기능 선택 후 [Generate token] 클릭</p>
+</li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker3.png?raw=true" alt="Jenkins"></p>
+<ul>
+<li>** ※ 아래 토큰은 나중에 다시확인 못하니 메모해야함! **</li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker4.png?raw=true" alt="Jenkins"></p>
+<h2 id="2-jenkins에-토큰-등록">2. Jenkins에 토큰 등록</h2>
+<ul>
+<li>Jenkins 접속 후 [Jenkins 관리] - [시스템 설정] 선택</li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker5.png?raw=true" alt="Jenkins"></p>
+<ul>
+<li>Github Server 설정에서 [Add Github Server] - [Add] 클릭</li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker6.png?raw=true" alt="Jenkins"></p>
+<ul>
+<li>아까 메모 해둔 Token을 [Secret]에 등록, [ID]에 토큰을 구분할 이름 작성 후 [Add]클릭</li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker7.png?raw=true" alt="Jenkins"></p>
-<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker8.png?raw=true" alt="Jenkins"></p>
+<h2 id="3-프로젝트-생성">3. 프로젝트 생성</h2>
+<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker14.png?raw=true" alt="Jenkins"></p>
+<ul>
+<li>
+<p>[Freestyle Project] 선택
+<img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker8.png?raw=true" alt="Jenkins"></p>
+</li>
+<li>
+<p>소스 코드 관리에서 [Git] 선택 후 Git주소를 [Repository URL]에 입력</p>
+</li>
+<li>
+<p>Credentials 등록 위해 [Add] 클릭</p>
+</li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker9.png?raw=true" alt="Jenkins"></p>
+<ul>
+<li>Kind에 [Username with Password] 선택</li>
+<li>Username에 Github ID 작성</li>
+<li>Password에 Github Password 작성 후 Add클릭</li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker10.png?raw=true" alt="Jenkins"></p>
+<ul>
+<li>빌드 유발에서 [Github hook trggier for GITScm polling] 선택 후 프로젝트를 저장</li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker11.png?raw=true" alt="Jenkins"></p>
-<p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker12.png?raw=true" alt="Jenkins"></p>
+<h2 id="4-github-webhook-설정">4. Github Webhook 설정</h2>
+<ul>
+<li>Webhooks를 설정 할
+<img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker12.png?raw=true" alt="Jenkins"></li>
+</ul>
 <p><img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker2/docker13.png?raw=true" alt="Jenkins"></p>
 
   </div>
@@ -297,31 +351,31 @@
      href="#"
      title="Share on Twitter"
      data-url="https://appealso.github.io/posts/dockerstart2/"
-     data-text="Dockerstart2"><i class="fab fa-twitter"></i></a>
+     data-text="Jenkins &#43; Github 연동 방법"><i class="fab fa-twitter"></i></a>
 
   <a class="linkedin-share-button"
      href="#"
      title="Share on LinkedIn"
      data-url="https://appealso.github.io/posts/dockerstart2/"
-     data-text="Dockerstart2"><i class="fab fa-linkedin-in"></i></a>
+     data-text="Jenkins &#43; Github 연동 방법"><i class="fab fa-linkedin-in"></i></a>
 
   <a class="facebook-share-button"
      href="#"
      title="Share on Facebook"
      data-url="https://appealso.github.io/posts/dockerstart2/"
-     data-text="Dockerstart2"><i class="fab fa-facebook"></i></a>
+     data-text="Jenkins &#43; Github 연동 방법"><i class="fab fa-facebook"></i></a>
 
   <a class="telegram-share-button"
      href="#"
      title="Share on Telegram"
      data-url="https://appealso.github.io/posts/dockerstart2/"
-     data-text="Dockerstart2"><i class="fab fa-telegram"></i></a>
+     data-text="Jenkins &#43; Github 연동 방법"><i class="fab fa-telegram"></i></a>
 
   <a class="pinterest-share-button"
      href="#"
      title="Share on Pinterest"
      data-url="https://appealso.github.io/posts/dockerstart2/"
-     data-text="Dockerstart2"><i class="fab fa-pinterest"></i></a>
+     data-text="Jenkins &#43; Github 연동 방법"><i class="fab fa-pinterest"></i></a>
 </div>
 
 </div>

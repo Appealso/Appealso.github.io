@@ -8,12 +8,12 @@
     <language>ko</language>
     <lastBuildDate>Sat, 24 Apr 2021 22:06:22 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Dockerstart2</title>
+      <title>Jenkins &#43; Github 연동 방법</title>
       <link>https://appealso.github.io/posts/dockerstart2/</link>
       <pubDate>Sat, 24 Apr 2021 22:06:22 +0900</pubDate>
       
       <guid>https://appealso.github.io/posts/dockerstart2/</guid>
-      <description></description>
+      <description>1. Personal access Token 발급  Github 접속 후 프로필 클릭 [setting] - [Developer settings] 선택    [Personal access tokens] - [Generate new token] 클릭   토큰 명 입력</description>
     </item>
     
     <item>
