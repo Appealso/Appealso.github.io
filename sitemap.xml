@@ -57,6 +57,12 @@
   </url>
   
   <url>
+    <loc>https://appealso.github.io/posts/dockerstart1/</loc>
+    <lastmod>2021-04-24T21:10:40+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
     <loc>https://appealso.github.io/categories/etc/</loc>
     <lastmod>2021-04-24T18:51:40+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -119,11 +125,6 @@
   <url>
     <loc>https://appealso.github.io/posts/my-first-post/</loc>
     <lastmod>2020-12-20T17:17:19+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://appealso.github.io/posts/dockerstart1/</loc>
     <changefreq>weekly</changefreq>
   </url>
   

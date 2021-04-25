@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Docker통한 젠킨스(Jenkins) 설치 </title>
+      <link>https://appealso.github.io/posts/dockerstart1/</link>
+      <pubDate>Sat, 24 Apr 2021 21:10:40 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/dockerstart1/</guid>
+      <description>1. 젠킨스 이미지 다운로드 % docker pull jenkins/jenkins:lts2. 젠킨스 실행 % docker run -p 8080:8080 -p 50000:50000 -v /#(your_home):/var/jenkins_home --name jenkins jenkins/jenkins:lts# -p	호스트와 컨테이너의 포트를 연결 (포워딩)# -v	호스트와 컨테이너의 디렉토리를 연결 (마운트)# --name container 이름 지정3.</description>
+    </item>
+    
+    <item>
       <title>Git-Flow 정리</title>
       <link>https://appealso.github.io/posts/git/</link>
       <pubDate>Sat, 24 Apr 2021 18:51:40 +0900</pubDate>
@@ -59,15 +68,6 @@
       
       <guid>https://appealso.github.io/posts/my-first-post/</guid>
       <description>My first Post in Blog!!</description>
-    </item>
-    
-    <item>
-      <title>Docker통한 젠킨스(Jenkins) 설치 </title>
-      <link>https://appealso.github.io/posts/dockerstart1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://appealso.github.io/posts/dockerstart1/</guid>
-      <description>1. 젠킨스 이미지 다운로드 % docker pull jenkins/jenkins:lts2. 젠킨스 실행 % docker run -p 8080:8080 -p 50000:50000 -v /#(your_home):/var/jenkins_home --name jenkins jenkins/jenkins:lts# -p	호스트와 컨테이너의 포트를 연결 (포워딩)# -v	호스트와 컨테이너의 디렉토리를 연결 (마운트)# --name container 이름 지정3.</description>
     </item>
     
   </channel>
