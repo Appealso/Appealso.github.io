@@ -22,7 +22,7 @@
       <pubDate>Sat, 24 Apr 2021 21:10:40 +0900</pubDate>
       
       <guid>https://appealso.github.io/posts/dockerstart1/</guid>
-      <description>1. 젠킨스 이미지 다운로드 % docker pull jenkins/jenkins:lts2. 젠킨스 실행 % docker run -p 8080:8080 -p 50000:50000 -v /#(your_home):/var/jenkins_home --name jenkins jenkins/jenkins:lts# -p	호스트와 컨테이너의 포트를 연결 (포워딩)# -v	호스트와 컨테이너의 디렉토리를 연결 (마운트)# --name container 이름 지정3.</description>
+      <description>&lt;p&gt;Jenkins와 Github을 연동하면서 정리함&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@
       <pubDate>Mon, 21 Dec 2020 20:45:37 +0900</pubDate>
       
       <guid>https://appealso.github.io/posts/hugo-githubio/</guid>
-      <description>&lt;p&gt;GithubIO와 hugo theme을 활용한 Blog 구축 방법을 작성하려 한다.&lt;/p&gt;</description>
+      <description>&lt;p&gt;GithubIO와 hugo theme을 적용하면서 정리함&lt;/p&gt;</description>
     </item>
     
     <item>
