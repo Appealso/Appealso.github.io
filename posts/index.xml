@@ -8,12 +8,66 @@
     <language>ko</language>
     <lastBuildDate>Mon, 02 Aug 2021 21:28:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Algo2</title>
+      <title>백준 10818 최소, 최대</title>
+      <link>https://appealso.github.io/posts/algo3/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo3/</guid>
+      <description>[문제]  N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오.</description>
+    </item>
+    
+    <item>
+      <title>백준 10951 A&#43;B - 4</title>
       <link>https://appealso.github.io/posts/algo2/</link>
       <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
       
       <guid>https://appealso.github.io/posts/algo2/</guid>
-      <description></description>
+      <description>[문제]  두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</description>
+    </item>
+    
+    <item>
+      <title>백준 11021 A&#43;B - 7</title>
+      <link>https://appealso.github.io/posts/algo4/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo4/</guid>
+      <description>[문제]  두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</description>
+    </item>
+    
+    <item>
+      <title>백준 11022 A&#43;B - 8</title>
+      <link>https://appealso.github.io/posts/algo5/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo5/</guid>
+      <description>[문제]  두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</description>
+    </item>
+    
+    <item>
+      <title>백준 14681 사분면 고르기</title>
+      <link>https://appealso.github.io/posts/algo6/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo6/</guid>
+      <description>[문제]  흔한 수학 문제 중 하나는 주어진 점이 어느 사분면에 속하는지 알아내는 것이다.</description>
+    </item>
+    
+    <item>
+      <title>백준 2753 윤년</title>
+      <link>https://appealso.github.io/posts/algo7/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo7/</guid>
+      <description>[문제]  연도가 주어졌을 때, 윤년이면 1, 아니면 0을 출력하는 프로그램을 작성하시오.</description>
+    </item>
+    
+    <item>
+      <title>백준 2884 알람 시계</title>
+      <link>https://appealso.github.io/posts/algo8/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo8/</guid>
+      <description>[문제]  상근이는 매일 아침 알람을 듣고 일어난다. 알람을 듣고 바로 일어나면 다행이겠지만, 항상 조금만 더 자려는 마음 때문에 매일 학교를 지각하고 있다.</description>
     </item>
     
     <item>

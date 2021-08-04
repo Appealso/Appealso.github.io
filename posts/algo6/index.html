@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.79.0" />
 
-  <title>백준 10951 A&#43;B - 4 &middot; SooHo&#39;s Blog</title>
+  <title>백준 14681 사분면 고르기 &middot; SooHo&#39;s Blog</title>
 
   <meta name="description" content="" />
 
   
 
-<meta itemprop="name" content="백준 10951 A&#43;B - 4">
-<meta itemprop="description" content="[문제]  두 정수 A와 B를 입력받은 다음, A&#43;B를 출력하는 프로그램을 작성하시오.">
+<meta itemprop="name" content="백준 14681 사분면 고르기">
+<meta itemprop="description" content="[문제]  흔한 수학 문제 중 하나는 주어진 점이 어느 사분면에 속하는지 알아내는 것이다.">
 <meta itemprop="datePublished" content="2021-08-02T21:28:37+09:00" />
 <meta itemprop="dateModified" content="2021-08-02T21:28:37+09:00" />
-<meta itemprop="wordCount" content="64">
+<meta itemprop="wordCount" content="134">
 
 
 
@@ -23,14 +23,14 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="백준 10951 A&#43;B - 4"/>
-<meta name="twitter:description" content="[문제]  두 정수 A와 B를 입력받은 다음, A&#43;B를 출력하는 프로그램을 작성하시오."/>
+<meta name="twitter:title" content="백준 14681 사분면 고르기"/>
+<meta name="twitter:description" content="[문제]  흔한 수학 문제 중 하나는 주어진 점이 어느 사분면에 속하는지 알아내는 것이다."/>
 
 
-<meta property="og:title" content="백준 10951 A&#43;B - 4" />
-<meta property="og:description" content="[문제]  두 정수 A와 B를 입력받은 다음, A&#43;B를 출력하는 프로그램을 작성하시오." />
+<meta property="og:title" content="백준 14681 사분면 고르기" />
+<meta property="og:description" content="[문제]  흔한 수학 문제 중 하나는 주어진 점이 어느 사분면에 속하는지 알아내는 것이다." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://appealso.github.io/posts/algo2/" />
+<meta property="og:url" content="https://appealso.github.io/posts/algo6/" />
 <meta property="article:published_time" content="2021-08-02T21:28:37+09:00" />
 <meta property="article:modified_time" content="2021-08-02T21:28:37+09:00" />
 
@@ -65,9 +65,9 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://appealso.github.io/posts/algo2/#webpage",
-      "url": "https://appealso.github.io/posts/algo2/",
-      "name": "백준 10951 A+B - 4",
+      "@id": "https://appealso.github.io/posts/algo6/#webpage",
+      "url": "https://appealso.github.io/posts/algo6/",
+      "name": "백준 14681 사분면 고르기",
       "isPartOf": {
         "@id": "https://appealso.github.io#website"
       },
@@ -76,13 +76,13 @@
       },
       "datePublished": "2021-08-02T21:28:37+09:00",
       "dateModified": "2021-08-02T21:28:37+09:00",
-      "description": "[문제]  두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.",
+      "description": "[문제]  흔한 수학 문제 중 하나는 주어진 점이 어느 사분면에 속하는지 알아내는 것이다.",
       "inLanguage": "ko",
       "potentialAction": [
         {
           "@type": "ReadAction",
           "target": [
-            "https://appealso.github.io/posts/algo2/"
+            "https://appealso.github.io/posts/algo6/"
           ]
         }
       ]
@@ -90,12 +90,12 @@
     {
       "@type": "Article",
       "isPartOf": {
-        "@id": "https://appealso.github.io/posts/algo2/#webpage"
+        "@id": "https://appealso.github.io/posts/algo6/#webpage"
       },
       "mainEntityOfPage": {
-        "@id": "https://appealso.github.io/posts/algo2/#webpage"
+        "@id": "https://appealso.github.io/posts/algo6/#webpage"
       },
-      "headline": "백준 10951 A+B - 4",
+      "headline": "백준 14681 사분면 고르기",
       "datePublished": "2021-08-02T21:28:37+09:00",
       "dateModified": "2021-08-02T21:28:37+09:00",
       "publisher": {
@@ -117,7 +117,7 @@
           "@type": "CommentAction",
           "name": "Comment",
           "target": [
-            "https://appealso.github.io/posts/algo2/#comments"
+            "https://appealso.github.io/posts/algo6/#comments"
           ]
         }
       ]
@@ -249,7 +249,7 @@
 
   <main class="content container">
   <div class="post">
-  <h1 class="title">백준 10951 A&#43;B - 4</h1>
+  <h1 class="title">백준 14681 사분면 고르기</h1>
   
 
   <div class="post-date">
@@ -259,29 +259,41 @@
   <div>
   <h3 id="문제">[문제]</h3>
 <blockquote>
-<p>두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.</p>
+<p>흔한 수학 문제 중 하나는 주어진 점이 어느 사분면에 속하는지 알아내는 것이다. 사분면은 아래 그림처럼 1부터 4까지 번호를 갖는다. &ldquo;Quadrant n&quot;은 &ldquo;제n사분면&quot;이라는 뜻이다.</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>예를 들어, 좌표가 (12, 5)인 점 A는 x좌표와 y좌표가 모두 양수이므로 제1사분면에 속한다. 점 B는 x좌표가 음수이고 y좌표가 양수이므로 제2사분면에 속한다.</p>
+</blockquote>
+<blockquote>
+<p>점의 좌표를 입력받아 그 점이 어느 사분면에 속하는지 알아내는 프로그램을 작성하시오. 단, x좌표와 y좌표는 모두 양수나 음수라고 가정한다.</p>
 </blockquote>
 <h3 id="입력">[입력]</h3>
 <blockquote>
-<p>입력은 여러 개의 테스트 케이스로 이루어져 있다.
-각 테스트 케이스는 한 줄로 이루어져 있으며, 각 줄에 A와 B가 주어진다. (0 &lt; A, B &lt; 10)</p>
+<p>첫 줄에는 정수 x가 주어진다. (−1000 ≤ x ≤ 1000; x ≠ 0) 다음 줄에는 정수 y가 주어진다. (−1000 ≤ y ≤ 1000; y ≠ 0)</p>
 </blockquote>
 <h3 id="출력">[출력]</h3>
 <blockquote>
-<p>각 테스트 케이스마다 A+B를 출력한다.</p>
+<p>점 (x, y)의 사분면 번호(1, 2, 3, 4 중 하나)를 출력한다.</p>
 </blockquote>
 <h3 id="소스">[소스]</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Scanner<span style="color:#f92672">;</span>
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">boj10951</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String args<span style="color:#f92672">[]){</span>
-		Scanner sc<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">);</span>
-		<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span>sc<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNextInt</span><span style="color:#f92672">())</span>
-			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">((</span>sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">()+</span>sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">()));</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">boj14681</span><span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+		Scanner sc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">);</span>
+
+		<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">();</span>
+		<span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">();</span>
+
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>x<span style="color:#f92672">&gt;</span>0<span style="color:#f92672">)</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>y<span style="color:#f92672">&gt;</span>0<span style="color:#f92672">?</span>1<span style="color:#f92672">:</span>4<span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">else</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>y<span style="color:#f92672">&gt;</span>0<span style="color:#f92672">?</span>2<span style="color:#f92672">:</span>3<span style="color:#f92672">);</span>
 	<span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><h3 id="문제링크">문제링크</h3>
-<p><a href="https://www.acmicpc.net/problem/10951">https://www.acmicpc.net/problem/10951</a></p>
+<p><a href="https://www.acmicpc.net/problem/14681">https://www.acmicpc.net/problem/14681</a></p>
 
   </div>
 
@@ -298,32 +310,32 @@
   <a class="twitter-share-button"
      href="#"
      title="Share on Twitter"
-     data-url="https://appealso.github.io/posts/algo2/"
-     data-text="백준 10951 A&#43;B - 4"><i class="fab fa-twitter"></i></a>
+     data-url="https://appealso.github.io/posts/algo6/"
+     data-text="백준 14681 사분면 고르기"><i class="fab fa-twitter"></i></a>
 
   <a class="linkedin-share-button"
      href="#"
      title="Share on LinkedIn"
-     data-url="https://appealso.github.io/posts/algo2/"
-     data-text="백준 10951 A&#43;B - 4"><i class="fab fa-linkedin-in"></i></a>
+     data-url="https://appealso.github.io/posts/algo6/"
+     data-text="백준 14681 사분면 고르기"><i class="fab fa-linkedin-in"></i></a>
 
   <a class="facebook-share-button"
      href="#"
      title="Share on Facebook"
-     data-url="https://appealso.github.io/posts/algo2/"
-     data-text="백준 10951 A&#43;B - 4"><i class="fab fa-facebook"></i></a>
+     data-url="https://appealso.github.io/posts/algo6/"
+     data-text="백준 14681 사분면 고르기"><i class="fab fa-facebook"></i></a>
 
   <a class="telegram-share-button"
      href="#"
      title="Share on Telegram"
-     data-url="https://appealso.github.io/posts/algo2/"
-     data-text="백준 10951 A&#43;B - 4"><i class="fab fa-telegram"></i></a>
+     data-url="https://appealso.github.io/posts/algo6/"
+     data-text="백준 14681 사분면 고르기"><i class="fab fa-telegram"></i></a>
 
   <a class="pinterest-share-button"
      href="#"
      title="Share on Pinterest"
-     data-url="https://appealso.github.io/posts/algo2/"
-     data-text="백준 10951 A&#43;B - 4"><i class="fab fa-pinterest"></i></a>
+     data-url="https://appealso.github.io/posts/algo6/"
+     data-text="백준 14681 사분면 고르기"><i class="fab fa-pinterest"></i></a>
 </div>
 
 </div>
