@@ -6,7 +6,16 @@
     <description>Recent content on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 06 Aug 2021 13:01:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Aug 2021 19:23:32 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://appealso.github.io/post/test/</link>
+      <pubDate>Sat, 07 Aug 2021 19:23:32 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/post/test/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>백준 15650 N과 M (2)</title>
       <link>https://appealso.github.io/posts/algo10/</link>
