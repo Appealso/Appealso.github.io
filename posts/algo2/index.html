@@ -151,6 +151,10 @@
     border-color: #000000;
   }
 
+  .read-more-link a:hover {
+    background-color: #000000;
+  }
+
   .pagination li a {
     color: #000000;
     border: 1px solid #000000;
@@ -199,7 +203,9 @@
       
         
         <div class="author-image">
-          <img src="/images/chusikrun.gif" class="img-circle img-headshot center" alt="Profile Picture">
+          <a href="https://appealso.github.io">
+            <img src="/images/chusikrun.gif" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
         </div>
         
       
@@ -253,7 +259,7 @@
   
 
   <div class="post-date">
-    <time datetime="2021-08-02T21:28:37&#43;0900">Aug 2, 2021</time> &middot; 1 min read
+    <time datetime="2021-08-02T21:28:37&#43;0900">Aug 2, 2021</time> <span class="readtime">&middot; 1 min read</span>
   </div>
 
   <div>
@@ -285,13 +291,15 @@
 
   </div>
 
-  <div>
+  
+<div>
   <ul class="tags">
   <li>
     <a href="https://appealso.github.io/tags/algorithm/" class="tag-link">algorithm</a>
   </li>
   </ul>
 </div>
+
 
 
   <div class="share-buttons">
@@ -326,10 +334,10 @@
      data-text="백준 10951 A&#43;B - 4"><i class="fab fa-pinterest"></i></a>
 </div>
 
-</div>
 
-<h2>Comments</h2>
-<div id="disqus_thread"></div>
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
     
@@ -349,6 +357,8 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
   </main>
 
   <footer>
