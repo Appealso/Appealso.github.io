@@ -5,34 +5,6 @@
     <link>https://appealso.github.io/categories/</link>
     <description>Recent content in Categories on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
-    <lastBuildDate>Fri, 06 Aug 2021 13:01:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>algorithm</title>
-      <link>https://appealso.github.io/categories/algorithm/</link>
-      <pubDate>Fri, 06 Aug 2021 13:01:37 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/categories/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devops</title>
-      <link>https://appealso.github.io/categories/devops/</link>
-      <pubDate>Sat, 24 Apr 2021 22:06:22 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>etc</title>
-      <link>https://appealso.github.io/categories/etc/</link>
-      <pubDate>Sat, 24 Apr 2021 18:51:40 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/categories/etc/</guid>
-      <description></description>
-    </item>
-    
+    <language>ko</language><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
