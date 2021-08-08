@@ -13,8 +13,8 @@
 
 <meta itemprop="name" content="백준 15650 N과 M (3)">
 <meta itemprop="description" content="[문제]  자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.">
-<meta itemprop="datePublished" content="2021-08-07T21:28:37+09:00" />
-<meta itemprop="dateModified" content="2021-08-07T21:28:37+09:00" />
+<meta itemprop="datePublished" content="2021-08-06T21:28:37+09:00" />
+<meta itemprop="dateModified" content="2021-08-06T21:28:37+09:00" />
 <meta itemprop="wordCount" content="146">
 
 
@@ -31,8 +31,8 @@
 <meta property="og:description" content="[문제]  자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://appealso.github.io/posts/algo11/" />
-<meta property="article:published_time" content="2021-08-07T21:28:37+09:00" />
-<meta property="article:modified_time" content="2021-08-07T21:28:37+09:00" />
+<meta property="article:published_time" content="2021-08-06T21:28:37+09:00" />
+<meta property="article:modified_time" content="2021-08-06T21:28:37+09:00" />
 
 
 
@@ -74,8 +74,8 @@
       "about": {
          "@id": "https://appealso.github.io#author"
       },
-      "datePublished": "2021-08-07T21:28:37+09:00",
-      "dateModified": "2021-08-07T21:28:37+09:00",
+      "datePublished": "2021-08-06T21:28:37+09:00",
+      "dateModified": "2021-08-06T21:28:37+09:00",
       "description": "[문제]  자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.",
       "inLanguage": "ko",
       "potentialAction": [
@@ -96,8 +96,8 @@
         "@id": "https://appealso.github.io/posts/algo11/#webpage"
       },
       "headline": "백준 15650 N과 M (3)",
-      "datePublished": "2021-08-07T21:28:37+09:00",
-      "dateModified": "2021-08-07T21:28:37+09:00",
+      "datePublished": "2021-08-06T21:28:37+09:00",
+      "dateModified": "2021-08-06T21:28:37+09:00",
       "publisher": {
         "@id": "https://appealso.github.io#author"
       },
@@ -259,7 +259,7 @@
   
 
   <div class="post-date">
-    <time datetime="2021-08-07T21:28:37&#43;0900">Aug 7, 2021</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2021-08-06T21:28:37&#43;0900">Aug 6, 2021</time> <span class="readtime">&middot; 1 min read</span>
   </div>
 
   <div>
@@ -285,32 +285,32 @@
 <span style="color:#f92672">import</span> java.util.StringTokenizer<span style="color:#f92672">;</span>
 
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> N<span style="color:#f92672">,</span>M<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ans<span style="color:#f92672">;</span>
-	<span style="color:#66d9ef">static</span> StringBuilder sb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">();</span>
-	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">{</span>
-		BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">));</span>
-		StringTokenizer stk <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringTokenizer<span style="color:#f92672">(</span>br<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">(),</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">);</span>
-		N<span style="color:#f92672">=</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>stk<span style="color:#f92672">.</span><span style="color:#a6e22e">nextToken</span><span style="color:#f92672">());</span>
-		M<span style="color:#f92672">=</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>stk<span style="color:#f92672">.</span><span style="color:#a6e22e">nextToken</span><span style="color:#f92672">());</span>
+    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> N<span style="color:#f92672">,</span>M<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> ans<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">static</span> StringBuilder sb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">{</span>
+        BufferedReader br <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BufferedReader<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">));</span>
+        StringTokenizer stk <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringTokenizer<span style="color:#f92672">(</span>br<span style="color:#f92672">.</span><span style="color:#a6e22e">readLine</span><span style="color:#f92672">(),</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">);</span>
+        N<span style="color:#f92672">=</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>stk<span style="color:#f92672">.</span><span style="color:#a6e22e">nextToken</span><span style="color:#f92672">());</span>
+        M<span style="color:#f92672">=</span>Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>stk<span style="color:#f92672">.</span><span style="color:#a6e22e">nextToken</span><span style="color:#f92672">());</span>
 
-		ans<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>M<span style="color:#f92672">];</span>
-		go<span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
-		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>sb<span style="color:#f92672">);</span>
-	<span style="color:#f92672">}</span>
-	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">go</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> depth<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">==</span>M<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-			<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> tmp<span style="color:#f92672">:</span>ans<span style="color:#f92672">)</span>
-				sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">((</span>tmp<span style="color:#f92672">+</span>1<span style="color:#f92672">)+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">);</span>
-			sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;\n&#39;</span><span style="color:#f92672">);</span>
-			<span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
-		<span style="color:#f92672">}</span>
-		<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">;</span>i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-			ans<span style="color:#f92672">[</span>depth<span style="color:#f92672">]=</span>i<span style="color:#f92672">;</span>
-			go<span style="color:#f92672">(</span>depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
-		<span style="color:#f92672">}</span>
-	<span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>z
+        ans<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>M<span style="color:#f92672">];</span>
+        go<span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>sb<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">go</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> depth<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>depth<span style="color:#f92672">==</span>M<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> tmp<span style="color:#f92672">:</span>ans<span style="color:#f92672">)</span>
+                sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">((</span>tmp<span style="color:#f92672">+</span>1<span style="color:#f92672">)+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">);</span>
+            sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#39;\n&#39;</span><span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">;</span>i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            ans<span style="color:#f92672">[</span>depth<span style="color:#f92672">]=</span>i<span style="color:#f92672">;</span>
+            go<span style="color:#f92672">(</span>depth<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 </code></pre></div><h3 id="문제링크">문제링크</h3>
 <p><a href="https://www.acmicpc.net/problem/15651">https://www.acmicpc.net/problem/15651</a></p>
 
