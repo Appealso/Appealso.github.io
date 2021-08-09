@@ -6,7 +6,16 @@
     <description>Recent content on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Mon, 09 Aug 2021 12:25:01 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Aug 2021 12:27:10 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 15651 N과 M (4)</title>
+      <link>https://appealso.github.io/posts/algo12/</link>
+      <pubDate>Mon, 09 Aug 2021 12:27:10 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo12/</guid>
+      <description>[문제]  자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.</description>
+    </item>
+    
     <item>
       <title>수정중</title>
       <link>https://appealso.github.io/posts/algo13/</link>
