@@ -6,22 +6,22 @@
     <description>Recent content in algorithm on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 06 Aug 2021 21:28:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Aug 2021 21:28:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 15651 N과 M (3)</title>
+      <link>https://appealso.github.io/posts/algo11/</link>
+      <pubDate>Sun, 08 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo11/</guid>
+      <description>[문제]  자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.</description>
+    </item>
+    
     <item>
       <title>백준 15650 N과 M (2)</title>
       <link>https://appealso.github.io/posts/algo10/</link>
       <pubDate>Fri, 06 Aug 2021 21:28:37 +0900</pubDate>
       
       <guid>https://appealso.github.io/posts/algo10/</guid>
-      <description>[문제]  자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.</description>
-    </item>
-    
-    <item>
-      <title>백준 15651 N과 M (3)</title>
-      <link>https://appealso.github.io/posts/algo11/</link>
-      <pubDate>Fri, 06 Aug 2021 21:28:37 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/posts/algo11/</guid>
       <description>[문제]  자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오.</description>
     </item>
     
