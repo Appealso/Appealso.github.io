@@ -6,7 +6,25 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Mon, 09 Aug 2021 12:27:10 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Aug 2021 20:43:49 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 2562 최댓값</title>
+      <link>https://appealso.github.io/posts/algo15/</link>
+      <pubDate>Wed, 11 Aug 2021 20:43:49 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo15/</guid>
+      <description>[문제]  9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 &amp;gt; 작성하시오.</description>
+    </item>
+    
+    <item>
+      <title>백준 3052 나머지</title>
+      <link>https://appealso.github.io/posts/algo14/</link>
+      <pubDate>Wed, 11 Aug 2021 20:43:43 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo14/</guid>
+      <description>[문제]  자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다.</description>
+    </item>
+    
     <item>
       <title>백준 15651 N과 M (4)</title>
       <link>https://appealso.github.io/posts/algo12/</link>
