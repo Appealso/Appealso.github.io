@@ -5,30 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.79.0" />
 
-  <title>수정중 &middot; SooHo&#39;s Blog</title>
+  <title>백준 2798 블랙잭 &middot; SooHo&#39;s Blog</title>
 
   <meta name="description" content="" />
 
   
 
-<meta itemprop="name" content="수정중">
-<meta itemprop="description" content="test">
+<meta itemprop="name" content="백준 2798 블랙잭">
+<meta itemprop="description" content="[문제]  카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다.">
 <meta itemprop="datePublished" content="2021-08-09T12:25:01+09:00" />
 <meta itemprop="dateModified" content="2021-08-09T12:25:01+09:00" />
-<meta itemprop="wordCount" content="1">
+<meta itemprop="wordCount" content="218">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="algorithm," />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="수정중"/>
-<meta name="twitter:description" content="test"/>
+<meta name="twitter:title" content="백준 2798 블랙잭"/>
+<meta name="twitter:description" content="[문제]  카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다."/>
 
 
-<meta property="og:title" content="수정중" />
-<meta property="og:description" content="test" />
+<meta property="og:title" content="백준 2798 블랙잭" />
+<meta property="og:description" content="[문제]  카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://appealso.github.io/posts/algo13/" />
 <meta property="article:published_time" content="2021-08-09T12:25:01+09:00" />
@@ -67,7 +67,7 @@
       "@type": "WebPage",
       "@id": "https://appealso.github.io/posts/algo13/#webpage",
       "url": "https://appealso.github.io/posts/algo13/",
-      "name": "수정중",
+      "name": "백준 2798 블랙잭",
       "isPartOf": {
         "@id": "https://appealso.github.io#website"
       },
@@ -76,7 +76,7 @@
       },
       "datePublished": "2021-08-09T12:25:01+09:00",
       "dateModified": "2021-08-09T12:25:01+09:00",
-      "description": "test",
+      "description": "[문제]  카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다.",
       "inLanguage": "ko",
       "potentialAction": [
         {
@@ -95,15 +95,17 @@
       "mainEntityOfPage": {
         "@id": "https://appealso.github.io/posts/algo13/#webpage"
       },
-      "headline": "수정중",
+      "headline": "백준 2798 블랙잭",
       "datePublished": "2021-08-09T12:25:01+09:00",
       "dateModified": "2021-08-09T12:25:01+09:00",
       "publisher": {
         "@id": "https://appealso.github.io#author"
       },
       "keywords": [
+        "algorithm"
       ],
       "articleSection": [
+        "algorithm"
       ],
       "inLanguage": "ko",
       "author": {
@@ -253,19 +255,68 @@
 
   <main class="content container">
   <div class="post">
-  <h1 class="title">수정중</h1>
+  <h1 class="title">백준 2798 블랙잭</h1>
   
 
   <div class="post-date">
-    <time datetime="2021-08-09T12:25:01&#43;0900">Aug 9, 2021</time> <span class="readtime">&middot; 1 min read</span>
+    <time datetime="2021-08-09T12:25:01&#43;0900">Aug 9, 2021</time> <span class="readtime">&middot; 2 min read</span>
   </div>
 
   <div>
-  <p>test</p>
+  <h3 id="문제">[문제]</h3>
+<blockquote>
+<p>카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다. 카드의 합이 21을 넘지 않는 한도 내에서, 카드의 &gt; 합을 최대한 크게 만드는 게임이다. 블랙잭은 카지노마다 다양한 규정이 있다.
+한국 최고의 블랙잭 고수 김정인은 새로운 블랙잭 규칙을 만들어 상근, 창영이와 게임하려고 한다.
+김정인 버전의 블랙잭에서 각 카드에는 양의 정수가 쓰여 있다. 그 다음, 딜러는 N장의 카드를 모두 숫자가 보이도록 &gt; 바닥에 놓는다. 그런 후에 딜러는 숫자 M을 크게 외친다.
+이제 플레이어는 제한된 시간 안에 N장의 카드 중에서 3장의 카드를 골라야 한다. 블랙잭 변형 게임이기 때문에, &gt; 플레이어가 고른 카드의 합은 M을 넘지 않으면서 M과 최대한 가깝게 만들어야 한다.
+N장의 카드에 써져 있는 숫자가 주어졌을 때, M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 구해 &gt; 출력하시오.</p>
+</blockquote>
+<h3 id="입력">[입력]</h3>
+<blockquote>
+<p>첫째 줄에 카드의 개수 N(3 ≤ N ≤ 100)과 M(10 ≤ M ≤ 300,000)이 주어진다. 둘째 줄에는 카드에 쓰여 있는 수가 주어지며, 이 값은 100,000을 넘지 않는 양의 정수이다.
+합이 M을 넘지 않는 카드 3장을 찾을 수 있는 경우만 입력으로 주어진다.</p>
+</blockquote>
+<h3 id="출력">[출력]</h3>
+<blockquote>
+<p>첫째 줄에 M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 출력한다.</p>
+</blockquote>
+<h3 id="소스">[소스]</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Scanner<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+        Scanner sc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">int</span> N<span style="color:#f92672">=</span>sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">int</span> M<span style="color:#f92672">=</span>sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">int</span> max<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> arr<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>N<span style="color:#f92672">];</span>
+
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">;</span>i<span style="color:#f92672">++)</span>
+            arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]=</span>sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">-</span>2<span style="color:#f92672">;</span>i<span style="color:#f92672">++)</span>
+            <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span>1<span style="color:#f92672">;</span>j<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>j<span style="color:#f92672">++)</span>
+                <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> k<span style="color:#f92672">=</span>j<span style="color:#f92672">+</span>1<span style="color:#f92672">;</span>k<span style="color:#f92672">&lt;</span>N<span style="color:#f92672">;</span>k<span style="color:#f92672">++){</span>
+                    <span style="color:#66d9ef">int</span> tmp<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+                    tmp<span style="color:#f92672">=</span>arr<span style="color:#f92672">[</span>i<span style="color:#f92672">]+</span>arr<span style="color:#f92672">[</span>j<span style="color:#f92672">]+</span>arr<span style="color:#f92672">[</span>k<span style="color:#f92672">];</span>
+                    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>max<span style="color:#f92672">&lt;</span>tmp<span style="color:#f92672">&amp;&amp;</span>tmp<span style="color:#f92672">&lt;=</span>M<span style="color:#f92672">)</span> max<span style="color:#f92672">=</span>tmp<span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>max<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="문제링크">문제링크</h3>
+<p><a href="https://www.acmicpc.net/problem/2798">https://www.acmicpc.net/problem/2798</a></p>
 
   </div>
 
   
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://appealso.github.io/tags/algorithm/" class="tag-link">algorithm</a>
+  </li>
+  </ul>
+</div>
+
 
 
   <div class="share-buttons">
@@ -273,31 +324,31 @@
      href="#"
      title="Share on Twitter"
      data-url="https://appealso.github.io/posts/algo13/"
-     data-text="수정중"><i class="fab fa-twitter"></i></a>
+     data-text="백준 2798 블랙잭"><i class="fab fa-twitter"></i></a>
 
   <a class="linkedin-share-button"
      href="#"
      title="Share on LinkedIn"
      data-url="https://appealso.github.io/posts/algo13/"
-     data-text="수정중"><i class="fab fa-linkedin-in"></i></a>
+     data-text="백준 2798 블랙잭"><i class="fab fa-linkedin-in"></i></a>
 
   <a class="facebook-share-button"
      href="#"
      title="Share on Facebook"
      data-url="https://appealso.github.io/posts/algo13/"
-     data-text="수정중"><i class="fab fa-facebook"></i></a>
+     data-text="백준 2798 블랙잭"><i class="fab fa-facebook"></i></a>
 
   <a class="telegram-share-button"
      href="#"
      title="Share on Telegram"
      data-url="https://appealso.github.io/posts/algo13/"
-     data-text="수정중"><i class="fab fa-telegram"></i></a>
+     data-text="백준 2798 블랙잭"><i class="fab fa-telegram"></i></a>
 
   <a class="pinterest-share-button"
      href="#"
      title="Share on Pinterest"
      data-url="https://appealso.github.io/posts/algo13/"
-     data-text="수정중"><i class="fab fa-pinterest"></i></a>
+     data-text="백준 2798 블랙잭"><i class="fab fa-pinterest"></i></a>
 </div>
 
 
