@@ -6,7 +6,16 @@
     <description>Recent content in algorithm on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 11 Aug 2021 20:43:49 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Aug 2021 21:28:50 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 10733 제로</title>
+      <link>https://appealso.github.io/posts/algo16/</link>
+      <pubDate>Fri, 13 Aug 2021 21:28:50 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo16/</guid>
+      <description>[문제]  나코더 기장 재민이는 동아리 회식을 준비하기 위해서 장부를 관리하는 중이다.</description>
+    </item>
+    
     <item>
       <title>백준 2562 최댓값</title>
       <link>https://appealso.github.io/posts/algo15/</link>
