@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>재귀 on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/%EC%9E%AC%EA%B7%80/</link>
+    <description>Recent content in 재귀 on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 16 Aug 2021 11:57:47 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/%EC%9E%AC%EA%B7%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algo18</title>
+      <link>https://appealso.github.io/posts/algo18/</link>
+      <pubDate>Mon, 16 Aug 2021 11:57:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo18/</guid>
+      <description>[문제]  세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다.</description>
+    </item>
+    
+  </channel>
+</rss>

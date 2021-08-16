@@ -6,7 +6,16 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Mon, 16 Aug 2021 09:22:57 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 11:57:47 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algo18</title>
+      <link>https://appealso.github.io/posts/algo18/</link>
+      <pubDate>Mon, 16 Aug 2021 11:57:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo18/</guid>
+      <description>[문제]  세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다.</description>
+    </item>
+    
     <item>
       <title>백준 2447 별찍기-10</title>
       <link>https://appealso.github.io/posts/algo17/</link>
