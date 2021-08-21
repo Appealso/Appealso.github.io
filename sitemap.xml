@@ -4,37 +4,49 @@
   
   <url>
     <loc>https://appealso.github.io/tags/algorithm/</loc>
-    <lastmod>2021-08-16T11:57:47+09:00</lastmod>
+    <lastmod>2021-08-21T11:27:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/categories/algorithm/</loc>
-    <lastmod>2021-08-16T11:57:47+09:00</lastmod>
+    <lastmod>2021-08-21T11:27:56+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://appealso.github.io/tags/backtracking/</loc>
+    <lastmod>2021-08-21T11:27:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/categories/</loc>
-    <lastmod>2021-08-16T11:57:47+09:00</lastmod>
+    <lastmod>2021-08-21T11:27:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/posts/</loc>
-    <lastmod>2021-08-16T11:57:47+09:00</lastmod>
+    <lastmod>2021-08-21T11:27:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/</loc>
-    <lastmod>2021-08-16T11:57:47+09:00</lastmod>
+    <lastmod>2021-08-21T11:27:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
   <url>
     <loc>https://appealso.github.io/tags/</loc>
-    <lastmod>2021-08-16T11:57:47+09:00</lastmod>
+    <lastmod>2021-08-21T11:27:56+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://appealso.github.io/posts/algo19/</loc>
+    <lastmod>2021-08-21T11:27:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   
@@ -71,12 +83,6 @@
   <url>
     <loc>https://appealso.github.io/posts/algo14/</loc>
     <lastmod>2021-08-11T20:43:43+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
-    <loc>https://appealso.github.io/tags/backtracking/</loc>
-    <lastmod>2021-08-09T12:27:10+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   

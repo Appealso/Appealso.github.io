@@ -6,13 +6,22 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Mon, 16 Aug 2021 11:57:47 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 11:27:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>algorithm</title>
       <link>https://appealso.github.io/tags/algorithm/</link>
-      <pubDate>Mon, 16 Aug 2021 11:57:47 +0900</pubDate>
+      <pubDate>Sat, 21 Aug 2021 11:27:56 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>backtracking</title>
+      <link>https://appealso.github.io/tags/backtracking/</link>
+      <pubDate>Sat, 21 Aug 2021 11:27:56 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/backtracking/</guid>
       <description></description>
     </item>
     
@@ -22,15 +31,6 @@
       <pubDate>Mon, 16 Aug 2021 11:57:47 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/%EC%9E%AC%EA%B7%80/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>backtracking</title>
-      <link>https://appealso.github.io/tags/backtracking/</link>
-      <pubDate>Mon, 09 Aug 2021 12:27:10 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/tags/backtracking/</guid>
       <description></description>
     </item>
     

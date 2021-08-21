@@ -6,7 +6,16 @@
     <description>Recent content in algorithm on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Mon, 16 Aug 2021 11:57:47 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Aug 2021 11:27:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 2580 스도쿠</title>
+      <link>https://appealso.github.io/posts/algo19/</link>
+      <pubDate>Sat, 21 Aug 2021 11:27:56 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo19/</guid>
+      <description>[문제]  스도쿠는 18세기 스위스 수학자가 만든 &amp;lsquo;라틴 사각형&amp;rsquo;이랑 퍼즐에서 유래한 것으로 현재 많은 인기를 누리고 있다.</description>
+    </item>
+    
     <item>
       <title>백준 11729 하노이 탑 이동 순서</title>
       <link>https://appealso.github.io/posts/algo18/</link>
