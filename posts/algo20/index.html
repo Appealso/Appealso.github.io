@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>Algo20 &middot; SooHo&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Algo20">
+<meta itemprop="description" content="[문제]  세계는 균형이 잘 잡혀있어야 한다. 양과 음, 빛과 어둠 그리고 왼쪽 괄호와 오른쪽 괄호처럼 말이다.">
+<meta itemprop="datePublished" content="2021-08-22T15:38:35+09:00" />
+<meta itemprop="dateModified" content="2021-08-22T15:38:35+09:00" />
+<meta itemprop="wordCount" content="222">
+
+
+
+<meta itemprop="keywords" content="algorithm,stack," />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algo20"/>
+<meta name="twitter:description" content="[문제]  세계는 균형이 잘 잡혀있어야 한다. 양과 음, 빛과 어둠 그리고 왼쪽 괄호와 오른쪽 괄호처럼 말이다."/>
+
+
+<meta property="og:title" content="Algo20" />
+<meta property="og:description" content="[문제]  세계는 균형이 잘 잡혀있어야 한다. 양과 음, 빛과 어둠 그리고 왼쪽 괄호와 오른쪽 괄호처럼 말이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://appealso.github.io/posts/algo20/" />
+<meta property="article:published_time" content="2021-08-22T15:38:35+09:00" />
+<meta property="article:modified_time" content="2021-08-22T15:38:35+09:00" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://appealso.github.io#author",
+      "name": "SooHo Kim",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://appealso.github.io/images/chusikrun.gif"
+        
+      },
+      "description":  null 
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://appealso.github.io#website",
+      "url": "https://appealso.github.io",
+      "name": "SooHo's Blog",
+      "description":  null ,
+      "publisher": {
+        "@id": "https://appealso.github.io#author"
+      },
+      "inLanguage": "ko"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://appealso.github.io/posts/algo20/#webpage",
+      "url": "https://appealso.github.io/posts/algo20/",
+      "name": "Algo20",
+      "isPartOf": {
+        "@id": "https://appealso.github.io#website"
+      },
+      "about": {
+         "@id": "https://appealso.github.io#author"
+      },
+      "datePublished": "2021-08-22T15:38:35+09:00",
+      "dateModified": "2021-08-22T15:38:35+09:00",
+      "description": "[문제]  세계는 균형이 잘 잡혀있어야 한다. 양과 음, 빛과 어둠 그리고 왼쪽 괄호와 오른쪽 괄호처럼 말이다.",
+      "inLanguage": "ko",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://appealso.github.io/posts/algo20/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://appealso.github.io/posts/algo20/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://appealso.github.io/posts/algo20/#webpage"
+      },
+      "headline": "Algo20",
+      "datePublished": "2021-08-22T15:38:35+09:00",
+      "dateModified": "2021-08-22T15:38:35+09:00",
+      "publisher": {
+        "@id": "https://appealso.github.io#author"
+      },
+      "keywords": [
+        "algorithm",
+        "stack"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ko",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://appealso.github.io/posts/algo20/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #000000;
+  }
+
+  .read-more-link a {
+    border-color: #000000;
+  }
+
+  .read-more-link a:hover {
+    background-color: #000000;
+  }
+
+  .pagination li a {
+    color: #000000;
+    border: 1px solid #000000;
+  }
+
+  .pagination li.active a {
+    background-color: #000000;
+  }
+
+  .pagination li a:hover {
+    background-color: #000000;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #000000;
+  }
+</style>
+
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://appealso.github.io">
+            <img src="/images/chusikrun.gif" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>SooHo&#39;s Blog</h1>
+
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://appealso.github.io">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/contact/">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/%ec%88%98%ed%98%b8-%ea%b9%80-49177b1ba/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/Appealso" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://www.instagram.com/sooohokim/" rel="me" title="Instagram" target="_blank">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Algo20</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-08-22T15:38:35&#43;0900">Aug 22, 2021</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <h3 id="문제">[문제]</h3>
+<blockquote>
+<p>세계는 균형이 잘 잡혀있어야 한다. 양과 음, 빛과 어둠 그리고 왼쪽 괄호와 오른쪽 괄호처럼 말이다.
+정민이의 임무는 어떤 문자열이 주어졌을 때, 괄호들의 균형이 잘 맞춰져 있는지 판단하는 프로그램을 짜는 것이다.
+문자열에 포함되는 괄호는 소괄호(&quot;()&quot;) 와 대괄호(&quot;[]&quot;)로 2종류이고, 문자열이 균형을 이루는 조건은 아래와 같다.</p>
+<ul>
+<li>모든 왼쪽 소괄호(&quot;(&quot;)는 오른쪽 소괄호(&quot;)&quot;)와만 짝을 이뤄야 한다.</li>
+<li>모든 왼쪽 대괄호(&quot;[&quot;)는 오른쪽 대괄호(&quot;]&quot;)와만 짝을 이뤄야 한다.</li>
+<li>모든 오른쪽 괄호들은 자신과 짝을 이룰 수 있는 왼쪽 괄호가 존재한다.</li>
+<li>모든 괄호들의 짝은 1:1 매칭만 가능하다. 즉, 괄호 하나가 둘 이상의 괄호와 짝지어지지 않는다.</li>
+<li>짝을 이루는 두 괄호가 있을 때, 그 사이에 있는 문자열도 균형이 잡혀야 한다.
+정민이를 도와 문자열이 주어졌을 때 균형잡힌 문자열인지 아닌지를 판단해보자.</li>
+</ul>
+</blockquote>
+<h3 id="입력">[입력]</h3>
+<blockquote>
+<p>하나 또는 여러줄에 걸쳐서 문자열이 주어진다. 각 문자열은 영문 알파벳, 공백, 소괄호(&quot;( )&quot;) 대괄호(&quot;[ ]&quot;)등으로 이루어져 있으며, 길이는 100글자보다 작거나 같다.
+입력의 종료조건으로 맨 마지막에 점 하나(&quot;.&quot;)가 들어온다.</p>
+</blockquote>
+<h3 id="출력">[출력]</h3>
+<blockquote>
+<p>각 줄마다 해당 문자열이 균형을 이루고 있으면 &ldquo;yes&quot;를, 아니면 &ldquo;no&quot;를 출력한다.</p>
+</blockquote>
+<h3 id="소스">[소스]</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Scanner<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.Stack<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception<span style="color:#f92672">{</span>
+       Scanner sc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">);</span>
+       Stack<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">&gt;</span> st<span style="color:#f92672">;</span>
+       <span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">){</span>
+           String tmp <span style="color:#f92672">=</span> sc<span style="color:#f92672">.</span><span style="color:#a6e22e">nextLine</span><span style="color:#f92672">();</span>
+           <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>tmp<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;.&#34;</span><span style="color:#f92672">))</span> <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+           st<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;</span>Character<span style="color:#f92672">&gt;();</span>
+           <span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>i<span style="color:#f92672">&lt;</span>tmp<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">();</span>i<span style="color:#f92672">++){</span>
+               <span style="color:#66d9ef">char</span> c <span style="color:#f92672">=</span> tmp<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>i<span style="color:#f92672">);</span>
+               <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;(&#39;</span><span style="color:#f92672">||</span>c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;[&#39;</span><span style="color:#f92672">)</span> st<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>c<span style="color:#f92672">);</span>
+               <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;)&#39;</span><span style="color:#f92672">||</span>c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;]&#39;</span><span style="color:#f92672">){</span>
+                   <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">()</span>
+                        <span style="color:#f92672">||</span> <span style="color:#f92672">(</span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;(&#39;</span> <span style="color:#f92672">&amp;&amp;</span> c <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;]&#39;</span><span style="color:#f92672">)</span>
+                        <span style="color:#f92672">||</span> <span style="color:#f92672">(</span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;[&#39;</span> <span style="color:#f92672">&amp;&amp;</span> c <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;)&#39;</span><span style="color:#f92672">)){</span>
+                       st<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>c<span style="color:#f92672">);</span>
+                       <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                   <span style="color:#f92672">}</span>
+                   <span style="color:#66d9ef">else</span>
+                       st<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span>
+               <span style="color:#f92672">}</span>
+           <span style="color:#f92672">}</span>
+           <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;yes&#34;</span><span style="color:#f92672">);</span>
+           <span style="color:#66d9ef">else</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;no&#34;</span><span style="color:#f92672">);</span>
+       <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="문제링크">문제링크</h3>
+<p><a href="https://www.acmicpc.net/problem/4949">https://www.acmicpc.net/problem/4949</a></p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://appealso.github.io/tags/algorithm/" class="tag-link">algorithm</a>
+  </li>
+  
+  <li>
+    <a href="https://appealso.github.io/tags/stack/" class="tag-link">stack</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://appealso.github.io/posts/algo20/"
+     data-text="Algo20"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://appealso.github.io/posts/algo20/"
+     data-text="Algo20"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://appealso.github.io/posts/algo20/"
+     data-text="Algo20"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://appealso.github.io/posts/algo20/"
+     data-text="Algo20"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://appealso.github.io/posts/algo20/"
+     data-text="Algo20"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Author Name 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-J2H7Y6XC3K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-J2H7Y6XC3K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>
