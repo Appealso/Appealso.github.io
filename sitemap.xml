@@ -3,12 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://appealso.github.io/posts/algo20/</loc>
-    <lastmod>2021-08-22T15:38:35+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url>
-  
-  <url>
     <loc>https://appealso.github.io/tags/algorithm/</loc>
     <lastmod>2021-08-22T15:38:35+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -34,6 +28,12 @@
   
   <url>
     <loc>https://appealso.github.io/tags/</loc>
+    <lastmod>2021-08-22T15:38:35+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <url>
+    <loc>https://appealso.github.io/posts/algo20/</loc>
     <lastmod>2021-08-22T15:38:35+09:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
