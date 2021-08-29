@@ -6,7 +6,16 @@
     <description>Recent content in algorithm on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 22 Aug 2021 15:38:35 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 14:26:07 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algo21</title>
+      <link>https://appealso.github.io/posts/algo21/</link>
+      <pubDate>Sun, 29 Aug 2021 14:26:07 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/algo21/</guid>
+      <description>[문제]  크기가 N인 수열 A = A1, A2, &amp;hellip;, AN이 있다.</description>
+    </item>
+    
     <item>
       <title>백준 4949 균형잡힌 세상</title>
       <link>https://appealso.github.io/posts/algo20/</link>
