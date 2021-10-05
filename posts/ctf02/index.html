@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <title>[dreamhack] Tomcat Manager &middot; SooHo&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="[dreamhack] Tomcat Manager">
+<meta itemprop="description" content="[문제]  드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요.">
+<meta itemprop="datePublished" content="2021-10-05T21:46:26+09:00" />
+<meta itemprop="dateModified" content="2021-10-05T21:46:26+09:00" />
+<meta itemprop="wordCount" content="44">
+
+
+
+<meta itemprop="keywords" content="LFI," />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[dreamhack] Tomcat Manager"/>
+<meta name="twitter:description" content="[문제]  드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요."/>
+
+
+<meta property="og:title" content="[dreamhack] Tomcat Manager" />
+<meta property="og:description" content="[문제]  드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://appealso.github.io/posts/ctf02/" />
+<meta property="article:published_time" content="2021-10-05T21:46:26+09:00" />
+<meta property="article:modified_time" content="2021-10-05T21:46:26+09:00" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://appealso.github.io#author",
+      "name": "SooHo Kim",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://appealso.github.io/images/chusikrun.gif"
+        
+      },
+      "description":  null 
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://appealso.github.io#website",
+      "url": "https://appealso.github.io",
+      "name": "SooHo's Blog",
+      "description":  null ,
+      "publisher": {
+        "@id": "https://appealso.github.io#author"
+      },
+      "inLanguage": "ko"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://appealso.github.io/posts/ctf02/#webpage",
+      "url": "https://appealso.github.io/posts/ctf02/",
+      "name": "[dreamhack] Tomcat Manager",
+      "isPartOf": {
+        "@id": "https://appealso.github.io#website"
+      },
+      "about": {
+         "@id": "https://appealso.github.io#author"
+      },
+      "datePublished": "2021-10-05T21:46:26+09:00",
+      "dateModified": "2021-10-05T21:46:26+09:00",
+      "description": "[문제]  드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요.",
+      "inLanguage": "ko",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://appealso.github.io/posts/ctf02/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://appealso.github.io/posts/ctf02/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://appealso.github.io/posts/ctf02/#webpage"
+      },
+      "headline": "[dreamhack] Tomcat Manager",
+      "datePublished": "2021-10-05T21:46:26+09:00",
+      "dateModified": "2021-10-05T21:46:26+09:00",
+      "publisher": {
+        "@id": "https://appealso.github.io#author"
+      },
+      "keywords": [
+        "LFI"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ko",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://appealso.github.io/posts/ctf02/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #000000;
+  }
+
+  .read-more-link a {
+    border-color: #000000;
+  }
+
+  .read-more-link a:hover {
+    background-color: #000000;
+  }
+
+  .pagination li a {
+    color: #000000;
+    border: 1px solid #000000;
+  }
+
+  .pagination li.active a {
+    background-color: #000000;
+  }
+
+  .pagination li a:hover {
+    background-color: #000000;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #000000;
+  }
+</style>
+
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://appealso.github.io">
+            <img src="/images/chusikrun.gif" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>SooHo&#39;s Blog</h1>
+
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://appealso.github.io">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/contact/">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/%ec%88%98%ed%98%b8-%ea%b9%80-49177b1ba/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/Appealso" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://www.instagram.com/sooohokim/" rel="me" title="Instagram" target="_blank">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">[dreamhack] Tomcat Manager</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-10-05T21:46:26&#43;0900">Oct 5, 2021</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <h3 id="문제">[문제]</h3>
+<blockquote>
+<p>드림이가 톰캣 서버로 개발을 시작하였습니다.
+서비스의 취약점을 찾아 플래그를 획득하세요.
+플래그는 /flag 경로에 있습니다.</p>
+</blockquote>
+<h3 id="해결법">[해결법]</h3>
+<blockquote>
+<ol>
+<li>LFI로 tomcat 비밀번호 획득</li>
+<li>웹쉘 업로드 하여 플래그 탈취 <!-- raw HTML omitted -->
+++ 설마&hellip;웹쉘 올려야 하는지 고민하다가 너무 올래걸렸다&hellip;ㅜㅜ <!-- raw HTML omitted -->
+++ 톰캣 취약점을 알고 있긴 했는데 직접 공격해보니깐 느낌이 이상했다.</li>
+</ol>
+</blockquote>
+<h3 id="참고">[참고]</h3>
+<p><a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=sjhmc9695&amp;logNo=221996754470">https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=sjhmc9695&amp;logNo=221996754470</a></p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://appealso.github.io/tags/lfi/" class="tag-link">LFI</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://appealso.github.io/posts/ctf02/"
+     data-text="[dreamhack] Tomcat Manager"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://appealso.github.io/posts/ctf02/"
+     data-text="[dreamhack] Tomcat Manager"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://appealso.github.io/posts/ctf02/"
+     data-text="[dreamhack] Tomcat Manager"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://appealso.github.io/posts/ctf02/"
+     data-text="[dreamhack] Tomcat Manager"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://appealso.github.io/posts/ctf02/"
+     data-text="[dreamhack] Tomcat Manager"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Author Name 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-J2H7Y6XC3K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-J2H7Y6XC3K', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

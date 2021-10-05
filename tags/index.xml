@@ -6,7 +6,25 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 29 Aug 2021 14:26:07 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2021 21:46:26 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LFI</title>
+      <link>https://appealso.github.io/tags/lfi/</link>
+      <pubDate>Tue, 05 Oct 2021 21:46:26 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/lfi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssrf</title>
+      <link>https://appealso.github.io/tags/ssrf/</link>
+      <pubDate>Tue, 05 Oct 2021 21:40:18 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/ssrf/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>algorithm</title>
       <link>https://appealso.github.io/tags/algorithm/</link>

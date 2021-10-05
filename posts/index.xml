@@ -6,7 +6,25 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 29 Aug 2021 14:26:07 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2021 21:46:26 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] Tomcat Manager</title>
+      <link>https://appealso.github.io/posts/ctf02/</link>
+      <pubDate>Tue, 05 Oct 2021 21:46:26 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/ctf02/</guid>
+      <description>[문제]  드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요.</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] crawling</title>
+      <link>https://appealso.github.io/posts/ctf01/</link>
+      <pubDate>Tue, 05 Oct 2021 21:40:18 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/ctf01/</guid>
+      <description>[문제]  드림이는 웹 크롤링 사이트를 구축했습니다. 크롤링 사이트에서 취약점을 찾고 flag를 획득하세요!</description>
+    </item>
+    
     <item>
       <title>백준 17298 오큰수</title>
       <link>https://appealso.github.io/posts/algo21/</link>

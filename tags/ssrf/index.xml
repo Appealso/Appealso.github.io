@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssrf on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/ssrf/</link>
+    <description>Recent content in ssrf on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 05 Oct 2021 21:40:18 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/ssrf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] crawling</title>
+      <link>https://appealso.github.io/posts/ctf01/</link>
+      <pubDate>Tue, 05 Oct 2021 21:40:18 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/ctf01/</guid>
+      <description>[문제]  드림이는 웹 크롤링 사이트를 구축했습니다. 크롤링 사이트에서 취약점을 찾고 flag를 획득하세요!</description>
+    </item>
+    
+  </channel>
+</rss>
