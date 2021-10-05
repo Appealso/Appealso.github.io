@@ -6,7 +6,16 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Tue, 05 Oct 2021 21:46:26 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2021 22:28:53 +0900</lastBuildDate><atom:link href="https://appealso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] xss-2</title>
+      <link>https://appealso.github.io/posts/ctf03/</link>
+      <pubDate>Tue, 05 Oct 2021 22:28:53 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/ctf03/</guid>
+      <description>[문제]  여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요.</description>
+    </item>
+    
     <item>
       <title>[dreamhack] Tomcat Manager</title>
       <link>https://appealso.github.io/posts/ctf02/</link>

