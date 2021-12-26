@@ -6,7 +6,16 @@
     <description>Recent content on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Tue, 05 Oct 2021 22:28:53 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 20:27:18 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Log4j</title>
+      <link>https://appealso.github.io/posts/log4j/</link>
+      <pubDate>Sun, 26 Dec 2021 20:27:18 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/posts/log4j/</guid>
+      <description>최근 발표된 log4j 라이브러리에서 발견된 취약점을 정리하려고 합니다. 공격 방법에 비해 영향도가 너무 높아 크게 이슈가 된 취약점이 아닐까 생각이 듭니다.</description>
+    </item>
+    
     <item>
       <title>[dreamhack] xss-2</title>
       <link>https://appealso.github.io/posts/ctf03/</link>
