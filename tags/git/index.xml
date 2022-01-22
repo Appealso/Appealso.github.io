@@ -5,14 +5,14 @@
     <link>https://appealso.github.io/tags/git/</link>
     <description>Recent content in git on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
+    <language>en-us</language>
     <lastBuildDate>Sat, 24 Apr 2021 18:51:40 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git-Flow 정리</title>
-      <link>https://appealso.github.io/posts/git/</link>
+      <link>https://appealso.github.io/p/git-flow-%EC%A0%95%EB%A6%AC/</link>
       <pubDate>Sat, 24 Apr 2021 18:51:40 +0900</pubDate>
       
-      <guid>https://appealso.github.io/posts/git/</guid>
+      <guid>https://appealso.github.io/p/git-flow-%EC%A0%95%EB%A6%AC/</guid>
       <description>&lt;p&gt;프로젝트 형상 관리에 Git-Flow를 적용하기 위해 정리 함&lt;/p&gt;</description>
     </item>
     

@@ -5,14 +5,14 @@
     <link>https://appealso.github.io/tags/hugo/</link>
     <description>Recent content in hugo on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
+    <language>en-us</language>
     <lastBuildDate>Mon, 21 Dec 2020 20:45:37 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Githubio&#43;hugo Theme Blog 구축기.</title>
-      <link>https://appealso.github.io/posts/hugo-githubio/</link>
+      <link>https://appealso.github.io/p/githubio-hugo-theme-blog-%EA%B5%AC%EC%B6%95%EA%B8%B0./</link>
       <pubDate>Mon, 21 Dec 2020 20:45:37 +0900</pubDate>
       
-      <guid>https://appealso.github.io/posts/hugo-githubio/</guid>
+      <guid>https://appealso.github.io/p/githubio-hugo-theme-blog-%EA%B5%AC%EC%B6%95%EA%B8%B0./</guid>
       <description>&lt;p&gt;GithubIO와 hugo theme을 적용하면서 정리함&lt;/p&gt;</description>
     </item>
     

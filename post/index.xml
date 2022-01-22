@@ -5,15 +5,267 @@
     <link>https://appealso.github.io/post/</link>
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
-    <lastBuildDate>Sat, 07 Aug 2021 19:23:32 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 05 Oct 2021 22:28:53 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test</title>
-      <link>https://appealso.github.io/post/test/</link>
-      <pubDate>Sat, 07 Aug 2021 19:23:32 +0900</pubDate>
+      <title>[dreamhack] xss-2</title>
+      <link>https://appealso.github.io/p/dreamhack-xss-2/</link>
+      <pubDate>Tue, 05 Oct 2021 22:28:53 +0900</pubDate>
       
-      <guid>https://appealso.github.io/post/test/</guid>
-      <description></description>
+      <guid>https://appealso.github.io/p/dreamhack-xss-2/</guid>
+      <description>[문제] 여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법]</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] Tomcat Manager</title>
+      <link>https://appealso.github.io/p/dreamhack-tomcat-manager/</link>
+      <pubDate>Tue, 05 Oct 2021 21:46:26 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-tomcat-manager/</guid>
+      <description>[문제] 드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요. 플래그는 /flag 경로에 있습니다. [해결법] LFI로 tomcat 비밀번</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] crawling</title>
+      <link>https://appealso.github.io/p/dreamhack-crawling/</link>
+      <pubDate>Tue, 05 Oct 2021 21:40:18 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-crawling/</guid>
+      <description>[문제] 드림이는 웹 크롤링 사이트를 구축했습니다. 크롤링 사이트에서 취약점을 찾고 flag를 획득하세요! [해결법] ssrf 우회 기법으로 ipaddress.ip_address(ip)).is_global 우회 [참고] https://umbum.dev/473</description>
+    </item>
+    
+    <item>
+      <title>백준 17298 오큰수</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-17298-%EC%98%A4%ED%81%B0%EC%88%98/</link>
+      <pubDate>Sun, 29 Aug 2021 14:26:07 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-17298-%EC%98%A4%ED%81%B0%EC%88%98/</guid>
+      <description>[문제] 크기가 N인 수열 A = A1, A2, &amp;hellip;, AN이 있다. 수열의 각 원소 Ai에 대해서 오큰수 NGE(i)를 구하려고 한다. Ai의 오큰수는 오른쪽에 있으면서 Ai보다</description>
+    </item>
+    
+    <item>
+      <title>백준 4949 균형잡힌 세상</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-4949-%EA%B7%A0%ED%98%95%EC%9E%A1%ED%9E%8C-%EC%84%B8%EC%83%81/</link>
+      <pubDate>Sun, 22 Aug 2021 15:38:35 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-4949-%EA%B7%A0%ED%98%95%EC%9E%A1%ED%9E%8C-%EC%84%B8%EC%83%81/</guid>
+      <description>[문제] 세계는 균형이 잘 잡혀있어야 한다. 양과 음, 빛과 어둠 그리고 왼쪽 괄호와 오른쪽 괄호처럼 말이다. 정민이의 임무는 어떤 문자열이 주어졌을 때, 괄호들의 균</description>
+    </item>
+    
+    <item>
+      <title>백준 2580 스도쿠</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2580-%EC%8A%A4%EB%8F%84%EC%BF%A0/</link>
+      <pubDate>Sat, 21 Aug 2021 11:27:56 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2580-%EC%8A%A4%EB%8F%84%EC%BF%A0/</guid>
+      <description>[문제] 스도쿠는 18세기 스위스 수학자가 만든 &amp;lsquo;라틴 사각형&amp;rsquo;이랑 퍼즐에서 유래한 것으로 현재 많은 인기를 누리고 있다. 이 게임은 아</description>
+    </item>
+    
+    <item>
+      <title>백준 11729 하노이 탑 이동 순서</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-11729-%ED%95%98%EB%85%B8%EC%9D%B4-%ED%83%91-%EC%9D%B4%EB%8F%99-%EC%88%9C%EC%84%9C/</link>
+      <pubDate>Mon, 16 Aug 2021 11:57:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-11729-%ED%95%98%EB%85%B8%EC%9D%B4-%ED%83%91-%EC%9D%B4%EB%8F%99-%EC%88%9C%EC%84%9C/</guid>
+      <description>[문제] 세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다. 각 원판은 반경이 큰 순서대로 쌓여있다. 이제 수도승들이 다음 규칙에 따라 첫 번</description>
+    </item>
+    
+    <item>
+      <title>백준 2447 별찍기-10</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2447-%EB%B3%84%EC%B0%8D%EA%B8%B0-10/</link>
+      <pubDate>Mon, 16 Aug 2021 09:22:57 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2447-%EB%B3%84%EC%B0%8D%EA%B8%B0-10/</guid>
+      <description>[문제] 재귀적인 패턴으로 별을 찍어 보자. N이 3의 거듭제곱(3, 9, 27, &amp;hellip;)이라고 할 때, 크기 N의 패턴은 N×N 정사각형 모양이다. 크기 3의</description>
+    </item>
+    
+    <item>
+      <title>백준 10733 제로</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-10733-%EC%A0%9C%EB%A1%9C/</link>
+      <pubDate>Fri, 13 Aug 2021 21:28:50 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-10733-%EC%A0%9C%EB%A1%9C/</guid>
+      <description>[문제] 나코더 기장 재민이는 동아리 회식을 준비하기 위해서 장부를 관리하는 중이다. 재현이는 재민이를 도와서 돈을 관리하는 중인데, 애석하게도 항상 정신없는 재</description>
+    </item>
+    
+    <item>
+      <title>백준 2562 최댓값</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2562-%EC%B5%9C%EB%8C%93%EA%B0%92/</link>
+      <pubDate>Wed, 11 Aug 2021 20:43:49 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2562-%EC%B5%9C%EB%8C%93%EA%B0%92/</guid>
+      <description>[문제] 9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 &amp;gt; 작성하시오. 예를 들어, 서로 다른 9개의 자연</description>
+    </item>
+    
+    <item>
+      <title>백준 3052 나머지</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-3052-%EB%82%98%EB%A8%B8%EC%A7%80/</link>
+      <pubDate>Wed, 11 Aug 2021 20:43:43 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-3052-%EB%82%98%EB%A8%B8%EC%A7%80/</guid>
+      <description>[문제] 자연수 A와 B가 있을 때, A%B는 A를 B로 나눈 나머지 이다. 예를 들어, 7, 14, 27, 38을 3으로 나눈 &amp;gt;머지는 1, 2, 0, 2이다. 10개를 입력받은 뒤</description>
+    </item>
+    
+    <item>
+      <title>백준 15651 N과 M (4)</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15651-n%EA%B3%BC-m-4/</link>
+      <pubDate>Mon, 09 Aug 2021 12:27:10 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15651-n%EA%B3%BC-m-4/</guid>
+      <description>[문제] 자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오. 1부터 N까지 자연수 중에서 M개를 고른 수열 같</description>
+    </item>
+    
+    <item>
+      <title>백준 2798 블랙잭</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2798-%EB%B8%94%EB%9E%99%EC%9E%AD/</link>
+      <pubDate>Mon, 09 Aug 2021 12:25:01 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2798-%EB%B8%94%EB%9E%99%EC%9E%AD/</guid>
+      <description>[문제] 카지노에서 제일 인기 있는 게임 블랙잭의 규칙은 상당히 쉽다. 카드의 합이 21을 넘지 않는 한도 내에서, 카드의 합을 최대한 크게 만드는 게임이다. 블랙잭은</description>
+    </item>
+    
+    <item>
+      <title>백준 15651 N과 M (3)</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15651-n%EA%B3%BC-m-3/</link>
+      <pubDate>Sun, 08 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15651-n%EA%B3%BC-m-3/</guid>
+      <description>[문제] 자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오. 1부터 N까지 자연수 중에서 M개를 고른 수열 같</description>
+    </item>
+    
+    <item>
+      <title>백준 15650 N과 M (2)</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15650-n%EA%B3%BC-m-2/</link>
+      <pubDate>Fri, 06 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15650-n%EA%B3%BC-m-2/</guid>
+      <description>[문제] 자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오. 1부터 N까지 자연수 중에서 중복 없이 M개를 고</description>
+    </item>
+    
+    <item>
+      <title>백준 15649 N과 M (1)</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15649-n%EA%B3%BC-m-1/</link>
+      <pubDate>Thu, 05 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15649-n%EA%B3%BC-m-1/</guid>
+      <description>[문제] 자연수 N과 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오. 1부터 N까지 자연수 중에서 중복 없이 M개를 고</description>
+    </item>
+    
+    <item>
+      <title>백준 10818 최소, 최대</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-10818-%EC%B5%9C%EC%86%8C-%EC%B5%9C%EB%8C%80/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-10818-%EC%B5%9C%EC%86%8C-%EC%B5%9C%EB%8C%80/</guid>
+      <description>[문제] N개의 정수가 주어진다. 이때, 최솟값과 최댓값을 구하는 프로그램을 작성하시오. [입력] 첫째 줄에 정수의 개수 N (1 ≤ N ≤ 1,000,000)이 주</description>
+    </item>
+    
+    <item>
+      <title>백준 10951 A&#43;B - 4</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-10951-a-b-4/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-10951-a-b-4/</guid>
+      <description>[문제] 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오. [입력] 입력은 여러 개의 테스트 케이스로 이루어져 있다. 각 테스트 케이스는</description>
+    </item>
+    
+    <item>
+      <title>백준 11021 A&#43;B - 7</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-11021-a-b-7/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-11021-a-b-7/</guid>
+      <description>[문제] 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오. [입력] 첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스는 한</description>
+    </item>
+    
+    <item>
+      <title>백준 11022 A&#43;B - 8</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-11022-a-b-8/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-11022-a-b-8/</guid>
+      <description>[문제] 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오. [입력] 첫째 줄에 테스트 케이스의 개수 T가 주어진다. 각 테스트 케이스는 한</description>
+    </item>
+    
+    <item>
+      <title>백준 14681 사분면 고르기</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-14681-%EC%82%AC%EB%B6%84%EB%A9%B4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-14681-%EC%82%AC%EB%B6%84%EB%A9%B4-%EA%B3%A0%EB%A5%B4%EA%B8%B0/</guid>
+      <description>[문제] 흔한 수학 문제 중 하나는 주어진 점이 어느 사분면에 속하는지 알아내는 것이다. 사분면은 아래 그림처럼 1부터 4까지 번호를 갖는다. &amp;ldquo;Quadrant n&amp;quot;은 &amp;</description>
+    </item>
+    
+    <item>
+      <title>백준 2753 윤년</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2753-%EC%9C%A4%EB%85%84/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2753-%EC%9C%A4%EB%85%84/</guid>
+      <description>[문제] 연도가 주어졌을 때, 윤년이면 1, 아니면 0을 출력하는 프로그램을 작성하시오. 윤년은 연도가 4의 배수이면서, 100의 배수가 아닐 때 또는 400의 배수</description>
+    </item>
+    
+    <item>
+      <title>백준 2884 알람 시계</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2884-%EC%95%8C%EB%9E%8C-%EC%8B%9C%EA%B3%84/</link>
+      <pubDate>Mon, 02 Aug 2021 21:28:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2884-%EC%95%8C%EB%9E%8C-%EC%8B%9C%EA%B3%84/</guid>
+      <description>[문제] 상근이는 매일 아침 알람을 듣고 일어난다. 알람을 듣고 바로 일어나면 다행이겠지만, 항상 조금만 더 자려는 마음 때문에 매일 학교를 지각하고 있다. 상근이는</description>
+    </item>
+    
+    <item>
+      <title>백준 15681 트리와 쿼리</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15681-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%BF%BC%EB%A6%AC/</link>
+      <pubDate>Mon, 02 Aug 2021 20:45:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-15681-%ED%8A%B8%EB%A6%AC%EC%99%80-%EC%BF%BC%EB%A6%AC/</guid>
+      <description>[문제] 간선에 가중치와 방향성이 없는 임의의 루트 있는 트리가 주어졌을 때, 아래의 쿼리에 답해보도록 하자. 정점 U를 루트로 하는 서브트리에 속한 정점의 수를 출력</description>
+    </item>
+    
+    <item>
+      <title>Jenkins &#43; Github 연동 방법</title>
+      <link>https://appealso.github.io/p/jenkins-github-%EC%97%B0%EB%8F%99-%EB%B0%A9%EB%B2%95/</link>
+      <pubDate>Sat, 24 Apr 2021 22:06:22 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/jenkins-github-%EC%97%B0%EB%8F%99-%EB%B0%A9%EB%B2%95/</guid>
+      <description>&lt;p&gt;프로젝트에 Jenkins를 적용하면서 정리함&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker통한 젠킨스(Jenkins) 설치 </title>
+      <link>https://appealso.github.io/p/docker%ED%86%B5%ED%95%9C-%EC%A0%A0%ED%82%A8%EC%8A%A4jenkins-%EC%84%A4%EC%B9%98/</link>
+      <pubDate>Sat, 24 Apr 2021 21:10:40 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/docker%ED%86%B5%ED%95%9C-%EC%A0%A0%ED%82%A8%EC%8A%A4jenkins-%EC%84%A4%EC%B9%98/</guid>
+      <description>&lt;p&gt;Jenkins와 Github을 연동하면서 정리함&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git-Flow 정리</title>
+      <link>https://appealso.github.io/p/git-flow-%EC%A0%95%EB%A6%AC/</link>
+      <pubDate>Sat, 24 Apr 2021 18:51:40 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/git-flow-%EC%A0%95%EB%A6%AC/</guid>
+      <description>&lt;p&gt;프로젝트 형상 관리에 Git-Flow를 적용하기 위해 정리 함&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Githubio&#43;hugo Theme Blog 구축기.</title>
+      <link>https://appealso.github.io/p/githubio-hugo-theme-blog-%EA%B5%AC%EC%B6%95%EA%B8%B0./</link>
+      <pubDate>Mon, 21 Dec 2020 20:45:37 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/githubio-hugo-theme-blog-%EA%B5%AC%EC%B6%95%EA%B8%B0./</guid>
+      <description>&lt;p&gt;GithubIO와 hugo theme을 적용하면서 정리함&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>마크다운 작성법</title>
+      <link>https://appealso.github.io/p/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EC%9E%91%EC%84%B1%EB%B2%95/</link>
+      <pubDate>Sun, 20 Dec 2020 20:19:13 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EC%9E%91%EC%84%B1%EB%B2%95/</guid>
+      <description>&lt;p&gt;Mark Down의 기본 문법을 정리&lt;/p&gt;</description>
     </item>
     
   </channel>

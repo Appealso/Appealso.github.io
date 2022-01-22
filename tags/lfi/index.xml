@@ -5,15 +5,15 @@
     <link>https://appealso.github.io/tags/lfi/</link>
     <description>Recent content in LFI on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
+    <language>en-us</language>
     <lastBuildDate>Tue, 05 Oct 2021 21:46:26 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/lfi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[dreamhack] Tomcat Manager</title>
-      <link>https://appealso.github.io/posts/ctf02/</link>
+      <link>https://appealso.github.io/p/dreamhack-tomcat-manager/</link>
       <pubDate>Tue, 05 Oct 2021 21:46:26 +0900</pubDate>
       
-      <guid>https://appealso.github.io/posts/ctf02/</guid>
-      <description>[문제]  드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요.</description>
+      <guid>https://appealso.github.io/p/dreamhack-tomcat-manager/</guid>
+      <description>[문제] 드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요. 플래그는 /flag 경로에 있습니다. [해결법] LFI로 tomcat 비밀번</description>
     </item>
     
   </channel>

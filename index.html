@@ -1,467 +1,660 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.79.0" />
+<html lang="en-us">
+    <head>
+	<meta name="generator" content="Hugo 0.91.2" /><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Security engineer and Developer'><title>SooHo&#39;s Blog</title>
 
-  <title>SooHo&#39;s Blog</title>
+<link rel='canonical' href='https://appealso.github.io/'>
 
-  <meta name="description" content="" />
-
-  
-
-<meta itemprop="name" content="SooHo&#39;s Blog">
-<meta itemprop="description" content="">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="SooHo&#39;s Blog"/>
-<meta name="twitter:description" content=""/>
-
-
-<meta property="og:title" content="SooHo&#39;s Blog" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://appealso.github.io/" />
-<meta property="og:updated_time" content="2021-12-26T20:27:18+09:00" />
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type":"Person",
-      "@id": "https://appealso.github.io#author",
-      "name": "SooHo Kim",
-      "image": {
-        "@type":"ImageObject",
-        
-        "url": "https://appealso.github.io/images/chusikrun.gif"
-        
-      },
-      "description":  null 
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://appealso.github.io#website",
-      "url": "https://appealso.github.io",
-      "name": "SooHo's Blog",
-      "description":  null ,
-      "publisher": {
-        "@id": "https://appealso.github.io#author"
-      },
-      "inLanguage": "ko"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://appealso.github.io/#webpage",
-      "url": "https://appealso.github.io/",
-      "name": "SooHo's Blog",
-      "isPartOf": {
-        "@id": "https://appealso.github.io#website"
-      },
-      "about": {
-         "@id": "https://appealso.github.io#author"
-      },
-      "dateModified": "2021-12-26T20:27:18+09:00",
-      "description": ,
-      "inLanguage": "ko",
-      "potentialAction": [
-        {
-          "@type": "ReadAction",
-          "target": [
-            "https://appealso.github.io/"
-          ]
-        }
-      ]
-    }
-  ]
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='SooHo&#39;s Blog'>
+<meta property='og:description' content='Security engineer and Developer'>
+<meta property='og:url' content='https://appealso.github.io/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2021-10-05T22:28:53&#43;09:00 '/>
+<meta name="twitter:title" content="SooHo&#39;s Blog">
+<meta name="twitter:description" content="Security engineer and Developer"><link rel="alternate" type="application/rss&#43;xml" href="https://appealso.github.io/index.xml">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
 }
 </script>
 
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "dark");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-  <link type="text/css"
-        rel="stylesheet"
-        href="/css/print.css"
-        media="print">
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="메뉴 여닫기">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
-  <link type="text/css"
-        rel="stylesheet"
-        href="/css/poole.css">
-
-  <link type="text/css"
-        rel="stylesheet"
-        href="/css/hyde.css">
-
-  
-<style type="text/css">
-  .sidebar {
-    background-color: #000000;
-  }
-
-  .read-more-link a {
-    border-color: #000000;
-  }
-
-  .read-more-link a:hover {
-    background-color: #000000;
-  }
-
-  .pagination li a {
-    color: #000000;
-    border: 1px solid #000000;
-  }
-
-  .pagination li.active a {
-    background-color: #000000;
-  }
-
-  .pagination li a:hover {
-    background-color: #000000;
-    opacity: 0.75;
-  }
-
-  footer a,
-  .content a,
-  .related-posts li a:hover {
-    color: #000000;
-  }
-</style>
-
-
-
-  <link type="text/css" rel="stylesheet" href="/css/blog.css">
-
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
-
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-        crossorigin="anonymous" />
-
-  <link rel="apple-touch-icon-precomposed"
-        sizes="144x144"
-        href="/apple-touch-icon-144-precomposed.png">
-
-  <link rel="shortcut icon" href="/favicon.png">
-
-  
-  <link href="https://appealso.github.io/index.xml" rel="alternate" type="application/rss+xml" title="SooHo's Blog" />
-  </head>
-<body>
-  <aside class="sidebar">
-  <div class="container">
-    <div class="sidebar-about">
-      
+    <header class="site-info">
         
-        <div class="author-image">
-          <a href="https://appealso.github.io">
-            <img src="/images/chusikrun.gif" class="img-circle img-headshot center" alt="Profile Picture">
-          </a>
-        </div>
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/IMG_hu741e5fcc8a8371ad3c512c4eac4a27a6_49324_300x0_resize_q75_box.JPG" width="300"
+                            height="353" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+            
         
-      
+        
+        <h1 class="site-name"><a href="/">SooHo&#39;s Blog</a></h1>
+        <h2 class="site-description">Security engineer and Developer</h2><ol class="social-menu">
+                
+                    <li>
+                        <a 
+                            href='https://github.com/appealso'
+                            target="_blank"
+                            title="GitHub"
+                        >
+                            
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
 
-      <h1>SooHo&#39;s Blog</h1>
 
-      
-    </div>
 
-    <nav>
-      <ul class="sidebar-nav">
-        <li>
-          <a href="https://appealso.github.io">Home</a>
+                            
+                        </a>
+                    </li>
+                
+            </ol></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' target="_blank">
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
         </li>
-        <li>
-          <a href="/posts/">Posts</a>
-        </li><li>
-          <a href="/categories/">Categories</a>
-        </li><li>
-          <a href="/tags/">Tags</a>
-        </li><li>
-          <a href="/about/">About</a>
-        </li><li>
-          <a href="/contact/">Contact</a>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
         </li>
-      </ul>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        
+    </ol>
+</aside>
+<main class="main full-width">
+    
+    
+    
+    
+
+    <section class="article-list">
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/dreamhack-xss-2/">[dreamhack] xss-2</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 05, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 분 정도
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/dreamhack-tomcat-manager/">[dreamhack] Tomcat Manager</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 05, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 분 정도
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/dreamhack-crawling/">[dreamhack] crawling</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 05, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 분 정도
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/%EB%B0%B1%EC%A4%80-17298-%EC%98%A4%ED%81%B0%EC%88%98/">백준 17298 오큰수</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 29, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 분 정도
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+</article>
+        
+            
+<article class="">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/%EB%B0%B1%EC%A4%80-4949-%EA%B7%A0%ED%98%95%EC%9E%A1%ED%9E%8C-%EC%84%B8%EC%83%81/">백준 4949 균형잡힌 세상</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 22, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 분 정도
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+</article>
+        
+    </section>
+    <nav class='pagination'>
+        
+        
+
+        
+            
+                <span class='page-link current'>1</span>
+                
+            
+            
+                    <a class='page-link' href='/page/2/'>2</a>
+                
+            
+            
+                    
+                        
+                        <span class='page-link dots'>&hellip;</span>
+                    
+                
+            
+            
+                    
+                
+            
+            
+                    
+                
+            
+            
+                    <a class='page-link' href='/page/6/'>6</a>
+                
+            
     </nav>
 
-    <section class="social-icons">
-      
-      <a href="https://www.linkedin.com/in/%ec%88%98%ed%98%b8-%ea%b9%80-49177b1ba/" rel="me" title="Linkedin" target="_blank">
-        <i class="fab fa-linkedin" aria-hidden="true"></i>
-      </a>
-      
-      <a href="https://github.com/Appealso" rel="me" title="GitHub" target="_blank">
-        <i class="fab fa-github" aria-hidden="true"></i>
-      </a>
-      
-      <a href="https://www.instagram.com/sooohokim/" rel="me" title="Instagram" target="_blank">
-        <i class="fab fa-instagram" aria-hidden="true"></i>
-      </a>
-      
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
     </section>
-  </div>
-</aside>
-
-
-  <main class="content container">
-  <div class="posts">
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/log4j/">Log4j 취약점 정리</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-12-26T20:27:18&#43;0900">Dec 26, 2021</time> &middot; 2 min read
-        </div>
-
-        <div>
-          최근 발표된 log4j 라이브러리에서 발견된 취약점을 정리하려고 합니다. 공격 방법에 비해 영향도가 너무 높아 크게 이슈가 된 취약점이 아닐까 생각이 듭니다.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/log4j/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/ctf03/">[dreamhack] xss-2</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-10-05T22:28:53&#43;0900">Oct 5, 2021</time> &middot; 1 min read
-        </div>
-
-        <div>
-          [문제]  여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/ctf03/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/ctf02/">[dreamhack] Tomcat Manager</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-10-05T21:46:26&#43;0900">Oct 5, 2021</time> &middot; 1 min read
-        </div>
-
-        <div>
-          [문제]  드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/ctf02/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/ctf01/">[dreamhack] crawling</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-10-05T21:40:18&#43;0900">Oct 5, 2021</time> &middot; 1 min read
-        </div>
-
-        <div>
-          [문제]  드림이는 웹 크롤링 사이트를 구축했습니다. 크롤링 사이트에서 취약점을 찾고 flag를 획득하세요!
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/ctf01/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/algo21/">백준 17298 오큰수</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-08-29T14:26:07&#43;0900">Aug 29, 2021</time> &middot; 1 min read
-        </div>
-
-        <div>
-          [문제]  크기가 N인 수열 A = A1, A2, &hellip;, AN이 있다.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/algo21/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/algo20/">백준 4949 균형잡힌 세상</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-08-22T15:38:35&#43;0900">Aug 22, 2021</time> &middot; 2 min read
-        </div>
-
-        <div>
-          [문제]  세계는 균형이 잘 잡혀있어야 한다. 양과 음, 빛과 어둠 그리고 왼쪽 괄호와 오른쪽 괄호처럼 말이다.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/algo20/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/algo19/">백준 2580 스도쿠</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-08-21T11:27:56&#43;0900">Aug 21, 2021</time> &middot; 2 min read
-        </div>
-
-        <div>
-          [문제]  스도쿠는 18세기 스위스 수학자가 만든 &lsquo;라틴 사각형&rsquo;이랑 퍼즐에서 유래한 것으로 현재 많은 인기를 누리고 있다.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/algo19/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/algo18/">백준 11729 하노이 탑 이동 순서</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-08-16T11:57:47&#43;0900">Aug 16, 2021</time> &middot; 1 min read
-        </div>
-
-        <div>
-          [문제]  세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/algo18/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/algo17/">백준 2447 별찍기-10</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-08-16T09:22:57&#43;0900">Aug 16, 2021</time> &middot; 1 min read
-        </div>
-
-        <div>
-          [문제]  재귀적인 패턴으로 별을 찍어 보자. N이 3의 거듭제곱(3, 9, 27, &hellip;)이라고 할 때, 크기 N의 패턴은 N×N 정사각형 모양이다.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/algo17/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://appealso.github.io/posts/algo16/">백준 10733 제로</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2021-08-13T21:28:50&#43;0900">Aug 13, 2021</time> &middot; 1 min read
-        </div>
-
-        <div>
-          [문제]  나코더 기장 재민이는 동아리 회식을 준비하기 위해서 장부를 관리하는 중이다.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://appealso.github.io/posts/algo16/">Read More</a>
-        </div>
-      </article>
-  </div>
-
-  
-<ul class="pagination">
-  <li class="page-item">
-    <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-  </li>
-  <li class="page-item disabled">
-    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-  </li>
-  <li class="page-item active">
-    <a class="page-link" href="/">1</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/2/">2</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/3/">3</a>
-  </li>
-  <li class="page-item">
-    <a class="page-link" href="/page/4/">4</a>
-  </li>
-  <li class="page-item">
-    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-  </li>
-  <li class="page-item">
-    <a href="/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-  </li>
-</ul>
-
-
-  </main>
-
-  <footer>
-  <div>
-    <p>
-      &copy; Author Name 2021
-
-      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
-
-      
-    </p>
-  </div>
+    
+    <section class="powerby">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>로 만듦 <br />
+        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>의 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.6.0">Stack</a></b> 테마 사용 중
+    </section>
 </footer>
 
+            </main>
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search/" class="search-form widget" >
+        <p>
+            <label>검색</label>
+            <input name="keyword" required placeholder="검색어를 입력하세요..." />
+        
+            <button title="검색">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
-          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
-          crossorigin="anonymous"></script>
 
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/soho.js"></script>
+            </button>
+        </p>
+    </form>
+        
+            <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
 
-  <script src="/js/blog.js"></script>
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'G-J2H7Y6XC3K', 'auto');
-	
-	ga('send', 'pageview');
-}
+
+
+        </div>
+        <h2 class="widget-title section-title">보관함</h2>
+
+        
+        
+        
+        
+        
+        <div class="widget-archive--list">
+            <div class="archives-year">
+                    <a href="/archives/#2021">
+                        
+                            <span class="year">2021</span>
+                            <span class="count">27</span>
+                        
+                    </a> 
+                </div>
+            <div class="archives-year">
+                    <a href="/archives/#2020">
+                        
+                            <span class="year">2020</span>
+                            <span class="count">2</span>
+                        
+                    </a> 
+                </div>
+            
+        </div>
+    </section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">태그</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/algorithm/" class="font_size_21">
+                algorithm
+            </a>
+        
+            <a href="/tags/backtracking/" class="font_size_5">
+                backtracking
+            </a>
+        
+            <a href="/tags/github/" class="font_size_3">
+                github
+            </a>
+        
+            <a href="/tags/docker/" class="font_size_2">
+                docker
+            </a>
+        
+            <a href="/tags/jenkins/" class="font_size_2">
+                jenkins
+            </a>
+        
+            <a href="/tags/stack/" class="font_size_2">
+                stack
+            </a>
+        
+            <a href="/tags/git/" class="font_size_1">
+                git
+            </a>
+        
+            <a href="/tags/github.io/" class="font_size_1">
+                github.io
+            </a>
+        
+            <a href="/tags/hugo/" class="font_size_1">
+                hugo
+            </a>
+        
+            <a href="/tags/hugo-theme/" class="font_size_1">
+                hugo Theme
+            </a>
+        
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
 </script>
 
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-J2H7Y6XC3K', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-</body>
+    </body>
 </html>

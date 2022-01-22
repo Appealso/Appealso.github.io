@@ -5,15 +5,15 @@
     <link>https://appealso.github.io/tags/%EC%9E%AC%EA%B7%80/</link>
     <description>Recent content in 재귀 on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
+    <language>en-us</language>
     <lastBuildDate>Mon, 16 Aug 2021 11:57:47 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/%EC%9E%AC%EA%B7%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>백준 11729 하노이 탑 이동 순서</title>
-      <link>https://appealso.github.io/posts/algo18/</link>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-11729-%ED%95%98%EB%85%B8%EC%9D%B4-%ED%83%91-%EC%9D%B4%EB%8F%99-%EC%88%9C%EC%84%9C/</link>
       <pubDate>Mon, 16 Aug 2021 11:57:47 +0900</pubDate>
       
-      <guid>https://appealso.github.io/posts/algo18/</guid>
-      <description>[문제]  세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다.</description>
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-11729-%ED%95%98%EB%85%B8%EC%9D%B4-%ED%83%91-%EC%9D%B4%EB%8F%99-%EC%88%9C%EC%84%9C/</guid>
+      <description>[문제] 세 개의 장대가 있고 첫 번째 장대에는 반경이 서로 다른 n개의 원판이 쌓여 있다. 각 원판은 반경이 큰 순서대로 쌓여있다. 이제 수도승들이 다음 규칙에 따라 첫 번</description>
     </item>
     
   </channel>
