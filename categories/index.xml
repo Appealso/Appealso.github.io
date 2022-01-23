@@ -6,7 +6,25 @@
     <description>Recent content in Categories on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Aug 2021 11:27:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 20:27:18 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>log4j</title>
+      <link>https://appealso.github.io/categories/log4j/</link>
+      <pubDate>Sun, 26 Dec 2021 20:27:18 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/categories/log4j/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>신규취약점</title>
+      <link>https://appealso.github.io/categories/%EC%8B%A0%EA%B7%9C%EC%B7%A8%EC%95%BD%EC%A0%90/</link>
+      <pubDate>Sun, 26 Dec 2021 20:27:18 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/categories/%EC%8B%A0%EA%B7%9C%EC%B7%A8%EC%95%BD%EC%A0%90/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>algorithm</title>
       <link>https://appealso.github.io/categories/algorithm/</link>

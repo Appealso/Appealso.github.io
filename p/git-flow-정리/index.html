@@ -144,51 +144,41 @@ if (!doNotTrack) {
 	<figcaption>Git-Flow</figcaption>
 	
 </figure></p>
-<h2 id="git-flow는-5가지-브랜치를-사용">Git-Flow는 5가지 브랜치를 사용</h2>
-<ol>
-<li>master</li>
-</ol>
+<h1 id="git-flow는-5가지-브랜치를-사용">Git-Flow는 5가지 브랜치를 사용</h1>
+<h2 id="1-master">1. master</h2>
 <ul>
 <li>유지 브랜치</li>
 <li>실제 프로그램이 배포되는 브랜치 (Production (운영 Branch))</li>
 </ul>
-<ol start="2">
-<li>develop</li>
-</ol>
+<h2 id="2-develop">2. develop</h2>
 <ul>
 <li>유지 브랜치</li>
 <li>개발 브랜치 (Develop(개발 Branch))</li>
 <li>개발 완료 후 release 브랜치에 merge</li>
 </ul>
-<ol start="3">
-<li>release</li>
-</ol>
+<h2 id="3-release">3. release</h2>
 <ul>
 <li>유지 브랜치</li>
 <li>QA 테스트 브랜치 (Staging (품질 테스트 Branch))</li>
 <li>테스트 완료 후 master 브랜치에 merge</li>
 </ul>
-<ol start="4">
-<li>feature</li>
-</ol>
+<h2 id="4-feature">4. feature</h2>
 <ul>
 <li>보조 브랜치</li>
 <li>기능 개발 브랜치 (실제 개발)</li>
 <li>일정에 맞춰 develop에 merge 및 해당 브랜치 삭제</li>
 </ul>
-<ol start="5">
-<li>hotfix</li>
-</ol>
+<h2 id="5-hotfix">5. hotfix</h2>
 <ul>
 <li>보조 브랜치</li>
 <li>긴급 오류 해결을 위한 브랜치 (운영 버그 수정)</li>
 <li>오류 수정 후 master에 merge 및 해당 브랜치 삭제</li>
 </ul>
-<h2 id="git-flow-설치하기">Git flow 설치하기</h2>
+<h1 id="git-flow-설치하기">Git flow 설치하기</h1>
 <pre tabindex="0"><code>$ brew install git-flow-avh
-</code></pre><h2 id="초기화">초기화</h2>
+</code></pre><h1 id="초기화">초기화</h1>
 <pre tabindex="0"><code class="language-git" data-lang="git">$ git flow init
-</code></pre><h2 id="메인-브랜치">메인 브랜치</h2>
+</code></pre><h1 id="메인-브랜치">메인 브랜치</h1>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/gitflow/gitflow2.png?raw=true" >
@@ -203,16 +193,12 @@ if (!doNotTrack) {
 	<figcaption>Git-Flow</figcaption>
 	
 </figure></p>
-<ol>
-<li>materst branch</li>
-</ol>
+<h2 id="1-materst-branch">1. materst branch</h2>
 <ul>
 <li>origin/master에 두고 관리</li>
 <li>master 브랜치에 merge는 새로운 버전을 의미</li>
 </ul>
-<ol start="2">
-<li>develop branch</li>
-</ol>
+<h2 id="2-develop-branch">2. develop branch</h2>
 <pre tabindex="0"><code># -d를 붙이면 develop이라는 브랜치 생성 됨
 $ git flow init -d
 </code></pre><ul>
@@ -221,7 +207,7 @@ $ git flow init -d
 <li>develop 브랜치는 master에서 파생됨</li>
 <li>release (QA 브랜치)를 사용하지 않을 경우 master에 merge하고 배포 버전으로 태그를 담</li>
 </ul>
-<h2 id="보조-브랜치">보조 브랜치</h2>
+<h1 id="보조-브랜치">보조 브랜치</h1>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/gitflow/gitflow3.png?raw=true" >
@@ -236,9 +222,7 @@ $ git flow init -d
 	<figcaption>Git-Flow</figcaption>
 	
 </figure></p>
-<ol>
-<li>feature 브랜치</li>
-</ol>
+<h2 id="1-feature-브랜치">1. feature 브랜치</h2>
 <ul>
 <li>develop에서 파생된 브랜치</li>
 <li>개발 완료 후 develop 브랜치에 merge</li>
@@ -265,9 +249,7 @@ $ git flow feature pull origin 브랜치명
 	<figcaption>Git-Flow</figcaption>
 	
 </figure></p>
-<ol start="2">
-<li>release 브랜치</li>
-</ol>
+<h2 id="2-release-브랜치">2. release 브랜치</h2>
 <ul>
 <li>develop에서 파생된 브랜치</li>
 <li>master에 merge하기 전 테스트 진행</li>
@@ -295,9 +277,7 @@ $ git push --tags
 	<figcaption>Git-Flow</figcaption>
 	
 </figure></p>
-<ol start="3">
-<li>hotfix 브랜치</li>
-</ol>
+<h2 id="3-hotfix-브랜치">3. hotfix 브랜치</h2>
 <ul>
 <li>master에서 파생된 브랜치</li>
 <li>master에 배포한 제품에 버그를 즉각 대응할 때 생성</li>
@@ -307,7 +287,7 @@ $ git push --tags
 $ git flow hotfix start 버전 [BASENAME]
 # 핫 픽스 완료
 $ git flow hotfix finish 버전
-</code></pre><h4 id="참고">참고</h4>
+</code></pre><h2 id="참고">참고</h2>
 <p><a class="link" href="https://dahye-jeong.gitbook.io/git/git/2019-01-27-git-flow?"  target="_blank" rel="noopener"
     >https://dahye-jeong.gitbook.io/git/git/2019-01-27-git-flow?</a></p>
 <p><a class="link" href="https://88240.tistory.com/489"  target="_blank" rel="noopener"
@@ -546,19 +526,23 @@ $ git flow hotfix finish 버전
                 <div class="widget--toc">
                     <nav id="TableOfContents">
   <ol>
-    <li><a href="#git-flow는-5가지-브랜치를-사용">Git-Flow는 5가지 브랜치를 사용</a></li>
-    <li><a href="#git-flow-설치하기">Git flow 설치하기</a></li>
-    <li><a href="#초기화">초기화</a></li>
-    <li><a href="#메인-브랜치">메인 브랜치</a></li>
-    <li><a href="#보조-브랜치">보조 브랜치</a>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#참고">참고</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
+    <li><a href="#1-master">1. master</a></li>
+    <li><a href="#2-develop">2. develop</a></li>
+    <li><a href="#3-release">3. release</a></li>
+    <li><a href="#4-feature">4. feature</a></li>
+    <li><a href="#5-hotfix">5. hotfix</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#1-materst-branch">1. materst branch</a></li>
+    <li><a href="#2-develop-branch">2. develop branch</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#1-feature-브랜치">1. feature 브랜치</a></li>
+    <li><a href="#2-release-브랜치">2. release 브랜치</a></li>
+    <li><a href="#3-hotfix-브랜치">3. hotfix 브랜치</a></li>
+    <li><a href="#참고">참고</a></li>
   </ol>
 </nav>
                 </div>
