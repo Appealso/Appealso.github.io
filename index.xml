@@ -14,7 +14,7 @@
         <guid>https://appealso.github.io/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</guid>
         <description>&lt;p&gt;최근 발표된 log4j 라이브러리에서 발견된 취약점을 정리하려고 합니다.
 공격 방법에 비해 영향도가 너무 높아 크게 이슈가 된 취약점이 아닐까 생각이 듭니다.&lt;/p&gt;
-&lt;h4 id=&#34;개요&#34;&gt;[개요]&lt;/h4&gt;
+&lt;h3 id=&#34;개요&#34;&gt;[개요]&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;java 에서 사용되는 log4j 라이브러리에서 취약점이 발표 되었고, 대부분의 라이브러리&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -24,13 +24,13 @@
 Apache Log4j 2에서 발생하는 원격코드 실행 취약점(CVE-2021-45046)
 Apache Log4j 1.x에서 발생하는 원격코드 실행 취약점(CVE-2021-4104)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&#34;영향받는버전&#34;&gt;[영향받는버전]&lt;/h4&gt;
+&lt;h3 id=&#34;영향받는버전&#34;&gt;[영향받는버전]&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;CVE-2021-44228: 2.0-beta9 ~ 2.14.1 이하 (2.3.1, 2.12.2, 2.12.3 제외)
 CVE-2021-45046: 2.0-beta9 ~ 2.15.0 버전 (2.3.1, 2.12.2, 2.12.3 제외)
 CVE-2021-4104: 1.x 버전 ※ JMSAppender를 사용하지 않는 경우 취약점 영향 없음&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&#34;취약점-설명&#34;&gt;[취약점 설명]&lt;/h4&gt;
+&lt;h3 id=&#34;취약점-설명&#34;&gt;[취약점 설명]&lt;/h3&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
 	&lt;a href=&#34;https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2021/12/15/image1-v2-3.jpg&#34; &gt;
@@ -1940,7 +1940,7 @@ $ git flow hotfix finish 버전
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;% hugo new site &amp;lt;hugo디렉토리명&amp;gt;
 
 % cd theme
-&amp;lt;hugo디렉토리명&amp;gt;/theme % git submodule add &amp;lt;테마git 주소&amp;gt; themes/&amp;lt;테마명&amp;gt;
+&amp;lt;hugo디렉토리명&amp;gt;/themes % git submodule add &amp;lt;테마git 주소&amp;gt; &amp;lt;테마명&amp;gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;테마다운로드주소--httpsthemesgohugoio&#34;&gt;&lt;strong&gt;테마다운로드주소 : &lt;a class=&#34;link&#34; href=&#34;https://themes.gohugo.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://themes.gohugo.io&lt;/a&gt;&lt;/strong&gt;&lt;/h3&gt;
