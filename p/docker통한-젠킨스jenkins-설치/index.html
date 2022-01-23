@@ -129,15 +129,15 @@ if (!doNotTrack) {
 
     <section class="article-content">
     <p>Jenkins와 Github을 연동하면서 정리함</p>
-<h1 id="1-젠킨스-이미지-다운로드">1. 젠킨스 이미지 다운로드</h1>
+<h2 id="1-젠킨스-이미지-다운로드">1. 젠킨스 이미지 다운로드</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker">% docker pull jenkins/jenkins:lts<span class="err">
-</span></code></pre></div><h1 id="2-젠킨스-실행">2. 젠킨스 실행</h1>
+</span></code></pre></div><h2 id="2-젠킨스-실행">2. 젠킨스 실행</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker">% docker run -p 8080:8080 -p 50000:50000 -v /#<span class="o">(</span>your_home<span class="o">)</span>:/var/jenkins_home --name jenkins jenkins/jenkins:lts<span class="err">
 </span><span class="err"></span><span class="c"># -p	    호스트와 컨테이너의 포트를 연결 (포워딩)</span><span class="err">
 </span><span class="err"></span><span class="c"># -v	    호스트와 컨테이너의 디렉토리를 연결 (마운트)</span><span class="err">
 </span><span class="err"></span><span class="c"># --name    container 이름 지정</span><span class="err">
-</span></code></pre></div><h1 id="3-젠킨스-설치">3. 젠킨스 설치</h1>
-<h2 id="1-비밀번호-입력">(1) 비밀번호 입력</h2>
+</span></code></pre></div><h2 id="3-젠킨스-설치">3. 젠킨스 설치</h2>
+<h3 id="1-비밀번호-입력">(1) 비밀번호 입력</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker1.png?raw=true" >
@@ -152,7 +152,7 @@ if (!doNotTrack) {
 	<figcaption>Docker</figcaption>
 	
 </figure></p>
-<h2 id="2-install-suggested-plugins선택">(2) Install suggested plugins선택</h2>
+<h3 id="2-install-suggested-plugins선택">(2) Install suggested plugins선택</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker2.png?raw=true" >
@@ -167,7 +167,7 @@ if (!doNotTrack) {
 	<figcaption>Docker</figcaption>
 	
 </figure></p>
-<h2 id="3-설치-진행">(3) 설치 진행</h2>
+<h3 id="3-설치-진행">(3) 설치 진행</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker3.png?raw=true" >
@@ -182,7 +182,7 @@ if (!doNotTrack) {
 	<figcaption>Docker</figcaption>
 	
 </figure></p>
-<h2 id="4-계정-설정">(4) 계정 설정</h2>
+<h3 id="4-계정-설정">(4) 계정 설정</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker4.png?raw=true" >
@@ -197,7 +197,7 @@ if (!doNotTrack) {
 	<figcaption>Docker</figcaption>
 	
 </figure></p>
-<h2 id="5-설치-완료">(5) 설치 완료</h2>
+<h3 id="5-설치-완료">(5) 설치 완료</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/docker/docker5.png?raw=true" >
@@ -260,7 +260,6 @@ if (!doNotTrack) {
     <a href="/p/jenkins-github-%EC%97%B0%EB%8F%99-%EB%B0%A9%EB%B2%95/">
         
         
-
         <div class="article-details">
             <h2 class="article-title">Jenkins &#43; Github 연동 방법</h2>
         </div>
@@ -327,8 +326,7 @@ if (!doNotTrack) {
     </section>
     
     <section class="powerby">
-        <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>로 만듦 <br />
-        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>의 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.6.0">Stack</a></b> 테마 사용 중
+        
     </section>
 </footer>
 
@@ -415,28 +413,22 @@ if (!doNotTrack) {
     
         <aside class="sidebar right-sidebar sticky">
             <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-                </div>
-                <h2 class="widget-title section-title">목차</h2>
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
                 
                 <div class="widget--toc">
                     <nav id="TableOfContents">
   <ol>
-    <li><a href="#1-비밀번호-입력">(1) 비밀번호 입력</a></li>
-    <li><a href="#2-install-suggested-plugins선택">(2) Install suggested plugins선택</a></li>
-    <li><a href="#3-설치-진행">(3) 설치 진행</a></li>
-    <li><a href="#4-계정-설정">(4) 계정 설정</a></li>
-    <li><a href="#5-설치-완료">(5) 설치 완료</a></li>
+    <li><a href="#1-젠킨스-이미지-다운로드">1. 젠킨스 이미지 다운로드</a></li>
+    <li><a href="#2-젠킨스-실행">2. 젠킨스 실행</a></li>
+    <li><a href="#3-젠킨스-설치">3. 젠킨스 설치</a>
+      <ol>
+        <li><a href="#1-비밀번호-입력">(1) 비밀번호 입력</a></li>
+        <li><a href="#2-install-suggested-plugins선택">(2) Install suggested plugins선택</a></li>
+        <li><a href="#3-설치-진행">(3) 설치 진행</a></li>
+        <li><a href="#4-계정-설정">(4) 계정 설정</a></li>
+        <li><a href="#5-설치-완료">(5) 설치 완료</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
                 </div>

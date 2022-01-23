@@ -6,7 +6,25 @@
     <description>Recent content in algorithm on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Aug 2021 11:27:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 14:26:07 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>백준 17298 오큰수</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-17298-%EC%98%A4%ED%81%B0%EC%88%98/</link>
+      <pubDate>Sun, 29 Aug 2021 14:26:07 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-17298-%EC%98%A4%ED%81%B0%EC%88%98/</guid>
+      <description>[문제] 크기가 N인 수열 A = A1, A2, &amp;hellip;, AN이 있다. 수열의 각 원소 Ai에 대해서 오큰수 NGE(i)를 구하려고 한다. Ai의 오큰수는 오른쪽에 있으면서 Ai보다</description>
+    </item>
+    
+    <item>
+      <title>백준 4949 균형잡힌 세상</title>
+      <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-4949-%EA%B7%A0%ED%98%95%EC%9E%A1%ED%9E%8C-%EC%84%B8%EC%83%81/</link>
+      <pubDate>Sun, 22 Aug 2021 15:38:35 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-4949-%EA%B7%A0%ED%98%95%EC%9E%A1%ED%9E%8C-%EC%84%B8%EC%83%81/</guid>
+      <description>[문제] 세계는 균형이 잘 잡혀있어야 한다. 양과 음, 빛과 어둠 그리고 왼쪽 괄호와 오른쪽 괄호처럼 말이다. 정민이의 임무는 어떤 문자열이 주어졌을 때, 괄호들의 균</description>
+    </item>
+    
     <item>
       <title>백준 2580 스도쿠</title>
       <link>https://appealso.github.io/p/%EB%B0%B1%EC%A4%80-2580-%EC%8A%A4%EB%8F%84%EC%BF%A0/</link>

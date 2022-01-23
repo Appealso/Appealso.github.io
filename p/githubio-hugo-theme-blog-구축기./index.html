@@ -129,10 +129,10 @@ if (!doNotTrack) {
 
     <section class="article-content">
     <p>GithubIO와 hugo theme을 적용하면서 정리함</p>
-<h1 id="1-hugo-설치">1. hugo 설치</h1>
+<h2 id="1-hugo-설치">1. hugo 설치</h2>
 <pre tabindex="0"><code>% brew isntall hugo
 % hugo version // 휴고 버전 확인
-</code></pre><h1 id="2-directory-구성">2. Directory 구성</h1>
+</code></pre><h2 id="2-directory-구성">2. Directory 구성</h2>
 <pre tabindex="0"><code>├── archetypes
 ├── config.toml //hugo theme 설정파일
 ├── content // post 저장 위치
@@ -140,7 +140,7 @@ if (!doNotTrack) {
 ├── layouts
 ├── static //image 저장 위치 인듯...?
 └── themes // 테마 저장 폴더
-</code></pre><h1 id="3-hugo로-웹-사이트-생성--테마-다운로드">3. hugo로 웹 사이트 생성 &amp; 테마 다운로드</h1>
+</code></pre><h2 id="3-hugo로-웹-사이트-생성--테마-다운로드">3. hugo로 웹 사이트 생성 &amp; 테마 다운로드</h2>
 <pre tabindex="0"><code>% hugo new site &lt;hugo디렉토리명&gt;
 
 % cd theme
@@ -149,19 +149,19 @@ if (!doNotTrack) {
 </code></pre><p><strong>테마다운로드주소 : <a class="link" href="https://themes.gohugo.io"  target="_blank" rel="noopener"
     >https://themes.gohugo.io</a></strong></p>
 <!-- raw HTML omitted -->
-<h1 id="4-hugo-테마-적용">4. hugo 테마 적용</h1>
+<h2 id="4-hugo-테마-적용">4. hugo 테마 적용</h2>
 <p>hugo 테마는 github repository가 2개 필요함. hugo 설정파일 repository와 실제 사이트 repository 두개를 생성해야함.</p>
 <pre tabindex="0"><code>% cd &lt;hugo디렉토리명&gt;
 &lt;hugo디렉토리명&gt; % git init
 &lt;hugo디렉토리명&gt; % git remote add origin &lt;hugo repository 주소&gt;
 &lt;hugo디렉토리명&gt; % git submodule add -b master &lt;github.io repository 주소&gt; public //실제 사이트는 public 폴더에서 볼 수 있음.
 &lt;hugo디렉토리명&gt; % hugo -t &lt;테마명&gt;
-</code></pre><h1 id="5-configtoml-설정">5. config.toml 설정</h1>
+</code></pre><h2 id="5-configtoml-설정">5. config.toml 설정</h2>
 <pre tabindex="0"><code>% vi config.toml
 theme = &quot;테마명&quot; //적용할 테마명을 넣는다.(필수!!)
 // 나머지 설정은 테마에 따라 설정이 달라진다.
 // theme에 저장한 theme의 config.toml을 참조해서 수정하면 될 듯 하다.
-</code></pre><h1 id="6-글작성">6. 글작성</h1>
+</code></pre><h2 id="6-글작성">6. 글작성</h2>
 <pre tabindex="0"><code>% hugo new &lt;폴더명&gt;/[md파일명].md //content/&lt;폴더명&gt;/[md파일명].md 에 파일 생성 됨.
 % vi content/&lt;폴더명&gt;/[md파일명].md //글 쓰기
 % hugo -D //static 파일을 생성한다. md파일을
@@ -179,7 +179,7 @@ tags: [&ldquo;tag명&rdquo;]<br>
 <hr>
 </blockquote>
 <!-- raw HTML omitted -->
-<h1 id="7-hugo-git에-반영">7. hugo git에 반영</h1>
+<h2 id="7-hugo-git에-반영">7. hugo git에 반영</h2>
 <p>아래 명령어 순서대로 입력</p>
 <pre tabindex="0"><code>&lt;hugo디렉토리명&gt; % hugo -t soho
 &lt;hugo디렉토리명&gt; % hugo -D
@@ -192,8 +192,8 @@ tags: [&ldquo;tag명&rdquo;]<br>
 &lt;hugo디렉토리명&gt; % git commit -m &quot;$msg&quot;
 &lt;hugo디렉토리명&gt; % git push origin master
 
-</code></pre><h1 id="8-disqus-comment-추가하기">8. Disqus Comment 추가하기</h1>
-<h2 id="81-disqus-가입-후-setting-클릭">8.1 Disqus 가입 후 Setting 클릭</h2>
+</code></pre><h2 id="8-disqus-comment-추가하기">8. Disqus Comment 추가하기</h2>
+<h3 id="81-disqus-가입-후-setting-클릭">8.1 Disqus 가입 후 Setting 클릭</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus1.png?raw=true" >
@@ -208,7 +208,7 @@ tags: [&ldquo;tag명&rdquo;]<br>
 	<figcaption>Disqus</figcaption>
 	
 </figure></p>
-<h2 id="82-profile-account-작성">8.2 Profile, Account 작성</h2>
+<h3 id="82-profile-account-작성">8.2 Profile, Account 작성</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus2.png?raw=true" >
@@ -223,7 +223,7 @@ tags: [&ldquo;tag명&rdquo;]<br>
 	<figcaption>Disqus</figcaption>
 	
 </figure></p>
-<h2 id="83-home으로-이동-후-get-started-클릭">8.3 Home으로 이동 후 Get Started 클릭</h2>
+<h3 id="83-home으로-이동-후-get-started-클릭">8.3 Home으로 이동 후 Get Started 클릭</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus3.png?raw=true" >
@@ -238,7 +238,7 @@ tags: [&ldquo;tag명&rdquo;]<br>
 	<figcaption>Disqus</figcaption>
 	
 </figure></p>
-<h2 id="84-i-want-to-install-disqus-on-my-site-클릭">8.4 I want to install Disqus on my site 클릭</h2>
+<h3 id="84-i-want-to-install-disqus-on-my-site-클릭">8.4 I want to install Disqus on my site 클릭</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus4.png?raw=true" >
@@ -253,7 +253,7 @@ tags: [&ldquo;tag명&rdquo;]<br>
 	<figcaption>Disqus</figcaption>
 	
 </figure></p>
-<h2 id="85-create-a-new-site-작성">8.5 Create a new site 작성</h2>
+<h3 id="85-create-a-new-site-작성">8.5 Create a new site 작성</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus5.png?raw=true" >
@@ -268,7 +268,7 @@ tags: [&ldquo;tag명&rdquo;]<br>
 	<figcaption>Disqus</figcaption>
 	
 </figure></p>
-<h2 id="86-화면을-조금-내리서-basic에-subscribe-now-클릭돈많으면돈내고쓰세요ㅠㅠ">8.6 화면을 조금 내리서 Basic에 Subscribe Now 클릭(돈많으면&hellip;돈내고쓰세요&hellip;ㅠㅠ)</h2>
+<h3 id="86-화면을-조금-내리서-basic에-subscribe-now-클릭돈많으면돈내고쓰세요ㅠㅠ">8.6 화면을 조금 내리서 Basic에 Subscribe Now 클릭(돈많으면&hellip;돈내고쓰세요&hellip;ㅠㅠ)</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus6.png?raw=true" >
@@ -283,10 +283,10 @@ tags: [&ldquo;tag명&rdquo;]<br>
 	<figcaption>Disqus</figcaption>
 	
 </figure></p>
-<h2 id="87-화면을-조금-내려서-아래-버튼-클릭hugo는-지원목록에-없다-추가될수도">8.7 화면을 조금 내려서 아래 버튼 클릭(hugo는 지원목록에 없다. 추가될수도..?)</h2>
+<h3 id="87-화면을-조금-내려서-아래-버튼-클릭hugo는-지원목록에-없다-추가될수도">8.7 화면을 조금 내려서 아래 버튼 클릭(hugo는 지원목록에 없다. 추가될수도..?)</h3>
 <p>![Disqus](<a class="link" href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqu"  target="_blank" rel="noopener"
     >https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqu</a> 8.png?raw=true)</p>
-<h2 id="88-configure-클릭">8.8 configure 클릭</h2>
+<h3 id="88-configure-클릭">8.8 configure 클릭</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus8.png?raw=true" >
@@ -316,7 +316,7 @@ tags: [&ldquo;tag명&rdquo;]<br>
 	<figcaption>Disqus</figcaption>
 	
 </figure></p>
-<h2 id="810-완료">8.10 완료!</h2>
+<h3 id="810-완료">8.10 완료!</h3>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus10.png?raw=true" >
@@ -331,10 +331,10 @@ tags: [&ldquo;tag명&rdquo;]<br>
 	<figcaption>Disqus</figcaption>
 	
 </figure></p>
-<h2 id="811-configtoml-수정">8.11 config.toml 수정</h2>
+<h3 id="811-configtoml-수정">8.11 config.toml 수정</h3>
 <pre tabindex="0"><code>% vi config.toml
 disqusShortname = &quot;&lt;Disqus shortname&gt;&quot;
-</code></pre><h3 id="8111-short-name-확인방법">8.11.1 short name 확인방법</h3>
+</code></pre><h4 id="8111-short-name-확인방법">8.11.1 short name 확인방법</h4>
 <p><figure 
 	>
 	<a href="https://github.com/Appealso/Appealso.github.io/blob/master/images/disqus/Disqus11.png?raw=true" >
@@ -413,7 +413,6 @@ disqusShortname = &quot;&lt;Disqus shortname&gt;&quot;
     <a href="/p/git-flow-%EC%A0%95%EB%A6%AC/">
         
         
-
         <div class="article-details">
             <h2 class="article-title">Git-Flow 정리</h2>
         </div>
@@ -425,7 +424,6 @@ disqusShortname = &quot;&lt;Disqus shortname&gt;&quot;
     <a href="/p/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EC%9E%91%EC%84%B1%EB%B2%95/">
         
         
-
         <div class="article-details">
             <h2 class="article-title">마크다운 작성법</h2>
         </div>
@@ -492,8 +490,7 @@ disqusShortname = &quot;&lt;Disqus shortname&gt;&quot;
     </section>
     
     <section class="powerby">
-        <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>로 만듦 <br />
-        <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>의 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.6.0">Stack</a></b> 테마 사용 중
+        
     </section>
 </footer>
 
@@ -580,39 +577,35 @@ disqusShortname = &quot;&lt;Disqus shortname&gt;&quot;
     
         <aside class="sidebar right-sidebar sticky">
             <section class="widget archives">
-                <div class="widget-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-                </div>
-                <h2 class="widget-title section-title">목차</h2>
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
                 
                 <div class="widget--toc">
                     <nav id="TableOfContents">
   <ol>
-    <li><a href="#81-disqus-가입-후-setting-클릭">8.1 Disqus 가입 후 Setting 클릭</a></li>
-    <li><a href="#82-profile-account-작성">8.2 Profile, Account 작성</a></li>
-    <li><a href="#83-home으로-이동-후-get-started-클릭">8.3 Home으로 이동 후 Get Started 클릭</a></li>
-    <li><a href="#84-i-want-to-install-disqus-on-my-site-클릭">8.4 I want to install Disqus on my site 클릭</a></li>
-    <li><a href="#85-create-a-new-site-작성">8.5 Create a new site 작성</a></li>
-    <li><a href="#86-화면을-조금-내리서-basic에-subscribe-now-클릭돈많으면돈내고쓰세요ㅠㅠ">8.6 화면을 조금 내리서 Basic에 Subscribe Now 클릭(돈많으면&hellip;돈내고쓰세요&hellip;ㅠㅠ)</a></li>
-    <li><a href="#87-화면을-조금-내려서-아래-버튼-클릭hugo는-지원목록에-없다-추가될수도">8.7 화면을 조금 내려서 아래 버튼 클릭(hugo는 지원목록에 없다. 추가될수도..?)</a></li>
-    <li><a href="#88-configure-클릭">8.8 configure 클릭</a>
+    <li><a href="#1-hugo-설치">1. hugo 설치</a></li>
+    <li><a href="#2-directory-구성">2. Directory 구성</a></li>
+    <li><a href="#3-hugo로-웹-사이트-생성--테마-다운로드">3. hugo로 웹 사이트 생성 &amp; 테마 다운로드</a></li>
+    <li><a href="#4-hugo-테마-적용">4. hugo 테마 적용</a></li>
+    <li><a href="#5-configtoml-설정">5. config.toml 설정</a></li>
+    <li><a href="#6-글작성">6. 글작성</a></li>
+    <li><a href="#7-hugo-git에-반영">7. hugo git에 반영</a></li>
+    <li><a href="#8-disqus-comment-추가하기">8. Disqus Comment 추가하기</a>
       <ol>
+        <li><a href="#81-disqus-가입-후-setting-클릭">8.1 Disqus 가입 후 Setting 클릭</a></li>
+        <li><a href="#82-profile-account-작성">8.2 Profile, Account 작성</a></li>
+        <li><a href="#83-home으로-이동-후-get-started-클릭">8.3 Home으로 이동 후 Get Started 클릭</a></li>
+        <li><a href="#84-i-want-to-install-disqus-on-my-site-클릭">8.4 I want to install Disqus on my site 클릭</a></li>
+        <li><a href="#85-create-a-new-site-작성">8.5 Create a new site 작성</a></li>
+        <li><a href="#86-화면을-조금-내리서-basic에-subscribe-now-클릭돈많으면돈내고쓰세요ㅠㅠ">8.6 화면을 조금 내리서 Basic에 Subscribe Now 클릭(돈많으면&hellip;돈내고쓰세요&hellip;ㅠㅠ)</a></li>
+        <li><a href="#87-화면을-조금-내려서-아래-버튼-클릭hugo는-지원목록에-없다-추가될수도">8.7 화면을 조금 내려서 아래 버튼 클릭(hugo는 지원목록에 없다. 추가될수도..?)</a></li>
+        <li><a href="#88-configure-클릭">8.8 configure 클릭</a></li>
         <li><a href="#89-사이트-정보-기입">8.9 사이트 정보 기입</a></li>
-      </ol>
-    </li>
-    <li><a href="#810-완료">8.10 완료!</a></li>
-    <li><a href="#811-configtoml-수정">8.11 config.toml 수정</a>
-      <ol>
-        <li><a href="#8111-short-name-확인방법">8.11.1 short name 확인방법</a></li>
+        <li><a href="#810-완료">8.10 완료!</a></li>
+        <li><a href="#811-configtoml-수정">8.11 config.toml 수정</a>
+          <ol>
+            <li><a href="#8111-short-name-확인방법">8.11.1 short name 확인방법</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
