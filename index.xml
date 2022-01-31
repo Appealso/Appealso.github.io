@@ -14,13 +14,13 @@
         <guid>https://appealso.github.io/p/dreamhack-login-1/</guid>
         <description>&lt;h2 id=&#34;문제&#34;&gt;[문제]&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;python으로 작성된 로그인 기능을 가진 서비스입니다.
+&lt;p&gt;python으로 작성된 로그인 기능을 가진 서비스입니다. &lt;!-- raw HTML omitted --&gt;
 “admin” 권한을 가진 사용자로 로그인하여 플래그를 획득하세요.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;해결법&#34;&gt;[해결법]&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;제공하는 app.py만 잘 해석하면 풀 수 있는 문제였다
-&amp;lsquo;/forgot_password&amp;rsquo;에 &amp;ldquo;time.sleep(1)&amp;rdquo; 구문이 있는데 1초안에 1~100까지 랜덤으로 생성되는 backupCode를 요청하면되었다.
+&lt;p&gt;제공하는 app.py만 잘 해석하면 풀 수 있는 문제였다. &lt;!-- raw HTML omitted --&gt;
+&amp;lsquo;/forgot_password&amp;rsquo;에 &amp;ldquo;time.sleep(1)&amp;rdquo; 구문이 있는데 1초안에 1~100까지 랜덤으로 생성되는 backupCode를 요청하면되었다. &lt;!-- raw HTML omitted --&gt;
 python으로 간단히 요청 코드를 작성하면 해결된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
@@ -33,12 +33,12 @@ python으로 간단히 요청 코드를 작성하면 해결된다.&lt;/p&gt;
         <guid>https://appealso.github.io/p/dreamhack-web-misconf-1/</guid>
         <description>&lt;h2 id=&#34;문제&#34;&gt;[문제]&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;여기본 설정을 사용한 서비스입니다.
-로그인한 후 Organization에 플래그를 설정해 놓았습니다.&lt;/p&gt;
+&lt;p&gt;여기본 설정을 사용한 서비스입니다. &lt;!-- raw HTML omitted --&gt;
+로그인한 후 Organization에 플래그를 설정해 놓았습니다. &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;해결법&#34;&gt;[해결법]&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;문제파일에 admin 정보가 있었다. 접속 후에 Organizaion 정보 찾으면 끝.. 5분안걸린듯..&lt;/p&gt;
+&lt;p&gt;문제파일에 admin 정보가 있었다. 접속 후에 Organizaion 정보 찾으면 끝.. 5분안걸린듯..&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         </item>
