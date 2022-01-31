@@ -6,7 +6,16 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Jan 2022 15:42:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 16:40:43 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSTI</title>
+      <link>https://appealso.github.io/tags/ssti/</link>
+      <pubDate>Mon, 31 Jan 2022 16:40:43 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/ssti/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Brute Forcing</title>
       <link>https://appealso.github.io/tags/brute-forcing/</link>

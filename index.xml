@@ -6,7 +6,41 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 31 Jan 2022 15:42:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 31 Jan 2022 16:40:43 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[dreamhack] Carve Party</title>
+        <link>https://appealso.github.io/p/dreamhack-carve-party/</link>
+        <pubDate>Mon, 31 Jan 2022 16:40:43 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/dreamhack-carve-party/</guid>
+        <description>&lt;h2 id=&#34;문제&#34;&gt;[문제]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;할로윈 파티를 기념하기 위해 호박을 준비했습니다! 호박을 10000번 클릭하고 플래그를 획득하세요!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;해결법&#34;&gt;[해결법]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JavaScript click 이벤트를 10000번 호출 하면되는 문제였다. 간단히 while문으로 호출해서 풀 수 있었다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>[dreamhack] simple-ssti</title>
+        <link>https://appealso.github.io/p/dreamhack-simple-ssti/</link>
+        <pubDate>Mon, 31 Jan 2022 16:13:01 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/dreamhack-simple-ssti/</guid>
+        <description>&lt;h2 id=&#34;문제&#34;&gt;[문제]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. &lt;!-- raw HTML omitted --&gt;
+SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;해결법&#34;&gt;[해결법]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;URL 뒤에 {{7*7}}을 넣으면 49가 나오는것으로 보아 SSTI 취약점이 있는것을 추측 할 수 있다.&lt;!-- raw HTML omitted --&gt;
+{URL}/{{config}}로 시도 시에 키 값을 간단한게 얻을 수 있었다.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>[dreamhack] login-1</title>
         <link>https://appealso.github.io/p/dreamhack-login-1/</link>
         <pubDate>Mon, 31 Jan 2022 15:42:56 +0900</pubDate>
@@ -2276,31 +2310,6 @@ ex) [네이버](https://www.naver.com)
     &gt;네이버&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;수정중ㅎㅎ&#34;&gt;수정중ㅎㅎ&lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://appealso.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://appealso.github.io/p/</guid>
-        <description>&lt;p&gt;bb&amp;mdash;
-title: &amp;ldquo;[dreamhack] simple-ssti&amp;rdquo;
-date: 2022-01-31T16:13:01+09:00
-draft: true
-categories: [&amp;ldquo;ctf&amp;rdquo;]
-tags: [&amp;ldquo;SSTI&amp;rdquo;]&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;문제&#34;&gt;[문제]&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. &lt;!-- raw HTML omitted --&gt;
-SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;해결법&#34;&gt;[해결법]&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;URL 뒤에 {{7*7}}을 넣으면 49가 나오는것으로 보아 SSTI 취약점이 있는것을 추측 할 수 있다.&lt;!-- raw HTML omitted --&gt;
-{URL}/{{config}}로 시도 시에 키 값을 간단한게 얻을 수 있었다.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
         </item>
         
     </channel>

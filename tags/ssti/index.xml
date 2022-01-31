@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSTI on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/ssti/</link>
+    <description>Recent content in SSTI on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 Jan 2022 16:40:43 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/ssti/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] Carve Party</title>
+      <link>https://appealso.github.io/p/dreamhack-carve-party/</link>
+      <pubDate>Mon, 31 Jan 2022 16:40:43 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-carve-party/</guid>
+      <description>[문제] 할로윈 파티를 기념하기 위해 호박을 준비했습니다! 호박을 10000번 클릭하고 플래그를 획득하세요! [해결법] JavaScript click 이벤트를 10000번 호출 하면</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] simple-ssti</title>
+      <link>https://appealso.github.io/p/dreamhack-simple-ssti/</link>
+      <pubDate>Mon, 31 Jan 2022 16:13:01 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-simple-ssti/</guid>
+      <description>[문제] 존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법] URL 뒤</description>
+    </item>
+    
+  </channel>
+</rss>
