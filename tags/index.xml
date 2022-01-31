@@ -6,7 +6,34 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 15:42:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brute Forcing</title>
+      <link>https://appealso.github.io/tags/brute-forcing/</link>
+      <pubDate>Mon, 31 Jan 2022 15:42:56 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/brute-forcing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Race Condition</title>
+      <link>https://appealso.github.io/tags/race-condition/</link>
+      <pubDate>Mon, 31 Jan 2022 15:42:56 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/race-condition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mis Configuration</title>
+      <link>https://appealso.github.io/tags/mis-configuration/</link>
+      <pubDate>Mon, 31 Jan 2022 14:54:40 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/mis-configuration/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CVE-2021-4104</title>
       <link>https://appealso.github.io/tags/cve-2021-4104/</link>

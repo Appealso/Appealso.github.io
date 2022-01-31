@@ -6,7 +6,25 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Jan 2022 15:42:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] login-1</title>
+      <link>https://appealso.github.io/p/dreamhack-login-1/</link>
+      <pubDate>Mon, 31 Jan 2022 15:42:56 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-login-1/</guid>
+      <description>[문제] python으로 작성된 로그인 기능을 가진 서비스입니다. “admin” 권한을 가진 사용자로 로그인하여 플래그를 획득하세요. [해결법] 제공하는</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] web-misconf-1</title>
+      <link>https://appealso.github.io/p/dreamhack-web-misconf-1/</link>
+      <pubDate>Mon, 31 Jan 2022 14:54:40 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-web-misconf-1/</guid>
+      <description>[문제] 여기본 설정을 사용한 서비스입니다. 로그인한 후 Organization에 플래그를 설정해 놓았습니다. [해결법] 문제파일에 admin 정보가 있었다. 접</description>
+    </item>
+    
     <item>
       <title>Log4j 취약점 정리</title>
       <link>https://appealso.github.io/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</link>

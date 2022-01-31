@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brute Forcing on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/brute-forcing/</link>
+    <description>Recent content in Brute Forcing on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 Jan 2022 15:42:56 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/brute-forcing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] login-1</title>
+      <link>https://appealso.github.io/p/dreamhack-login-1/</link>
+      <pubDate>Mon, 31 Jan 2022 15:42:56 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-login-1/</guid>
+      <description>[문제] python으로 작성된 로그인 기능을 가진 서비스입니다. “admin” 권한을 가진 사용자로 로그인하여 플래그를 획득하세요. [해결법] 제공하는</description>
+    </item>
+    
+  </channel>
+</rss>
