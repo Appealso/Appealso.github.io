@@ -295,5 +295,14 @@
       <description>&lt;p&gt;Mark Down의 기본 문법을 정리&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://appealso.github.io/p/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://appealso.github.io/p/</guid>
+      <description>bb&amp;mdash; title: &amp;ldquo;[dreamhack] simple-ssti&amp;rdquo; date: 2022-01-31T16:13:01+09:00 draft: true categories: [&amp;ldquo;ctf&amp;rdquo;] tags: [&amp;ldquo;SSTI&amp;rdquo;] [문제] 존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에</description>
+    </item>
+    
   </channel>
 </rss>
