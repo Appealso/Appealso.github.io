@@ -2347,7 +2347,7 @@ ex) [네이버](https://www.naver.com)
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://appealso.github.io/p/microsegmentation/</guid>
-        <description>&lt;img src="https://appealso.github.io/cover.jpg" alt="Featured image of post Microsegmentation" /&gt;&lt;h1 id=&#34;마이크로-세그멘테이션&#34;&gt;마이크로 세그멘테이션&lt;/h1&gt;
+        <description>&lt;img src="https://appealso.github.io/p/microsegmentation/cover.jpg" alt="Featured image of post Microsegmentation" /&gt;&lt;h1 id=&#34;마이크로-세그멘테이션&#34;&gt;마이크로 세그멘테이션&lt;/h1&gt;
 &lt;p&gt;과거 컴퓨터 시스템, 네트워크 및 응용 프로그램은 상대적으로 정적이었습니다. 동일한 네트워크를 따라 흐르는 데이터 연결, 매일, 응용 프로그램은 동일한 시스템에서 실행되었으며, 정적 방화벽 규칙 및 액세스 제어 목록 (ACL)을 사용하여 시스템 간 트래픽을 제한할 수 있습니다. 그러나 오늘날의 IT 환경은 훨씬 복잡하고 역동적입니다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -2362,12 +2362,17 @@ ex) [네이버](https://www.naver.com)
 &lt;h2 id=&#34;1-기존-시스템&#34;&gt;1. 기존 시스템&lt;/h2&gt;
 &lt;p&gt;대부분의 데이터 센터는 아래 그림과 같이 클라우드 영역과 데이터 센터 영역으로 나뉩니다. 영역 간의 트래픽은 일반적으로 방화벽에서 트래픽 필터링 정책이 구성됩니다.
 &lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 131; 
+			flex-basis: 315px&#34;
 	&gt;
-	&lt;a href=&#34;https://appealso.github.io/mircosegmentation-image1.jpg&#34; &gt;
-		&lt;img src=&#34;https://appealso.github.io/mircosegmentation-image1.jpg&#34;
-			
-			
-			
+	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1.jpg&#34; data-size=&#34;410x312&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1.jpg&#34;
+			width=&#34;410&#34;
+			height=&#34;312&#34;
+			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1_hu83d78ecea49ee669b0e9c01dff812ea5_30033_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image1_hu83d78ecea49ee669b0e9c01dff812ea5_30033_1024x0_resize_q75_box.jpg 1024w&#34;
 			loading=&#34;lazy&#34;
 			alt=&#34;Image 1&#34;&gt;
 	&lt;/a&gt;
@@ -2389,12 +2394,17 @@ ex) [네이버](https://www.naver.com)
 &lt;h2 id=&#34;3-마이크로-세그멘테이션microsegmentation&#34;&gt;3. 마이크로 세그멘테이션(Microsegmentation)&lt;/h2&gt;
 &lt;p&gt;마이크로 세그먼테이션(Microsegmentation)은 IT 환경을 통제 가능한 구역으로 분할해 각 워크로드를 상호 안전하게 격리하는 동시에 네트워크 보호를 더 세분화함으로써 승인되지 않은 횡적 이동 문제에 대처하는 방법론입니다.
 &lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 94; 
+			flex-basis: 226px&#34;
 	&gt;
-	&lt;a href=&#34;https://appealso.github.io/mircosegmentation-image2.jpg&#34; &gt;
-		&lt;img src=&#34;https://appealso.github.io/mircosegmentation-image2.jpg&#34;
-			
-			
-			
+	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2.jpg&#34; data-size=&#34;452x478&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2.jpg&#34;
+			width=&#34;452&#34;
+			height=&#34;478&#34;
+			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2_hu06402baea21292f08e1d8c0d357b5248_118605_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image2_hu06402baea21292f08e1d8c0d357b5248_118605_1024x0_resize_q75_box.jpg 1024w&#34;
 			loading=&#34;lazy&#34;
 			alt=&#34;Image 2&#34;&gt;
 	&lt;/a&gt;
@@ -2404,12 +2414,17 @@ ex) [네이버](https://www.naver.com)
 &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;마이크로세그먼테이션은 성능과 관리에 중점을 둔 네트워크 세그먼테이션(network segmentation)의 단순한 연장선상에 있는 기술이 아닌 네트워크 보호 문제에 대처해 위험을 낮추고 동적인 IT 환경의 요구에 상응해 보안을 조정하기 위한 목적으로 설계된 기술입니다.
 &lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 98; 
+			flex-basis: 235px&#34;
 	&gt;
-	&lt;a href=&#34;https://appealso.github.io/mircosegmentation-image3.jpg&#34; &gt;
-		&lt;img src=&#34;https://appealso.github.io/mircosegmentation-image3.jpg&#34;
-			
-			
-			
+	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3.jpg&#34; data-size=&#34;404x412&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3.jpg&#34;
+			width=&#34;404&#34;
+			height=&#34;412&#34;
+			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3_hu26b3e765232fd1a3e4964ab624f6d1a8_79174_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image3_hu26b3e765232fd1a3e4964ab624f6d1a8_79174_1024x0_resize_q75_box.jpg 1024w&#34;
 			loading=&#34;lazy&#34;
 			alt=&#34;Image 3&#34;&gt;
 	&lt;/a&gt;
@@ -2417,12 +2432,17 @@ ex) [네이버](https://www.naver.com)
 	&lt;figcaption&gt;Image 3&lt;/figcaption&gt;
 	
 &lt;/figure&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 114; 
+			flex-basis: 275px&#34;
 	&gt;
-	&lt;a href=&#34;https://appealso.github.io/mircosegmentation-image4.jpg&#34; &gt;
-		&lt;img src=&#34;https://appealso.github.io/mircosegmentation-image4.jpg&#34;
-			
-			
-			
+	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4.jpg&#34; data-size=&#34;482x420&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4.jpg&#34;
+			width=&#34;482&#34;
+			height=&#34;420&#34;
+			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4_hu5e2a730531545c5f2c95705ae94befa0_92098_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image4_hu5e2a730531545c5f2c95705ae94befa0_92098_1024x0_resize_q75_box.jpg 1024w&#34;
 			loading=&#34;lazy&#34;
 			alt=&#34;Image 4&#34;&gt;
 	&lt;/a&gt;
