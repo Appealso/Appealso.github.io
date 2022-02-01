@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Microsegmentation 정리'><title>Microsegmentation</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/example-post/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='Microsegmentation'>
+<meta property='og:description' content='Microsegmentation 정리'>
+<meta property='og:url' content='https://appealso.github.io/p/example-post/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Architecture' /><meta property='article:tag' content='Microsegmentation' /><meta property='og:image' content='https://appealso.github.io/cover.jpg' />
+<meta name="twitter:title" content="Microsegmentation">
+<meta name="twitter:description" content="Microsegmentation 정리"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/cover.jpg' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "dark");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/example-post/">
+                
+                    <img src="/cover.jpg" loading="lazy" alt="Featured image of post Microsegmentation" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/security/" >
+                Security
+            </a>
+        
+            <a href="/categories/architecture/" >
+                Architecture
+            </a>
+        
+            <a href="/categories/microsegmentation/" >
+                Microsegmentation
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/example-post/">Microsegmentation</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        Microsegmentation 정리
+    </h3>
+    
+
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="마이크로-세그멘테이션">마이크로 세그멘테이션</h1>
+<p>과거 컴퓨터 시스템, 네트워크 및 응용 프로그램은 상대적으로 정적이었습니다. 동일한 네트워크를 따라 흐르는 데이터 연결, 매일, 응용 프로그램은 동일한 시스템에서 실행되었으며, 정적 방화벽 규칙 및 액세스 제어 목록 (ACL)을 사용하여 시스템 간 트래픽을 제한할 수 있습니다. 그러나 오늘날의 IT 환경은 훨씬 복잡하고 역동적입니다.</p>
+<blockquote>
+<ul>
+<li>다중 계층 애플리케이션은 종종 여러 데이터 센터와 클라우드 플랫폼 걸쳐 있습니다.</li>
+<li>응용 프로그램은 매일 릴리스 되고 향상됩니다.</li>
+<li>소프트웨어 모듈은 새 가상 머신에서 스핀업 된 다음 서로 다른 물리적 서버 간에 이동합니다.</li>
+<li>새로운 인스턴스의 모듈은 요구에 따라 Scale up and down합니다.</li>
+<li>조직에서는 지속적으로 애플리케이션 이동, 클라우드 리소스 활용 및 워크로드 통합 시 데이터 센터를 재구성 해야합니다.</li>
+</ul>
+</blockquote>
+<p>대부분의 IT 영역은 이러한 변화 속도에 보조를 맞추었지만 보안프로세스는 여전히 수동적입니다. 이러한 결과로 기술 및 비즈니스 혁신에 브레이크를 겁니다.</p>
+<h2 id="1-기존-시스템">1. 기존 시스템</h2>
+<p>대부분의 데이터 센터는 아래 그림과 같이 클라우드 영역과 데이터 센터 영역으로 나뉩니다. 영역 간의 트래픽은 일반적으로 방화벽에서 트래픽 필터링 정책이 구성됩니다.
+<figure 
+	>
+	<a href="/mircosegmentation-image1.jpg" >
+		<img src="/mircosegmentation-image1.jpg"
+			
+			
+			
+			loading="lazy"
+			alt="Image 1">
+	</a>
+	
+	<figcaption>Image 1</figcaption>
+	
+</figure></p>
+<h2 id="2-기존-시스템의-문제점">2. 기존 시스템의 문제점</h2>
+<p>이와 같은 구성으로 인해 기존 시스템은 아래와 같은 문제점들이 발생합니다.</p>
+<blockquote>
+<ul>
+<li>공격자가 방화벽으로 구분되지 않은 영역에 침투를 할 수 있을 경우 그 안에 있는 많은 응용 프로그램을 대상으로 공격을 할 수 있음</li>
+<li>방화벽의 가격은 비싸며 네트워크 재설계가 필요할 경우 비용이 많이 발생</li>
+<li>방화벽은 일반적으로 수천 개의 규칙으로 구성되어 정책 관리가 힘듬</li>
+<li>데이터 센터와 클라우드 플랫폼은 서로 다른 보안 도구를 사용하기 때문에 클라우드 환경과 데이터 센터 간의 액세스 규칙을 관리하기가 매우 어려움</li>
+<li>전체 시스템을 효과적으로 모니터링할 수 없음</li>
+</ul>
+</blockquote>
+<h2 id="3-마이크로-세그멘테이션microsegmentation">3. 마이크로 세그멘테이션(Microsegmentation)</h2>
+<p>마이크로 세그먼테이션(Microsegmentation)은 IT 환경을 통제 가능한 구역으로 분할해 각 워크로드를 상호 안전하게 격리하는 동시에 네트워크 보호를 더 세분화함으로써 승인되지 않은 횡적 이동 문제에 대처하는 방법론입니다.
+<figure 
+	>
+	<a href="/mircosegmentation-image2.jpg" >
+		<img src="/mircosegmentation-image2.jpg"
+			
+			
+			
+			loading="lazy"
+			alt="Image 2">
+	</a>
+	
+	<figcaption>Image 2</figcaption>
+	
+</figure></p>
+<p>마이크로세그먼테이션은 성능과 관리에 중점을 둔 네트워크 세그먼테이션(network segmentation)의 단순한 연장선상에 있는 기술이 아닌 네트워크 보호 문제에 대처해 위험을 낮추고 동적인 IT 환경의 요구에 상응해 보안을 조정하기 위한 목적으로 설계된 기술입니다.
+<figure 
+	>
+	<a href="/mircosegmentation-image3.jpg" >
+		<img src="/mircosegmentation-image3.jpg"
+			
+			
+			
+			loading="lazy"
+			alt="Image 3">
+	</a>
+	
+	<figcaption>Image 3</figcaption>
+	
+</figure><figure 
+	>
+	<a href="/mircosegmentation-image4.jpg" >
+		<img src="/mircosegmentation-image4.jpg"
+			
+			
+			
+			loading="lazy"
+			alt="Image 4">
+	</a>
+	
+	<figcaption>Image 4</figcaption>
+	
+</figure>
+마이크로세그먼테이션은 하나의 중앙 정책을 사용하되 보안 집행은 각각의 개별 시스템으로 분산시킵니다. 경계만이 아니라 조직 네트워크 전반에서 세분화된 정책 실행을 가능하게 해줍니다. 이 접근 방식이 필요한 이유는 경계 보안이 종종 실패한다는 점, 그리고 클라우드 도입으로 인해 네트워크 경계에 구멍이 많아졌다는 점에있습니다.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/architecture/">Architecture</a>
+        
+            <a href="/tags/microsegmentation/">Microsegmentation</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/log4j.jpg?raw=true" loading="lazy" data-key="" data-hash="https://github.com/Appealso/Appealso.github.io/blob/master/images/log4j.jpg?raw=true"/>
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Log4j 취약점 정리</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-기존-시스템">1. 기존 시스템</a></li>
+    <li><a href="#2-기존-시스템의-문제점">2. 기존 시스템의 문제점</a></li>
+    <li><a href="#3-마이크로-세그멘테이션microsegmentation">3. 마이크로 세그멘테이션(Microsegmentation)</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

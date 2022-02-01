@@ -61,5 +61,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Architecture</title>
+      <link>https://appealso.github.io/categories/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://appealso.github.io/categories/architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microsegmentation</title>
+      <link>https://appealso.github.io/categories/microsegmentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://appealso.github.io/categories/microsegmentation/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
