@@ -8,10 +8,10 @@
     <language>en-us</language><atom:link href="https://appealso.github.io/categories/architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microsegmentation</title>
-      <link>https://appealso.github.io/p/example-post/</link>
+      <link>https://appealso.github.io/p/microsegmentation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://appealso.github.io/p/example-post/</guid>
+      <guid>https://appealso.github.io/p/microsegmentation/</guid>
       <description>마이크로 세그멘테이션 과거 컴퓨터 시스템, 네트워크 및 응용 프로그램은 상대적으로 정적이었습니다. 동일한 네트워크를 따라 흐르는 데이터 연결, 매일, 응용 프로</description>
     </item>
     

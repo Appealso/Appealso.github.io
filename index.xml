@@ -2343,10 +2343,10 @@ ex) [네이버](https://www.naver.com)
         </item>
         <item>
         <title>Microsegmentation</title>
-        <link>https://appealso.github.io/p/example-post/</link>
+        <link>https://appealso.github.io/p/microsegmentation/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://appealso.github.io/p/example-post/</guid>
+        <guid>https://appealso.github.io/p/microsegmentation/</guid>
         <description>&lt;img src="https://appealso.github.io/cover.jpg" alt="Featured image of post Microsegmentation" /&gt;&lt;h1 id=&#34;마이크로-세그멘테이션&#34;&gt;마이크로 세그멘테이션&lt;/h1&gt;
 &lt;p&gt;과거 컴퓨터 시스템, 네트워크 및 응용 프로그램은 상대적으로 정적이었습니다. 동일한 네트워크를 따라 흐르는 데이터 연결, 매일, 응용 프로그램은 동일한 시스템에서 실행되었으며, 정적 방화벽 규칙 및 액세스 제어 목록 (ACL)을 사용하여 시스템 간 트래픽을 제한할 수 있습니다. 그러나 오늘날의 IT 환경은 훨씬 복잡하고 역동적입니다.&lt;/p&gt;
 &lt;blockquote&gt;
