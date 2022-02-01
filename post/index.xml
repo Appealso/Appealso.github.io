@@ -6,7 +6,16 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 31 Jan 2022 16:40:43 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Feb 2022 19:20:51 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsegmentation</title>
+      <link>https://appealso.github.io/p/microsegmentation/</link>
+      <pubDate>Tue, 01 Feb 2022 19:20:51 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/microsegmentation/</guid>
+      <description>마이크로 세그멘테이션 과거 컴퓨터 시스템, 네트워크 및 응용 프로그램은 상대적으로 정적이었습니다. 동일한 네트워크를 따라 흐르는 데이터 연결, 매일, 응용 프로</description>
+    </item>
+    
     <item>
       <title>[dreamhack] Carve Party</title>
       <link>https://appealso.github.io/p/dreamhack-carve-party/</link>
@@ -311,15 +320,6 @@
       
       <guid>https://appealso.github.io/p/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4-%EC%9E%91%EC%84%B1%EB%B2%95/</guid>
       <description>&lt;p&gt;Mark Down의 기본 문법을 정리&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Microsegmentation</title>
-      <link>https://appealso.github.io/p/microsegmentation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://appealso.github.io/p/microsegmentation/</guid>
-      <description>마이크로 세그멘테이션 과거 컴퓨터 시스템, 네트워크 및 응용 프로그램은 상대적으로 정적이었습니다. 동일한 네트워크를 따라 흐르는 데이터 연결, 매일, 응용 프로</description>
     </item>
     
   </channel>

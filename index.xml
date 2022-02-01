@@ -6,7 +6,119 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 31 Jan 2022 16:40:43 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 01 Feb 2022 19:20:51 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Microsegmentation</title>
+        <link>https://appealso.github.io/p/microsegmentation/</link>
+        <pubDate>Tue, 01 Feb 2022 19:20:51 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/microsegmentation/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/microsegmentation/cover.jpg" alt="Featured image of post Microsegmentation" /&gt;&lt;h1 id=&#34;마이크로-세그멘테이션&#34;&gt;마이크로 세그멘테이션&lt;/h1&gt;
+&lt;p&gt;과거 컴퓨터 시스템, 네트워크 및 응용 프로그램은 상대적으로 정적이었습니다. 동일한 네트워크를 따라 흐르는 데이터 연결, 매일, 응용 프로그램은 동일한 시스템에서 실행되었으며, 정적 방화벽 규칙 및 액세스 제어 목록 (ACL)을 사용하여 시스템 간 트래픽을 제한할 수 있습니다. 그러나 오늘날의 IT 환경은 훨씬 복잡하고 역동적입니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;다중 계층 애플리케이션은 종종 여러 데이터 센터와 클라우드 플랫폼 걸쳐 있습니다.&lt;/li&gt;
+&lt;li&gt;응용 프로그램은 매일 릴리스 되고 향상됩니다.&lt;/li&gt;
+&lt;li&gt;소프트웨어 모듈은 새 가상 머신에서 스핀업 된 다음 서로 다른 물리적 서버 간에 이동합니다.&lt;/li&gt;
+&lt;li&gt;새로운 인스턴스의 모듈은 요구에 따라 Scale up and down합니다.&lt;/li&gt;
+&lt;li&gt;조직에서는 지속적으로 애플리케이션 이동, 클라우드 리소스 활용 및 워크로드 통합 시 데이터 센터를 재구성 해야합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;대부분의 IT 영역은 이러한 변화 속도에 보조를 맞추었지만 보안프로세스는 여전히 수동적입니다. 이러한 결과로 기술 및 비즈니스 혁신에 브레이크를 겁니다.&lt;/p&gt;
+&lt;h2 id=&#34;1-기존-시스템&#34;&gt;1. 기존 시스템&lt;/h2&gt;
+&lt;p&gt;대부분의 데이터 센터는 아래 그림과 같이 클라우드 영역과 데이터 센터 영역으로 나뉩니다. 영역 간의 트래픽은 일반적으로 방화벽에서 트래픽 필터링 정책이 구성됩니다.
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 131; 
+			flex-basis: 315px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1.jpg&#34; data-size=&#34;410x312&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1.jpg&#34;
+			width=&#34;410&#34;
+			height=&#34;312&#34;
+			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1_hu83d78ecea49ee669b0e9c01dff812ea5_30033_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image1_hu83d78ecea49ee669b0e9c01dff812ea5_30033_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;Image 1&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;Image 1&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-기존-시스템의-문제점&#34;&gt;2. 기존 시스템의 문제점&lt;/h2&gt;
+&lt;p&gt;이와 같은 구성으로 인해 기존 시스템은 아래와 같은 문제점들이 발생합니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;공격자가 방화벽으로 구분되지 않은 영역에 침투를 할 수 있을 경우 그 안에 있는 많은 응용 프로그램을 대상으로 공격을 할 수 있음&lt;/li&gt;
+&lt;li&gt;방화벽의 가격은 비싸며 네트워크 재설계가 필요할 경우 비용이 많이 발생&lt;/li&gt;
+&lt;li&gt;방화벽은 일반적으로 수천 개의 규칙으로 구성되어 정책 관리가 힘듬&lt;/li&gt;
+&lt;li&gt;데이터 센터와 클라우드 플랫폼은 서로 다른 보안 도구를 사용하기 때문에 클라우드 환경과 데이터 센터 간의 액세스 규칙을 관리하기가 매우 어려움&lt;/li&gt;
+&lt;li&gt;전체 시스템을 효과적으로 모니터링할 수 없음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;3-마이크로-세그멘테이션microsegmentation&#34;&gt;3. 마이크로 세그멘테이션(Microsegmentation)&lt;/h2&gt;
+&lt;p&gt;마이크로 세그먼테이션(Microsegmentation)은 IT 환경을 통제 가능한 구역으로 분할해 각 워크로드를 상호 안전하게 격리하는 동시에 네트워크 보호를 더 세분화함으로써 승인되지 않은 횡적 이동 문제에 대처하는 방법론입니다.
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 94; 
+			flex-basis: 226px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2.jpg&#34; data-size=&#34;452x478&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2.jpg&#34;
+			width=&#34;452&#34;
+			height=&#34;478&#34;
+			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2_hu06402baea21292f08e1d8c0d357b5248_118605_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image2_hu06402baea21292f08e1d8c0d357b5248_118605_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;Image 2&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;Image 2&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;마이크로세그먼테이션은 성능과 관리에 중점을 둔 네트워크 세그먼테이션(network segmentation)의 단순한 연장선상에 있는 기술이 아닌 네트워크 보호 문제에 대처해 위험을 낮추고 동적인 IT 환경의 요구에 상응해 보안을 조정하기 위한 목적으로 설계된 기술입니다.
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 98; 
+			flex-basis: 235px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3.jpg&#34; data-size=&#34;404x412&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3.jpg&#34;
+			width=&#34;404&#34;
+			height=&#34;412&#34;
+			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3_hu26b3e765232fd1a3e4964ab624f6d1a8_79174_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image3_hu26b3e765232fd1a3e4964ab624f6d1a8_79174_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;Image 3&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;Image 3&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 114; 
+			flex-basis: 275px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4.jpg&#34; data-size=&#34;482x420&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4.jpg&#34;
+			width=&#34;482&#34;
+			height=&#34;420&#34;
+			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4_hu5e2a730531545c5f2c95705ae94befa0_92098_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image4_hu5e2a730531545c5f2c95705ae94befa0_92098_1024x0_resize_q75_box.jpg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;Image 4&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;Image 4&lt;/figcaption&gt;
+	
+&lt;/figure&gt;
+마이크로세그먼테이션은 하나의 중앙 정책을 사용하되 보안 집행은 각각의 개별 시스템으로 분산시킵니다. 경계만이 아니라 조직 네트워크 전반에서 세분화된 정책 실행을 가능하게 해줍니다. 이 접근 방식이 필요한 이유는 경계 보안이 종종 실패한다는 점, 그리고 클라우드 도입으로 인해 네트워크 경계에 구멍이 많아졌다는 점에있습니다.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>[dreamhack] Carve Party</title>
         <link>https://appealso.github.io/p/dreamhack-carve-party/</link>
         <pubDate>Mon, 31 Jan 2022 16:40:43 +0900</pubDate>
@@ -2340,118 +2452,6 @@ ex) [네이버](https://www.naver.com)
     &gt;네이버&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;수정중ㅎㅎ&#34;&gt;수정중ㅎㅎ&lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title>Microsegmentation</title>
-        <link>https://appealso.github.io/p/microsegmentation/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://appealso.github.io/p/microsegmentation/</guid>
-        <description>&lt;img src="https://appealso.github.io/p/microsegmentation/cover.jpg" alt="Featured image of post Microsegmentation" /&gt;&lt;h1 id=&#34;마이크로-세그멘테이션&#34;&gt;마이크로 세그멘테이션&lt;/h1&gt;
-&lt;p&gt;과거 컴퓨터 시스템, 네트워크 및 응용 프로그램은 상대적으로 정적이었습니다. 동일한 네트워크를 따라 흐르는 데이터 연결, 매일, 응용 프로그램은 동일한 시스템에서 실행되었으며, 정적 방화벽 규칙 및 액세스 제어 목록 (ACL)을 사용하여 시스템 간 트래픽을 제한할 수 있습니다. 그러나 오늘날의 IT 환경은 훨씬 복잡하고 역동적입니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;다중 계층 애플리케이션은 종종 여러 데이터 센터와 클라우드 플랫폼 걸쳐 있습니다.&lt;/li&gt;
-&lt;li&gt;응용 프로그램은 매일 릴리스 되고 향상됩니다.&lt;/li&gt;
-&lt;li&gt;소프트웨어 모듈은 새 가상 머신에서 스핀업 된 다음 서로 다른 물리적 서버 간에 이동합니다.&lt;/li&gt;
-&lt;li&gt;새로운 인스턴스의 모듈은 요구에 따라 Scale up and down합니다.&lt;/li&gt;
-&lt;li&gt;조직에서는 지속적으로 애플리케이션 이동, 클라우드 리소스 활용 및 워크로드 통합 시 데이터 센터를 재구성 해야합니다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;대부분의 IT 영역은 이러한 변화 속도에 보조를 맞추었지만 보안프로세스는 여전히 수동적입니다. 이러한 결과로 기술 및 비즈니스 혁신에 브레이크를 겁니다.&lt;/p&gt;
-&lt;h2 id=&#34;1-기존-시스템&#34;&gt;1. 기존 시스템&lt;/h2&gt;
-&lt;p&gt;대부분의 데이터 센터는 아래 그림과 같이 클라우드 영역과 데이터 센터 영역으로 나뉩니다. 영역 간의 트래픽은 일반적으로 방화벽에서 트래픽 필터링 정책이 구성됩니다.
-&lt;figure 
-	
-		class=&#34;gallery-image&#34; 
-		style=&#34;
-			flex-grow: 131; 
-			flex-basis: 315px&#34;
-	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1.jpg&#34; data-size=&#34;410x312&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1.jpg&#34;
-			width=&#34;410&#34;
-			height=&#34;312&#34;
-			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image1_hu83d78ecea49ee669b0e9c01dff812ea5_30033_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image1_hu83d78ecea49ee669b0e9c01dff812ea5_30033_1024x0_resize_q75_box.jpg 1024w&#34;
-			loading=&#34;lazy&#34;
-			alt=&#34;Image 1&#34;&gt;
-	&lt;/a&gt;
-	
-	&lt;figcaption&gt;Image 1&lt;/figcaption&gt;
-	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&#34;2-기존-시스템의-문제점&#34;&gt;2. 기존 시스템의 문제점&lt;/h2&gt;
-&lt;p&gt;이와 같은 구성으로 인해 기존 시스템은 아래와 같은 문제점들이 발생합니다.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;공격자가 방화벽으로 구분되지 않은 영역에 침투를 할 수 있을 경우 그 안에 있는 많은 응용 프로그램을 대상으로 공격을 할 수 있음&lt;/li&gt;
-&lt;li&gt;방화벽의 가격은 비싸며 네트워크 재설계가 필요할 경우 비용이 많이 발생&lt;/li&gt;
-&lt;li&gt;방화벽은 일반적으로 수천 개의 규칙으로 구성되어 정책 관리가 힘듬&lt;/li&gt;
-&lt;li&gt;데이터 센터와 클라우드 플랫폼은 서로 다른 보안 도구를 사용하기 때문에 클라우드 환경과 데이터 센터 간의 액세스 규칙을 관리하기가 매우 어려움&lt;/li&gt;
-&lt;li&gt;전체 시스템을 효과적으로 모니터링할 수 없음&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;3-마이크로-세그멘테이션microsegmentation&#34;&gt;3. 마이크로 세그멘테이션(Microsegmentation)&lt;/h2&gt;
-&lt;p&gt;마이크로 세그먼테이션(Microsegmentation)은 IT 환경을 통제 가능한 구역으로 분할해 각 워크로드를 상호 안전하게 격리하는 동시에 네트워크 보호를 더 세분화함으로써 승인되지 않은 횡적 이동 문제에 대처하는 방법론입니다.
-&lt;figure 
-	
-		class=&#34;gallery-image&#34; 
-		style=&#34;
-			flex-grow: 94; 
-			flex-basis: 226px&#34;
-	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2.jpg&#34; data-size=&#34;452x478&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2.jpg&#34;
-			width=&#34;452&#34;
-			height=&#34;478&#34;
-			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image2_hu06402baea21292f08e1d8c0d357b5248_118605_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image2_hu06402baea21292f08e1d8c0d357b5248_118605_1024x0_resize_q75_box.jpg 1024w&#34;
-			loading=&#34;lazy&#34;
-			alt=&#34;Image 2&#34;&gt;
-	&lt;/a&gt;
-	
-	&lt;figcaption&gt;Image 2&lt;/figcaption&gt;
-	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;마이크로세그먼테이션은 성능과 관리에 중점을 둔 네트워크 세그먼테이션(network segmentation)의 단순한 연장선상에 있는 기술이 아닌 네트워크 보호 문제에 대처해 위험을 낮추고 동적인 IT 환경의 요구에 상응해 보안을 조정하기 위한 목적으로 설계된 기술입니다.
-&lt;figure 
-	
-		class=&#34;gallery-image&#34; 
-		style=&#34;
-			flex-grow: 98; 
-			flex-basis: 235px&#34;
-	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3.jpg&#34; data-size=&#34;404x412&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3.jpg&#34;
-			width=&#34;404&#34;
-			height=&#34;412&#34;
-			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image3_hu26b3e765232fd1a3e4964ab624f6d1a8_79174_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image3_hu26b3e765232fd1a3e4964ab624f6d1a8_79174_1024x0_resize_q75_box.jpg 1024w&#34;
-			loading=&#34;lazy&#34;
-			alt=&#34;Image 3&#34;&gt;
-	&lt;/a&gt;
-	
-	&lt;figcaption&gt;Image 3&lt;/figcaption&gt;
-	
-&lt;/figure&gt;&lt;figure 
-	
-		class=&#34;gallery-image&#34; 
-		style=&#34;
-			flex-grow: 114; 
-			flex-basis: 275px&#34;
-	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4.jpg&#34; data-size=&#34;482x420&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4.jpg&#34;
-			width=&#34;482&#34;
-			height=&#34;420&#34;
-			srcset=&#34;https://appealso.github.io/p/microsegmentation/mircosegmentation-image4_hu5e2a730531545c5f2c95705ae94befa0_92098_480x0_resize_q75_box.jpg 480w, https://appealso.github.io/p/microsegmentation/mircosegmentation-image4_hu5e2a730531545c5f2c95705ae94befa0_92098_1024x0_resize_q75_box.jpg 1024w&#34;
-			loading=&#34;lazy&#34;
-			alt=&#34;Image 4&#34;&gt;
-	&lt;/a&gt;
-	
-	&lt;figcaption&gt;Image 4&lt;/figcaption&gt;
-	
-&lt;/figure&gt;
-마이크로세그먼테이션은 하나의 중앙 정책을 사용하되 보안 집행은 각각의 개별 시스템으로 분산시킵니다. 경계만이 아니라 조직 네트워크 전반에서 세분화된 정책 실행을 가능하게 해줍니다. 이 접근 방식이 필요한 이유는 경계 보안이 종종 실패한다는 점, 그리고 클라우드 도입으로 인해 네트워크 경계에 구멍이 많아졌다는 점에있습니다.&lt;/p&gt;
-</description>
         </item>
         
     </channel>
