@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='[문제] 존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법] URL 뒤'><title>[dreamhack] simple-ssti</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='[문제] 입력 폼에 데이터를 입력하여 맞으면 플래그, 틀리면 NOP !을 출력하는 HTML 페이지입니다. main 함수를 분석하여 올바른 입력 값을 찾아보세요 ! [해결법] 이 문제'><title>[dreamhack] funjs</title>
 
-<link rel='canonical' href='https://appealso.github.io/p/dreamhack-simple-ssti/'>
+<link rel='canonical' href='https://appealso.github.io/p/dreamhack-funjs/'>
 
-<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='[dreamhack] simple-ssti'>
-<meta property='og:description' content='[문제] 존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법] URL 뒤'>
-<meta property='og:url' content='https://appealso.github.io/p/dreamhack-simple-ssti/'>
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='[dreamhack] funjs'>
+<meta property='og:description' content='[문제] 입력 폼에 데이터를 입력하여 맞으면 플래그, 틀리면 NOP !을 출력하는 HTML 페이지입니다. main 함수를 분석하여 올바른 입력 값을 찾아보세요 ! [해결법] 이 문제'>
+<meta property='og:url' content='https://appealso.github.io/p/dreamhack-funjs/'>
 <meta property='og:site_name' content='SooHo&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='SSTI' /><meta property='article:published_time' content='2022-01-31T16:13:01&#43;09:00'/><meta property='article:modified_time' content='2022-01-31T16:13:01&#43;09:00'/>
-<meta name="twitter:title" content="[dreamhack] simple-ssti">
-<meta name="twitter:description" content="[문제] 존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법] URL 뒤">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-02-05T21:40:29&#43;09:00'/><meta property='article:modified_time' content='2022-02-05T21:40:29&#43;09:00'/>
+<meta name="twitter:title" content="[dreamhack] funjs">
+<meta name="twitter:description" content="[문제] 입력 폼에 데이터를 입력하여 맞으면 플래그, 틀리면 NOP !을 출력하는 HTML 페이지입니다. main 함수를 분석하여 올바른 입력 값을 찾아보세요 ! [해결법] 이 문제">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
 <script>
 var doNotTrack = false;
@@ -82,7 +82,7 @@ if (!doNotTrack) {
     
 
     <h2 class="article-title">
-        <a href="/p/dreamhack-simple-ssti/">[dreamhack] simple-ssti</a>
+        <a href="/p/dreamhack-funjs/">[dreamhack] funjs</a>
     </h2>
 
     
@@ -100,7 +100,7 @@ if (!doNotTrack) {
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jan 31, 2022</time>
+                <time class="article-time--published">Feb 05, 2022</time>
             </div>
         
 
@@ -127,26 +127,26 @@ if (!doNotTrack) {
     <section class="article-content">
     <h2 id="문제">[문제]</h2>
 <blockquote>
-<p>존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. <!-- raw HTML omitted -->
-SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다.<!-- raw HTML omitted --></p>
+<p>입력 폼에 데이터를 입력하여 맞으면 플래그, 틀리면 NOP !을 출력하는 HTML 페이지입니다.
+main 함수를 분석하여 올바른 입력 값을 찾아보세요 !</p>
 </blockquote>
 <h2 id="해결법">[해결법]</h2>
 <blockquote>
-<p>URL 뒤에 {{7*7}}을 넣으면 49가 나오는것으로 보아 SSTI 취약점이 있는것을 추측 할 수 있다.<!-- raw HTML omitted -->
-{URL}/{{config}}로 시도 시에 키 값을 간단한게 얻을 수 있었다.<!-- raw HTML omitted --></p>
+<p>이 문제는 난독화된 html 파일을 해독하는 문제였다. 끝에 for loop만 잘 수정해주면 답이 나오는 문제였는데 변수 별로 의미를 파악하려다 보니 삽질을 좀 했다. for loop 수정 부분은 아래 참고하면 된다.</p>
 </blockquote>
-
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">36</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">s</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">(</span>
+    <span class="nx">operator</span><span class="p">[</span><span class="nx">i</span> <span class="o">%</span> <span class="nx">operator</span><span class="p">[</span><span class="nx">_0x374fd6</span><span class="p">(</span><span class="mh">0x17c</span><span class="p">)]](</span><span class="nx">_0x4949</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">_0x42931</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+</code></pre></div>
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/ssti/">SSTI</a>
-        
-    </section>
-
 
     
     <section class="article-copyright">
@@ -177,22 +177,22 @@ SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt,
                 
                     
 <article class="">
-    <a href="/p/dreamhack-funjs/">
+    <a href="/p/dreamhack-carve-party/">
         
         
         <div class="article-details">
-            <h2 class="article-title">[dreamhack] funjs</h2>
+            <h2 class="article-title">[dreamhack] Carve Party</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/p/dreamhack-carve-party/">
+    <a href="/p/dreamhack-simple-ssti/">
         
         
         <div class="article-details">
-            <h2 class="article-title">[dreamhack] Carve Party</h2>
+            <h2 class="article-title">[dreamhack] simple-ssti</h2>
         </div>
     </a>
 </article>
