@@ -264,6 +264,94 @@ python으로 간단히 요청 코드를 작성하면 해결된다.
         <item>
         <title>Log4j 취약점 정리</title>
         <link>https://appealso.github.io/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</link>
+        <pubDate>Sun, 26 Dec 2021 20:27:18 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</guid>
+        <description>&lt;p&gt;최근 발표된 log4j 라이브러리에서 발견된 취약점을 정리하려고 합니다.
+공격 방법에 비해 영향도가 너무 높아 크게 이슈가 된 취약점이 아닐까 생각이 듭니다.&lt;/p&gt;
+&lt;h4 id=&#34;개요&#34;&gt;[개요]&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;java 에서 사용되는 log4j 라이브러리에서 취약점이 발표 되었고, 대부분의 라이브러리&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;주요내용&#34;&gt;[주요내용]&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Apache Log4j 2에서 발생하는 원격코드 실행 취약점(CVE-2021-44228)
+Apache Log4j 2에서 발생하는 원격코드 실행 취약점(CVE-2021-45046)
+Apache Log4j 1.x에서 발생하는 원격코드 실행 취약점(CVE-2021-4104)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;영향받는버전&#34;&gt;[영향받는버전]&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;CVE-2021-44228: 2.0-beta9 ~ 2.14.1 이하 (2.3.1, 2.12.2, 2.12.3 제외)
+CVE-2021-45046: 2.0-beta9 ~ 2.15.0 버전 (2.3.1, 2.12.2, 2.12.3 제외)
+CVE-2021-4104: 1.x 버전 ※ JMSAppender를 사용하지 않는 경우 취약점 영향 없음&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;취약점-설명&#34;&gt;[취약점 설명]&lt;/h4&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2021/12/15/image1-v2-3.jpg&#34; &gt;
+		&lt;img src=&#34;https://d2908q01vomqb2.cloudfront.net/22d200f8670dbdb3e253a90eee5098477c95c23d/2021/12/15/image1-v2-3.jpg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;log4j&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;log4j&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;log4j 공격 방법은 심플 합니다. 공격자는 log4j를 사용하여 로그를 남기는 부분에 payload를 삽입하면 공격은 끝납니다.
+공격이 성공하면 자신이 운영하고 있는 LDAP서버에서 공격 코드를 다운로드받아 공격을 시도한 서버에서 해당 코드를 실행시키는 원리입니다.
+공격코드를 주입하는 방식에 따라 분류됩니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CVE-2021-44228 : log4j로 로그를 남기는 부분에 직접 payload를 삽입하는 방식&lt;/li&gt;
+&lt;li&gt;CVE-2021-45046 : 변수 등에 payload를 삽입해 두고, 해당 변수를 호출하는 방식&lt;/li&gt;
+&lt;li&gt;CVE-2021-4104 : 환경변수파일(ex.log4j.properties)에 payload를 삽입해 놓고 로그를 남길때 공격하는 방식(로그를 남길때 payload가 실행됨)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;공격가능한시나리오&#34;&gt;[공격가능한시나리오]&lt;/h3&gt;
+&lt;p&gt;공격시나리오는 아래 3가지를 생각해보았습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(1) 외부에서 Payload를 삽입을 시도하며 외부에 미리 구성해둔 LDAP서버로 부터 공격 코드를 받아 가게 하는 방식&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;공격자 입장에서는 가장 흔한 공격 방식일 것 같고, OutBound 정책만 잘 구성되어있다면 영향도가 없을 것으로 예상됐습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(2) 내부에서 Payload를 삽입을 시도하며 외부에 미리 구성해둔 LDAP서버로 부터 공격 코드를 받아 가게 하는 방식&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;내부에서 공격 가능한 포인트를 찾아 외부에 구성해놓은 서버로 부터 공격코드를 받아 실행 하는 방식을 생각해 보았는데 이것 역시 OutBound 정책이 잘 구성되어있으면 영향도가 낮을 것으로 생각되었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(3) 내부에서 Payload를 삽입을 시도하며 내부에 미리 구성해둔 LDAP서버로 부터 공격 코드를 받아 가게 하는 방식&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;내부에서 공격서버를 구성하고, 내부에서 공격 코드를 실행하는 방식을 생각해 보았는데 내부 서버 팜의 경우 방화벽이 없기 떄문에 가장 영향도 높은 공격이 가능할 것으로 예상되었습니다. Spring Boot 같은 것을 사용하면 LDAP 서버를 구성하는 것이 쉽기 때문에 공격 자체도 어렵지 않은 것으로 예상이 되었습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;공격-테스트방법&#34;&gt;[공격 테스트방법]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;LDAP 서버를 구성하면 시간이 들기때문에 페이로가 삽입될 만한 부분을 찾고 NC를 사용해서 리스너를 열고, 해당 리스너로 패킷이 들어오는지 여부를 체크하면 쉽게 공격 가능여부를 테스트 해볼 수 있습니다.
+우회 공격을 시도할 경우 Github에서 payload 생성기 같은 것들을 찾아서 시도해볼 수 있습니다. 링크는 아래 참조.
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/woodpecker-appstore/log4j-payload-generator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/woodpecker-appstore/log4j-payload-generator&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;조치방안&#34;&gt;[조치방안]&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;조치 방법은 안전한 버전으로 업데이트 하는것이겠지만, 1.x버전에서 안전한 버전으로 올리는 것은 영향도가 높기 때문에 적용하기까지 시간이 소요될 것입니다.
+이를 위해서 할 수 있는 조치는 ips에서 룰생성을 통해 들어오는 공격을 방어하고 문제되는 JNDI LOOKUP기능을 비활성화 하는 방법이 있을 것입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;참조&#34;&gt;[참조]&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://aws.amazon.com/ko/blogs/korea/using-aws-security-services-to-protect-against-detect-and-respond-to-the-log4j-vulnerability/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://aws.amazon.com/ko/blogs/korea/using-aws-security-services-to-protect-against-detect-and-respond-to-the-log4j-vulnerability/&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=36389&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=36389&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Log4j 취약점 정리</title>
+        <link>https://appealso.github.io/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</link>
         <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
         
         <guid>https://appealso.github.io/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</guid>
