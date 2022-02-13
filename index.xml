@@ -6,7 +6,26 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 05 Feb 2022 21:40:29 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 13 Feb 2022 11:03:12 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[dreamhack] session-basic</title>
+        <link>https://appealso.github.io/p/dreamhack-session-basic/</link>
+        <pubDate>Sun, 13 Feb 2022 11:03:12 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/dreamhack-session-basic/</guid>
+        <description>&lt;h2 id=&#34;문제&#34;&gt;[문제]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;쿠키와 세션으로 인증 상태를 관리하는 간단한 로그인 서비스입니다.
+admin 계정으로 로그인에 성공하면 플래그를 획득할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;해결법&#34;&gt;[해결법]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이 문제는 admin 세션을 탈취하여 변조하면 되는 문제였다.
+제공하는 소스를 확인해보면 &lt;!-- raw HTML omitted --&gt;/admin 페이지가 있는 것을 확인 할 수있는데 해당 페이지에서 admin 세션 값을 획득 할 수 있었다.
+해당 세션 정보로 쿠키에 저장되어있는 세션값을 변조하면 통과할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>[dreamhack] funjs</title>
         <link>https://appealso.github.io/p/dreamhack-funjs/</link>
         <pubDate>Sat, 05 Feb 2022 21:40:29 +0900</pubDate>
