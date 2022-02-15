@@ -6,7 +6,16 @@
     <description>Recent content in Categories on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Feb 2022 11:03:12 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Feb 2022 20:52:35 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OWASP</title>
+      <link>https://appealso.github.io/categories/owasp/</link>
+      <pubDate>Tue, 15 Feb 2022 20:52:35 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/categories/owasp/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ctf</title>
       <link>https://appealso.github.io/categories/ctf/</link>
