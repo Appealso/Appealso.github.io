@@ -6,7 +6,218 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 15 Feb 2022 20:52:35 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 17 Feb 2022 20:39:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>네트워크 기초 정리 (1) - 네트워크 장비</title>
+        <link>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/</link>
+        <pubDate>Thu, 17 Feb 2022 20:39:00 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/network.jpeg" alt="Featured image of post 네트워크 기초 정리 (1) - 네트워크 장비" /&gt;&lt;p&gt;업무만 하다기 보니 기초지식을 점점 잊는 것 같아 정리하는 시간을 가져보려고 합니다. 이번 포스트에서는 네트워크 기초인 네트워크 장비들에 대해 대략적인 내용을 정리했습니다. 추가가 필요한 내용은 덧글 남겨주시면 추가하도록 하겠습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;네트워크-장비&#34;&gt;네트워크 장비&lt;/h2&gt;
+&lt;h3 id=&#34;스위치&#34;&gt;스위치&lt;/h3&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 261; 
+			flex-basis: 626px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/switch.jpeg&#34; data-size=&#34;700x268&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/switch.jpeg&#34;
+			width=&#34;700&#34;
+			height=&#34;268&#34;
+			srcset=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/switch_hu9531997a997ff2777ecb41684bf88513_58788_480x0_resize_q75_box.jpeg 480w, https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/switch_hu9531997a997ff2777ecb41684bf88513_58788_1024x0_resize_q75_box.jpeg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;스위치&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;스위치&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;스위치는 PC나 서버에 있어 네트워크 입구에 해당하는 네트워크 기기이다.&lt;/li&gt;
+&lt;li&gt;스위치는 MAC 주소를 사용해 같은 네트워크의 포트 간 데이터 전송을 수행한다&lt;/li&gt;
+&lt;li&gt;Switch는 전통적인 L2 Switch 와 Multi Layer Switch(MLS) L3 / L4 / L7 Switch로 구분&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;스위치-기능&#34;&gt;스위치 기능&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;특정 포트 활성화 및 비활성화&lt;/li&gt;
+&lt;li&gt;이중(반이중 또는 전이중) 설정 및 대역폭 구성&lt;/li&gt;
+&lt;li&gt;특정 포트의 서비스 품질(QoS) 수준 설정&lt;/li&gt;
+&lt;li&gt;MAC 필터링 및 기타 액세스 제어 기능 활성화&lt;/li&gt;
+&lt;li&gt;링크 상태를 포함한 기기의 SNMP 모니터링 설정&lt;/li&gt;
+&lt;li&gt;네트워크 트래픽 모니터링을 위한 포트 미러링 설정&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;스위치-종류&#34;&gt;스위치 종류&lt;/h4&gt;
+&lt;h5 id=&#34;l2-스위치l2-switch&#34;&gt;L2 스위치(L2 Switch)&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;스위치의 기본 정의에 가장 부합하는 것이 L2 스위치&lt;/li&gt;
+&lt;li&gt;L2 스위치를 그냥 스위치로 부르기도 함&lt;/li&gt;
+&lt;li&gt;OSI7 계층에서 Layer 2 는 데이터 링크 계층 (Data Link Layer)장비&lt;/li&gt;
+&lt;li&gt;이더넷 레벨에서만 동작하기 때문에 IP Address 단위 서비스인 라우팅이 불가&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;l3-스위치l3-switch&#34;&gt;L3 스위치(L3 Switch)&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;네트워크 계층(Network Layer)에서 동작을 하므로 IP 스위칭이 가능&lt;/li&gt;
+&lt;li&gt;즉 L3 스위치는 라우터 기능도 갖게 됨&lt;/li&gt;
+&lt;li&gt;L3 스위치의 경우 라우터보다 가격 및 성능은 우수하나 소프트웨어 기능 (F/W, I PS, VPN 등 )이 적다는 차이점이 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;l4-스위치l4-switch&#34;&gt;L4 스위치(L4 Switch)&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;L4 스위치는 계층 4 단계인 전송 계층(Transport Layer)에서 동작&lt;/li&gt;
+&lt;li&gt;L4 단계의 프로토콜인 TCP/UDP 등에서 스위칭을 수행&lt;/li&gt;
+&lt;li&gt;TCP 와 UDP 등의 헤더를 보고 그것이 FTP 인지 HTTP인지 아니면 SMTP 인지를 구분한 후 어떤 것을 우선시해서 스위칭 할지 판단 할 수 있음&lt;/li&gt;
+&lt;li&gt;즉, 로드 밸런싱이 가능해 진다는 것으로 이는 L3 스위치 이하에서는 불가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;로드 밸런싱(Load Balancing):컴퓨터 네트워크 기술의 일종으로 둘 혹은 셋 이상의 중앙처리장치 혹은 저장 장치와 같은 컴퓨터 자원들에게 작업을 나누는 것&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;l7-스위치l7-switch&#34;&gt;L7 스위치(L7 Switch)&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;L7 스위치 는 OSI7 계층 중 가장 상위의 계층인 응용 계층(Application Layer)에서 동작을 하는 스위치로 상당히 다양한 조건으로 로드 밸런싱이 가능&lt;/li&gt;
+&lt;li&gt;이메일의 제목이나 문자열을 보고 내용을 파악한다거나 HTTP 의 URL, 또는 FTP 의 파일명, 쿠키 정보 등을 분석해서 보안에 유리하고 더욱 정교한 로드 밸런싱을 가능케 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;라우터&#34;&gt;라우터&lt;/h3&gt;
+&lt;h4 id=&#34;개요&#34;&gt;개요&lt;/h4&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 174; 
+			flex-basis: 418px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router1.png&#34; data-size=&#34;820x470&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router1.png&#34;
+			width=&#34;820&#34;
+			height=&#34;470&#34;
+			srcset=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router1_hud45241da259b0d934d93acb563cd7687_77269_480x0_resize_box_3.png 480w, https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router1_hud45241da259b0d934d93acb563cd7687_77269_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;라우터&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;라우터&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;서로 다른 네트워크 간에 중계 역활을 해주는 장치&lt;/li&gt;
+&lt;li&gt;라우터는 IP 주소를 사용, 네트워크 간의 데이터 전송을 수행하며 이를 ‘Routing’ 이라고 함&lt;/li&gt;
+&lt;li&gt;NAT(Network Address Translation), 방화벽, VPN(Virtual Private Network), QoS(Quality of Service)등 다양한 부가 기능을 함께 제공하기도 함&lt;/li&gt;
+&lt;li&gt;L3 스위치가 라우터 역할을 하기도 함&lt;/li&gt;
+&lt;li&gt;OSI7계층 중 3 계층에 속하는 장비&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;라우팅-프로토콜의-종류&#34;&gt;라우팅 프로토콜의 종류&lt;/h4&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 112; 
+			flex-basis: 269px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router2.png&#34; data-size=&#34;1280x1142&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router2.png&#34;
+			width=&#34;1280&#34;
+			height=&#34;1142&#34;
+			srcset=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router2_hu953460d82ba0ef2ee3e90e6245c07f47_136132_480x0_resize_box_3.png 480w, https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router2_hu953460d82ba0ef2ee3e90e6245c07f47_136132_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;라우팅프로토콜&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;라우팅프로토콜&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&#34;static-routing정적-라우팅&#34;&gt;Static Routing(정적 라우팅)&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;관리자가 네트워크에 대한 경로 정보를 직접 지정하여 라우팅&lt;/li&gt;
+&lt;li&gt;관리자에 의한 라우팅 정보만을 참조하여 라우터 자체 부담이 하락&lt;/li&gt;
+&lt;li&gt;동적 라우팅보다 빠르며 안정적&lt;/li&gt;
+&lt;li&gt;네트워크가 복잡해질수록 관리가 힘듬&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;dynamic-routing동적-라우팅&#34;&gt;Dynamic Routing(동적 라우팅)&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;대규모 네트워크에 사용&lt;/li&gt;
+&lt;li&gt;라우터 간의 변경된 네트워크에 대한 정보를 자동으로 교환하여 라우팅&lt;/li&gt;
+&lt;li&gt;Routing table을 자동으로 작성하여 관리자의 초기 설정만 필요&lt;/li&gt;
+&lt;li&gt;Static Routing 보다 메모리를 많이 차지한다는 단점이 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 126; 
+			flex-basis: 303px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router3.png&#34; data-size=&#34;1280x1011&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router3.png&#34;
+			width=&#34;1280&#34;
+			height=&#34;1011&#34;
+			srcset=&#34;https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router3_hubb0466de2e398c6edfa07d9acd74cf98_231078_480x0_resize_box_3.png 480w, https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/router3_hubb0466de2e398c6edfa07d9acd74cf98_231078_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;라우팅프로토콜&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;라우팅프로토콜&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;igpinternal-gateway-routing-protocol&#34;&gt;IGP(Internal Gateway Routing Protocol)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;동일 그룹 네트워크에서 라우팅 정보를 교환할 때 사용되는 라우팅 프로토콜&lt;/li&gt;
+&lt;li&gt;라우터로 서로 연결되어 있는 네트워크 집합을 도메인 or AS(Autonomous System)이라고 함&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;egpexternal-gateway-routing-protocol&#34;&gt;EGP(External Gateway Routing Protocol)&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;다른 그룹과 라우팅 정보를 교환할때 사용되는 라우팅 프로토콜&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;distance-vector&#34;&gt;Distance Vector&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Routing table을 위한 요소를 거리와 방향에 중점을 둔 라우팅 알고리즘&lt;/li&gt;
+&lt;li&gt;Routing table을 연결된 라우터와 교환하여 생성&lt;/li&gt;
+&lt;li&gt;홉 수를 기준으로 최적 경로를 결정&lt;/li&gt;
+&lt;li&gt;모든 라우터들은 주기적으로 서로 Routing table을 교환하면서 Routing 정보에 변화가 없는지 관리하는데 이에 대한 프로토콜로 RIP와 IGRP가 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;link-state-vector&#34;&gt;Link State Vector&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Link State는 Distance Vector가 가지고있는 단점을 극복하고자 만들어짐&lt;/li&gt;
+&lt;li&gt;Link State는 네트워크의 토폴로지 정보를 DB로 구성하고 이를 사용하여 SPF(Shortest Path First) 알고리즘을 사용하여 Routing table을 작성&lt;/li&gt;
+&lt;li&gt;네트워크 상에서 변화가 있을때만 Routing 정보를 전달&lt;/li&gt;
+&lt;li&gt;주기적으로 Routing 정보를 전송하는 Distance Vector보다는 트래픽이 적음&lt;/li&gt;
+&lt;li&gt;토폴로지 등 다른 정보를 사용하기에 메모리를 많이 사용&lt;/li&gt;
+&lt;li&gt;계층적 구조를 가져 환경설정이 복잡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;리피터&#34;&gt;리피터&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;신호를 수신하여 신호를 증폭한 후 다음 구간으로 재전송하는 장치&lt;/li&gt;
+&lt;li&gt;OSI 7계층 중에서 1계층인 물리계층에서 동작하는 장비&lt;/li&gt;
+&lt;li&gt;근거리 통신망을 구성하는 세그먼트들을 확장하거나 서로 연결하는데 주로 사용&lt;/li&gt;
+&lt;li&gt;신호 감쇠를 보상해 주기 때문에 신호를 먼 거리까지 데이터를 전달하는 것이 가능&lt;/li&gt;
+&lt;li&gt;전체 LAN에 접속할 수 있는 장비의 수 증가&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;허브&#34;&gt;허브&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;OSI 7계층 중에서 1계층인 물리계층에서 동작하는 장비&lt;/li&gt;
+&lt;li&gt;다수의 pc와 장치들을 묶어서 LAN을 구성할 때 각각의 PC에 연결된 노들을 한곳으로 모으는 역할을 해주는 장치&lt;/li&gt;
+&lt;li&gt;UTP 랜 케이블을 이용하여 가까운 거리에 있는 컴퓨터들을 연결시켜 주는 네트워크 장비&lt;/li&gt;
+&lt;li&gt;허브는 단순히 중계기 역할&lt;/li&gt;
+&lt;li&gt;컴퓨터 b가 컴퓨터 c로 신호를 보내면, 그 신호는 c한테만 가는게 아니라 연결된 모든 컴퓨터로 전송(브로드캐스트(Broadcast))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;참고-및-출처&#34;&gt;참고 및 출처&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.naver.com/PostView.nhn?blogId=withnetworks&amp;amp;logNo=222004830412&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.naver.com/PostView.nhn?blogId=withnetworks&amp;logNo=222004830412&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://puzzle-puzzle.tistory.com/entry/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-%ec%9a%a9%ec%96%b4-%eb%9d%bc%ec%9a%b0%ed%84%b0%eb%9e%80-Router&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://puzzle-puzzle.tistory.com/entry/네트워크-용어-라우터란-Router&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://nasa1515.tech/network-for-beginner/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://nasa1515.tech/network-for-beginner/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://nasa1515.tech/network-for-beginner2/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://nasa1515.tech/network-for-beginner2/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Owasp Top10 2021</title>
         <link>https://appealso.github.io/p/owasp-top10-2021/</link>
         <pubDate>Tue, 15 Feb 2022 20:52:35 +0900</pubDate>
@@ -185,9 +396,9 @@
 ■ 직렬화/역직렬화 라이브러리를 사용하는 경우, 직렬화 된 데이터에 대해 무결성 검증을 수행&lt;/p&gt;
 &lt;h3 id=&#34;a09---security-logging-and-monitoring-failures-보안-로깅과-모니터링-실패&#34;&gt;A09 - Security Logging and Monitoring Failures (보안 로깅과 모니터링 실패)&lt;/h3&gt;
 &lt;h4 id=&#34;개요-7&#34;&gt;개요&lt;/h4&gt;
-&lt;p&gt;■ OWASP Top 10 - 2017에서 A10번에 위치하던 Insufficient Logging &amp;amp; Monitoring(불충분한 로깅과 모니터링)항목으로 이름이 새롭게 변경됨
-■ 해당 항목은 보안 업계 설문조사에서 3위를 차지하였고, 한단계 상승한 아홉 번째 위치 (A09)로 이동하였다.
-■ 해당 항목은 기존 보다 더 많은 종류의 이슈를 포함하도록 확장됨
+&lt;p&gt;■ OWASP Top 10 - 2017에서 A10번에 위치하던 Insufficient Logging &amp;amp; Monitoring(불충분한 로깅과 모니터링)항목으로 이름이 새롭게 변경됨&lt;br&gt;
+■ 해당 항목은 보안 업계 설문조사에서 3위를 차지하였고, 한단계 상승한 아홉 번째 위치 (A09)로 이동하였다.&lt;br&gt;
+■ 해당 항목은 기존 보다 더 많은 종류의 이슈를 포함하도록 확장됨&lt;br&gt;
 ■ 적절한 로깅과 모니터링이 없다면 공격을 감지하고 대응할 수가 없기 때문에, 취약점 공격 예방 뿐 아니라 공격 발생 감지 및 대응까지 포함하는 것으로 개정됨&lt;/p&gt;
 &lt;h4 id=&#34;취약점-예시-7&#34;&gt;취약점 예시&lt;/h4&gt;
 &lt;p&gt;■ 로그인, 인증 실패, 권한 설정 등 중요 기능 수행에 대한 로깅이 없는 경우&lt;br&gt;

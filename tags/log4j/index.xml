@@ -6,16 +6,7 @@
     <description>Recent content in log4j on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Feb 2022 20:52:35 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/log4j/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Owasp Top10 2021</title>
-      <link>https://appealso.github.io/p/owasp-top10-2021/</link>
-      <pubDate>Tue, 15 Feb 2022 20:52:35 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/p/owasp-top10-2021/</guid>
-      <description>OWASP 정의 ■ OWASP(The Open Web Application Security Project)는 웹 애플리케이션 보안 증진을 목표로 하는 비영리단체 ■ OWASP Top 10 이라는 안전한 웹 애플리케이션 개발을 위한 가이드를 2004</description>
-    </item>
-    
+    <lastBuildDate>Sun, 26 Dec 2021 20:27:18 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/log4j/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Log4j 취약점 정리</title>
       <link>https://appealso.github.io/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</link>

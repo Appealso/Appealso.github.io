@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>네트워크 장비 on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/</link>
+    <description>Recent content in 네트워크 장비 on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Feb 2022 20:39:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>네트워크 기초 정리 (1) - 네트워크 장비</title>
+      <link>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/</link>
+      <pubDate>Thu, 17 Feb 2022 20:39:00 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/</guid>
+      <description>업무만 하다기 보니 기초지식을 점점 잊는 것 같아 정리하는 시간을 가져보려고 합니다. 이번 포스트에서는 네트워크 기초인 네트워크 장비들에 대해 대략적인 내용을 정리</description>
+    </item>
+    
+  </channel>
+</rss>
