@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSI 7 Layer on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/osi-7-layer/</link>
+    <description>Recent content in OSI 7 Layer on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Feb 2022 14:28:48 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/osi-7-layer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>네트워크 기초 정리 (2) - OSI 7 Layer</title>
+      <link>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/</link>
+      <pubDate>Sat, 19 Feb 2022 14:28:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/</guid>
+      <description>이번 포스트에서는 네트워크 기초중의 기초인 OSI 7 Layer의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~ OSI 7 계층 OSI 7 Layer L1 물리 계층</description>
+    </item>
+    
+  </channel>
+</rss>

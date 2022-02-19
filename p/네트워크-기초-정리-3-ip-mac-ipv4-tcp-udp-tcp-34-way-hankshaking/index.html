@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='이번 포스트에서는 네트워크 기초중의 기초인 IP/MAC,TCP/UDP의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~ MAC Address/IP Address MAC Address'><title>네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking'>
+<meta property='og:description' content='이번 포스트에서는 네트워크 기초중의 기초인 IP/MAC,TCP/UDP의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~ MAC Address/IP Address MAC Address'>
+<meta property='og:url' content='https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Network' /><meta property='article:tag' content='기초지식' /><meta property='article:tag' content='IP' /><meta property='article:tag' content='MAC' /><meta property='article:tag' content='IPv4' /><meta property='article:tag' content='TCP' /><meta property='article:tag' content='UDP' /><meta property='article:tag' content='TCP 3-4way HandShaking' /><meta property='article:published_time' content='2022-02-19T15:11:48&#43;09:00'/><meta property='article:modified_time' content='2022-02-19T15:11:48&#43;09:00'/><meta property='og:image' content='https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/network.jpeg' />
+<meta name="twitter:title" content="네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking">
+<meta name="twitter:description" content="이번 포스트에서는 네트워크 기초중의 기초인 IP/MAC,TCP/UDP의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~ MAC Address/IP Address MAC Address"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/network.jpeg' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/network_hu7c2d7e014291615816b31fb9f4a70106_112373_800x0_resize_q75_box.jpeg"
+                        srcset="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/network_hu7c2d7e014291615816b31fb9f4a70106_112373_800x0_resize_q75_box.jpeg 800w, /p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/network_hu7c2d7e014291615816b31fb9f4a70106_112373_1600x0_resize_q75_box.jpeg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <h2 class="article-title">
+        <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/">네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 19, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    5 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p>이번 포스트에서는 네트워크 기초중의 기초인 IP/MAC,TCP/UDP의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~</p>
+<h2 id="mac-addressip-address">MAC Address/IP Address</h2>
+<h3 id="mac-address">MAC Address</h3>
+<h4 id="개요">개요</h4>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 166; 
+			flex-basis: 400px"
+	>
+	<a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/macaddress.png" data-size="750x450">
+		<img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/macaddress.png"
+			width="750"
+			height="450"
+			srcset="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/macaddress_hu5bfa002513742ab46d288416cf09a4ae_43170_480x0_resize_box_3.png 480w, /p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/macaddress_hu5bfa002513742ab46d288416cf09a4ae_43170_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="MAC">
+	</a>
+	
+	<figcaption>MAC</figcaption>
+	
+</figure></p>
+<ul>
+<li>2계층에서 사용하는 네트워크 인터페이스에 할당된 고유 식별 주소</li>
+<li>OUI (24bit)와 UAA (24bit)로 이루어짐
+<ul>
+<li>OUI (Organizational Unique Identifier)</li>
+<li>UAA (Universally Administered Address)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>MAC 주소 변경<br>
+BIA상태로 NIC에 할당되어 있다. 일반적으로 ROM형태로 NIC에 고정시키는 것이기 때문에 주소 변경이 어려움
+하지만 결국 메모리에 적재되어 구동되는 것이기 때문에 여러 가지 방법으로 이용해 변경된 MAC주소로 NIC를 동작시킬 수 있음</p>
+</blockquote>
+<h4 id="동작방식">동작방식</h4>
+<ol>
+<li>NIC는 자신의 MAC주소를 가지고 있고, 전기 신호가 들어오면 Data Link Layer에서 패킷으로 변환하여 목적지 MAC주소를 확인</li>
+<li>만약 자신의 주소와 동일하지 않으면 패킷을 폐기</li>
+<li>자신의 주소 or 브로드캐스트 or 멀티캐스트 그룹주소인 경우 패킷 정보를 상위 계층 (Network Layer) 으로 넘김</li>
+</ol>
+<blockquote>
+<p>무차별 모드(Promiscuous Mode)<br>
+기본 NIC 동작 방식은 다른 목적지를 가진 패킷을 분석할 수 없음
+하지만 다른 목적지를 가진 패킷을 분석하거나 수집해야 할 경우, Promiscuous Mode로 NIC를 구성
+이는 자신의 MAC주소와 상관없는 패킷이 들어와도 분석할 수 있도록 메모리에 적재시키기 때문</p>
+</blockquote>
+<h3 id="ip-address">IP Address</h3>
+<h4 id="개요-1">개요</h4>
+<ul>
+<li>네트워크 통신에 있어 각각의 통신기기(컴퓨터,스마트폰 등)에 할당된 식별번호를 나타냄</li>
+<li>IPv4, IPv6가 존재
+<ul>
+<li>IPv4 : 32bit 10진수 (8bit x 4byte)</li>
+<li>IPv6 : 128bit</li>
+</ul>
+</li>
+<li>4개의 옥텟(Octet)이라고 부르는 8bit 단위로 나누고 각 옥텟은 &ldquo;.&ldquo;으로 구분한</li>
+<li>네트워크 주소와 호스트 주소로 나뉨
+<ul>
+<li>네트워크 주소: : 호스트들을 모은 네트워크를 지칭하는 주소. 네트워크 주소가 동일한 네트워크를 로켈 네트워크라고 함</li>
+<li>호스트 주소 : 하나의 네트워크 내에 존재하는 호스트를 구분하기 위한 주소</li>
+</ul>
+</li>
+</ul>
+<h2 id="ipv4--주소체계class">IPv4 : 주소체계(Class)</h2>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 249; 
+			flex-basis: 597px"
+	>
+	<a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/ipclass.png" data-size="548x220">
+		<img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/ipclass.png"
+			width="548"
+			height="220"
+			srcset="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/ipclass_huedc9df261ac0f5fc188a12acda8fc2dd_44118_480x0_resize_box_3.png 480w, /p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/ipclass_huedc9df261ac0f5fc188a12acda8fc2dd_44118_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="ipclass">
+	</a>
+	
+	<figcaption>ipclass</figcaption>
+	
+</figure></p>
+<ul>
+<li>사설 IP 영역 : 기업 내 인트라넷 등 내부망에 쓰기 위한 예약주소
+<ul>
+<li>A Class : 10.0.0.0 ~ 10.255.255.255</li>
+<li>B Class : 172.16.0.0 ~ 172.31.255.255</li>
+<li>C Class : 192.168.0.0 ~ 192.168.255.255</li>
+</ul>
+</li>
+<li>사용 가능한 호스트 개수&gt;: 2^n-2 (브로드케스트 주소 2개 제외)</li>
+</ul>
+<h2 id="서브-네트워크sub-network">서브 네트워크(Sub Network)</h2>
+<h3 id="서브네팅subnetting">서브네팅(Subnetting)</h3>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 239; 
+			flex-basis: 574px"
+	>
+	<a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/subnetting.png" data-size="347x145">
+		<img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/subnetting.png"
+			width="347"
+			height="145"
+			srcset="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/subnetting_hu8ebe79984071c793a37ab6d83f8d2f20_9458_480x0_resize_box_3.png 480w, /p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/subnetting_hu8ebe79984071c793a37ab6d83f8d2f20_9458_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="subnetting">
+	</a>
+	
+	<figcaption>subnetting</figcaption>
+	
+</figure></p>
+<ul>
+<li>네트워크 세분화를 위한 IP 주소의 구성을 변경
+<ul>
+<li>IP 주소 체계는 [2단계 (네트워크 ID - 호스트 ID)] 에서</li>
+<li>[다시 3단계(네트워크 - 서브네트 - 호스트] 로 네트워크 세분화 과정</li>
+</ul>
+</li>
+<li>호스트 구분 ID에 할당된 비트들을 추가적으로 네트워크 구분 ID로 사용 가능</li>
+</ul>
+<h3 id="서브넷-마스크subnet-mask">서브넷 마스크(Subnet Mask)</h3>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 157; 
+			flex-basis: 377px"
+	>
+	<a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/subnetmask.jpeg" data-size="550x350">
+		<img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/subnetmask.jpeg"
+			width="550"
+			height="350"
+			srcset="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/subnetmask_hub3eeadf766c0054f888ca2f86b0a5d62_34655_480x0_resize_q75_box.jpeg 480w, /p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/subnetmask_hub3eeadf766c0054f888ca2f86b0a5d62_34655_1024x0_resize_q75_box.jpeg 1024w"
+			loading="lazy"
+			alt="subnetmask">
+	</a>
+	
+	<figcaption>subnetmask</figcaption>
+	
+</figure></p>
+<ul>
+<li>서브 네트워크를 만들기 위해 AND 비트 연산에 의해 씌우는 마스크</li>
+<li>IP Address에서 첫비트부터 어디까지가 네트워크 부분인가 알려주는 역할.</li>
+<li>TCP/IP 에서 IP 주소 체계로 네트워크를 분할하는 논리적인 수단 (Mask는 차폐의 의미를 갖음)</li>
+<li>IP Address처럼 32비트로 구성되며, 네트워크 부분을 표시하는 비트는 1, 호스트 부분은 0</li>
+</ul>
+<h2 id="tcpudp-프로토콜">TCP/UDP 프로토콜</h2>
+<h3 id="tcptransmission-control-protocol">TCP(Transmission Control Protocol)</h3>
+<ul>
+<li>인터넷상에서 데이터를 메세지의 형태로 보내기 위해 IP와 함께 사용하는 프로토콜</li>
+<li>신뢰성이 없는 인터넷을 통해 종단간에 신뢰성 있는 바이트 스트림을 전송하도록 특별히 설계</li>
+<li>연결형 서비스로 가상 회선 방식을 제공한다</li>
+<li>3-way handshaking과정을 통해 연결 설정, 4-way handshaking으로 해제.
+흐름 제어 및 혼잡 제어</li>
+<li>높은 신뢰성을 보장</li>
+<li>UDP보다 속도가 느리다</li>
+<li>전이중(Full-Duplex), 점대점(Point to Point) 방식
+<ul>
+<li>전이중이란 전송이 양방향으로 동시에 일어날 수 있음을 의미</li>
+<li>점대점이란 각 연결이 정확히 2개의 종단점을 가지고 있음을 의미</li>
+</ul>
+</li>
+<li>TCP는 멀티캐스팅이나 브로드캐스팅을 지원하지 않음</li>
+</ul>
+<h3 id="tcp-3-4-way-handshaking-로직">TCP 3, 4-WAY HANDSHAKING 로직</h3>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 113; 
+			flex-basis: 273px"
+	>
+	<a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/3way.png" data-size="900x791">
+		<img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/3way.png"
+			width="900"
+			height="791"
+			srcset="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/3way_huadadcf4d6c10f5feec9bfd5857b40310_235906_480x0_resize_box_3.png 480w, /p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/3way_huadadcf4d6c10f5feec9bfd5857b40310_235906_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="3way/4way">
+	</a>
+	
+	<figcaption>3way/4way</figcaption>
+	
+</figure></p>
+<h4 id="3-way-handshake---연결-생성-connection-establishment">3-WAY HandShake - 연결 생성 (Connection establishment)</h4>
+<ol>
+<li>
+<p>클라이언트가 서버에게 SYN 메시지를 보낸다. 이때 SYN/ACK 응답을 기다리는 SYN_SENT 상태가 된다. 이 메시지에 포함된 시퀀스 번호는 클라이언트가 임의로 설정한 값 A(ACK Flag)</p>
+</li>
+<li>
+<p>서버가 클라이언트에게 SYN-ACK 메시지 응답. 이 메시지에 포함된 시퀀스 번호는 서버가 임의로 설정한 값 S, A+1</p>
+</li>
+<li>
+<p>클라이언트가 서버에게 ACK 메시지를 보낸다. 이 메시지에 포함된 응답 번호는 S+1, A+1</p>
+</li>
+<li>
+<p>데이터 전송 (Data transfer) 발생한다. 클라이언트와 서버 모두 데이터와 확인응답을 보낼 수 있다. Client에서 발송시에는 P 플래그를 보내고, 서버는 수신 완료시에 A 플래그를 보낸다.</p>
+<blockquote>
+<p>A: Ack Flag / S:Syn Flag / P: PSH Flag</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>데이터는 순서에 맞지 않게 도착할 수 있고 또한 수신 TCP에서 일시적으로 보관할 수 있다. 그렇지만 TCP는 세그먼트가 순서에 맞지 않게 프로세스에 전달 되도록 하지 않는다.</p>
+</blockquote>
+<h4 id="4-way-shake---연결-종료-connection-termination">4-WAY Shake - 연결 종료 (Connection termination)</h4>
+<ul>
+<li>먼저 연결을 끊고자 하는 쪽을 Active Close라 하고 상대는 Passive Close라 한다.</li>
+</ul>
+<ol>
+<li>FIN_WAIT_1 (host A) : close()를 호출하면 &lsquo;연결을 끊겠다&rsquo;라는 신호를 보내기 위해 FIN flag를 1로 설정한 패킷을 상대에게 보내면서 FIN_WAIT_1 상태가 된다.</li>
+<li>CLOSE_WAIT (host B) : 상대에게 FIN flag가 1인 패킷을 받았다면 &lsquo;연결을 종료하겠다는 것을 일단 알고있겠다.&rsquo; 라는 의미로 해당 패킷에 대한 응답 ACK을 보내고 CLOSE_WAIT 상태가 된다. 출력 버퍼에 있는 데이터를 모두 보낸 다음 서로간의 연결을 끊어야 하므로 ACK 만 보낸다.</li>
+<li>FIN_WAIT_2 (host A) : ACK을 받고 상대방이 FIN flag가 1인 패킷을 보낼 때까지 기다리는데 이를 FIN_WAIT_2 상태라고 한다.</li>
+<li>LAST_ACK (host B) : 상대에게 모든 데이터를 보냈다면 close()를 호출해 FIN flag가 1인 패킷을 보낸다.</li>
+<li>TIME_WAIT (host A) : 상대에게 FIN flag가 1인 패킷을 받았다면 서로가 연결을 끊을 준비가 된 것이므로 이에 대한 응답 ACK을 보낸다.</li>
+<li>CLOSED : ACK을 받으면 소켓을 닫아 연결을 종료한다.</li>
+</ol>
+<h3 id="udpuser-datagram-protocol">UDP(User Datagram Protocol)</h3>
+<ul>
+<li>UDP(User Datagram Protocol, 사용자 데이터그램 프로토콜)는 비연결형 프로토콜</li>
+<li>IP 데이터그램을 캡슐화하여 보내는 방법과 연결 설정을 하지 않고 보내는 방법을 제공</li>
+<li>UDP는 흐름제어, 오류제어 또는 손상된 세그먼트의 수신에 대한 재전송을 하지 않음</li>
+<li>UDP 사용하는 서비스: DNS, 실시간 멀티미디어 등</li>
+</ul>
+<h2 id="참고-및-출처">참고 및 출처</h2>
+<ul>
+<li><a class="link" href="https://velog.io/@evelyn82ny/4-way-handshake"  target="_blank" rel="noopener"
+    >https://velog.io/@evelyn82ny/4-way-handshake</a></li>
+<li><a class="link" href="https://asfirstalways.tistory.com/327"  target="_blank" rel="noopener"
+    >https://asfirstalways.tistory.com/327</a></li>
+<li><a class="link" href="https://nasa1515.tech/network-for-beginner/#-5-tcpudp-%ed%94%84%eb%a1%9c%ed%86%a0%ec%bd%9c"  target="_blank" rel="noopener"
+    >https://nasa1515.tech/network-for-beginner/#-5-tcpudp-프로토콜</a></li>
+<li><a class="link" href="https://velog.io/@kimyeji203/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-IP-%ec%a3%bc%ec%86%8c%ec%97%90-%eb%8c%80%ed%95%b4%ec%84%9c"  target="_blank" rel="noopener"
+    >https://velog.io/@kimyeji203/네트워크-IP-주소에-대해서</a></li>
+<li><a class="link" href="https://velog.io/@kimyeji203/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-MAC-%ec%a3%bc%ec%86%8c%ec%97%90-%eb%8c%80%ed%95%b4%ec%84%9c"  target="_blank" rel="noopener"
+    >https://velog.io/@kimyeji203/네트워크-MAC-주소에-대해서</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/network/">Network</a>
+        
+            <a href="/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/">기초지식</a>
+        
+            <a href="/tags/ip/">IP</a>
+        
+            <a href="/tags/mac/">MAC</a>
+        
+            <a href="/tags/ipv4/">IPv4</a>
+        
+            <a href="/tags/tcp/">TCP</a>
+        
+            <a href="/tags/udp/">UDP</a>
+        
+            <a href="/tags/tcp-3-4way-handshaking/">TCP 3-4way HandShaking</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/network.6048e0bb95131505e4659f29b4f9c493_hu7c2d7e014291615816b31fb9f4a70106_112373_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (4) - Well Known PortNumber, ACL, VLAN"
+                        
+                        data-hash="md5-YEjgu5UTFQXkZZ8ptPnEkw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">네트워크 기초 정리 (4) - Well Known PortNumber, ACL, VLAN</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/network.6048e0bb95131505e4659f29b4f9c493_hu7c2d7e014291615816b31fb9f4a70106_112373_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (2) - OSI 7 Layer"
+                        
+                        data-hash="md5-YEjgu5UTFQXkZZ8ptPnEkw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">네트워크 기초 정리 (2) - OSI 7 Layer</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/network.6048e0bb95131505e4659f29b4f9c493_hu7c2d7e014291615816b31fb9f4a70106_112373_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (1) - 네트워크 장비"
+                        
+                        data-hash="md5-YEjgu5UTFQXkZZ8ptPnEkw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">네트워크 기초 정리 (1) - 네트워크 장비</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#mac-addressip-address">MAC Address/IP Address</a>
+      <ol>
+        <li><a href="#mac-address">MAC Address</a>
+          <ol>
+            <li><a href="#개요">개요</a></li>
+            <li><a href="#동작방식">동작방식</a></li>
+          </ol>
+        </li>
+        <li><a href="#ip-address">IP Address</a>
+          <ol>
+            <li><a href="#개요-1">개요</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#ipv4--주소체계class">IPv4 : 주소체계(Class)</a></li>
+    <li><a href="#서브-네트워크sub-network">서브 네트워크(Sub Network)</a>
+      <ol>
+        <li><a href="#서브네팅subnetting">서브네팅(Subnetting)</a></li>
+        <li><a href="#서브넷-마스크subnet-mask">서브넷 마스크(Subnet Mask)</a></li>
+      </ol>
+    </li>
+    <li><a href="#tcpudp-프로토콜">TCP/UDP 프로토콜</a>
+      <ol>
+        <li><a href="#tcptransmission-control-protocol">TCP(Transmission Control Protocol)</a></li>
+        <li><a href="#tcp-3-4-way-handshaking-로직">TCP 3, 4-WAY HANDSHAKING 로직</a>
+          <ol>
+            <li><a href="#3-way-handshake---연결-생성-connection-establishment">3-WAY HandShake - 연결 생성 (Connection establishment)</a></li>
+            <li><a href="#4-way-shake---연결-종료-connection-termination">4-WAY Shake - 연결 종료 (Connection termination)</a></li>
+          </ol>
+        </li>
+        <li><a href="#udpuser-datagram-protocol">UDP(User Datagram Protocol)</a></li>
+      </ol>
+    </li>
+    <li><a href="#참고-및-출처">참고 및 출처</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

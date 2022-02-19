@@ -6,22 +6,112 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Feb 2022 20:39:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 19:56:54 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACL</title>
+      <link>https://appealso.github.io/tags/acl/</link>
+      <pubDate>Sat, 19 Feb 2022 19:56:54 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/acl/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Network</title>
       <link>https://appealso.github.io/tags/network/</link>
-      <pubDate>Thu, 17 Feb 2022 20:39:00 +0900</pubDate>
+      <pubDate>Sat, 19 Feb 2022 19:56:54 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/network/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>VLAN</title>
+      <link>https://appealso.github.io/tags/vlan/</link>
+      <pubDate>Sat, 19 Feb 2022 19:56:54 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/vlan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Well Known Port</title>
+      <link>https://appealso.github.io/tags/well-known-port/</link>
+      <pubDate>Sat, 19 Feb 2022 19:56:54 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/well-known-port/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>기초지식</title>
       <link>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</link>
-      <pubDate>Thu, 17 Feb 2022 20:39:00 +0900</pubDate>
+      <pubDate>Sat, 19 Feb 2022 19:56:54 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IP</title>
+      <link>https://appealso.github.io/tags/ip/</link>
+      <pubDate>Sat, 19 Feb 2022 15:11:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/ip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IPv4</title>
+      <link>https://appealso.github.io/tags/ipv4/</link>
+      <pubDate>Sat, 19 Feb 2022 15:11:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/ipv4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MAC</title>
+      <link>https://appealso.github.io/tags/mac/</link>
+      <pubDate>Sat, 19 Feb 2022 15:11:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCP</title>
+      <link>https://appealso.github.io/tags/tcp/</link>
+      <pubDate>Sat, 19 Feb 2022 15:11:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/tcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCP 3-4way HandShaking</title>
+      <link>https://appealso.github.io/tags/tcp-3-4way-handshaking/</link>
+      <pubDate>Sat, 19 Feb 2022 15:11:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/tcp-3-4way-handshaking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UDP</title>
+      <link>https://appealso.github.io/tags/udp/</link>
+      <pubDate>Sat, 19 Feb 2022 15:11:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/udp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OSI 7 Layer</title>
+      <link>https://appealso.github.io/tags/osi-7-layer/</link>
+      <pubDate>Sat, 19 Feb 2022 14:28:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/osi-7-layer/</guid>
       <description></description>
     </item>
     

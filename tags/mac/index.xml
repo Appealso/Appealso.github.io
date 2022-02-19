@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MAC on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/mac/</link>
+    <description>Recent content in MAC on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Feb 2022 15:11:48 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking</title>
+      <link>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/</link>
+      <pubDate>Sat, 19 Feb 2022 15:11:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/</guid>
+      <description>이번 포스트에서는 네트워크 기초중의 기초인 IP/MAC,TCP/UDP의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~ MAC Address/IP Address MAC Address</description>
+    </item>
+    
+  </channel>
+</rss>

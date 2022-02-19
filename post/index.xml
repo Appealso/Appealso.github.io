@@ -6,7 +6,34 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Feb 2022 20:39:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Feb 2022 19:56:54 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>네트워크 기초 정리 (4) - Well Known PortNumber, ACL, VLAN</title>
+      <link>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/</link>
+      <pubDate>Sat, 19 Feb 2022 19:56:54 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/</guid>
+      <description>이번 포스트에서는 네트워크 기초중의 기초인 Port Number, ACL, VLAN의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~ Well Known Port Number 포트 TCP UDP 설명 상태</description>
+    </item>
+    
+    <item>
+      <title>네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking</title>
+      <link>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/</link>
+      <pubDate>Sat, 19 Feb 2022 15:11:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/</guid>
+      <description>이번 포스트에서는 네트워크 기초중의 기초인 IP/MAC,TCP/UDP의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~ MAC Address/IP Address MAC Address</description>
+    </item>
+    
+    <item>
+      <title>네트워크 기초 정리 (2) - OSI 7 Layer</title>
+      <link>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/</link>
+      <pubDate>Sat, 19 Feb 2022 14:28:48 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/</guid>
+      <description>이번 포스트에서는 네트워크 기초중의 기초인 OSI 7 Layer의 대략적인 내용을 정리했습니다. 추가가 필요한 사항은 덧글 남겨주세요~ OSI 7 계층 OSI 7 Layer L1 물리 계층</description>
+    </item>
+    
     <item>
       <title>네트워크 기초 정리 (1) - 네트워크 장비</title>
       <link>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-1-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9E%A5%EB%B9%84/</link>
