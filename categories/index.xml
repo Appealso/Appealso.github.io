@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithm on SooHo&#39;s Blog</title>
+    <title>Categories on SooHo&#39;s Blog</title>
     <link>https://appealso.github.io/categories/</link>
-    <description>Recent content in Algorithm on SooHo&#39;s Blog</description>
+    <description>Recent content in Categories on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 27 Feb 2022 19:57:18 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>algorithm</title>
+      <title>Algorithm</title>
       <link>https://appealso.github.io/categories/algorithm/</link>
       <pubDate>Sun, 27 Feb 2022 19:57:18 +0900</pubDate>
       
@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>ctf</title>
+      <title>CTF</title>
       <link>https://appealso.github.io/categories/ctf/</link>
       <pubDate>Sun, 13 Feb 2022 11:03:12 +0900</pubDate>
       
@@ -44,34 +44,16 @@
     </item>
     
     <item>
-      <title>Microsegmentation</title>
-      <link>https://appealso.github.io/categories/microsegmentation/</link>
-      <pubDate>Tue, 01 Feb 2022 19:20:51 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/categories/microsegmentation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Security</title>
       <link>https://appealso.github.io/categories/security/</link>
-      <pubDate>Tue, 01 Feb 2022 19:20:51 +0900</pubDate>
+      <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://appealso.github.io/categories/security/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>log4j</title>
-      <link>https://appealso.github.io/categories/log4j/</link>
-      <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://appealso.github.io/categories/log4j/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devops</title>
+      <title>DevOps</title>
       <link>https://appealso.github.io/categories/devops/</link>
       <pubDate>Sat, 24 Apr 2021 22:06:22 +0900</pubDate>
       
@@ -80,7 +62,7 @@
     </item>
     
     <item>
-      <title>etc</title>
+      <title>ETC</title>
       <link>https://appealso.github.io/categories/etc/</link>
       <pubDate>Sat, 24 Apr 2021 18:51:40 +0900</pubDate>
       

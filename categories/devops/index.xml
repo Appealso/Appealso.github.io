@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>devops on SooHo&#39;s Blog</title>
+    <title>DevOps on SooHo&#39;s Blog</title>
     <link>https://appealso.github.io/categories/devops/</link>
-    <description>Recent content in devops on SooHo&#39;s Blog</description>
+    <description>Recent content in DevOps on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 24 Apr 2021 22:06:22 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
