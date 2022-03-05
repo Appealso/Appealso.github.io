@@ -6,13 +6,22 @@
     <description>Recent content in Algorithm on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Mar 2022 10:09:02 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Mar 2022 10:12:19 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Algo24</title>
-      <link>https://appealso.github.io/p/algo24/</link>
+      <title>[Java] 백준 1525 퍼즐</title>
+      <link>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1525-%ED%8D%BC%EC%A6%90/</link>
+      <pubDate>Sat, 05 Mar 2022 10:12:19 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1525-%ED%8D%BC%EC%A6%90/</guid>
+      <description>문제 3*3 표에 다음과 같이 수가 채워져 있다. 오른쪽 아래 가장 끝 칸은 비어 있는 칸이다. 1 2 3 4 5 6 7 8 어떤 수와 인접해 있는 네 개의 칸 중에 하나가 비어 있으면, 수를</description>
+    </item>
+    
+    <item>
+      <title>[Java] 백준 1720 타일 코드</title>
+      <link>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1720-%ED%83%80%EC%9D%BC-%EC%BD%94%EB%93%9C/</link>
       <pubDate>Sat, 05 Mar 2022 10:09:02 +0900</pubDate>
       
-      <guid>https://appealso.github.io/p/algo24/</guid>
+      <guid>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1720-%ED%83%80%EC%9D%BC-%EC%BD%94%EB%93%9C/</guid>
       <description>문제 2×N 크기의 넓은 판을 1×2 (또는 2×1) 크기와 2×2 크기의 타일로 채우려고 한다. 여러 가지 경우가 있을 수 있으므로, 각각을 하나의 코드로 대응시켜서</description>
     </item>
     

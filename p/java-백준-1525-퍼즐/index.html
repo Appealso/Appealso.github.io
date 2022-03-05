@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='문제 3*3 표에 다음과 같이 수가 채워져 있다. 오른쪽 아래 가장 끝 칸은 비어 있는 칸이다. 1 2 3 4 5 6 7 8 어떤 수와 인접해 있는 네 개의 칸 중에 하나가 비어 있으면, 수를'><title>[Java] 백준 1525 퍼즐</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1525-%ED%8D%BC%EC%A6%90/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='[Java] 백준 1525 퍼즐'>
+<meta property='og:description' content='문제 3*3 표에 다음과 같이 수가 채워져 있다. 오른쪽 아래 가장 끝 칸은 비어 있는 칸이다. 1 2 3 4 5 6 7 8 어떤 수와 인접해 있는 네 개의 칸 중에 하나가 비어 있으면, 수를'>
+<meta property='og:url' content='https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1525-%ED%8D%BC%EC%A6%90/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-03-05T10:12:19&#43;09:00'/><meta property='article:modified_time' content='2022-03-05T10:12:19&#43;09:00'/>
+<meta name="twitter:title" content="[Java] 백준 1525 퍼즐">
+<meta name="twitter:description" content="문제 3*3 표에 다음과 같이 수가 채워져 있다. 오른쪽 아래 가장 끝 칸은 비어 있는 칸이다. 1 2 3 4 5 6 7 8 어떤 수와 인접해 있는 네 개의 칸 중에 하나가 비어 있으면, 수를">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/algorithm/" style="background-color: #2a9d8f; color: #fff;">
+                Algorithm
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/java-%EB%B0%B1%EC%A4%80-1525-%ED%8D%BC%EC%A6%90/">[Java] 백준 1525 퍼즐</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 05, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="문제">문제</h2>
+<p>3*3 표에 다음과 같이 수가 채워져 있다. 오른쪽 아래 가장 끝 칸은 비어 있는 칸이다. </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>어떤 수와 인접해 있는 네 개의 칸 중에 하나가 비어 있으면, 수를 그 칸으로 이동시킬 수가 있다. 물론 표 바깥으로 나가는 경우는 불가능하다. 우리의 목표는 초기 상태가 주어졌을 때, 최소의 이동으로 위와 같은 정리된 상태를 만드는 것이다. 다음의 예를 보자.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>5</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>가장 윗 상태에서 세 번의 이동을 통해 정리된 상태를 만들 수 있다. 이와 같이 최소 이동 횟수를 구하는 프로그램을 작성하시오.</p>
+<h2 id="입력">입력</h2>
+<p>세 줄에 걸쳐서 표에 채워져 있는 아홉 개의 수가 주어진다. 한 줄에 세 개의 수가 주어지며, 빈 칸은 0으로 나타낸다.</p>
+<h2 id="출력">출력</h2>
+<p>첫째 줄에 최소의 이동 횟수를 출력한다. 이동이 불가능한 경우 -1을 출력한다.</p>
+<h2 id="소스">소스</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">dx</span> <span class="o">=</span> <span class="o">{</span><span class="n">0</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">1</span><span class="o">,-</span><span class="n">1</span><span class="o">};</span>
+    <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">dy</span> <span class="o">=</span> <span class="o">{</span><span class="n">1</span><span class="o">,-</span><span class="n">1</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">0</span><span class="o">};</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Scanner</span> <span class="n">scan</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">start</span><span class="o">=</span><span class="n">0</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">3</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">3</span><span class="o">;</span><span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="kt">int</span> <span class="n">temp</span><span class="o">=</span><span class="n">scan</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">temp</span><span class="o">==</span><span class="n">0</span><span class="o">)</span> <span class="n">temp</span> <span class="o">=</span><span class="n">9</span><span class="o">;</span>
+                <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="o">*</span><span class="n">10</span><span class="o">+</span><span class="n">temp</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">d</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">start</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>
+        <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">start</span><span class="o">);</span>
+        <span class="k">while</span><span class="o">(!</span><span class="n">q</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">now_n</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+            <span class="n">String</span> <span class="n">now</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">now_n</span><span class="o">);</span>
+            <span class="c1">//1 0 3
+</span><span class="c1"></span>            <span class="c1">//4 2 5
+</span><span class="c1"></span>            <span class="c1">//7 8 9
+</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="sc">&#39;9&#39;</span><span class="o">);</span><span class="c1">//빈칸 위치 저장
+</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">z</span><span class="o">/</span><span class="n">3</span><span class="o">;</span> <span class="c1">//x좌표 계산
+</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span><span class="o">%</span><span class="n">3</span><span class="o">;</span> <span class="c1">//y좌표 계산
+</span><span class="c1"></span>            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="n">0</span><span class="o">;</span><span class="n">k</span><span class="o">&lt;</span><span class="n">4</span><span class="o">;</span><span class="n">k</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="kt">int</span> <span class="n">nx</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="o">[</span><span class="n">k</span><span class="o">];</span>
+                <span class="kt">int</span> <span class="n">ny</span><span class="o">=</span><span class="n">y</span><span class="o">+</span><span class="n">dy</span><span class="o">[</span><span class="n">k</span><span class="o">];</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">nx</span><span class="o">&gt;=</span><span class="n">0</span><span class="o">&amp;&amp;</span><span class="n">nx</span><span class="o">&lt;</span><span class="n">3</span><span class="o">&amp;&amp;</span><span class="n">ny</span><span class="o">&gt;=</span><span class="n">0</span><span class="o">&amp;&amp;</span><span class="n">ny</span><span class="o">&lt;</span><span class="n">3</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">StringBuilder</span> <span class="n">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">(</span><span class="n">now</span><span class="o">);</span>
+                    <span class="kt">char</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">next</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">x</span><span class="o">*</span><span class="n">3</span><span class="o">+</span><span class="n">y</span><span class="o">);</span>
+                    <span class="n">next</span><span class="o">.</span><span class="na">setCharAt</span><span class="o">(</span><span class="n">x</span><span class="o">*</span><span class="n">3</span><span class="o">+</span><span class="n">y</span><span class="o">,</span> <span class="n">next</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">nx</span><span class="o">*</span><span class="n">3</span><span class="o">+</span><span class="n">ny</span><span class="o">));</span>
+                    <span class="n">next</span><span class="o">.</span><span class="na">setCharAt</span><span class="o">(</span><span class="n">nx</span><span class="o">*</span><span class="n">3</span><span class="o">+</span><span class="n">ny</span><span class="o">,</span><span class="n">temp</span><span class="o">);</span>
+                    <span class="kt">int</span> <span class="n">num</span><span class="o">=</span><span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">next</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+                    <span class="k">if</span><span class="o">(!</span><span class="n">d</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">num</span><span class="o">))</span> <span class="o">{</span>
+                        <span class="n">d</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">num</span><span class="o">,</span><span class="n">d</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">now_n</span><span class="o">)+</span><span class="n">1</span><span class="o">);</span>
+                        <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">num</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">d</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">123456789</span><span class="o">))</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">d</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">123456789</span><span class="o">));</span>
+        <span class="k">else</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(-</span><span class="n">1</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h2 id="문제링크">문제링크</h2>
+<p><a class="link" href="https://www.acmicpc.net/problem/1525"  target="_blank" rel="noopener"
+    >https://www.acmicpc.net/problem/1525</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/java-%EB%B0%B1%EC%A4%80-1720-%ED%83%80%EC%9D%BC-%EC%BD%94%EB%93%9C/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">[Java] 백준 1720 타일 코드</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/java-%EB%B0%B1%EC%A4%80-14503-%EB%A1%9C%EB%B4%87-%EC%B2%AD%EC%86%8C%EA%B8%B0/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">[Java] 백준 14503 로봇 청소기</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%EB%B0%B1%EC%A4%80-15685-%EB%93%9C%EB%9E%98%EA%B3%A4-%EC%BB%A4%EB%B8%8C/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">백준 15685 드래곤 커브</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%EB%B0%B1%EC%A4%80-17298-%EC%98%A4%ED%81%B0%EC%88%98/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">백준 17298 오큰수</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%EB%B0%B1%EC%A4%80-4949-%EA%B7%A0%ED%98%95%EC%9E%A1%ED%9E%8C-%EC%84%B8%EC%83%81/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">백준 4949 균형잡힌 세상</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#문제">문제</a></li>
+    <li><a href="#입력">입력</a></li>
+    <li><a href="#출력">출력</a></li>
+    <li><a href="#소스">소스</a></li>
+    <li><a href="#문제링크">문제링크</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
