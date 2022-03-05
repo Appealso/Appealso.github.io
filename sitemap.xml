@@ -2,19 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://appealso.github.io/categories/basic/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/categories/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/post/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/uri/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/url/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/urn/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/web/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/</loc>
+    <lastmod>2022-03-05T15:34:01+09:00</lastmod>
+  </url><url>
     <loc>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1525-%ED%8D%BC%EC%A6%90/</loc>
     <lastmod>2022-03-05T10:12:19+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/categories/algorithm/</loc>
-    <lastmod>2022-03-05T10:12:19+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/categories/</loc>
-    <lastmod>2022-03-05T10:12:19+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/post/</loc>
-    <lastmod>2022-03-05T10:12:19+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/</loc>
     <lastmod>2022-03-05T10:12:19+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1720-%ED%83%80%EC%9D%BC-%EC%BD%94%EB%93%9C/</loc>
@@ -32,16 +56,10 @@
     <loc>https://appealso.github.io/tags/network/</loc>
     <lastmod>2022-02-19T19:56:54+09:00</lastmod>
   </url><url>
-    <loc>https://appealso.github.io/tags/</loc>
-    <lastmod>2022-02-19T19:56:54+09:00</lastmod>
-  </url><url>
     <loc>https://appealso.github.io/tags/vlan/</loc>
     <lastmod>2022-02-19T19:56:54+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/tags/well-known-port/</loc>
-    <lastmod>2022-02-19T19:56:54+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</loc>
     <lastmod>2022-02-19T19:56:54+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/</loc>

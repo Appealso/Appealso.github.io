@@ -6,7 +6,64 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 05 Mar 2022 10:12:19 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 05 Mar 2022 15:34:01 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>웹 기초 정리(1) - URL,URI,URN</title>
+        <link>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/</link>
+        <pubDate>Sat, 05 Mar 2022 15:34:01 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/</guid>
+        <description>&lt;img src="https://appealso.github.io/web.png" alt="Featured image of post 웹 기초 정리(1) - URL,URI,URN" /&gt;&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 121; 
+			flex-basis: 290px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/urluriurn.png&#34; data-size=&#34;500x413&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/urluriurn.png&#34;
+			width=&#34;500&#34;
+			height=&#34;413&#34;
+			srcset=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/urluriurn_hubcc6ad2f19b0b25dd1aa36eb4b17a92d_66907_480x0_resize_box_3.png 480w, https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/urluriurn_hubcc6ad2f19b0b25dd1aa36eb4b17a92d_66907_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;urlvsurivsurn&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;urlvsurivsurn&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;uri&#34;&gt;URI&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;통합 자원 식별자(Uniform Resource Identifier, URI)는 인터넷에 있는 자원을 나타내냄&lt;/li&gt;
+&lt;li&gt;URI의 존재는 인터넷에서 요구되는 기본조건으로서 인터넷 프로토콜에 항상 붙음&lt;/li&gt;
+&lt;li&gt;URI의 하위개념으로 URL, URN 이 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;url&#34;&gt;URL&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;URL(Uniform Resource Locator)은 네트워크 상에서 자원이 어디 있는지를 알려주기 위한 규약&lt;/li&gt;
+&lt;li&gt;컴퓨터 네트워크와 검색 메커니즘에서의 위치를 지정하는, 웹 리소스에 대한 구체적인 위치를 나타냄&lt;/li&gt;
+&lt;li&gt;흔히 웹 사이트 주소로 알고 있지만, URL은 웹 사이트 주소뿐만 아니라 컴퓨터 네트워크상의 자원(프로토콜)을 모두 나타낼 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;urn&#34;&gt;URN&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;URN(Uniform Resource Name, 통합 자원 이름)은 통합자원의 이름&lt;/li&gt;
+&lt;li&gt;URN은 영속적이고, 위치에 독립적인 자원을 위한 지시자로 사용하기 위해 1997년도 RFC 2141 문서에서 정의됨&lt;/li&gt;
+&lt;li&gt;URN은 여전히 실험 중인 상태고 아직 널리 채택 되지 않음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;결론&#34;&gt;결론&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;단순하게 말하자면, URI는 규약이고, URL은 규약에 대한 형태&lt;/li&gt;
+&lt;li&gt;수학적으로 말하자면, URL과 URN은 부분집합이라고 생각할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;출처-및-참고&#34;&gt;출처 및 참고&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://velog.io/@jch9537/URI-URL&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://velog.io/@jch9537/URI-URL&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://ssungkang.tistory.com/entry/WEB-URI-vs-URL-vs-URN-%eb%b9%84%ea%b5%90-%eb%b6%84%ec%84%9d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://ssungkang.tistory.com/entry/WEB-URI-vs-URL-vs-URN-비교-분석&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://mygumi.tistory.com/139&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://mygumi.tistory.com/139&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>[Java] 백준 1525 퍼즐</title>
         <link>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1525-%ED%8D%BC%EC%A6%90/</link>
         <pubDate>Sat, 05 Mar 2022 10:12:19 +0900</pubDate>
