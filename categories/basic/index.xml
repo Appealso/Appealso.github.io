@@ -52,5 +52,14 @@
       <description>업무만 하다기 보니 기초지식을 점점 잊는 것 같아 정리하는 시간을 가져보려고 합니다. 이번 포스트에서는 네트워크 기초인 네트워크 장비들에 대해 대략적인 내용을 정리</description>
     </item>
     
+    <item>
+      <title>안드로이드 루팅 - Magisk</title>
+      <link>https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%A3%A8%ED%8C%85-magisk/</link>
+      <pubDate>Thu, 17 Feb 2022 20:39:00 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%A3%A8%ED%8C%85-magisk/</guid>
+      <description>ADB 설치 # Home Brew 통한 Install $ brew cask install android-platform-tools # adb 버전 확인 $ adb version Android Debug Bridge version 1.0.41 Version 33.0.1-8253317 Installed as /usr/local/bin/adb</description>
+    </item>
+    
   </channel>
 </rss>

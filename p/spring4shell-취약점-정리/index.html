@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1. Spring4Shell 개요 Spring Core 프레임워크에서 특정 조건 하에 RCE(Remote Code Execution)가 가능한 취약점 Spring 프레임워크가 매개변수를 바인딩하는 과정에서 &amp;lsquo;class&amp;rsquo; 객체가 노출되어 발생 공'><title>Spring4Shell 취약점 정리</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='Spring4Shell 취약점 정리'>
+<meta property='og:description' content='1. Spring4Shell 개요 Spring Core 프레임워크에서 특정 조건 하에 RCE(Remote Code Execution)가 가능한 취약점 Spring 프레임워크가 매개변수를 바인딩하는 과정에서 &amp;lsquo;class&amp;rsquo; 객체가 노출되어 발생 공'>
+<meta property='og:url' content='https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Spring4Shell' /><meta property='article:tag' content='CVE-2022-22965' /><meta property='article:published_time' content='2021-12-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-12-26T00:00:00&#43;00:00'/><meta property='og:image' content='https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/spring4shell.png' />
+<meta name="twitter:title" content="Spring4Shell 취약점 정리">
+<meta name="twitter:description" content="1. Spring4Shell 개요 Spring Core 프레임워크에서 특정 조건 하에 RCE(Remote Code Execution)가 가능한 취약점 Spring 프레임워크가 매개변수를 바인딩하는 과정에서 &amp;lsquo;class&amp;rsquo; 객체가 노출되어 발생 공"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/spring4shell.png' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/">
+                <img src="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/spring4shell_hu0e74430e5160ec4f6e5bf648835c9515_5679_800x0_resize_box_3.png"
+                        srcset="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/spring4shell_hu0e74430e5160ec4f6e5bf648835c9515_5679_800x0_resize_box_3.png 800w, /p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/spring4shell_hu0e74430e5160ec4f6e5bf648835c9515_5679_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="270" 
+                        loading="lazy"
+                        alt="Featured image of post Spring4Shell 취약점 정리" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/security/" style="background-color: #2a9d8f; color: #fff;">
+                Security
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/">Spring4Shell 취약점 정리</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 26, 2021</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="1-spring4shell-개요">1. Spring4Shell 개요</h2>
+<ul>
+<li>Spring Core 프레임워크에서 특정 조건 하에 RCE(Remote Code Execution)가 가능한 취약점</li>
+<li>Spring 프레임워크가 매개변수를 바인딩하는 과정에서 &lsquo;class&rsquo; 객체가 노출되어 발생</li>
+<li>공격자는 해당 &lsquo;class&rsquo; 객체에서 로깅 관련 기능을 사용해 웹 쉘 코드를 업로드하여 명령어를 실행 가능</li>
+</ul>
+<h2 id="2-취약점-poc">2. 취약점 POC</h2>
+<h3 id="1-테스트-환경">(1) 테스트 환경</h3>
+<ul>
+<li>JDK 11</li>
+<li>tocat-9.0.59</li>
+<li>Spring Framework 5.3.15</li>
+</ul>
+<h3 id="2-매개변수-바인딩과-사용자-접근">(2) 매개변수 바인딩과 사용자 접근</h3>
+<p>Spring에서는 POJO(Plain Old Java Object)라고 불리는 일반 자바 객체의 속성에 URL을 통해 입력된 매개변수를 매핑하여 사용할 수 있습니다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 객체클래스
+</span><span class="c1"></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Greeting</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">content</span><span class="o">;</span>
+	<span class="kd">public</span> <span class="kt">long</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getContent</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">content</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setContent</span><span class="o">(</span><span class="n">String</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="c1">//컨트롤러
+</span><span class="c1"></span><span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloController</span> <span class="o">{</span>
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/greeting&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">greetingForm</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">&#34;greeting&#34;</span><span class="o">,</span> <span class="k">new</span> <span class="n">Greeting</span><span class="o">());</span>
+        <span class="k">return</span> <span class="s">&#34;hello&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nd">@PostMapping</span><span class="o">(</span><span class="s">&#34;/greeting&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">greetingSubmit</span><span class="o">(</span><span class="nd">@ModelAttribute</span> <span class="n">Greeting</span> <span class="n">greeting</span><span class="o">,</span> <span class="n">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">&#34;hello&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><p>위와 같이 Greetring이라는 객체와 Controller를 생성하면 가정한다면 일반적인 사용자는 “http://<!-- raw HTML omitted -->/greeting?id=test&amp;content=test”과 같은 URL로 접근할 수 있습니다.</p>
+<h3 id="3-취약점-공격">(3) 취약점 공격</h3>
+<p>해당 취약점은 특정 상황에서 ‘class’라는 특수한 변수가 사용자에게 노출될 때 발생합니다. 현재 공개된 방식은 ‘classLoader’를 사용하여 Tomcat 로그를 이용하여 JSP 웹 쉘을 생성하는 방식입니다.</p>
+<h4 id="1-취약한-도커-이미지-실행">1) 취약한 도커 이미지 실행</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker">docker build . -t spring4shell <span class="o">&amp;&amp;</span> docker run -p 8080:8080 spring4shell<span class="err">
+</span></code></pre></div><h4 id="2-poc-코드-실행">2) POC 코드 실행</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-docker" data-lang="docker">python exploit.py --url <span class="s2">&#34;http://localhost:8080/helloworld/greeting&#34;</span><span class="err">
+</span></code></pre></div><h5 id="2-1-poc-코드-실행-시-body에-class의-로깅-관련-객체가-사용되는-것을-확인할-수-있습니다-classmoduleclassloaderresourcescontextparentpipelinefirstpattern-매개-변수에-웹-쉘-코드를-담아-보내는-것을-확인할-수-있습니다">2-1) POC 코드 실행 시 Body에 class의 로깅 관련 객체가 사용되는 것을 확인할 수 있습니다. ‘class.module.classLoader.resources.context.parent.pipeline.first.pattern’ 매개 변수에 웹 쉘 코드를 담아 보내는 것을 확인할 수 있습니다.</h5>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 279; 
+			flex-basis: 671px"
+	>
+	<a href="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1.png" data-size="604x216">
+		<img src="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1.png"
+			width="604"
+			height="216"
+			srcset="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1_hu6ed47f4d37125ef3b89ec48ecb8d2594_83005_480x0_resize_box_3.png 480w, /p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1_hu6ed47f4d37125ef3b89ec48ecb8d2594_83005_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="burp">
+	</a>
+	
+	<figcaption>burp</figcaption>
+	
+</figure></p>
+<h4 id="2-2-poc-코드가-정상적으로-실행이-됐을-경우-웹-쉘-파일이-서버에-생성되는-것을-확인할-수-있습니다">2-2) POC 코드가 정상적으로 실행이 됐을 경우 웹 쉘 파일이 서버에 생성되는 것을 확인할 수 있습니다.</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ find -name shell.jsp
+./usr/local/tomcat/webapps/ROOT/shell.jsp
+</code></pre></div><h3 id="3-웹쉘-접속--명령어-실행">3) 웹쉘 접속 * 명령어 실행</h3>
+<p>생성한 웹 쉘에 원하는 명령어를 파라마터에 대입하여 요청할 경우 실행되는 것을 확인할 수 있습니다.
+<figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 311; 
+			flex-basis: 747px"
+	>
+	<a href="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux.png" data-size="604x194">
+		<img src="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux.png"
+			width="604"
+			height="194"
+			srcset="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux_hu18682955d9a82016916f89821e0bbd15_142248_480x0_resize_box_3.png 480w, /p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux_hu18682955d9a82016916f89821e0bbd15_142248_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="linux">
+	</a>
+	
+	<figcaption>linux</figcaption>
+	
+</figure></p>
+<h2 id="3-영향받는-버전">3. 영향받는 버전</h2>
+<p>CVE-2022-22965(Spring4Shell)
+■ JDK 9 이상의 Spring 프레임워크 사용하는 경우</p>
+<ul>
+<li>Spring Framework 5.3.0 ~ 5.3.17</li>
+<li>Spring Framework 5.2.0 ~ 5.2.19</li>
+<li>및 이전 버전
+※ JDK 8 이하의 경우 취약점의 영향을 받지 않음</li>
+</ul>
+<h2 id="4-취약한-버전-확인-방법">4. 취약한 버전 확인 방법</h2>
+<h3 id="1-java-버전-확인">(1) Java 버전 확인</h3>
+<p>: java -version</p>
+<h3 id="2-spring-버전-확인">(2) Spring 버전 확인</h3>
+<h4 id="1-pomxml-내-springframework-version-확인">1) pom.xml 내 <!-- raw HTML omitted --> 확인</h4>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 601; 
+			flex-basis: 1443px"
+	>
+	<a href="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom.png" data-size="914x152">
+		<img src="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom.png"
+			width="914"
+			height="152"
+			srcset="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom_hu4d584afd1ebe60b25ae39d0e72e191a5_105457_480x0_resize_box_3.png 480w, /p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom_hu4d584afd1ebe60b25ae39d0e72e191a5_105457_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="pom">
+	</a>
+	
+	<figcaption>pom</figcaption>
+	
+</figure></p>
+<h4 id="2-getversion-메서드를-사용-확인">2) getVersion() 메서드를 사용 확인</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CheckSpringVersion</span><span class="o">{</span>
+	<span class="nd">@Test</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">versionTest</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">{</span>
+		<span class="n">String</span> <span class="n">test</span><span class="o">=</span><span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">SpringVersion</span><span class="o">.</span><span class="na">getVersion</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">test</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h3 id="5-대응방안">5. 대응방안</h3>
+<ul>
+<li>제조사 홈페이지를 통해 최신버전으로 업데이트 적용
+<ul>
+<li>제조사 홈페이지에 신규버전이 계속 업데이트되고 있어 확인 후 업데이트 적용 필요</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>CVE-2022-22965(Spring4Shell)
+<ul>
+<li>Spring Framework 5.3.18, 5.2.20 버전으로 업데이트</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>신규 업데이트가 불가능할 경우 아래와 같이 조치 적용</li>
+</ul>
+<ul>
+<li>CVE-2022-22965(Spring4Shell)
+※ 프로젝트 패키지 아래 해당 전역 클래스 생성 후 재 컴파일(테스트 필요)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">org.springwork.core.Ordered</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springwork.core.annotation.Order</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springwork.web.bind.WebDataBinder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springwork.web.bind.annotation.ControllerAdvice</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springwork.web.bind.annotation.InitBinder</span><span class="o">;</span>
+ 
+<span class="nd">@ControllerAdvice</span>
+<span class="nd">@Order</span><span class="o">(</span><span class="n">10000</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BinderControllerAdvice</span> <span class="o">{</span>
+	<span class="nd">@InitBinder</span>
+	<span class="kd">public</span> <span class="nf">setAllowedFields</span><span class="o">(</span><span class="n">WebDataBinder</span> <span class="n">dataBinder</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">String</span><span class="o">[]</span> <span class="n">denylist</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="s">&#34;class.*&#34;</span><span class="o">,</span> <span class="s">&#34;Class.*&#34;</span><span class="o">,</span> <span class="s">&#34;*.class.*&#34;</span><span class="o">,</span> <span class="s">&#34;*.Class.*&#34;</span><span class="o">};</span>
+		<span class="n">dataBinder</span><span class="o">.</span><span class="na">setDisallowedFields</span><span class="o">(</span><span class="n">denylist</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><h2 id="-참고-">※ 참고 ※</h2>
+<p><a class="link" href="https://uxicode.tistory.com/entry/%EB%B0%94%EC%9D%B8%EB%94%A9%EC%9D%B4%EB%9E%80"  target="_blank" rel="noopener"
+    >https://uxicode.tistory.com/entry/%EB%B0%94%EC%9D%B8%EB%94%A9%EC%9D%B4%EB%9E%80</a>
+<a class="link" href="https://velog.io/@thelm3716/spring4shell-%EB%B6%84%EC%84%9D-%EA%B8%80-%EC%A0%95%EB%A6%AC-CVE-2022-22965"  target="_blank" rel="noopener"
+    >https://velog.io/@thelm3716/spring4shell-%EB%B6%84%EC%84%9D-%EA%B8%80-%EC%A0%95%EB%A6%AC-CVE-2022-22965</a>
+<a class="link" href="https://www.fastly.com/blog/spring-has-sprung-breaking-down-cve-2022-22963-and-spring4shell-cve-2022"  target="_blank" rel="noopener"
+    >https://www.fastly.com/blog/spring-has-sprung-breaking-down-cve-2022-22963-and-spring4shell-cve-2022</a>
+<a class="link" href="https://unit42.paloaltonetworks.com/cve-2022-22965-springshell/"  target="_blank" rel="noopener"
+    >https://unit42.paloaltonetworks.com/cve-2022-22965-springshell/</a>
+<a class="link" href="https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=66592"  target="_blank" rel="noopener"
+    >https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=66592</a>
+<a class="link" href="https://javamana.com/2022/04/202204022300005716.html"  target="_blank" rel="noopener"
+    >https://javamana.com/2022/04/202204022300005716.html</a>
+<a class="link" href="https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities/"  target="_blank" rel="noopener"
+    >https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities/</a>
+<a class="link" href="https://hackyboiz.github.io/2022/04/03/l0ch/2022-04-03/"  target="_blank" rel="noopener"
+    >https://hackyboiz.github.io/2022/04/03/l0ch/2022-04-03/</a>
+<a class="link" href="https://snyk.io/blog/spring4shell-zero-day-rce-spring-framework-explained/"  target="_blank" rel="noopener"
+    >https://snyk.io/blog/spring4shell-zero-day-rce-spring-framework-explained/</a>
+<a class="link" href="https://github.com/reznok/Spring4Shell-POC"  target="_blank" rel="noopener"
+    >https://github.com/reznok/Spring4Shell-POC</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/spring4shell/">Spring4Shell</a>
+        
+            <a href="/tags/cve-2022-22965/">CVE-2022-22965</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/log4j-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://github.com/Appealso/Appealso.github.io/blob/master/images/log4j.jpg?raw=true" loading="lazy" data-key="" data-hash="https://github.com/Appealso/Appealso.github.io/blob/master/images/log4j.jpg?raw=true"/>
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Log4j 취약점 정리</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1-spring4shell-개요">1. Spring4Shell 개요</a></li>
+    <li><a href="#2-취약점-poc">2. 취약점 POC</a>
+      <ol>
+        <li><a href="#1-테스트-환경">(1) 테스트 환경</a></li>
+        <li><a href="#2-매개변수-바인딩과-사용자-접근">(2) 매개변수 바인딩과 사용자 접근</a></li>
+        <li><a href="#3-취약점-공격">(3) 취약점 공격</a>
+          <ol>
+            <li><a href="#1-취약한-도커-이미지-실행">1) 취약한 도커 이미지 실행</a></li>
+            <li><a href="#2-poc-코드-실행">2) POC 코드 실행</a></li>
+            <li><a href="#2-2-poc-코드가-정상적으로-실행이-됐을-경우-웹-쉘-파일이-서버에-생성되는-것을-확인할-수-있습니다">2-2) POC 코드가 정상적으로 실행이 됐을 경우 웹 쉘 파일이 서버에 생성되는 것을 확인할 수 있습니다.</a></li>
+          </ol>
+        </li>
+        <li><a href="#3-웹쉘-접속--명령어-실행">3) 웹쉘 접속 * 명령어 실행</a></li>
+      </ol>
+    </li>
+    <li><a href="#3-영향받는-버전">3. 영향받는 버전</a></li>
+    <li><a href="#4-취약한-버전-확인-방법">4. 취약한 버전 확인 방법</a>
+      <ol>
+        <li><a href="#1-java-버전-확인">(1) Java 버전 확인</a></li>
+        <li><a href="#2-spring-버전-확인">(2) Spring 버전 확인</a>
+          <ol>
+            <li><a href="#1-pomxml-내-springframework-version-확인">1) pom.xml 내 <!-- raw HTML omitted --> 확인</a></li>
+            <li><a href="#2-getversion-메서드를-사용-확인">2) getVersion() 메서드를 사용 확인</a></li>
+          </ol>
+        </li>
+        <li><a href="#5-대응방안">5. 대응방안</a></li>
+      </ol>
+    </li>
+    <li><a href="#-참고-">※ 참고 ※</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

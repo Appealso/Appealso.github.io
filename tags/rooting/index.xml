@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rooting on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/rooting/</link>
+    <description>Recent content in Rooting on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Feb 2022 20:39:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/rooting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>안드로이드 루팅 - Magisk</title>
+      <link>https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%A3%A8%ED%8C%85-magisk/</link>
+      <pubDate>Thu, 17 Feb 2022 20:39:00 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EB%A3%A8%ED%8C%85-magisk/</guid>
+      <description>ADB 설치 # Home Brew 통한 Install $ brew cask install android-platform-tools # adb 버전 확인 $ adb version Android Debug Bridge version 1.0.41 Version 33.0.1-8253317 Installed as /usr/local/bin/adb</description>
+    </item>
+    
+  </channel>
+</rss>
