@@ -6,7 +6,210 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 05 Mar 2022 15:34:01 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Spring4Shell 취약점 정리</title>
+        <link>https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</link>
+        <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/spring4shell.png" alt="Featured image of post Spring4Shell 취약점 정리" /&gt;&lt;h2 id=&#34;1-spring4shell-개요&#34;&gt;1. Spring4Shell 개요&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring Core 프레임워크에서 특정 조건 하에 RCE(Remote Code Execution)가 가능한 취약점&lt;/li&gt;
+&lt;li&gt;Spring 프레임워크가 매개변수를 바인딩하는 과정에서 &amp;lsquo;class&amp;rsquo; 객체가 노출되어 발생&lt;/li&gt;
+&lt;li&gt;공격자는 해당 &amp;lsquo;class&amp;rsquo; 객체에서 로깅 관련 기능을 사용해 웹 쉘 코드를 업로드하여 명령어를 실행 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-취약점-poc&#34;&gt;2. 취약점 POC&lt;/h2&gt;
+&lt;h3 id=&#34;1-테스트-환경&#34;&gt;(1) 테스트 환경&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;JDK 11&lt;/li&gt;
+&lt;li&gt;tocat-9.0.59&lt;/li&gt;
+&lt;li&gt;Spring Framework 5.3.15&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-매개변수-바인딩과-사용자-접근&#34;&gt;(2) 매개변수 바인딩과 사용자 접근&lt;/h3&gt;
+&lt;p&gt;Spring에서는 POJO(Plain Old Java Object)라고 불리는 일반 자바 객체의 속성에 URL을 통해 입력된 매개변수를 매핑하여 사용할 수 있습니다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 객체클래스
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Greeting&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getId&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setId&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getContent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setContent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;content&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//컨트롤러
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@Controller&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;HelloController&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nd&#34;&gt;@GetMapping&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/greeting&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;greetingForm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Model&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;addAttribute&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;greeting&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Greeting&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;());&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;nd&#34;&gt;@PostMapping&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/greeting&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;greetingSubmit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@ModelAttribute&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Greeting&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;greeting&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Model&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;위와 같이 Greetring이라는 객체와 Controller를 생성하면 가정한다면 일반적인 사용자는 “http://&lt;!-- raw HTML omitted --&gt;/greeting?id=test&amp;amp;content=test”과 같은 URL로 접근할 수 있습니다.&lt;/p&gt;
+&lt;h3 id=&#34;3-취약점-공격&#34;&gt;(3) 취약점 공격&lt;/h3&gt;
+&lt;p&gt;해당 취약점은 특정 상황에서 ‘class’라는 특수한 변수가 사용자에게 노출될 때 발생합니다. 현재 공개된 방식은 ‘classLoader’를 사용하여 Tomcat 로그를 이용하여 JSP 웹 쉘을 생성하는 방식입니다.&lt;/p&gt;
+&lt;h4 id=&#34;1-취약한-도커-이미지-실행&#34;&gt;1) 취약한 도커 이미지 실행&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-docker&#34; data-lang=&#34;docker&#34;&gt;docker build . -t spring4shell &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; docker run -p 8080:8080 spring4shell&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2-poc-코드-실행&#34;&gt;2) POC 코드 실행&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-docker&#34; data-lang=&#34;docker&#34;&gt;python exploit.py --url &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://localhost:8080/helloworld/greeting&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;2-1-poc-코드-실행-시-body에-class의-로깅-관련-객체가-사용되는-것을-확인할-수-있습니다-classmoduleclassloaderresourcescontextparentpipelinefirstpattern-매개-변수에-웹-쉘-코드를-담아-보내는-것을-확인할-수-있습니다&#34;&gt;2-1) POC 코드 실행 시 Body에 class의 로깅 관련 객체가 사용되는 것을 확인할 수 있습니다. ‘class.module.classLoader.resources.context.parent.pipeline.first.pattern’ 매개 변수에 웹 쉘 코드를 담아 보내는 것을 확인할 수 있습니다.&lt;/h5&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 279; 
+			flex-basis: 671px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1.png&#34; data-size=&#34;604x216&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1.png&#34;
+			width=&#34;604&#34;
+			height=&#34;216&#34;
+			srcset=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1_hu6ed47f4d37125ef3b89ec48ecb8d2594_83005_480x0_resize_box_3.png 480w, https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1_hu6ed47f4d37125ef3b89ec48ecb8d2594_83005_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;burp&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;burp&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-2-poc-코드가-정상적으로-실행이-됐을-경우-웹-쉘-파일이-서버에-생성되는-것을-확인할-수-있습니다&#34;&gt;2-2) POC 코드가 정상적으로 실행이 됐을 경우 웹 쉘 파일이 서버에 생성되는 것을 확인할 수 있습니다.&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ find -name shell.jsp
+./usr/local/tomcat/webapps/ROOT/shell.jsp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-웹쉘-접속--명령어-실행&#34;&gt;3) 웹쉘 접속 * 명령어 실행&lt;/h3&gt;
+&lt;p&gt;생성한 웹 쉘에 원하는 명령어를 파라마터에 대입하여 요청할 경우 실행되는 것을 확인할 수 있습니다.
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 311; 
+			flex-basis: 747px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux.png&#34; data-size=&#34;604x194&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux.png&#34;
+			width=&#34;604&#34;
+			height=&#34;194&#34;
+			srcset=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux_hu18682955d9a82016916f89821e0bbd15_142248_480x0_resize_box_3.png 480w, https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux_hu18682955d9a82016916f89821e0bbd15_142248_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;linux&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;linux&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-영향받는-버전&#34;&gt;3. 영향받는 버전&lt;/h2&gt;
+&lt;p&gt;CVE-2022-22965(Spring4Shell)
+■ JDK 9 이상의 Spring 프레임워크 사용하는 경우&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring Framework 5.3.0 ~ 5.3.17&lt;/li&gt;
+&lt;li&gt;Spring Framework 5.2.0 ~ 5.2.19&lt;/li&gt;
+&lt;li&gt;및 이전 버전
+※ JDK 8 이하의 경우 취약점의 영향을 받지 않음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4-취약한-버전-확인-방법&#34;&gt;4. 취약한 버전 확인 방법&lt;/h2&gt;
+&lt;h3 id=&#34;1-java-버전-확인&#34;&gt;(1) Java 버전 확인&lt;/h3&gt;
+&lt;p&gt;: java -version&lt;/p&gt;
+&lt;h3 id=&#34;2-spring-버전-확인&#34;&gt;(2) Spring 버전 확인&lt;/h3&gt;
+&lt;h4 id=&#34;1-pomxml-내-springframework-version-확인&#34;&gt;1) pom.xml 내 &lt;!-- raw HTML omitted --&gt; 확인&lt;/h4&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 601; 
+			flex-basis: 1443px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom.png&#34; data-size=&#34;914x152&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom.png&#34;
+			width=&#34;914&#34;
+			height=&#34;152&#34;
+			srcset=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom_hu4d584afd1ebe60b25ae39d0e72e191a5_105457_480x0_resize_box_3.png 480w, https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom_hu4d584afd1ebe60b25ae39d0e72e191a5_105457_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;pom&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;pom&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-getversion-메서드를-사용-확인&#34;&gt;2) getVersion() 메서드를 사용 확인&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CheckSpringVersion&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nd&#34;&gt;@Test&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;versionTest&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;throws&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Exception&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;org&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;springframework&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;core&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;SpringVersion&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getVersion&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;5-대응방안&#34;&gt;5. 대응방안&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;제조사 홈페이지를 통해 최신버전으로 업데이트 적용
+&lt;ul&gt;
+&lt;li&gt;제조사 홈페이지에 신규버전이 계속 업데이트되고 있어 확인 후 업데이트 적용 필요&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;CVE-2022-22965(Spring4Shell)
+&lt;ul&gt;
+&lt;li&gt;Spring Framework 5.3.18, 5.2.20 버전으로 업데이트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;신규 업데이트가 불가능할 경우 아래와 같이 조치 적용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;CVE-2022-22965(Spring4Shell)
+※ 프로젝트 패키지 아래 해당 전역 클래스 생성 후 재 컴파일(테스트 필요)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.core.Ordered&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.core.annotation.Order&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.web.bind.WebDataBinder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.web.bind.annotation.ControllerAdvice&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.web.bind.annotation.InitBinder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+ 
+&lt;span class=&#34;nd&#34;&gt;@ControllerAdvice&lt;/span&gt;
+&lt;span class=&#34;nd&#34;&gt;@Order&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;10000&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;BinderControllerAdvice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;nd&#34;&gt;@InitBinder&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setAllowedFields&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;WebDataBinder&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dataBinder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;denylist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]{&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;class.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Class.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;*.class.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;*.Class.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;};&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;dataBinder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setDisallowedFields&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;denylist&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-참고-&#34;&gt;※ 참고 ※&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uxicode.tistory.com/entry/%EB%B0%94%EC%9D%B8%EB%94%A9%EC%9D%B4%EB%9E%80&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://uxicode.tistory.com/entry/%EB%B0%94%EC%9D%B8%EB%94%A9%EC%9D%B4%EB%9E%80&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://velog.io/@thelm3716/spring4shell-%EB%B6%84%EC%84%9D-%EA%B8%80-%EC%A0%95%EB%A6%AC-CVE-2022-22965&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://velog.io/@thelm3716/spring4shell-%EB%B6%84%EC%84%9D-%EA%B8%80-%EC%A0%95%EB%A6%AC-CVE-2022-22965&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.fastly.com/blog/spring-has-sprung-breaking-down-cve-2022-22963-and-spring4shell-cve-2022&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.fastly.com/blog/spring-has-sprung-breaking-down-cve-2022-22963-and-spring4shell-cve-2022&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://unit42.paloaltonetworks.com/cve-2022-22965-springshell/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://unit42.paloaltonetworks.com/cve-2022-22965-springshell/&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=66592&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=66592&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://javamana.com/2022/04/202204022300005716.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://javamana.com/2022/04/202204022300005716.html&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities/&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://hackyboiz.github.io/2022/04/03/l0ch/2022-04-03/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hackyboiz.github.io/2022/04/03/l0ch/2022-04-03/&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://snyk.io/blog/spring4shell-zero-day-rce-spring-framework-explained/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://snyk.io/blog/spring4shell-zero-day-rce-spring-framework-explained/&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/reznok/Spring4Shell-POC&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/reznok/Spring4Shell-POC&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>웹 기초 정리(1) - URL,URI,URN</title>
         <link>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/</link>
         <pubDate>Sat, 05 Mar 2022 15:34:01 +0900</pubDate>
@@ -2203,209 +2406,6 @@ CVE-2021-4104: 1.x 버전 ※ JMSAppender를 사용하지 않는 경우 취약�
     &gt;https://aws.amazon.com/ko/blogs/korea/using-aws-security-services-to-protect-against-detect-and-respond-to-the-log4j-vulnerability/&lt;/a&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=36389&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=36389&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Spring4Shell 취약점 정리</title>
-        <link>https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</link>
-        <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
-        
-        <guid>https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</guid>
-        <description>&lt;img src="https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/spring4shell.png" alt="Featured image of post Spring4Shell 취약점 정리" /&gt;&lt;h2 id=&#34;1-spring4shell-개요&#34;&gt;1. Spring4Shell 개요&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Spring Core 프레임워크에서 특정 조건 하에 RCE(Remote Code Execution)가 가능한 취약점&lt;/li&gt;
-&lt;li&gt;Spring 프레임워크가 매개변수를 바인딩하는 과정에서 &amp;lsquo;class&amp;rsquo; 객체가 노출되어 발생&lt;/li&gt;
-&lt;li&gt;공격자는 해당 &amp;lsquo;class&amp;rsquo; 객체에서 로깅 관련 기능을 사용해 웹 쉘 코드를 업로드하여 명령어를 실행 가능&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;2-취약점-poc&#34;&gt;2. 취약점 POC&lt;/h2&gt;
-&lt;h3 id=&#34;1-테스트-환경&#34;&gt;(1) 테스트 환경&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;JDK 11&lt;/li&gt;
-&lt;li&gt;tocat-9.0.59&lt;/li&gt;
-&lt;li&gt;Spring Framework 5.3.15&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;2-매개변수-바인딩과-사용자-접근&#34;&gt;(2) 매개변수 바인딩과 사용자 접근&lt;/h3&gt;
-&lt;p&gt;Spring에서는 POJO(Plain Old Java Object)라고 불리는 일반 자바 객체의 속성에 URL을 통해 입력된 매개변수를 매핑하여 사용할 수 있습니다.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 객체클래스
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Greeting&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;private&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getId&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setId&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;id&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;getContent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setContent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;this&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;content&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//컨트롤러
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@Controller&lt;/span&gt;
-&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;HelloController&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nd&#34;&gt;@GetMapping&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/greeting&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;greetingForm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Model&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;addAttribute&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;greeting&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Greeting&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;());&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-    &lt;span class=&#34;nd&#34;&gt;@PostMapping&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/greeting&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;greetingSubmit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nd&#34;&gt;@ModelAttribute&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Greeting&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;greeting&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Model&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;위와 같이 Greetring이라는 객체와 Controller를 생성하면 가정한다면 일반적인 사용자는 “http://&lt;!-- raw HTML omitted --&gt;/greeting?id=test&amp;amp;content=test”과 같은 URL로 접근할 수 있습니다.&lt;/p&gt;
-&lt;h3 id=&#34;3-취약점-공격&#34;&gt;(3) 취약점 공격&lt;/h3&gt;
-&lt;p&gt;해당 취약점은 특정 상황에서 ‘class’라는 특수한 변수가 사용자에게 노출될 때 발생합니다. 현재 공개된 방식은 ‘classLoader’를 사용하여 Tomcat 로그를 이용하여 JSP 웹 쉘을 생성하는 방식입니다.&lt;/p&gt;
-&lt;h4 id=&#34;1-취약한-도커-이미지-실행&#34;&gt;1) 취약한 도커 이미지 실행&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-docker&#34; data-lang=&#34;docker&#34;&gt;docker build . -t spring4shell &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; docker run -p 8080:8080 spring4shell&lt;span class=&#34;err&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2-poc-코드-실행&#34;&gt;2) POC 코드 실행&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-docker&#34; data-lang=&#34;docker&#34;&gt;python exploit.py --url &lt;span class=&#34;s2&#34;&gt;&amp;#34;http://localhost:8080/helloworld/greeting&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;2-1-poc-코드-실행-시-body에-class의-로깅-관련-객체가-사용되는-것을-확인할-수-있습니다-classmoduleclassloaderresourcescontextparentpipelinefirstpattern-매개-변수에-웹-쉘-코드를-담아-보내는-것을-확인할-수-있습니다&#34;&gt;2-1) POC 코드 실행 시 Body에 class의 로깅 관련 객체가 사용되는 것을 확인할 수 있습니다. ‘class.module.classLoader.resources.context.parent.pipeline.first.pattern’ 매개 변수에 웹 쉘 코드를 담아 보내는 것을 확인할 수 있습니다.&lt;/h5&gt;
-&lt;p&gt;&lt;figure 
-	
-		class=&#34;gallery-image&#34; 
-		style=&#34;
-			flex-grow: 279; 
-			flex-basis: 671px&#34;
-	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1.png&#34; data-size=&#34;604x216&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1.png&#34;
-			width=&#34;604&#34;
-			height=&#34;216&#34;
-			srcset=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1_hu6ed47f4d37125ef3b89ec48ecb8d2594_83005_480x0_resize_box_3.png 480w, https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/burp1_hu6ed47f4d37125ef3b89ec48ecb8d2594_83005_1024x0_resize_box_3.png 1024w&#34;
-			loading=&#34;lazy&#34;
-			alt=&#34;burp&#34;&gt;
-	&lt;/a&gt;
-	
-	&lt;figcaption&gt;burp&lt;/figcaption&gt;
-	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&#34;2-2-poc-코드가-정상적으로-실행이-됐을-경우-웹-쉘-파일이-서버에-생성되는-것을-확인할-수-있습니다&#34;&gt;2-2) POC 코드가 정상적으로 실행이 됐을 경우 웹 쉘 파일이 서버에 생성되는 것을 확인할 수 있습니다.&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ find -name shell.jsp
-./usr/local/tomcat/webapps/ROOT/shell.jsp
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-웹쉘-접속--명령어-실행&#34;&gt;3) 웹쉘 접속 * 명령어 실행&lt;/h3&gt;
-&lt;p&gt;생성한 웹 쉘에 원하는 명령어를 파라마터에 대입하여 요청할 경우 실행되는 것을 확인할 수 있습니다.
-&lt;figure 
-	
-		class=&#34;gallery-image&#34; 
-		style=&#34;
-			flex-grow: 311; 
-			flex-basis: 747px&#34;
-	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux.png&#34; data-size=&#34;604x194&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux.png&#34;
-			width=&#34;604&#34;
-			height=&#34;194&#34;
-			srcset=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux_hu18682955d9a82016916f89821e0bbd15_142248_480x0_resize_box_3.png 480w, https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/linux_hu18682955d9a82016916f89821e0bbd15_142248_1024x0_resize_box_3.png 1024w&#34;
-			loading=&#34;lazy&#34;
-			alt=&#34;linux&#34;&gt;
-	&lt;/a&gt;
-	
-	&lt;figcaption&gt;linux&lt;/figcaption&gt;
-	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&#34;3-영향받는-버전&#34;&gt;3. 영향받는 버전&lt;/h2&gt;
-&lt;p&gt;CVE-2022-22965(Spring4Shell)
-■ JDK 9 이상의 Spring 프레임워크 사용하는 경우&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Spring Framework 5.3.0 ~ 5.3.17&lt;/li&gt;
-&lt;li&gt;Spring Framework 5.2.0 ~ 5.2.19&lt;/li&gt;
-&lt;li&gt;및 이전 버전
-※ JDK 8 이하의 경우 취약점의 영향을 받지 않음&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;4-취약한-버전-확인-방법&#34;&gt;4. 취약한 버전 확인 방법&lt;/h2&gt;
-&lt;h3 id=&#34;1-java-버전-확인&#34;&gt;(1) Java 버전 확인&lt;/h3&gt;
-&lt;p&gt;: java -version&lt;/p&gt;
-&lt;h3 id=&#34;2-spring-버전-확인&#34;&gt;(2) Spring 버전 확인&lt;/h3&gt;
-&lt;h4 id=&#34;1-pomxml-내-springframework-version-확인&#34;&gt;1) pom.xml 내 &lt;!-- raw HTML omitted --&gt; 확인&lt;/h4&gt;
-&lt;p&gt;&lt;figure 
-	
-		class=&#34;gallery-image&#34; 
-		style=&#34;
-			flex-grow: 601; 
-			flex-basis: 1443px&#34;
-	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom.png&#34; data-size=&#34;914x152&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom.png&#34;
-			width=&#34;914&#34;
-			height=&#34;152&#34;
-			srcset=&#34;https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom_hu4d584afd1ebe60b25ae39d0e72e191a5_105457_480x0_resize_box_3.png 480w, https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/pom_hu4d584afd1ebe60b25ae39d0e72e191a5_105457_1024x0_resize_box_3.png 1024w&#34;
-			loading=&#34;lazy&#34;
-			alt=&#34;pom&#34;&gt;
-	&lt;/a&gt;
-	
-	&lt;figcaption&gt;pom&lt;/figcaption&gt;
-	
-&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&#34;2-getversion-메서드를-사용-확인&#34;&gt;2) getVersion() 메서드를 사용 확인&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;CheckSpringVersion&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;nd&#34;&gt;@Test&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;versionTest&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;throws&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Exception&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;org&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;springframework&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;core&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;SpringVersion&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getVersion&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;5-대응방안&#34;&gt;5. 대응방안&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;제조사 홈페이지를 통해 최신버전으로 업데이트 적용
-&lt;ul&gt;
-&lt;li&gt;제조사 홈페이지에 신규버전이 계속 업데이트되고 있어 확인 후 업데이트 적용 필요&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;CVE-2022-22965(Spring4Shell)
-&lt;ul&gt;
-&lt;li&gt;Spring Framework 5.3.18, 5.2.20 버전으로 업데이트&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;신규 업데이트가 불가능할 경우 아래와 같이 조치 적용&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;CVE-2022-22965(Spring4Shell)
-※ 프로젝트 패키지 아래 해당 전역 클래스 생성 후 재 컴파일(테스트 필요)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.core.Ordered&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.core.annotation.Order&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.web.bind.WebDataBinder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.web.bind.annotation.ControllerAdvice&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;org.springwork.web.bind.annotation.InitBinder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
- 
-&lt;span class=&#34;nd&#34;&gt;@ControllerAdvice&lt;/span&gt;
-&lt;span class=&#34;nd&#34;&gt;@Order&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;10000&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;BinderControllerAdvice&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;nd&#34;&gt;@InitBinder&lt;/span&gt;
-	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setAllowedFields&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;WebDataBinder&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dataBinder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;denylist&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]{&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;class.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Class.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;*.class.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;*.Class.*&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;};&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;dataBinder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;setDisallowedFields&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;denylist&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;-참고-&#34;&gt;※ 참고 ※&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uxicode.tistory.com/entry/%EB%B0%94%EC%9D%B8%EB%94%A9%EC%9D%B4%EB%9E%80&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://uxicode.tistory.com/entry/%EB%B0%94%EC%9D%B8%EB%94%A9%EC%9D%B4%EB%9E%80&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://velog.io/@thelm3716/spring4shell-%EB%B6%84%EC%84%9D-%EA%B8%80-%EC%A0%95%EB%A6%AC-CVE-2022-22965&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://velog.io/@thelm3716/spring4shell-%EB%B6%84%EC%84%9D-%EA%B8%80-%EC%A0%95%EB%A6%AC-CVE-2022-22965&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://www.fastly.com/blog/spring-has-sprung-breaking-down-cve-2022-22963-and-spring4shell-cve-2022&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.fastly.com/blog/spring-has-sprung-breaking-down-cve-2022-22963-and-spring4shell-cve-2022&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://unit42.paloaltonetworks.com/cve-2022-22965-springshell/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://unit42.paloaltonetworks.com/cve-2022-22965-springshell/&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=66592&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=66592&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://javamana.com/2022/04/202204022300005716.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://javamana.com/2022/04/202204022300005716.html&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.lunasec.io/docs/blog/spring-rce-vulnerabilities/&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://hackyboiz.github.io/2022/04/03/l0ch/2022-04-03/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://hackyboiz.github.io/2022/04/03/l0ch/2022-04-03/&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://snyk.io/blog/spring4shell-zero-day-rce-spring-framework-explained/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://snyk.io/blog/spring4shell-zero-day-rce-spring-framework-explained/&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://github.com/reznok/Spring4Shell-POC&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/reznok/Spring4Shell-POC&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
