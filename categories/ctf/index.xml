@@ -6,7 +6,25 @@
     <description>Recent content in CTF on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Feb 2022 11:03:12 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 May 2022 21:57:09 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] blind-command</title>
+      <link>https://appealso.github.io/p/dreamhack-blind-command/</link>
+      <pubDate>Fri, 06 May 2022 21:57:09 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-blind-command/</guid>
+      <description>[문제] Read the flag file XD [해결법] HTTP GET Method 우회하여 푸는 문제였다 아래 서버 코드를 보면 GET request를 받을 경우 GET 요청이 아닐 경우 커맨드가 실행되는 것을 확인할</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] Mango</title>
+      <link>https://appealso.github.io/p/dreamhack-mango/</link>
+      <pubDate>Fri, 06 May 2022 21:45:29 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-mango/</guid>
+      <description>[문제] 이 문제는 데이터베이스에 저장된 플래그를 획득하는 문제입니다. 플래그는 admin 계정의 비밀번호 입니다. 플래그의 형식은 DH{…} 입니다. {‘uid’</description>
+    </item>
+    
     <item>
       <title>[dreamhack] session-basic</title>
       <link>https://appealso.github.io/p/dreamhack-session-basic/</link>

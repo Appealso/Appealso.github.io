@@ -6,7 +6,97 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 May 2022 21:57:09 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Command Injection</title>
+      <link>https://appealso.github.io/tags/command-injection/</link>
+      <pubDate>Fri, 06 May 2022 21:57:09 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/command-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NoSQL Injection</title>
+      <link>https://appealso.github.io/tags/nosql-injection/</link>
+      <pubDate>Fri, 06 May 2022 21:45:29 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/nosql-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CORS</title>
+      <link>https://appealso.github.io/tags/cors/</link>
+      <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/cors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cross Origin</title>
+      <link>https://appealso.github.io/tags/cross-origin/</link>
+      <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/cross-origin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Same Origin </title>
+      <link>https://appealso.github.io/tags/same-origin/</link>
+      <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/same-origin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SOP</title>
+      <link>https://appealso.github.io/tags/sop/</link>
+      <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/sop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://appealso.github.io/tags/web/</link>
+      <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>기초지식</title>
+      <link>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</link>
+      <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cookie &amp; Seesion</title>
+      <link>https://appealso.github.io/tags/cookie-seesion/</link>
+      <pubDate>Fri, 06 May 2022 19:00:35 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/cookie-seesion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>웹 서버, 웹 리소스, 웹서비스</title>
+      <link>https://appealso.github.io/tags/%EC%9B%B9-%EC%84%9C%EB%B2%84-%EC%9B%B9-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/</link>
+      <pubDate>Fri, 06 May 2022 19:00:35 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/%EC%9B%B9-%EC%84%9C%EB%B2%84-%EC%9B%B9-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CVE-2022-22965</title>
       <link>https://appealso.github.io/tags/cve-2022-22965/</link>
@@ -49,24 +139,6 @@
       <pubDate>Sat, 05 Mar 2022 15:34:01 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/urn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web</title>
-      <link>https://appealso.github.io/tags/web/</link>
-      <pubDate>Sat, 05 Mar 2022 15:34:01 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>기초지식</title>
-      <link>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</link>
-      <pubDate>Sat, 05 Mar 2022 15:34:01 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</guid>
       <description></description>
     </item>
     
@@ -445,6 +517,15 @@
       <pubDate>Sun, 20 Dec 2020 20:19:13 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTTP/HTTPS</title>
+      <link>https://appealso.github.io/tags/http/https/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://appealso.github.io/tags/http/https/</guid>
       <description></description>
     </item>
     

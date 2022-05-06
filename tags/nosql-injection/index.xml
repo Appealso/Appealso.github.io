@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NoSQL Injection on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/nosql-injection/</link>
+    <description>Recent content in NoSQL Injection on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 May 2022 21:45:29 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/nosql-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] Mango</title>
+      <link>https://appealso.github.io/p/dreamhack-mango/</link>
+      <pubDate>Fri, 06 May 2022 21:45:29 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-mango/</guid>
+      <description>[문제] 이 문제는 데이터베이스에 저장된 플래그를 획득하는 문제입니다. 플래그는 admin 계정의 비밀번호 입니다. 플래그의 형식은 DH{…} 입니다. {‘uid’</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,22 +6,31 @@
     <description>Recent content in Categories on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 May 2022 21:57:09 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Security</title>
-      <link>https://appealso.github.io/categories/security/</link>
-      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+      <title>CTF</title>
+      <link>https://appealso.github.io/categories/ctf/</link>
+      <pubDate>Fri, 06 May 2022 21:57:09 +0900</pubDate>
       
-      <guid>https://appealso.github.io/categories/security/</guid>
+      <guid>https://appealso.github.io/categories/ctf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Basic</title>
       <link>https://appealso.github.io/categories/basic/</link>
-      <pubDate>Sat, 05 Mar 2022 15:34:01 +0900</pubDate>
+      <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
       
       <guid>https://appealso.github.io/categories/basic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://appealso.github.io/categories/security/</link>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://appealso.github.io/categories/security/</guid>
       <description></description>
     </item>
     
@@ -40,15 +49,6 @@
       <pubDate>Tue, 15 Feb 2022 20:52:35 +0900</pubDate>
       
       <guid>https://appealso.github.io/categories/owasp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CTF</title>
-      <link>https://appealso.github.io/categories/ctf/</link>
-      <pubDate>Sun, 13 Feb 2022 11:03:12 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/categories/ctf/</guid>
       <description></description>
     </item>
     

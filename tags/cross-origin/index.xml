@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cross Origin on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/cross-origin/</link>
+    <description>Recent content in Cross Origin on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 May 2022 19:01:47 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/cross-origin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basicweb3</title>
+      <link>https://appealso.github.io/p/basicweb3/</link>
+      <pubDate>Fri, 06 May 2022 19:01:47 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/basicweb3/</guid>
+      <description>수정중&amp;hellip; SOP Same Origin Cross Origin CORS</description>
+    </item>
+    
+  </channel>
+</rss>
