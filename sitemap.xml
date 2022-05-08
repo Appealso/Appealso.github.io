@@ -2,10 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://appealso.github.io/p/dreamhack-blind-command/</loc>
-    <lastmod>2022-05-06T21:57:09+09:00</lastmod>
+    <loc>https://appealso.github.io/categories/basic/</loc>
+    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/categories/</loc>
+    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/post/</loc>
+    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/</loc>
+    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/</loc>
+    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/web/</loc>
+    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</loc>
+    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/</loc>
+    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
+  </url><url>
+    <loc>https://appealso.github.io/p/dreamhack-blind-command/</loc>
     <lastmod>2022-05-06T21:57:09+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/tags/command-injection/</loc>
@@ -14,23 +35,11 @@
     <loc>https://appealso.github.io/categories/ctf/</loc>
     <lastmod>2022-05-06T21:57:09+09:00</lastmod>
   </url><url>
-    <loc>https://appealso.github.io/post/</loc>
-    <lastmod>2022-05-06T21:57:09+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/</loc>
-    <lastmod>2022-05-06T21:57:09+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/tags/</loc>
-    <lastmod>2022-05-06T21:57:09+09:00</lastmod>
-  </url><url>
     <loc>https://appealso.github.io/p/dreamhack-mango/</loc>
     <lastmod>2022-05-06T21:45:29+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/tags/nosql-injection/</loc>
     <lastmod>2022-05-06T21:45:29+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/categories/basic/</loc>
-    <lastmod>2022-05-06T19:01:47+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/p/basicweb3/</loc>
     <lastmod>2022-05-06T19:01:47+09:00</lastmod>
@@ -46,21 +55,6 @@
   </url><url>
     <loc>https://appealso.github.io/tags/sop/</loc>
     <lastmod>2022-05-06T19:01:47+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/tags/web/</loc>
-    <lastmod>2022-05-06T19:01:47+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</loc>
-    <lastmod>2022-05-06T19:01:47+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/tags/cookie-seesion/</loc>
-    <lastmod>2022-05-06T19:00:35+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https-%EC%9B%B9%EC%84%9C%EB%B2%84-%EC%9B%B9%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%BF%A0%ED%82%A4-%EC%84%B8%EC%85%98/</loc>
-    <lastmod>2022-05-06T19:00:35+09:00</lastmod>
-  </url><url>
-    <loc>https://appealso.github.io/tags/%EC%9B%B9-%EC%84%9C%EB%B2%84-%EC%9B%B9-%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4/</loc>
-    <lastmod>2022-05-06T19:00:35+09:00</lastmod>
   </url><url>
     <loc>https://appealso.github.io/tags/cve-2022-22965/</loc>
     <lastmod>2022-04-10T00:00:00+00:00</lastmod>

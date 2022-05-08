@@ -6,7 +6,402 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 06 May 2022 21:57:09 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 08 May 2022 16:00:35 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>웹 기초 정리(2) - HTTP/HTTPS</title>
+        <link>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/</link>
+        <pubDate>Sun, 08 May 2022 16:00:35 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/</guid>
+        <description>&lt;h2 id=&#34;httphttps&#34;&gt;HTTP/HTTPS&lt;/h2&gt;
+&lt;h3 id=&#34;http란&#34;&gt;HTTP란?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTP란 Hyper Text Transfer Protocol의 약자로 말 그대로 하이퍼 텍스트를 전송&lt;/li&gt;
+&lt;li&gt;HTTP는 클라이언트와 서버 사이에 이루어지는 요청/응답 프로토콜&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;특징&#34;&gt;특징&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;무상태(Stateless): HTTP는 상태를 저장하지 않는다. 즉, 통신간의 연결 상태 처리나, 정보를 저장할 필요가 없기 때문에 서버 디자인이 간단해진다는 장점이 있다. 만약 저장이 필요한 경우에는 쿠키나 세션을 활용해 정보를 저장할 수 있다.&lt;/li&gt;
+&lt;li&gt;비연결성(Connectionless): HTTP는 클라이언트와 서버가 한 번 연결을 맺은 후, 클라이언트의 요청에 대해 서버가 응답을 마치면 맺었던 연결을 끊어버리는 성질을 말한다. 이러한 특징의 장점은 컴퓨터마다 매번 연결을 유지할 필요가 없기 때문에 리소스를 줄일 수 있어 더 많은 연결을 그때그때 수행할 수 있다는 장점이 있다. 하지만 연결 해제를 매번 해주어야 때문에 이에 대한 오버헤드가 일어난다는 단점또한 가지고 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;흐름&#34;&gt;흐름&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;TCP 연결을 Open&lt;/li&gt;
+&lt;li&gt;HTTP 메시지를 전송
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 206; 
+			flex-basis: 495px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http01.png&#34; data-size=&#34;693x336&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http01.png&#34;
+			width=&#34;693&#34;
+			height=&#34;336&#34;
+			srcset=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http01_hu9c558987cfc634d18c54d528b7872d45_72308_480x0_resize_box_3.png 480w, https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http01_hu9c558987cfc634d18c54d528b7872d45_72308_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;http&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;http&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;서버에 의해 전송된 응답
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 153; 
+			flex-basis: 368px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http02.png&#34; data-size=&#34;758x494&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http02.png&#34;
+			width=&#34;758&#34;
+			height=&#34;494&#34;
+			srcset=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http02_hu21029befebfd825d25d5e5a115ccd29c_204541_480x0_resize_box_3.png 480w, https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http02_hu21029befebfd825d25d5e5a115ccd29c_204541_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;http&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;http&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;연결을 닫거나 다른 요청들을 위해 재사용합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;http-method&#34;&gt;HTTP Method&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;HTTP Method&lt;/th&gt;
+&lt;th&gt;전송 형태&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GET&lt;/td&gt;
+&lt;td&gt;GET [request-uri]?query_string&lt;/td&gt;
+&lt;td&gt;- 요청받은 URI의 정보를 검색하여 응답한다. &lt;!-- raw HTML omitted --&gt; - GET을 사용하는 요청은 오직 데이터를 받기만 한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;HEAD&lt;/td&gt;
+&lt;td&gt;HEAD [request-uri]&lt;/td&gt;
+&lt;td&gt;- HEAD 메서드는 GET 메서드의 요청과 동일한 응답을 요구하지만, 응답 본문을 포함하지 않는다. &lt;!-- raw HTML omitted --&gt;- 웹서버 정보확인, 헬스체크, 버젼확인, 최종 수정일자 확인등의 용도로 사용된다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;POST&lt;/td&gt;
+&lt;td&gt;POST [request-uri] Content-Type:[Content Type] [데이터]&lt;/td&gt;
+&lt;td&gt;- 요청된 자원을 생성/수정한다.&lt;!-- raw HTML omitted --&gt; - 새로 작성된 리소스인 경우 HTTP헤더 항목 Location : URI주소를 포함하여 응답한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PUT&lt;/td&gt;
+&lt;td&gt;PUT [request-uri] Content-Type:[Content Type] [데이터]&lt;/td&gt;
+&lt;td&gt;- 요청된 자원을 수정(UPDATE)한다. &lt;!-- raw HTML omitted --&gt; - 내용 갱신을 위주로 Location : URI를 보내지 않아도 된다. &lt;!-- raw HTML omitted --&gt;- 클라이언트측은 요청된 URI를 그대로 사용하는 것으로 간주한다.&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PATCH&lt;/td&gt;
+&lt;td&gt;PATCH [request-uri] Content-Type:[Content Type] [데이터]&lt;/td&gt;
+&lt;td&gt;- PUT과 유사하게 요청된 자원을 수정(UPDATE)할 때 사용한다.&lt;!-- raw HTML omitted --&gt; - PUT의 경우 자원 전체를 갱신하는 의미지만, PATCH는 해당 자원의 일부를 교체하는 의미로 사용한다.&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DELETE&lt;/td&gt;
+&lt;td&gt;DELETE [request-uri]&lt;/td&gt;
+&lt;td&gt;- 요청된 자원을 삭제할 것을 요청함.&lt;!-- raw HTML omitted --&gt; - 안전성 문제로 대부분의 서버에서 비활성한다.&lt;!-- raw HTML omitted --&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CONNECT&lt;/td&gt;
+&lt;td&gt;CONNECT [request-uri]&lt;/td&gt;
+&lt;td&gt;동적으로 터널 모드를 교환, 프락시 기능을 요청시 사용한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TRACE&lt;/td&gt;
+&lt;td&gt;TRACE [request-uri]&lt;/td&gt;
+&lt;td&gt;원격지 서버에 루프백 메시지 호출하기 위해 테스트용으로 사용한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OPTIONS&lt;/td&gt;
+&lt;td&gt;OPTIONS [request-uri]&lt;/td&gt;
+&lt;td&gt;웹서버에서 지원되는 메소드의 종류를 확인할 경우 사용한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;http-응답-코드&#34;&gt;HTTP 응답 코드&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;조건부 응답&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;응답코드&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;Continue (클라이언트로 부터 일부 요청을 받았으며 나머지 정보를 계속 요청함)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;101&lt;/td&gt;
+&lt;td&gt;Switching protocols&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;102&lt;/td&gt;
+&lt;td&gt;처리&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;성공&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;응답코드&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;200&lt;/td&gt;
+&lt;td&gt;OK(요청이 성공적으로 수행되었음)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;201&lt;/td&gt;
+&lt;td&gt;Created (PUT 메소드에 의해 원격지 서버에 파일 생성됨)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;202&lt;/td&gt;
+&lt;td&gt;서버가 요청을 접수했지만 아직 처리하지 않았다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;203&lt;/td&gt;
+&lt;td&gt;서버가 요청을 성공적으로 처리했지만 다른 소스에서 수신된 정보를 제공하고 있다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;204&lt;/td&gt;
+&lt;td&gt;No content, (사용자 요구 처리하였으나 전송할 데이터가 없음)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;205&lt;/td&gt;
+&lt;td&gt;서버가 요청을 성공적으로 처리했지만 콘텐츠를 표시하지 않는다. 204 응답과 달리 이 응답은 요청자가 문서 보기를 재설정할 것을 요구한다(예: 새 입력을 위한 양식 비우기).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;206&lt;/td&gt;
+&lt;td&gt;서버가 GET 요청의 일부만 성공적으로 처리했다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;리다이렉션 완료&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;응답코드&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;300&lt;/td&gt;
+&lt;td&gt;서요청한 페이지를 새 위치로 영구적으로 이동했다. GET 또는 HEAD 요청에 대한 응답으로 이 응답을 표시하면 요청자가 자동으로 새 위치로 전달된다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;301&lt;/td&gt;
+&lt;td&gt;Moved permanently (요구한 데이터를 변경된 타 URL에 요청함)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;302&lt;/td&gt;
+&lt;td&gt;현재 서버가 다른 위치의 페이지로 요청에 응답하고 있지만 요청자는 향후 요청 시 원래 위치를 계속 사용해야 한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;303&lt;/td&gt;
+&lt;td&gt;요청자가 다른 위치에 별도의 GET 요청을 하여 응답을 검색할 경우 서버는 이 코드를 표시한다. HEAD 요청 이외의 모든 요청을 다른 위치로 자동으로 전달한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;304&lt;/td&gt;
+&lt;td&gt;마지막 요청 이후 요청한 페이지는 수정되지 않았다. 서버가 이 응답을 표시하면 페이지의 콘텐츠를 표시하지 않는다. 요청자가 마지막으로 페이지를 요청한 후 페이지가 변경되지 않으면 이 응답(If-Modified-Since HTTP 헤더라고 함)을 표시하도록 서버를 구성해야 한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;305&lt;/td&gt;
+&lt;td&gt;요청자는 프록시를 사용하여 요청한 페이지만 액세스할 수 있다. 서버가 이 응답을 표시하면 요청자가 사용할 프록시를 가리키는 것이기도 하다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;307&lt;/td&gt;
+&lt;td&gt;현재 서버가 다른 위치의 페이지로 요청에 응답하고 있지만 요청자는 향후 요청 시 원래 위치를 계속 사용해야 한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;요청 오류&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;응답코드&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;400&lt;/td&gt;
+&lt;td&gt;Bad request (사용자의 잘못된 요청을 처리할 수 없음)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;401&lt;/td&gt;
+&lt;td&gt;Unauthorized (인증이 필요한 페이지를 요청한 경우)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;402&lt;/td&gt;
+&lt;td&gt;Payment required(예약됨)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;403&lt;/td&gt;
+&lt;td&gt;Forbidden (접근 금지, 디렉터리 리스팅 요청 및 관리자 페이지 접근 등을 차단)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;404&lt;/td&gt;
+&lt;td&gt;Not found, (요청한 페이지 없음)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;405&lt;/td&gt;
+&lt;td&gt;Method not allowed (혀용되지 않는 http method 사용함)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;407&lt;/td&gt;
+&lt;td&gt;Proxy authentication required (프락시 인증 요구됨)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;408&lt;/td&gt;
+&lt;td&gt;Request timeout (요청 시간 초과)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;409&lt;/td&gt;
+&lt;td&gt;서버가 요청을 수행하는 중에 충돌이 발생했다. 서버는 응답할 때 충돌에 대한 정보를 포함해야 한다. 서버는 PUT 요청과 충돌하는 PUT 요청에 대한 응답으로 이 코드를 요청 간 차이점 목록과 함께 표시해야 한다.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;410&lt;/td&gt;
+&lt;td&gt;Gone (영구적으로 사용 금지)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;412&lt;/td&gt;
+&lt;td&gt;Precondition failed (전체 조건 실패)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;414&lt;/td&gt;
+&lt;td&gt;Request-URI too long (요청 URL 길이가 긴 경우임)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;서버오류&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;응답코드&lt;/th&gt;
+&lt;th&gt;설명&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;500&lt;/td&gt;
+&lt;td&gt;Internal server error (내부 서버 오류)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;501&lt;/td&gt;
+&lt;td&gt;Not implemented (웹 서버가 처리할 수 없음)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;503&lt;/td&gt;
+&lt;td&gt;Service unnailable (서비스 제공 불가)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;504&lt;/td&gt;
+&lt;td&gt;Gateway timeout (게이트웨이 시간 초과)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;505&lt;/td&gt;
+&lt;td&gt;HTTP version not supported (해당 http 버전 지원되지 않음)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;http란-1&#34;&gt;HTTP란?&lt;/h3&gt;
+&lt;p&gt;&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 276; 
+			flex-basis: 663px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https01.jpeg&#34; data-size=&#34;860x311&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https01.jpeg&#34;
+			width=&#34;860&#34;
+			height=&#34;311&#34;
+			srcset=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https01_hu34824f4c018393d838bef2f89b3adb00_18690_480x0_resize_q75_box.jpeg 480w, https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https01_hu34824f4c018393d838bef2f89b3adb00_18690_1024x0_resize_q75_box.jpeg 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;https&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;https&lt;/figcaption&gt;
+	
+&lt;/figure&gt;
+&lt;figure 
+	
+		class=&#34;gallery-image&#34; 
+		style=&#34;
+			flex-grow: 124; 
+			flex-basis: 299px&#34;
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https02.png&#34; data-size=&#34;580x465&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https02.png&#34;
+			width=&#34;580&#34;
+			height=&#34;465&#34;
+			srcset=&#34;https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https02_hu70e80fb675c500db92a4542aa9147179_65966_480x0_resize_box_3.png 480w, https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https02_hu70e80fb675c500db92a4542aa9147179_65966_1024x0_resize_box_3.png 1024w&#34;
+			loading=&#34;lazy&#34;
+			alt=&#34;https&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;https&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTPS는 기본 골격이나 사용 목적 등은 HTTP와 거의 동일하지만, 데이터를 주고 받는 과정에 ‘보안’ 요소가 추가됨&lt;/li&gt;
+&lt;li&gt;HTTPS를 사용하면 서버와 클라이언트 사이의 모든 통신 내용이 암호화된다.&lt;/li&gt;
+&lt;li&gt;HTTPS는 SSL이나 TLS 프로토콜을 통해 세션 데이터를 암호화하며, 기본 TCP/IP 포트는 443이고, SSL 프로토콜 위에서 HTTPS 프로토콜이 동작&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ssl--tls&#34;&gt;SSL / TLS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SSL은 넷스케이프에 의해 작성된 프로토콜&lt;/li&gt;
+&lt;li&gt;1995년 version1은 출시되지 않았고, version2는 넷스케이프 1.1 브라우저로 시작&lt;/li&gt;
+&lt;li&gt;버전 2에 몇가지 주요 보안 문제가 있어서, version3을 출시&lt;/li&gt;
+&lt;li&gt;이후 1999년이 끝나기 전에 IETF는 TLS1.0을 발표&lt;/li&gt;
+&lt;li&gt;TLS1.1버전이 2006년에 릴리즈 되었고, 2008년에 TLS1.2버전이 몇가지 결함과 악용을 해결하기 위해 릴리즈&lt;/li&gt;
+&lt;li&gt;혼란 야기 방지차원에서 SSL 3.0은 2015년 공식적으로 사용 종료&lt;/li&gt;
+&lt;li&gt;이후 TLS 1.3 버전은 보안 2018년 3월에 승인됨&lt;/li&gt;
+&lt;li&gt;TLS 1.3버전은 보안 기능을 크게 향상시키고 이전의 약한 기능을 제거&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;출처-및-참고&#34;&gt;출처 및 참고&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/ko/docs/Web/HTTP/Overview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://developer.mozilla.org/ko/docs/Web/HTTP/Overview&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://hanamon.kr/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-http-http%eb%9e%80-%ed%8a%b9%ec%a7%95-%eb%ac%b4%ec%83%81%ed%83%9c-%eb%b9%84%ec%97%b0%ea%b2%b0%ec%84%b1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hanamon.kr/네트워크-http-http란-특징-무상태-비연결성/&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://kyun2da.dev/CS/http%eb%9e%80/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://kyun2da.dev/CS/http란/&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://developer.mozilla.org/ko/docs/Web/HTTP/Methods&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://developer.mozilla.org/ko/docs/Web/HTTP/Methods&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://ko.wikipedia.org/wiki/HTTP_%ec%83%81%ed%83%9c_%ec%bd%94%eb%93%9c&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://ko.wikipedia.org/wiki/HTTP_상태_코드&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://incheol-jung.gitbook.io/docs/q-and-a/computer-science/http-method&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://incheol-jung.gitbook.io/docs/q-and-a/computer-science/http-method&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://rachel-kwak.github.io/2021/03/08/HTTPS.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://rachel-kwak.github.io/2021/03/08/HTTPS.html&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://bumday.tistory.com/43&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://bumday.tistory.com/43&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>[dreamhack] blind-command</title>
         <link>https://appealso.github.io/p/dreamhack-blind-command/</link>
         <pubDate>Fri, 06 May 2022 21:57:09 +0900</pubDate>
@@ -169,23 +564,6 @@ SOP
 Same Origin
 Cross Origin
 CORS&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>웹 기초 정리(2) - HTTP/HTTPS, 웹서버, 웹리소스, 웹서비스 ,쿠키, 세션</title>
-        <link>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https-%EC%9B%B9%EC%84%9C%EB%B2%84-%EC%9B%B9%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%BF%A0%ED%82%A4-%EC%84%B8%EC%85%98/</link>
-        <pubDate>Fri, 06 May 2022 19:00:35 +0900</pubDate>
-        
-        <guid>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https-%EC%9B%B9%EC%84%9C%EB%B2%84-%EC%9B%B9%EB%A6%AC%EC%86%8C%EC%8A%A4-%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%BF%A0%ED%82%A4-%EC%84%B8%EC%85%98/</guid>
-        <description>&lt;p&gt;수정중&amp;hellip;&lt;/p&gt;
-&lt;p&gt;HTTP/HTTPS
-HTT란?
-형태&lt;/p&gt;
-&lt;p&gt;HTTPS 개요
-HTTP 응답 값&lt;/p&gt;
-&lt;p&gt;웹 서버, 웹 리소스, 웹서비스&lt;/p&gt;
-&lt;p&gt;Cookie &amp;amp; Seesion&lt;/p&gt;
-&lt;h2 id=&#34;출처-및-참고&#34;&gt;출처 및 참고&lt;/h2&gt;
 </description>
         </item>
         <item>

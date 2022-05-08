@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='HTTP/HTTPS HTTP란? HTTP란 Hyper Text Transfer Protocol의 약자로 말 그대로 하이퍼 텍스트를 전송 HTTP는 클라이언트와 서버 사이에 이루어지는 요청/응답 프로토콜'><title>웹 기초 정리(2) - HTTP/HTTPS</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='웹 기초 정리(2) - HTTP/HTTPS'>
+<meta property='og:description' content='HTTP/HTTPS HTTP란? HTTP란 Hyper Text Transfer Protocol의 약자로 말 그대로 하이퍼 텍스트를 전송 HTTP는 클라이언트와 서버 사이에 이루어지는 요청/응답 프로토콜'>
+<meta property='og:url' content='https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Web' /><meta property='article:tag' content='기초지식' /><meta property='article:tag' content='HTTP/HTTPS' /><meta property='article:published_time' content='2022-05-08T16:00:35&#43;09:00'/><meta property='article:modified_time' content='2022-05-08T16:00:35&#43;09:00'/>
+<meta name="twitter:title" content="웹 기초 정리(2) - HTTP/HTTPS">
+<meta name="twitter:description" content="HTTP/HTTPS HTTP란? HTTP란 Hyper Text Transfer Protocol의 약자로 말 그대로 하이퍼 텍스트를 전송 HTTP는 클라이언트와 서버 사이에 이루어지는 요청/응답 프로토콜">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/basic/" style="background-color: #2a9d8f; color: #fff;">
+                Basic
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/">웹 기초 정리(2) - HTTP/HTTPS</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 08, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    6 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="httphttps">HTTP/HTTPS</h2>
+<h3 id="http란">HTTP란?</h3>
+<ul>
+<li>HTTP란 Hyper Text Transfer Protocol의 약자로 말 그대로 하이퍼 텍스트를 전송</li>
+<li>HTTP는 클라이언트와 서버 사이에 이루어지는 요청/응답 프로토콜</li>
+</ul>
+<h3 id="특징">특징</h3>
+<ul>
+<li>무상태(Stateless): HTTP는 상태를 저장하지 않는다. 즉, 통신간의 연결 상태 처리나, 정보를 저장할 필요가 없기 때문에 서버 디자인이 간단해진다는 장점이 있다. 만약 저장이 필요한 경우에는 쿠키나 세션을 활용해 정보를 저장할 수 있다.</li>
+<li>비연결성(Connectionless): HTTP는 클라이언트와 서버가 한 번 연결을 맺은 후, 클라이언트의 요청에 대해 서버가 응답을 마치면 맺었던 연결을 끊어버리는 성질을 말한다. 이러한 특징의 장점은 컴퓨터마다 매번 연결을 유지할 필요가 없기 때문에 리소스를 줄일 수 있어 더 많은 연결을 그때그때 수행할 수 있다는 장점이 있다. 하지만 연결 해제를 매번 해주어야 때문에 이에 대한 오버헤드가 일어난다는 단점또한 가지고 있다.</li>
+</ul>
+<h3 id="흐름">흐름</h3>
+<ol>
+<li>TCP 연결을 Open</li>
+<li>HTTP 메시지를 전송
+<figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 206; 
+			flex-basis: 495px"
+	>
+	<a href="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http01.png" data-size="693x336">
+		<img src="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http01.png"
+			width="693"
+			height="336"
+			srcset="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http01_hu9c558987cfc634d18c54d528b7872d45_72308_480x0_resize_box_3.png 480w, /p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http01_hu9c558987cfc634d18c54d528b7872d45_72308_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="http">
+	</a>
+	
+	<figcaption>http</figcaption>
+	
+</figure></li>
+<li>서버에 의해 전송된 응답
+<figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 153; 
+			flex-basis: 368px"
+	>
+	<a href="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http02.png" data-size="758x494">
+		<img src="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http02.png"
+			width="758"
+			height="494"
+			srcset="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http02_hu21029befebfd825d25d5e5a115ccd29c_204541_480x0_resize_box_3.png 480w, /p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/http02_hu21029befebfd825d25d5e5a115ccd29c_204541_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="http">
+	</a>
+	
+	<figcaption>http</figcaption>
+	
+</figure></li>
+<li>연결을 닫거나 다른 요청들을 위해 재사용합니다.</li>
+</ol>
+<h3 id="http-method">HTTP Method</h3>
+<table>
+<thead>
+<tr>
+<th>HTTP Method</th>
+<th>전송 형태</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>GET [request-uri]?query_string</td>
+<td>- 요청받은 URI의 정보를 검색하여 응답한다. <!-- raw HTML omitted --> - GET을 사용하는 요청은 오직 데이터를 받기만 한다.</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>HEAD [request-uri]</td>
+<td>- HEAD 메서드는 GET 메서드의 요청과 동일한 응답을 요구하지만, 응답 본문을 포함하지 않는다. <!-- raw HTML omitted -->- 웹서버 정보확인, 헬스체크, 버젼확인, 최종 수정일자 확인등의 용도로 사용된다.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>POST [request-uri] Content-Type:[Content Type] [데이터]</td>
+<td>- 요청된 자원을 생성/수정한다.<!-- raw HTML omitted --> - 새로 작성된 리소스인 경우 HTTP헤더 항목 Location : URI주소를 포함하여 응답한다.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>PUT [request-uri] Content-Type:[Content Type] [데이터]</td>
+<td>- 요청된 자원을 수정(UPDATE)한다. <!-- raw HTML omitted --> - 내용 갱신을 위주로 Location : URI를 보내지 않아도 된다. <!-- raw HTML omitted -->- 클라이언트측은 요청된 URI를 그대로 사용하는 것으로 간주한다.<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>PATCH [request-uri] Content-Type:[Content Type] [데이터]</td>
+<td>- PUT과 유사하게 요청된 자원을 수정(UPDATE)할 때 사용한다.<!-- raw HTML omitted --> - PUT의 경우 자원 전체를 갱신하는 의미지만, PATCH는 해당 자원의 일부를 교체하는 의미로 사용한다.<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>DELETE [request-uri]</td>
+<td>- 요청된 자원을 삭제할 것을 요청함.<!-- raw HTML omitted --> - 안전성 문제로 대부분의 서버에서 비활성한다.<!-- raw HTML omitted --></td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>CONNECT [request-uri]</td>
+<td>동적으로 터널 모드를 교환, 프락시 기능을 요청시 사용한다.</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>TRACE [request-uri]</td>
+<td>원격지 서버에 루프백 메시지 호출하기 위해 테스트용으로 사용한다.</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>OPTIONS [request-uri]</td>
+<td>웹서버에서 지원되는 메소드의 종류를 확인할 경우 사용한다.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http-응답-코드">HTTP 응답 코드</h3>
+<ol>
+<li>조건부 응답</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>응답코드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>Continue (클라이언트로 부터 일부 요청을 받았으며 나머지 정보를 계속 요청함)</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Switching protocols</td>
+</tr>
+<tr>
+<td>102</td>
+<td>처리</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>성공</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>응답코드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK(요청이 성공적으로 수행되었음)</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Created (PUT 메소드에 의해 원격지 서버에 파일 생성됨)</td>
+</tr>
+<tr>
+<td>202</td>
+<td>서버가 요청을 접수했지만 아직 처리하지 않았다.</td>
+</tr>
+<tr>
+<td>203</td>
+<td>서버가 요청을 성공적으로 처리했지만 다른 소스에서 수신된 정보를 제공하고 있다.</td>
+</tr>
+<tr>
+<td>204</td>
+<td>No content, (사용자 요구 처리하였으나 전송할 데이터가 없음)</td>
+</tr>
+<tr>
+<td>205</td>
+<td>서버가 요청을 성공적으로 처리했지만 콘텐츠를 표시하지 않는다. 204 응답과 달리 이 응답은 요청자가 문서 보기를 재설정할 것을 요구한다(예: 새 입력을 위한 양식 비우기).</td>
+</tr>
+<tr>
+<td>206</td>
+<td>서버가 GET 요청의 일부만 성공적으로 처리했다.</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>리다이렉션 완료</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>응답코드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300</td>
+<td>서요청한 페이지를 새 위치로 영구적으로 이동했다. GET 또는 HEAD 요청에 대한 응답으로 이 응답을 표시하면 요청자가 자동으로 새 위치로 전달된다.</td>
+</tr>
+<tr>
+<td>301</td>
+<td>Moved permanently (요구한 데이터를 변경된 타 URL에 요청함)</td>
+</tr>
+<tr>
+<td>302</td>
+<td>현재 서버가 다른 위치의 페이지로 요청에 응답하고 있지만 요청자는 향후 요청 시 원래 위치를 계속 사용해야 한다.</td>
+</tr>
+<tr>
+<td>303</td>
+<td>요청자가 다른 위치에 별도의 GET 요청을 하여 응답을 검색할 경우 서버는 이 코드를 표시한다. HEAD 요청 이외의 모든 요청을 다른 위치로 자동으로 전달한다.</td>
+</tr>
+<tr>
+<td>304</td>
+<td>마지막 요청 이후 요청한 페이지는 수정되지 않았다. 서버가 이 응답을 표시하면 페이지의 콘텐츠를 표시하지 않는다. 요청자가 마지막으로 페이지를 요청한 후 페이지가 변경되지 않으면 이 응답(If-Modified-Since HTTP 헤더라고 함)을 표시하도록 서버를 구성해야 한다.</td>
+</tr>
+<tr>
+<td>305</td>
+<td>요청자는 프록시를 사용하여 요청한 페이지만 액세스할 수 있다. 서버가 이 응답을 표시하면 요청자가 사용할 프록시를 가리키는 것이기도 하다.</td>
+</tr>
+<tr>
+<td>307</td>
+<td>현재 서버가 다른 위치의 페이지로 요청에 응답하고 있지만 요청자는 향후 요청 시 원래 위치를 계속 사용해야 한다.</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>요청 오류</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>응답코드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad request (사용자의 잘못된 요청을 처리할 수 없음)</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized (인증이 필요한 페이지를 요청한 경우)</td>
+</tr>
+<tr>
+<td>402</td>
+<td>Payment required(예약됨)</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden (접근 금지, 디렉터리 리스팅 요청 및 관리자 페이지 접근 등을 차단)</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not found, (요청한 페이지 없음)</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method not allowed (혀용되지 않는 http method 사용함)</td>
+</tr>
+<tr>
+<td>407</td>
+<td>Proxy authentication required (프락시 인증 요구됨)</td>
+</tr>
+<tr>
+<td>408</td>
+<td>Request timeout (요청 시간 초과)</td>
+</tr>
+<tr>
+<td>409</td>
+<td>서버가 요청을 수행하는 중에 충돌이 발생했다. 서버는 응답할 때 충돌에 대한 정보를 포함해야 한다. 서버는 PUT 요청과 충돌하는 PUT 요청에 대한 응답으로 이 코드를 요청 간 차이점 목록과 함께 표시해야 한다.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone (영구적으로 사용 금지)</td>
+</tr>
+<tr>
+<td>412</td>
+<td>Precondition failed (전체 조건 실패)</td>
+</tr>
+<tr>
+<td>414</td>
+<td>Request-URI too long (요청 URL 길이가 긴 경우임)</td>
+</tr>
+</tbody>
+</table>
+<ol start="5">
+<li>서버오류</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>응답코드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500</td>
+<td>Internal server error (내부 서버 오류)</td>
+</tr>
+<tr>
+<td>501</td>
+<td>Not implemented (웹 서버가 처리할 수 없음)</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service unnailable (서비스 제공 불가)</td>
+</tr>
+<tr>
+<td>504</td>
+<td>Gateway timeout (게이트웨이 시간 초과)</td>
+</tr>
+<tr>
+<td>505</td>
+<td>HTTP version not supported (해당 http 버전 지원되지 않음)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http란-1">HTTP란?</h3>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 276; 
+			flex-basis: 663px"
+	>
+	<a href="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https01.jpeg" data-size="860x311">
+		<img src="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https01.jpeg"
+			width="860"
+			height="311"
+			srcset="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https01_hu34824f4c018393d838bef2f89b3adb00_18690_480x0_resize_q75_box.jpeg 480w, /p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https01_hu34824f4c018393d838bef2f89b3adb00_18690_1024x0_resize_q75_box.jpeg 1024w"
+			loading="lazy"
+			alt="https">
+	</a>
+	
+	<figcaption>https</figcaption>
+	
+</figure>
+<figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 124; 
+			flex-basis: 299px"
+	>
+	<a href="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https02.png" data-size="580x465">
+		<img src="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https02.png"
+			width="580"
+			height="465"
+			srcset="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https02_hu70e80fb675c500db92a4542aa9147179_65966_480x0_resize_box_3.png 480w, /p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/https02_hu70e80fb675c500db92a4542aa9147179_65966_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="https">
+	</a>
+	
+	<figcaption>https</figcaption>
+	
+</figure></p>
+<ul>
+<li>HTTPS는 기본 골격이나 사용 목적 등은 HTTP와 거의 동일하지만, 데이터를 주고 받는 과정에 ‘보안’ 요소가 추가됨</li>
+<li>HTTPS를 사용하면 서버와 클라이언트 사이의 모든 통신 내용이 암호화된다.</li>
+<li>HTTPS는 SSL이나 TLS 프로토콜을 통해 세션 데이터를 암호화하며, 기본 TCP/IP 포트는 443이고, SSL 프로토콜 위에서 HTTPS 프로토콜이 동작</li>
+</ul>
+<h3 id="ssl--tls">SSL / TLS</h3>
+<ul>
+<li>SSL은 넷스케이프에 의해 작성된 프로토콜</li>
+<li>1995년 version1은 출시되지 않았고, version2는 넷스케이프 1.1 브라우저로 시작</li>
+<li>버전 2에 몇가지 주요 보안 문제가 있어서, version3을 출시</li>
+<li>이후 1999년이 끝나기 전에 IETF는 TLS1.0을 발표</li>
+<li>TLS1.1버전이 2006년에 릴리즈 되었고, 2008년에 TLS1.2버전이 몇가지 결함과 악용을 해결하기 위해 릴리즈</li>
+<li>혼란 야기 방지차원에서 SSL 3.0은 2015년 공식적으로 사용 종료</li>
+<li>이후 TLS 1.3 버전은 보안 2018년 3월에 승인됨</li>
+<li>TLS 1.3버전은 보안 기능을 크게 향상시키고 이전의 약한 기능을 제거</li>
+</ul>
+<h2 id="출처-및-참고">출처 및 참고</h2>
+<p><a class="link" href="https://developer.mozilla.org/ko/docs/Web/HTTP/Overview"  target="_blank" rel="noopener"
+    >https://developer.mozilla.org/ko/docs/Web/HTTP/Overview</a><br>
+<a class="link" href="https://hanamon.kr/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac-http-http%eb%9e%80-%ed%8a%b9%ec%a7%95-%eb%ac%b4%ec%83%81%ed%83%9c-%eb%b9%84%ec%97%b0%ea%b2%b0%ec%84%b1/"  target="_blank" rel="noopener"
+    >https://hanamon.kr/네트워크-http-http란-특징-무상태-비연결성/</a><br>
+<a class="link" href="https://kyun2da.dev/CS/http%eb%9e%80/"  target="_blank" rel="noopener"
+    >https://kyun2da.dev/CS/http란/</a><br>
+<a class="link" href="https://developer.mozilla.org/ko/docs/Web/HTTP/Methods"  target="_blank" rel="noopener"
+    >https://developer.mozilla.org/ko/docs/Web/HTTP/Methods</a>
+<a class="link" href="https://ko.wikipedia.org/wiki/HTTP_%ec%83%81%ed%83%9c_%ec%bd%94%eb%93%9c"  target="_blank" rel="noopener"
+    >https://ko.wikipedia.org/wiki/HTTP_상태_코드</a>
+<a class="link" href="https://incheol-jung.gitbook.io/docs/q-and-a/computer-science/http-method"  target="_blank" rel="noopener"
+    >https://incheol-jung.gitbook.io/docs/q-and-a/computer-science/http-method</a>
+<a class="link" href="https://rachel-kwak.github.io/2021/03/08/HTTPS.html"  target="_blank" rel="noopener"
+    >https://rachel-kwak.github.io/2021/03/08/HTTPS.html</a>
+<a class="link" href="https://bumday.tistory.com/43"  target="_blank" rel="noopener"
+    >https://bumday.tistory.com/43</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/web/">Web</a>
+        
+            <a href="/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/">기초지식</a>
+        
+            <a href="/tags/http/https/">HTTP/HTTPS</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/basicweb3/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">Basicweb3</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/web.f6849ac32e9cd6f2e23efeb3b3b75d1e_huec69e85255479d361775b2ffac2b6328_58393_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 웹 기초 정리(1) - URL,URI,URN"
+                        
+                        data-hash="md5-9oSawy6c1vLiPv6zs7ddHg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">웹 기초 정리(1) - URL,URI,URN</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/network.6048e0bb95131505e4659f29b4f9c493_hu7c2d7e014291615816b31fb9f4a70106_112373_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (4) - Well Known PortNumber, ACL, VLAN"
+                        
+                        data-hash="md5-YEjgu5UTFQXkZZ8ptPnEkw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">네트워크 기초 정리 (4) - Well Known PortNumber, ACL, VLAN</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/network.6048e0bb95131505e4659f29b4f9c493_hu7c2d7e014291615816b31fb9f4a70106_112373_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking"
+                        
+                        data-hash="md5-YEjgu5UTFQXkZZ8ptPnEkw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/network.6048e0bb95131505e4659f29b4f9c493_hu7c2d7e014291615816b31fb9f4a70106_112373_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (2) - OSI 7 Layer"
+                        
+                        data-hash="md5-YEjgu5UTFQXkZZ8ptPnEkw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">네트워크 기초 정리 (2) - OSI 7 Layer</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#httphttps">HTTP/HTTPS</a>
+      <ol>
+        <li><a href="#http란">HTTP란?</a></li>
+        <li><a href="#특징">특징</a></li>
+        <li><a href="#흐름">흐름</a></li>
+        <li><a href="#http-method">HTTP Method</a></li>
+        <li><a href="#http-응답-코드">HTTP 응답 코드</a></li>
+        <li><a href="#http란-1">HTTP란?</a></li>
+        <li><a href="#ssl--tls">SSL / TLS</a></li>
+      </ol>
+    </li>
+    <li><a href="#출처-및-참고">출처 및 참고</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
