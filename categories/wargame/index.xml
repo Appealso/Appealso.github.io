@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wargame on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/categories/wargame/</link>
+    <description>Recent content in Wargame on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 06 May 2022 21:57:09 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/wargame/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[dreamhack] blind-command</title>
+      <link>https://appealso.github.io/p/dreamhack-blind-command/</link>
+      <pubDate>Fri, 06 May 2022 21:57:09 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-blind-command/</guid>
+      <description>[문제] Read the flag file XD [해결법] HTTP GET Method 우회하여 푸는 문제였다 아래 서버 코드를 보면 GET request를 받을 경우 GET 요청이 아닐 경우 커맨드가 실행되는 것을 확인할</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] Mango</title>
+      <link>https://appealso.github.io/p/dreamhack-mango/</link>
+      <pubDate>Fri, 06 May 2022 21:45:29 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-mango/</guid>
+      <description>[문제] 이 문제는 데이터베이스에 저장된 플래그를 획득하는 문제입니다. 플래그는 admin 계정의 비밀번호 입니다. 플래그의 형식은 DH{…} 입니다. {‘uid’</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] session-basic</title>
+      <link>https://appealso.github.io/p/dreamhack-session-basic/</link>
+      <pubDate>Sun, 13 Feb 2022 11:03:12 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-session-basic/</guid>
+      <description>[문제] 쿠키와 세션으로 인증 상태를 관리하는 간단한 로그인 서비스입니다. admin 계정으로 로그인에 성공하면 플래그를 획득할 수 있습니다. [해결법] 이 문제는 admin 세</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] funjs</title>
+      <link>https://appealso.github.io/p/dreamhack-funjs/</link>
+      <pubDate>Sat, 05 Feb 2022 21:40:29 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-funjs/</guid>
+      <description>[문제] 입력 폼에 데이터를 입력하여 맞으면 플래그, 틀리면 NOP !을 출력하는 HTML 페이지입니다. main 함수를 분석하여 올바른 입력 값을 찾아보세요 ! [해결법] 이 문제</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] Carve Party</title>
+      <link>https://appealso.github.io/p/dreamhack-carve-party/</link>
+      <pubDate>Mon, 31 Jan 2022 16:40:43 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-carve-party/</guid>
+      <description>[문제] 할로윈 파티를 기념하기 위해 호박을 준비했습니다! 호박을 10000번 클릭하고 플래그를 획득하세요! [해결법] JavaScript click 이벤트를 10000번 호출 하면</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] simple-ssti</title>
+      <link>https://appealso.github.io/p/dreamhack-simple-ssti/</link>
+      <pubDate>Mon, 31 Jan 2022 16:13:01 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-simple-ssti/</guid>
+      <description>[문제] 존재하지 않는 페이지 방문시 404 에러를 출력하는 서비스입니다. SSTI 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법] URL 뒤</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] login-1</title>
+      <link>https://appealso.github.io/p/dreamhack-login-1/</link>
+      <pubDate>Mon, 31 Jan 2022 15:42:56 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-login-1/</guid>
+      <description>[문제] python으로 작성된 로그인 기능을 가진 서비스입니다. “admin” 권한을 가진 사용자로 로그인하여 플래그를 획득하세요. [해결법] 제공하는</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] web-misconf-1</title>
+      <link>https://appealso.github.io/p/dreamhack-web-misconf-1/</link>
+      <pubDate>Mon, 31 Jan 2022 14:54:40 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-web-misconf-1/</guid>
+      <description>[문제] 여기본 설정을 사용한 서비스입니다. 로그인한 후 Organization에 플래그를 설정해 놓았습니다. [해결법] 문제파일에 admin 정보가 있었다. 접</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] xss-2</title>
+      <link>https://appealso.github.io/p/dreamhack-xss-2/</link>
+      <pubDate>Tue, 05 Oct 2021 22:28:53 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-xss-2/</guid>
+      <description>[문제] 여러 기능과 입력받은 URL을 확인하는 봇이 구현된 서비스입니다. XSS 취약점을 이용해 플래그를 획득하세요. 플래그는 flag.txt, FLAG 변수에 있습니다. [해결법]</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] Tomcat Manager</title>
+      <link>https://appealso.github.io/p/dreamhack-tomcat-manager/</link>
+      <pubDate>Tue, 05 Oct 2021 21:46:26 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-tomcat-manager/</guid>
+      <description>[문제] 드림이가 톰캣 서버로 개발을 시작하였습니다. 서비스의 취약점을 찾아 플래그를 획득하세요. 플래그는 /flag 경로에 있습니다. [해결법] LFI로 tomcat 비밀번</description>
+    </item>
+    
+    <item>
+      <title>[dreamhack] crawling</title>
+      <link>https://appealso.github.io/p/dreamhack-crawling/</link>
+      <pubDate>Tue, 05 Oct 2021 21:40:18 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dreamhack-crawling/</guid>
+      <description>[문제] 드림이는 웹 크롤링 사이트를 구축했습니다. 크롤링 사이트에서 취약점을 찾고 flag를 획득하세요! [해결법] ssrf 우회 기법으로 ipaddress.ip_address(ip)).is_global 우회 [참고] https://umbum.dev/473</description>
+    </item>
+    
+  </channel>
+</rss>
