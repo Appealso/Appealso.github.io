@@ -22,7 +22,7 @@
       <pubDate>Wed, 25 May 2022 15:34:01 +0900</pubDate>
       
       <guid>https://appealso.github.io/p/hack-the-box-misc-matrioshka-brain-matrioshka-brain/</guid>
-      <description>해당 문제는 heat_measurements.csv 파일을 제공했고 해당 파일에서 Flag를 추출해내는 문제였다. 해당 파일을 열면 아래와 같은 표를 확인할 수 있다. misc ￼ 해당 표를 봤을때 열 측정을 표로</description>
+      <description>해당 문제는 heat_measurements.csv 파일을 제공했고 해당 파일에서 Flag를 추출해내는 문제였다. heat_measurements.csv 해당 파일을 열면 아래와 같은 표를 확인할 수 있다. misc ￼ 해당 표를 봤을때 열 측정을 표</description>
     </item>
     
     <item>

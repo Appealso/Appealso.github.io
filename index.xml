@@ -154,6 +154,11 @@
         
         <guid>https://appealso.github.io/p/hack-the-box-misc-matrioshka-brain-matrioshka-brain/</guid>
         <description>&lt;img src="https://appealso.github.io/cover.png" alt="Featured image of post Hack The Box - [MISC] -Matrioshka Brain Matrioshka Brain" /&gt;&lt;p&gt;해당 문제는 heat_measurements.csv 파일을 제공했고 해당 파일에서 Flag를 추출해내는 문제였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Appealso/Appealso.github.io/blob/master/file/heat_measurements.csv,&#34;  title=&#34;csv Link&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;heat_measurements.csv&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;해당 파일을 열면 아래와 같은 표를 확인할 수 있다.&lt;/p&gt;
 &lt;p&gt;&lt;figure 
 	&gt;
