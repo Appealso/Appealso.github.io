@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RSA on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/rsa/</link>
+    <description>Recent content in RSA on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Jun 2022 16:07:41 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/rsa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>N00bzCTF - [Crpyto] - RSA</title>
+      <link>https://appealso.github.io/p/n00bzctf-crpyto-rsa/</link>
+      <pubDate>Sat, 18 Jun 2022 16:07:41 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/n00bzctf-crpyto-rsa/</guid>
+      <description>[Crpyto] - RSA RSA암호화라는건 알고 잇었는데 RSA 암호화 알고리즘을 자세하게 공부한 것은 이번이 처음이라 기록을 남기려고 한다. 해당 문제를 열었을 떄 아래와 같은 python 코드</description>
+    </item>
+    
+  </channel>
+</rss>

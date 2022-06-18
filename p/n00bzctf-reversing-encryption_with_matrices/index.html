@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='[Revesing] - encryption_with_matrices Python 형태로 나오는 리버싱 문제는 처음 접해 기록을 남기려고 한다. 해당 문제를 열었는데 아래와 같은 python 코드가 주어진다. flag = &amp;#39;REDACTED&amp;#39; rand = &amp;#39;瀆瀆瀆瀆瀆瀆瀆'><title>N00bzCTF [Reversing] - encryption_with_matrices</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/n00bzctf-reversing-encryption_with_matrices/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css"><meta property='og:title' content='N00bzCTF [Reversing] - encryption_with_matrices'>
+<meta property='og:description' content='[Revesing] - encryption_with_matrices Python 형태로 나오는 리버싱 문제는 처음 접해 기록을 남기려고 한다. 해당 문제를 열었는데 아래와 같은 python 코드가 주어진다. flag = &amp;#39;REDACTED&amp;#39; rand = &amp;#39;瀆瀆瀆瀆瀆瀆瀆'>
+<meta property='og:url' content='https://appealso.github.io/p/n00bzctf-reversing-encryption_with_matrices/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='N00bzCTF' /><meta property='article:tag' content='Reversing' /><meta property='article:published_time' content='2022-06-18T16:07:25&#43;09:00'/><meta property='article:modified_time' content='2022-06-18T16:07:25&#43;09:00'/><meta property='og:image' content='https://appealso.github.io/p/n00bzctf-reversing-encryption_with_matrices/cover.png' />
+<meta name="twitter:title" content="N00bzCTF [Reversing] - encryption_with_matrices">
+<meta name="twitter:description" content="[Revesing] - encryption_with_matrices Python 형태로 나오는 리버싱 문제는 처음 접해 기록을 남기려고 한다. 해당 문제를 열었는데 아래와 같은 python 코드가 주어진다. flag = &amp;#39;REDACTED&amp;#39; rand = &amp;#39;瀆瀆瀆瀆瀆瀆瀆"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/p/n00bzctf-reversing-encryption_with_matrices/cover.png' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/n00bzctf-reversing-encryption_with_matrices/">
+                <img src="/p/n00bzctf-reversing-encryption_with_matrices/cover_hu9a07790b52a43b6c840a3a8793df70ef_7677_800x0_resize_box_3.png"
+                        srcset="/p/n00bzctf-reversing-encryption_with_matrices/cover_hu9a07790b52a43b6c840a3a8793df70ef_7677_800x0_resize_box_3.png 800w, /p/n00bzctf-reversing-encryption_with_matrices/cover_hu9a07790b52a43b6c840a3a8793df70ef_7677_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="800" 
+                        loading="lazy"
+                        alt="Featured image of post N00bzCTF [Reversing] - encryption_with_matrices" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ctf/" style="background-color: #2a9d8f; color: #fff;">
+                CTF
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/n00bzctf-reversing-encryption_with_matrices/">N00bzCTF [Reversing] - encryption_with_matrices</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 18, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h3 id="revesing---encryption_with_matrices">[Revesing] - encryption_with_matrices</h3>
+<p>Python 형태로 나오는 리버싱 문제는 처음 접해 기록을 남기려고 한다.
+해당 문제를 열었는데 아래와 같은 python 코드가 주어진다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;REDACTED&#39;</span>
+<span class="n">rand</span> <span class="o">=</span> <span class="s1">&#39;瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆瀆&#39;</span>
+
+<span class="k">def</span> <span class="nf">str_to_matrix</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">letter</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+        <span class="n">flag_mat</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter</span><span class="p">,</span><span class="n">letter</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">flag_mat</span>
+
+<span class="n">final_flag_matrix</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
+    <span class="n">final_flag_matrix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">str_to_matrix</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="n">leet_matrix</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">rand</span><span class="p">:</span>
+    <span class="n">leet_matrix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">str_to_matrix</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+<span class="n">enc_flag_matrix</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">final_flag_matrix</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">enc_flag_matrix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">enc_leet_matrix</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">leet_matrix</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">enc_leet_matrix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;leet=</span><span class="si">{</span><span class="n">enc_leet_matrix</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="n">final_ct</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">enc_leet_matrix</span><span class="p">)):</span>
+    <span class="n">final_ct</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">enc_leet_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">enc_flag_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ct=</span><span class="si">{</span><span class="n">final_ct</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1">#ct=[21629584900, 4118558976, 4118558976, 17167812676, 26606176996, 27044131401, 5407396225, 19334346304, 4291953169, 23640600025, 16132810225, 23640600025, 17519963769, 19334346304, 4649466969, 21238107289, 4649466969, 16132810225, 24053528464, 4118558976, 4118558976, 20465877481, 16132810225, 21238107289, 4649466969, 16132810225, 21238107289, 4118558976, 23231246724, 4649466969, 16132810225, 24053528464, 19334346304, 4833586576, 21629584900, 16132810225, 18597867876, 4291953169, 24890110756, 4649466969, 16132810225, 19334346304, 4118558976, 24470032041, 23231246724, 23640600025, 16132810225, 24053528464, 4118558976, 16132810225, 21238107289, 4833586576, 20465877481, 4649466969, 16132810225, 4833586576, 21629584900, 17875690000, 16132810225, 5021281321, 16132810225, 21238107289, 4291953169, 21629584900, 24470032041, 24053528464, 4649466969, 23640600025, 16132810225, 24053528464, 4118558976, 16132810225, 23640600025, 4118558976, 20850204816, 24890110756, 4649466969, 16132810225, 25740993600, 8265719056, 8265719056, 27930765625]</span>
+</code></pre></div><p>위에 코드를 해석해보면 아래와 같은 흐름이 나온다.</p>
+<ol>
+<li>flag, rand 의 값을 제곱</li>
+<li>flag 제곱 값과 rand의 제곱 값을 곱하여 출력</li>
+</ol>
+<p>rand에 입력된 값을 보면 특수문자가 반복되어 입력이 된 것을 확인할 수 있다.
+여기서 추측 할 수 있는건 특수문자가 모두 동일하고, final_ct에 출력한 값의 최대 공약수를 구하면 특수문자의 값을 구할 수 있을 것으로 추측 했다.
+최대 공약수를 계산해보면 1337^2이라는 것을 확인할 수 있었고, 아래와 같은 코드를 만들어 flag를 구할 수 있었다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">ct</span> <span class="o">=</span> <span class="p">[</span><span class="mi">21629584900</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">17167812676</span><span class="p">,</span> <span class="mi">26606176996</span><span class="p">,</span> <span class="mi">27044131401</span><span class="p">,</span> <span class="mi">5407396225</span><span class="p">,</span> <span class="mi">19334346304</span><span class="p">,</span> <span class="mi">4291953169</span><span class="p">,</span> <span class="mi">23640600025</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">23640600025</span><span class="p">,</span> <span class="mi">17519963769</span><span class="p">,</span> <span class="mi">19334346304</span><span class="p">,</span> <span class="mi">4649466969</span><span class="p">,</span> <span class="mi">21238107289</span><span class="p">,</span> <span class="mi">4649466969</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">24053528464</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">20465877481</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">21238107289</span><span class="p">,</span> <span class="mi">4649466969</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">21238107289</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">23231246724</span><span class="p">,</span> <span class="mi">4649466969</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">24053528464</span><span class="p">,</span> <span class="mi">19334346304</span><span class="p">,</span> <span class="mi">4833586576</span><span class="p">,</span> <span class="mi">21629584900</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">18597867876</span><span class="p">,</span> <span class="mi">4291953169</span><span class="p">,</span> <span class="mi">24890110756</span><span class="p">,</span> <span class="mi">4649466969</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">19334346304</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">24470032041</span><span class="p">,</span> <span class="mi">23231246724</span><span class="p">,</span> <span class="mi">23640600025</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">24053528464</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">21238107289</span><span class="p">,</span> <span class="mi">4833586576</span><span class="p">,</span> <span class="mi">20465877481</span><span class="p">,</span> <span class="mi">4649466969</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">4833586576</span><span class="p">,</span> <span class="mi">21629584900</span><span class="p">,</span> <span class="mi">17875690000</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">5021281321</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">21238107289</span><span class="p">,</span> <span class="mi">4291953169</span><span class="p">,</span> <span class="mi">21629584900</span><span class="p">,</span> <span class="mi">24470032041</span><span class="p">,</span> <span class="mi">24053528464</span><span class="p">,</span> <span class="mi">4649466969</span><span class="p">,</span> <span class="mi">23640600025</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">24053528464</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">23640600025</span><span class="p">,</span> <span class="mi">4118558976</span><span class="p">,</span> <span class="mi">20850204816</span><span class="p">,</span> <span class="mi">24890110756</span><span class="p">,</span> <span class="mi">4649466969</span><span class="p">,</span> <span class="mi">16132810225</span><span class="p">,</span> <span class="mi">25740993600</span><span class="p">,</span> <span class="mi">8265719056</span><span class="p">,</span> <span class="mi">8265719056</span><span class="p">,</span> <span class="mi">27930765625</span><span class="p">]</span>
+<span class="n">tmp</span> <span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ct</span><span class="p">:</span>
+    <span class="n">tmp</span><span class="o">+=</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="mi">1787569</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">))))</span> <span class="c1"># 제곱근을 구하면된다! 1787569는 제곱근을 추측해서 구했다.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ctf/">CTF</a>
+        
+            <a href="/tags/n00bzctf/">N00bzCTF</a>
+        
+            <a href="/tags/reversing/">Reversing</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/n00bzctf-crpyto-rsa/">
+        
+        
+            <div class="article-image">
+                <img src="/p/n00bzctf-crpyto-rsa/cover.8fbb065798b37fb4539bd9aef56e6809_hu9a07790b52a43b6c840a3a8793df70ef_7677_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post N00bzCTF - [Crpyto] - RSA"
+                        
+                        data-hash="md5-j7sGV5izf7RTm9mu9W5oCQ==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">N00bzCTF - [Crpyto] - RSA</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/hack-the-box-crypto-android-in-the-middle/">
+        
+        
+            <div class="article-image">
+                <img src="/p/hack-the-box-crypto-android-in-the-middle/cover.d501c41fb23501887c35324a9d654cf1_hu6c7d8e00816a314732898bca532296f9_14244_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Hack The Box - [Crypto] - Android-in-the-Middle"
+                        
+                        data-hash="md5-1QHEH7I1AYh8NTJKnWVM8Q==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Hack The Box - [Crypto] - Android-in-the-Middle</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/hack-the-box-misc-matrioshka-brain-matrioshka-brain/">
+        
+        
+            <div class="article-image">
+                <img src="/p/hack-the-box-misc-matrioshka-brain-matrioshka-brain/cover.d501c41fb23501887c35324a9d654cf1_hu6c7d8e00816a314732898bca532296f9_14244_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Hack The Box - [MISC] -Matrioshka Brain Matrioshka Brain"
+                        
+                        data-hash="md5-1QHEH7I1AYh8NTJKnWVM8Q==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Hack The Box - [MISC] -Matrioshka Brain Matrioshka Brain</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#revesing---encryption_with_matrices">[Revesing] - encryption_with_matrices</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

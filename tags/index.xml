@@ -6,13 +6,49 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 May 2022 15:34:01 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jun 2022 16:07:41 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Crypto</title>
       <link>https://appealso.github.io/tags/crypto/</link>
-      <pubDate>Wed, 25 May 2022 15:34:01 +0900</pubDate>
+      <pubDate>Sat, 18 Jun 2022 16:07:41 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/crypto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>N00bzCTF</title>
+      <link>https://appealso.github.io/tags/n00bzctf/</link>
+      <pubDate>Sat, 18 Jun 2022 16:07:41 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/n00bzctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RSA</title>
+      <link>https://appealso.github.io/tags/rsa/</link>
+      <pubDate>Sat, 18 Jun 2022 16:07:41 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/rsa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CTF</title>
+      <link>https://appealso.github.io/tags/ctf/</link>
+      <pubDate>Sat, 18 Jun 2022 16:07:25 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reversing</title>
+      <link>https://appealso.github.io/tags/reversing/</link>
+      <pubDate>Sat, 18 Jun 2022 16:07:25 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/reversing/</guid>
       <description></description>
     </item>
     
