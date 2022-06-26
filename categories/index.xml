@@ -6,7 +6,16 @@
     <description>Recent content in Categories on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jun 2022 16:07:41 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 09:40:46 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Security</title>
+      <link>https://appealso.github.io/categories/security/</link>
+      <pubDate>Sun, 26 Jun 2022 09:40:46 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/categories/security/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CTF</title>
       <link>https://appealso.github.io/categories/ctf/</link>
@@ -31,15 +40,6 @@
       <pubDate>Fri, 06 May 2022 21:57:09 +0900</pubDate>
       
       <guid>https://appealso.github.io/categories/wargame/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://appealso.github.io/categories/security/</link>
-      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://appealso.github.io/categories/security/</guid>
       <description></description>
     </item>
     

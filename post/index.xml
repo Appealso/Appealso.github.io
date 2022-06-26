@@ -6,7 +6,16 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jun 2022 16:07:41 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 09:40:46 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown XSS</title>
+      <link>https://appealso.github.io/p/markdown-xss/</link>
+      <pubDate>Sun, 26 Jun 2022 09:40:46 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/markdown-xss/</guid>
+      <description>최근 Markdown편집기에서 XSS 공격이 가능한 것을 알게되어 정리합니다. Markdown이란? Markdown은 콘텐츠를 작성하고 형식을 지정하기 위</description>
+    </item>
+    
     <item>
       <title>N00bzCTF - [Crpyto] - RSA</title>
       <link>https://appealso.github.io/p/n00bzctf-crpyto-rsa/</link>
