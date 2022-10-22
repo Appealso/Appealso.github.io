@@ -6,16 +6,7 @@
     <description>Recent content in Web on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Oct 2022 11:23:15 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Sekai CTF Bottle-Poem Write Up</title>
-      <link>https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/</link>
-      <pubDate>Sat, 22 Oct 2022 11:23:15 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/</guid>
-      <description>Write Up 문제를 접속하면 아래와 같은 페이지가 나온다. sekai 링크들을 클릭해보면 아래와 같은 URL로 이동이 되면서 시가 나오는 페이지로 이동이 된다. 해당 링크에서 LF</description>
-    </item>
-    
+    <lastBuildDate>Sun, 08 May 2022 16:00:35 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>웹 기초 정리(2) - HTTP/HTTPS</title>
       <link>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/</link>

@@ -6,7 +6,16 @@
     <description>Recent content in Sekai CTF on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Oct 2022 11:23:15 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/sekai-ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 19:30:27 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/sekai-ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sekai CTF sekai-game-start</title>
+      <link>https://appealso.github.io/p/sekai-ctf-sekai-game-start/</link>
+      <pubDate>Sat, 22 Oct 2022 19:30:27 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/sekai-ctf-sekai-game-start/</guid>
+      <description>문제를 접속하면 아래의 php 코드가 주어진다. 해당 코드를 해석해보면 GET 방식으로 sekai_game.run을 실행하면 될 것으로 보였다. &amp;lt;?php include(&amp;#39;./flag.php&amp;#39;); class Sekai_Game{ public $start = True; public</description>
+    </item>
+    
     <item>
       <title>Sekai CTF Bottle-Poem Write Up</title>
       <link>https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/</link>

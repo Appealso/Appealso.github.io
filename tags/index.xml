@@ -6,11 +6,11 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Oct 2022 11:23:15 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 19:30:27 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTF</title>
       <link>https://appealso.github.io/tags/ctf/</link>
-      <pubDate>Sat, 22 Oct 2022 11:23:15 +0900</pubDate>
+      <pubDate>Sat, 22 Oct 2022 19:30:27 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/ctf/</guid>
       <description></description>
@@ -19,18 +19,18 @@
     <item>
       <title>Sekai CTF</title>
       <link>https://appealso.github.io/tags/sekai-ctf/</link>
-      <pubDate>Sat, 22 Oct 2022 11:23:15 +0900</pubDate>
+      <pubDate>Sat, 22 Oct 2022 19:30:27 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/sekai-ctf/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Web</title>
-      <link>https://appealso.github.io/tags/web/</link>
-      <pubDate>Sat, 22 Oct 2022 11:23:15 +0900</pubDate>
+      <title>WEBCTF</title>
+      <link>https://appealso.github.io/tags/webctf/</link>
+      <pubDate>Sat, 22 Oct 2022 19:30:27 +0900</pubDate>
       
-      <guid>https://appealso.github.io/tags/web/</guid>
+      <guid>https://appealso.github.io/tags/webctf/</guid>
       <description></description>
     </item>
     
@@ -148,6 +148,15 @@
       <pubDate>Wed, 25 May 2022 15:34:01 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/misc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://appealso.github.io/tags/web/</link>
+      <pubDate>Sun, 08 May 2022 16:00:35 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/web/</guid>
       <description></description>
     </item>
     

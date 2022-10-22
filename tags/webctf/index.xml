@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WEBCTF on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/webctf/</link>
+    <description>Recent content in WEBCTF on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Oct 2022 19:30:27 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/webctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sekai CTF sekai-game-start</title>
+      <link>https://appealso.github.io/p/sekai-ctf-sekai-game-start/</link>
+      <pubDate>Sat, 22 Oct 2022 19:30:27 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/sekai-ctf-sekai-game-start/</guid>
+      <description>문제를 접속하면 아래의 php 코드가 주어진다. 해당 코드를 해석해보면 GET 방식으로 sekai_game.run을 실행하면 될 것으로 보였다. &amp;lt;?php include(&amp;#39;./flag.php&amp;#39;); class Sekai_Game{ public $start = True; public</description>
+    </item>
+    
+    <item>
+      <title>Sekai CTF Bottle-Poem Write Up</title>
+      <link>https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/</link>
+      <pubDate>Sat, 22 Oct 2022 11:23:15 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/</guid>
+      <description>Write Up 문제를 접속하면 아래와 같은 페이지가 나온다. sekai 링크들을 클릭해보면 아래와 같은 URL로 이동이 되면서 시가 나오는 페이지로 이동이 된다. 해당 링크에서 LF</description>
+    </item>
+    
+  </channel>
+</rss>
