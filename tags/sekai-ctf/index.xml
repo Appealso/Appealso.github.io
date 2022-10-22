@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sekai CTF on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/sekai-ctf/</link>
+    <description>Recent content in Sekai CTF on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Oct 2022 11:23:15 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/sekai-ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sekai CTF Bottle-Poem Write Up</title>
+      <link>https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/</link>
+      <pubDate>Sat, 22 Oct 2022 11:23:15 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/sekai-ctf-bottle-poem-write-up/</guid>
+      <description>Write Up 문제를 접속하면 아래와 같은 페이지가 나온다. sekai 링크들을 클릭해보면 아래와 같은 URL로 이동이 되면서 시가 나오는 페이지로 이동이 된다. 해당 링크에서 LF</description>
+    </item>
+    
+  </channel>
+</rss>
