@@ -6,7 +6,16 @@
     <description>Recent content in 기초지식 on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 May 2022 16:00:35 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 20:33:30 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>안드로이드 기초 정리</title>
+      <link>https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/</link>
+      <pubDate>Wed, 20 Jul 2022 20:33:30 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/</guid>
+      <description>안드로이드 4대요소 Activity 사용자와 상호작용하기 위한 진입점, 사용자 인터페이스를 포함한 화면 하나를 나타냄 &amp;lt;manifest ... &amp;gt; &amp;lt;application ... &amp;gt; &amp;lt;activity android:name=&amp;#34;com.example.myapp.MainActivity&amp;#34; ... &amp;gt; &amp;lt;/activity&amp;gt; &amp;lt;/application&amp;gt; &amp;lt;/manifest&amp;gt; Service 백그라운드에서 앱을 계</description>
+    </item>
+    
     <item>
       <title>웹 기초 정리(2) - HTTP/HTTPS</title>
       <link>https://appealso.github.io/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/</link>

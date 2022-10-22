@@ -2,8 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://appealso.github.io/tags/android/</loc>
+    <lastmod>2022-07-20T20:33:30+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/categories/basic/</loc>
+    <lastmod>2022-07-20T20:33:30+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://appealso.github.io/categories/</loc>
-    <lastmod>2022-07-04T22:22:46+09:00</lastmod>
+    <lastmod>2022-07-20T20:33:30+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/post/</loc>
+    <lastmod>2022-07-20T20:33:30+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/</loc>
+    <lastmod>2022-07-20T20:33:30+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/tags/</loc>
+    <lastmod>2022-07-20T20:33:30+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</loc>
+    <lastmod>2022-07-20T20:33:30+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/</loc>
+    <lastmod>2022-07-20T20:33:30+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -22,22 +57,7 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://appealso.github.io/post/</loc>
-    <lastmod>2022-07-04T22:22:46+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://appealso.github.io/categories/security/</loc>
-    <lastmod>2022-07-04T22:22:46+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/</loc>
-    <lastmod>2022-07-04T22:22:46+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/tags/</loc>
     <lastmod>2022-07-04T22:22:46+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -112,17 +132,7 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://appealso.github.io/categories/basic/</loc>
-    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://appealso.github.io/tags/web/</loc>
-    <lastmod>2022-05-08T16:00:35+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</loc>
     <lastmod>2022-05-08T16:00:35+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -309,11 +319,6 @@
   </url><url>
     <loc>https://appealso.github.io/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-2-osi-7-layer/</loc>
     <lastmod>2022-02-19T14:28:48+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/tags/android/</loc>
-    <lastmod>2022-02-17T20:39:00+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>

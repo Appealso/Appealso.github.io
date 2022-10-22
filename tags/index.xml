@@ -6,7 +6,25 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Jul 2022 22:22:46 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 20:33:30 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android</title>
+      <link>https://appealso.github.io/tags/android/</link>
+      <pubDate>Wed, 20 Jul 2022 20:33:30 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>기초지식</title>
+      <link>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</link>
+      <pubDate>Wed, 20 Jul 2022 20:33:30 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Confluence Zeroday</title>
       <link>https://appealso.github.io/tags/confluence-zeroday/</link>
@@ -103,15 +121,6 @@
       <pubDate>Sun, 08 May 2022 16:00:35 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>기초지식</title>
-      <link>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</link>
-      <pubDate>Sun, 08 May 2022 16:00:35 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/</guid>
       <description></description>
     </item>
     
@@ -310,15 +319,6 @@
       <pubDate>Sat, 19 Feb 2022 14:28:48 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/osi-7-layer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Android</title>
-      <link>https://appealso.github.io/tags/android/</link>
-      <pubDate>Thu, 17 Feb 2022 20:39:00 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/tags/android/</guid>
       <description></description>
     </item>
     

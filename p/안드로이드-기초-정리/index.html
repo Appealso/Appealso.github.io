@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='안드로이드 4대요소 Activity 사용자와 상호작용하기 위한 진입점, 사용자 인터페이스를 포함한 화면 하나를 나타냄 &amp;lt;manifest ... &amp;gt; &amp;lt;application ... &amp;gt; &amp;lt;activity android:name=&amp;#34;com.example.myapp.MainActivity&amp;#34; ... &amp;gt; &amp;lt;/activity&amp;gt; &amp;lt;/application&amp;gt; &amp;lt;/manifest&amp;gt; Service 백그라운드에서 앱을 계'><title>안드로이드 기초 정리</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2H7Y6XC3K');
+</script><meta property='og:title' content='안드로이드 기초 정리'>
+<meta property='og:description' content='안드로이드 4대요소 Activity 사용자와 상호작용하기 위한 진입점, 사용자 인터페이스를 포함한 화면 하나를 나타냄 &amp;lt;manifest ... &amp;gt; &amp;lt;application ... &amp;gt; &amp;lt;activity android:name=&amp;#34;com.example.myapp.MainActivity&amp;#34; ... &amp;gt; &amp;lt;/activity&amp;gt; &amp;lt;/application&amp;gt; &amp;lt;/manifest&amp;gt; Service 백그라운드에서 앱을 계'>
+<meta property='og:url' content='https://appealso.github.io/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Android' /><meta property='article:tag' content='기초지식' /><meta property='article:published_time' content='2022-07-20T20:33:30&#43;09:00'/><meta property='article:modified_time' content='2022-07-20T20:33:30&#43;09:00'/>
+<meta name="twitter:title" content="안드로이드 기초 정리">
+<meta name="twitter:description" content="안드로이드 4대요소 Activity 사용자와 상호작용하기 위한 진입점, 사용자 인터페이스를 포함한 화면 하나를 나타냄 &amp;lt;manifest ... &amp;gt; &amp;lt;application ... &amp;gt; &amp;lt;activity android:name=&amp;#34;com.example.myapp.MainActivity&amp;#34; ... &amp;gt; &amp;lt;/activity&amp;gt; &amp;lt;/application&amp;gt; &amp;lt;/manifest&amp;gt; Service 백그라운드에서 앱을 계">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/basic/" style="background-color: #2a9d8f; color: #fff;">
+                Basic
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/">안드로이드 기초 정리</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 20, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    3 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="안드로이드-4대요소">안드로이드 4대요소</h2>
+<h3 id="activity">Activity</h3>
+<ul>
+<li>사용자와 상호작용하기 위한 진입점, 사용자 인터페이스를 포함한 화면 하나를 나타냄</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> <span class="err">...</span> <span class="nt">&gt;</span>
+    <span class="nt">&lt;application</span> <span class="err">...</span> <span class="nt">&gt;</span>
+        <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&#34;com.example.myapp.MainActivity&#34;</span> <span class="err">...</span> <span class="nt">&gt;</span>
+        <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div><h3 id="service">Service</h3>
+<ul>
+<li>백그라운드에서 앱을 계속 실행하기 위한 다목적 진입점</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> <span class="err">...</span> <span class="nt">&gt;</span> ...
+    <span class="nt">&lt;application</span> <span class="err">...</span> <span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">android:name=</span><span class="s">&#34;.ExampleService&#34;</span> <span class="nt">/&gt;</span> ...
+    <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</code></pre></div><h3 id="broadcast-receiver">BroadCast Receiver</h3>
+<ul>
+<li>시스템이 정기적인 사용자 플로우 밖에서 이벤트를 앱에 전달하도록 지원하는 컴포넌트</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;receiver</span> <span class="na">android:name=</span><span class="s">&#34;.MyBroadcastReceiver&#34;</span> <span class="na">android:exported=</span><span class="s">&#34;true&#34;</span><span class="nt">&gt;</span> 
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.BOOT_COMPLETED&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.INPUT_METHOD_CHANGED&#34;</span> <span class="nt">/&gt;</span> 
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</code></pre></div><h3 id="contents-provider">Contents Provider</h3>
+<ul>
+<li>콘텐츠 제공자는 파일 시스템, SQLite 데이터 베이스, 웹상이나 앱이 접근할 수 있는 다른 모든 영구 저장소에 저장 간으한 앱 데이터의 공유형 집합을 관리함</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;provider</span> 
+    <span class="na">android:name=</span><span class="s">&#34;.TrackUserContentProvider&#34;</span> 
+    <span class="na">android:authorities=</span><span class="s">&#34;com.android.insecurebankv2.TrackUserContentProvider&#34;</span> <span class="na">android:exported=</span><span class="s">&#34;true&#34;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/provider&gt;</span>
+</code></pre></div><h2 id="애플리케이션의-권한-관리-uid-할당">애플리케이션의 권한 관리 (UID 할당)</h2>
+<ul>
+<li>안드로이드는 리눅스 커널을 기반으로 구축 됨</li>
+<li>안드로이드에 설치된 모든 애플리케이션은 일반 사용자 권한으로 실행됨</li>
+<li>접근 시 사용자의 동의를 받도록 하고 있음
+<figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 130; 
+			flex-basis: 314px"
+	>
+	<a href="/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/android01.png" data-size="576x440">
+		<img src="/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/android01.png"
+			width="576"
+			height="440"
+			srcset="/p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/android01_hube19104c6f1a1b727753f8125fe6e6ab_35637_480x0_resize_box_3.png 480w, /p/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC/android01_hube19104c6f1a1b727753f8125fe6e6ab_35637_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="스위치">
+	</a>
+	
+	<figcaption>스위치</figcaption>
+	
+</figure></li>
+</ul>
+<h2 id="안드로이드-디렉토리-구조">안드로이드 디렉토리 구조</h2>
+<table>
+<thead>
+<tr>
+<th>디렉토리</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/system/app</td>
+<td>시스템에의해미리설치된앱경로</td>
+</tr>
+<tr>
+<td>/data/app</td>
+<td>사용자에의해설치된앱경로</td>
+</tr>
+<tr>
+<td>/data/data/&lt;package&gt;</td>
+<td>설치앱패키지경로,루트권한으로접근가능</td>
+</tr>
+<tr>
+<td>/data/data/&lt;package&gt;/files</td>
+<td>애플리케이션이 소유한 데이터 또는 파일 저장 (so파일, data파일, ini 파일 등이 포함됨)</td>
+</tr>
+<tr>
+<td>/data/data/&lt;package&gt;/lib</td>
+<td>애플리케이션에 요청하는 라이브러리 파일 저장 (so 파일이 존재함)</td>
+</tr>
+<tr>
+<td>/data/data/&lt;package&gt;/databases</td>
+<td>설정 파일, 컨텐츠 파일 등의 쿼리 정보가 포함된 SQLlite 데이터베이스 파일 (db 파일이 존재함)</td>
+</tr>
+<tr>
+<td>/data/data/&lt;package&gt;/cache</td>
+<td>브라우저 캐시같이 일시적인 사용자의 상태정보가 포함</td>
+</tr>
+<tr>
+<td>/data/data/&lt;package&gt;/shared_prefs</td>
+<td>XML파일로저장이되며,앱에공유되는설정파일</td>
+</tr>
+<tr>
+<td>/mnt/sdcard or /sdcard</td>
+<td>External/Internal SD Card 경로</td>
+</tr>
+<tr>
+<td>/system/app/앱이름.apk</td>
+<td>시스템앱공간 <!-- raw HTML omitted -->세이프모드로 부팅이 될 시에는 시스템 앱들이 가능한 앱들이 실행</td>
+</tr>
+<tr>
+<td>/data/app/앱이름.apk</td>
+<td>사용자가 다운로드한 앱들의 공간</td>
+</tr>
+<tr>
+<td>/data/davik-cache</td>
+<td>dex 파일이 보관</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adb-명령어">adb 명령어</h2>
+<table>
+<thead>
+<tr>
+<th>옵션</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adb &ndash;help</td>
+<td>adb 명령어 도움말 확인</td>
+</tr>
+<tr>
+<td>adb connect &lt;device_ip_address&gt;</td>
+<td>아이피 주소로 디바이스에 연결</td>
+</tr>
+<tr>
+<td>adb devices</td>
+<td>연결되어 있는 디바이스 목록 출력</td>
+</tr>
+<tr>
+<td>adb kill-server</td>
+<td>서버가 실행 중인 경우 종료</td>
+</tr>
+<tr>
+<td>adb start-server</td>
+<td>서버가 종료된 경우 실행</td>
+</tr>
+<tr>
+<td>adb shell</td>
+<td>adb를 통해 양방향 셸 실행</td>
+</tr>
+<tr>
+<td>adb –s &lt;SERIAL&gt;</td>
+<td>지정된 SERIAL 대상 디바이스에 명령어 전송</td>
+</tr>
+<tr>
+<td>adb install &lt;path_to_apk&gt;</td>
+<td>APK 파일을 지정하여 설치</td>
+</tr>
+<tr>
+<td>adb uninstall &lt;PACKAGE&gt;</td>
+<td>디바이스에서 앱 패키지 제거</td>
+</tr>
+<tr>
+<td>adb pull &lt;remote&gt; &lt;local&gt;</td>
+<td>디바이스에서 로컬 컴퓨터로 파일 및 디렉터리를 복사</td>
+</tr>
+<tr>
+<td>adb push &lt;local&gt; &lt;remote&gt;</td>
+<td>로컬 컴퓨터에서 디바이스로 파일 및 디렉터리를 복사</td>
+</tr>
+<tr>
+<td>adb logcat</td>
+<td>디바이스 로그 모니터링</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>떠있는 패키지 확인 방법
+<ul>
+<li>adb shell dumpsys window windows | grep -E &lsquo;mCurrentFocus|mFocusedApp&rsquo;</li>
+</ul>
+</li>
+</ul>
+<h2 id="안드로이드-shell-command">안드로이드 shell command</h2>
+<table>
+<thead>
+<tr>
+<th>옵션</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>am &lt;command&gt;</td>
+<td>Activity Manager(활동 관리자) 호출</td>
+</tr>
+<tr>
+<td>am start &lt;intent&gt;</td>
+<td>인텐트에 지정된 Activity를 시작</td>
+</tr>
+<tr>
+<td>am startservice &lt;intent&gt;</td>
+<td>인텐트에 지정된 Service를 시작</td>
+</tr>
+<tr>
+<td>am broadcast &lt;intent&gt;</td>
+<td>브로드캐스트 인텐트를 실행</td>
+</tr>
+<tr>
+<td>am dumpheap &lt;process&gt; &lt;file&gt;</td>
+<td>process의 힙을 덤프하고 file에 작성</td>
+</tr>
+<tr>
+<td>pm &lt;command&gt;</td>
+<td>Package Manager(패키지 관리자) 호출</td>
+</tr>
+<tr>
+<td>pm list packages</td>
+<td>모든 패키지 목록 출력</td>
+</tr>
+<tr>
+<td>pm path &lt;package&gt;</td>
+<td>지정한 패키지의 APK 경로 출력</td>
+</tr>
+<tr>
+<td>input text &lt;string&gt;</td>
+<td>지정한 텍스트 입력</td>
+</tr>
+<tr>
+<td>Input keyevent &lt;key code number or name&gt;</td>
+<td>지정한 키 이벤트 입력</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>액티비티 실행 명령어
+<ul>
+<li>adb shell am start -n [package name/component name]</li>
+<li>호출가능한 경우 아래와 같이 exported 속성이 true 여야함
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">&#34;com.android.ChangePassword&#34;</span>
+    <span class="na">android:exported=</span><span class="s">&#34;true&#34;</span>
+    <span class="na">android:lable=</span><span class="s">&#34;change_password&#34;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="intent-옵션">intent 옵션</h2>
+<table>
+<thead>
+<tr>
+<th>옵션</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-a action</td>
+<td>인텐트 작업을 지정</td>
+</tr>
+<tr>
+<td>-n component</td>
+<td>패키지 이름을 접두사로 구성 요소 이름을 지정</td>
+</tr>
+<tr>
+<td>-e | &ndash;es extra_key extra_string_value</td>
+<td>문자열 데이터를 키-값 쌍으로 추가</td>
+</tr>
+<tr>
+<td>&ndash;ez extra_key extra_boolean_value</td>
+<td>불리언 데이터를 키-값 쌍으로 추가</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/android/">Android</a>
+        
+            <a href="/tags/%EA%B8%B0%EC%B4%88%EC%A7%80%EC%8B%9D/">기초지식</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC2-http/https/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">웹 기초 정리(2) - HTTP/HTTPS</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/basicweb3/">
+        
+        
+        <div class="article-details">
+            <h2 class="article-title">Basicweb3</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EC%9B%B9-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC1-urluriurn/web.f6849ac32e9cd6f2e23efeb3b3b75d1e_huec69e85255479d361775b2ffac2b6328_58393_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 웹 기초 정리(1) - URL,URI,URN"
+                        
+                        data-hash="md5-9oSawy6c1vLiPv6zs7ddHg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">웹 기초 정리(1) - URL,URI,URN</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-4-well-known-portnumber-acl-vlan/network.6048e0bb95131505e4659f29b4f9c493_hu7c2d7e014291615816b31fb9f4a70106_112373_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (4) - Well Known PortNumber, ACL, VLAN"
+                        
+                        data-hash="md5-YEjgu5UTFQXkZZ8ptPnEkw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">네트워크 기초 정리 (4) - Well Known PortNumber, ACL, VLAN</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/">
+        
+        
+            <div class="article-image">
+                <img src="/p/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-3-ip-mac-ipv4-tcp-udp-tcp-34-way-hankshaking/network.6048e0bb95131505e4659f29b4f9c493_hu7c2d7e014291615816b31fb9f4a70106_112373_250x150_fill_q75_box_smart1.jpeg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post 네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking"
+                        
+                        data-hash="md5-YEjgu5UTFQXkZZ8ptPnEkw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">네트워크 기초 정리 (3) - IP, MAC, IPv4, TCP, UDP, TCP 3,4-Way Hankshaking</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#안드로이드-4대요소">안드로이드 4대요소</a>
+      <ol>
+        <li><a href="#activity">Activity</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#broadcast-receiver">BroadCast Receiver</a></li>
+        <li><a href="#contents-provider">Contents Provider</a></li>
+      </ol>
+    </li>
+    <li><a href="#애플리케이션의-권한-관리-uid-할당">애플리케이션의 권한 관리 (UID 할당)</a></li>
+    <li><a href="#안드로이드-디렉토리-구조">안드로이드 디렉토리 구조</a></li>
+    <li><a href="#adb-명령어">adb 명령어</a></li>
+    <li><a href="#안드로이드-shell-command">안드로이드 shell command</a></li>
+    <li><a href="#intent-옵션">intent 옵션</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

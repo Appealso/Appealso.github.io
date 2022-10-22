@@ -6,7 +6,16 @@
     <description>Recent content in Categories on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Jul 2022 22:22:46 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 20:33:30 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic</title>
+      <link>https://appealso.github.io/categories/basic/</link>
+      <pubDate>Wed, 20 Jul 2022 20:33:30 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/categories/basic/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Security</title>
       <link>https://appealso.github.io/categories/security/</link>
@@ -22,15 +31,6 @@
       <pubDate>Sat, 18 Jun 2022 16:07:41 +0900</pubDate>
       
       <guid>https://appealso.github.io/categories/ctf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Basic</title>
-      <link>https://appealso.github.io/categories/basic/</link>
-      <pubDate>Sun, 08 May 2022 16:00:35 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/categories/basic/</guid>
       <description></description>
     </item>
     
