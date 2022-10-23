@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='해당 문제를 실행하면 아래와 같은 코드가 주어진다. #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;void func(int key){ char overflowme[32]; printf(&amp;#34;overflow me : &amp;#34;); gets(overflowme); // smash me! if(key == 0xcafebabe){ system(&amp;#34;/bin/sh&amp;#34;); } else{ printf(&amp;#34;Nah..\n&amp;#34;); } } int main(int argc, char* argv[]){ func(0xdeadbeef); return 0; } 코드를 보면 gets라는 취약한'><title>pwnable.kr bof</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name="naver-site-verification" content="66737462d26ac026782cf58694d2b5efcf6ed19f" /><meta name='description' content='해당 문제를 실행하면 아래와 같은 코드가 주어진다. #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;string.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;void func(int key){ char overflowme[32]; printf(&amp;#34;overflow me : &amp;#34;); gets(overflowme); // smash me! if(key == 0xcafebabe){ system(&amp;#34;/bin/sh&amp;#34;); } else{ printf(&amp;#34;Nah..\n&amp;#34;); } } int main(int argc, char* argv[]){ func(0xdeadbeef); return 0; } 코드를 보면 gets라는 취약한'><title>pwnable.kr bof</title>
 
 <link rel='canonical' href='https://appealso.github.io/p/pwnable.kr-bof/'>
 
