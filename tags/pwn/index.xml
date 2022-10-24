@@ -6,7 +6,16 @@
     <description>Recent content in pwn on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Oct 2022 10:19:30 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Oct 2022 10:57:54 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pwnable.kr passcode</title>
+      <link>https://appealso.github.io/p/pwnable.kr-passcode/</link>
+      <pubDate>Mon, 24 Oct 2022 10:57:54 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/pwnable.kr-passcode/</guid>
+      <description>접속을 하면 아래와 같은 링크가 주어진다. ssh passcode@pwnable.kr -p2222 ls를 쳐보면 아래와 같이 3가지 파일이 주어지는 c 파일을 먼저 열어 보았다. passcode@pwnable:~$ ls flag passcode passcode.c // passcode.c #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt; void login(){ int passcode1; int passcode2;</description>
+    </item>
+    
     <item>
       <title>pwnable.kr cmd2</title>
       <link>https://appealso.github.io/p/pwnable.kr-cmd2/</link>
