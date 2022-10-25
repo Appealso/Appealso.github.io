@@ -3,41 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://appealso.github.io/categories/</loc>
-    <lastmod>2022-10-24T10:57:54+09:00</lastmod>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/post/</loc>
-    <lastmod>2022-10-24T10:57:54+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/categories/pwn/</loc>
-    <lastmod>2022-10-24T10:57:54+09:00</lastmod>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/tags/pwn/</loc>
-    <lastmod>2022-10-24T10:57:54+09:00</lastmod>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/tags/pwnable.kr/</loc>
-    <lastmod>2022-10-24T10:57:54+09:00</lastmod>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://appealso.github.io/p/pwnable.kr-passcode/</loc>
-    <lastmod>2022-10-24T10:57:54+09:00</lastmod>
+    <loc>https://appealso.github.io/p/pwnable.kr-random/</loc>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/</loc>
-    <lastmod>2022-10-24T10:57:54+09:00</lastmod>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/tags/</loc>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/tags/wargame/</loc>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/categories/wargame/</loc>
+    <lastmod>2022-10-25T09:55:13+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/p/pwnable.kr-passcode/</loc>
     <lastmod>2022-10-24T10:57:54+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -223,11 +233,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/tags/command-injection/</loc>
-    <lastmod>2022-05-06T21:57:09+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/categories/wargame/</loc>
     <lastmod>2022-05-06T21:57:09+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>

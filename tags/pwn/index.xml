@@ -6,7 +6,16 @@
     <description>Recent content in pwn on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Oct 2022 10:57:54 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Oct 2022 09:55:13 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pwnable.kr random</title>
+      <link>https://appealso.github.io/p/pwnable.kr-random/</link>
+      <pubDate>Tue, 25 Oct 2022 09:55:13 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/pwnable.kr-random/</guid>
+      <description>Write-up 처음 접속을 하면 아래의 코드가 주어진다. 코드를 해석해보면 key와 random을 xor연산하여 0xdeadbeef 와 값이 동일하면 플래그가 출력되도록 되어있다. random@pwnable:~$ ls flag</description>
+    </item>
+    
     <item>
       <title>pwnable.kr passcode</title>
       <link>https://appealso.github.io/p/pwnable.kr-passcode/</link>

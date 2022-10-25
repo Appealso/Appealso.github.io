@@ -6,13 +6,13 @@
     <description>Recent content in Categories on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Oct 2022 10:57:54 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Oct 2022 09:55:13 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>PWN</title>
-      <link>https://appealso.github.io/categories/pwn/</link>
-      <pubDate>Mon, 24 Oct 2022 10:57:54 +0900</pubDate>
+      <title>Wargame</title>
+      <link>https://appealso.github.io/categories/wargame/</link>
+      <pubDate>Tue, 25 Oct 2022 09:55:13 +0900</pubDate>
       
-      <guid>https://appealso.github.io/categories/pwn/</guid>
+      <guid>https://appealso.github.io/categories/wargame/</guid>
       <description></description>
     </item>
     
@@ -40,15 +40,6 @@
       <pubDate>Mon, 04 Jul 2022 22:22:46 +0900</pubDate>
       
       <guid>https://appealso.github.io/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wargame</title>
-      <link>https://appealso.github.io/categories/wargame/</link>
-      <pubDate>Fri, 06 May 2022 21:57:09 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/categories/wargame/</guid>
       <description></description>
     </item>
     

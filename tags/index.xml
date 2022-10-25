@@ -6,11 +6,11 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Oct 2022 10:57:54 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Oct 2022 09:55:13 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>pwn</title>
       <link>https://appealso.github.io/tags/pwn/</link>
-      <pubDate>Mon, 24 Oct 2022 10:57:54 +0900</pubDate>
+      <pubDate>Tue, 25 Oct 2022 09:55:13 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/pwn/</guid>
       <description></description>
@@ -19,9 +19,18 @@
     <item>
       <title>pwnable.kr</title>
       <link>https://appealso.github.io/tags/pwnable.kr/</link>
-      <pubDate>Mon, 24 Oct 2022 10:57:54 +0900</pubDate>
+      <pubDate>Tue, 25 Oct 2022 09:55:13 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/pwnable.kr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wargame</title>
+      <link>https://appealso.github.io/tags/wargame/</link>
+      <pubDate>Tue, 25 Oct 2022 09:55:13 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/wargame/</guid>
       <description></description>
     </item>
     

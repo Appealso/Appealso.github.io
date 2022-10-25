@@ -6,7 +6,108 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 24 Oct 2022 10:57:54 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 25 Oct 2022 09:55:13 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>pwnable.kr random</title>
+        <link>https://appealso.github.io/p/pwnable.kr-random/</link>
+        <pubDate>Tue, 25 Oct 2022 09:55:13 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/pwnable.kr-random/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/pwnable.kr-random/pwn.png" alt="Featured image of post pwnable.kr random" /&gt;&lt;h2 id=&#34;write-up&#34;&gt;Write-up&lt;/h2&gt;
+&lt;p&gt;처음 접속을 하면 아래의 코드가 주어진다.
+코드를 해석해보면 key와 random을 xor연산하여 0xdeadbeef 와 값이
+동일하면 플래그가 출력되도록 되어있다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;pwnable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ls&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;pwnable&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cat&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;  
+
+&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(){&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;random&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rand&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;// random value!
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;unsigned&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;key&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;random&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0xdeadbeef&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;){&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// key random이랑 xor 연산
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Good!&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/bin/cat flag&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+	&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Wrong, maybe you should try 2^32 cases.&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;이제 디컴파일을 하여 코드를 확인해보자. DWORD PTR [rbp-0x4],eax에 랜덤값을 생성하여 변수에 삽입하는 것을 알 수 있다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(gdb) set disassembly-flavor intel
+(gdb) disas main
+Dump of assembler code for function main:
+   0x00000000004005f4 &amp;lt;+0&amp;gt;:	push   rbp
+   0x00000000004005f5 &amp;lt;+1&amp;gt;:	mov    rbp,rsp
+   0x00000000004005f8 &amp;lt;+4&amp;gt;:	sub    rsp,0x10
+   0x00000000004005fc &amp;lt;+8&amp;gt;:	mov    eax,0x0
+   0x0000000000400601 &amp;lt;+13&amp;gt;:	call   0x400500 &amp;lt;rand@plt&amp;gt;
+   0x0000000000400606 &amp;lt;+18&amp;gt;:	mov    DWORD PTR [rbp-0x4],eax
+   0x0000000000400609 &amp;lt;+21&amp;gt;:	mov    DWORD PTR [rbp-0x8],0x0
+   0x0000000000400610 &amp;lt;+28&amp;gt;:	mov    eax,0x400760
+   0x0000000000400615 &amp;lt;+33&amp;gt;:	lea    rdx,[rbp-0x8]
+   0x0000000000400619 &amp;lt;+37&amp;gt;:	mov    rsi,rdx
+   0x000000000040061c &amp;lt;+40&amp;gt;:	mov    rdi,rax
+   0x000000000040061f &amp;lt;+43&amp;gt;:	mov    eax,0x0
+   0x0000000000400624 &amp;lt;+48&amp;gt;:	call   0x4004f0 &amp;lt;__isoc99_scanf@plt&amp;gt;
+   0x0000000000400629 &amp;lt;+53&amp;gt;:	mov    eax,DWORD PTR [rbp-0x8]
+   0x000000000040062c &amp;lt;+56&amp;gt;:	xor    eax,DWORD PTR [rbp-0x4]
+   0x000000000040062f &amp;lt;+59&amp;gt;:	cmp    eax,0xdeadbeef
+   0x0000000000400634 &amp;lt;+64&amp;gt;:	jne    0x400656 &amp;lt;main+98&amp;gt;
+   0x0000000000400636 &amp;lt;+66&amp;gt;:	mov    edi,0x400763
+   0x000000000040063b &amp;lt;+71&amp;gt;:	call   0x4004c0 &amp;lt;puts@plt&amp;gt;
+   0x0000000000400640 &amp;lt;+76&amp;gt;:	mov    edi,0x400769
+   0x0000000000400645 &amp;lt;+81&amp;gt;:	mov    eax,0x0
+   0x000000000040064a &amp;lt;+86&amp;gt;:	call   0x4004d0 &amp;lt;system@plt&amp;gt;
+   0x000000000040064f &amp;lt;+91&amp;gt;:	mov    eax,0x0
+   0x0000000000400654 &amp;lt;+96&amp;gt;:	jmp    0x400665 &amp;lt;main+113&amp;gt;
+   0x0000000000400656 &amp;lt;+98&amp;gt;:	mov    edi,0x400778
+   0x000000000040065b &amp;lt;+103&amp;gt;:	call   0x4004c0 &amp;lt;puts@plt&amp;gt;
+   0x0000000000400660 &amp;lt;+108&amp;gt;:	mov    eax,0x0
+   0x0000000000400665 &amp;lt;+113&amp;gt;:	leave
+   0x0000000000400666 &amp;lt;+114&amp;gt;:	ret
+End of assembler dump.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;해당 지점에서 bp를 잡고 할당된 값을 보면 0x6b8b4567 값이 고정되서 들어가는 것을 알 수 있다. 즉  0x6b8b4567과 0xdeadbeef를 xor연산하여 대입하면 flag를 획득할 수 있다는 것이다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(gdb) b *main+18
+Breakpoint 1 at 0x400606
+(gdb) r
+Starting program: /home/random/random
+Breakpoint 1, 0x0000000000400606 in main ()
+(gdb) info register $eax
+eax            0x6b8b4567	1804289383
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;이를 기반으로 아래 코드를 작성하여 flag를 획득 할 수 있었다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;pwn&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;rand&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0x6b8b4567&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;deadbeef&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0xdeadbeef&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;deadbeef&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rand&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ssh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;random&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;pwnable.kr&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;password&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;guest&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2222&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;process&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;./random&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sendline&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;payload&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;interactive&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; python3 ./pwnable.kr_random.py
+[+] Connecting to pwnable.kr on port 2222: Done
+[*] passcode@pwnable.kr:
+    Distro    Ubuntu 16.04
+    OS:       linux
+    Arch:     amd64
+    Version:  4.4.179
+    ASLR:     Enabled
+[+] Starting remote process bytearray(b&#39;./random&#39;) on pwnable.kr: pid 59043
+[*] Switching to interactive mode
+Good!
+Mommy, I thought libc random is unpredictable...
+&lt;/code&gt;&lt;/pre&gt;</description>
+        </item>
+        <item>
         <title>pwnable.kr passcode</title>
         <link>https://appealso.github.io/p/pwnable.kr-passcode/</link>
         <pubDate>Mon, 24 Oct 2022 10:57:54 +0900</pubDate>
