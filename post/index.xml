@@ -6,7 +6,16 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Oct 2022 09:55:13 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Oct 2022 17:08:44 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pwnable.kr input</title>
+      <link>https://appealso.github.io/p/pwnable.kr-input/</link>
+      <pubDate>Wed, 26 Oct 2022 17:08:44 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/pwnable.kr-input/</guid>
+      <description>문제를 접속하면 아래의 파일이 주어진다. 우선 c파일을 열어보자. 열어보면 총 5개의 stage를 넘어가야하는데. 입력값을 코드에 맞춰 넘겨주면 된다. 각 스테</description>
+    </item>
+    
     <item>
       <title>pwnable.kr random</title>
       <link>https://appealso.github.io/p/pwnable.kr-random/</link>
