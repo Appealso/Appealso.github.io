@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS Injection on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/css-injection/</link>
+    <description>Recent content in CSS Injection on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Dec 2022 20:04:14 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/css-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[WEB Hacking] CSS injection</title>
+      <link>https://appealso.github.io/p/web-hacking-css-injection/</link>
+      <pubDate>Mon, 05 Dec 2022 20:04:14 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/web-hacking-css-injection/</guid>
+      <description>CSS Injection? CSS Injection은 악의적인 문자열을 삽입하여 악의적인 동작을 이끄공격 CSS 속성을 삽입해 웹페이지의 UI (생김새)를 변조하거나 CSS 속성의 다양한 기능을</description>
+    </item>
+    
+  </channel>
+</rss>

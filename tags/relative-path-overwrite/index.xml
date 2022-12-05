@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Relative Path OverWrite on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/relative-path-overwrite/</link>
+    <description>Recent content in Relative Path OverWrite on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Dec 2022 20:04:14 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/relative-path-overwrite/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[WEB Hacking] Relative Path OverWrite</title>
+      <link>https://appealso.github.io/p/web-hacking-relative-path-overwrite/</link>
+      <pubDate>Mon, 05 Dec 2022 20:04:14 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/web-hacking-relative-path-overwrite/</guid>
+      <description>Relative Path Overwrite? Relative Path Overwrite (RPO)는 일반적으로 서버와 브라우저가 상대 경로를 해석하는 과정에서 발생하는 차이점을 이용한 공격 임포트 하는 페이지를 조작할 수 있으면, 공격</description>
+    </item>
+    
+  </channel>
+</rss>

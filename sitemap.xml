@@ -2,13 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://appealso.github.io/p/web-hacking-css-injection/</loc>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/p/web-hacking-relative-path-overwrite/</loc>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://appealso.github.io/categories/</loc>
-    <lastmod>2022-10-26T17:08:44+09:00</lastmod>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/tags/css-injection/</loc>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/post/</loc>
-    <lastmod>2022-10-26T17:08:44+09:00</lastmod>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/tags/relative-path-overwrite/</loc>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/categories/security/</loc>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/</loc>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/tags/</loc>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://appealso.github.io/tags/web-hacking/</loc>
+    <lastmod>2022-12-05T20:04:14+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -23,16 +63,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/p/pwnable.kr-input/</loc>
-    <lastmod>2022-10-26T17:08:44+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/</loc>
-    <lastmod>2022-10-26T17:08:44+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/tags/</loc>
     <lastmod>2022-10-26T17:08:44+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -153,11 +183,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://appealso.github.io/tags/cve-2022-26134/</loc>
-    <lastmod>2022-07-04T22:22:46+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://appealso.github.io/categories/security/</loc>
     <lastmod>2022-07-04T22:22:46+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>

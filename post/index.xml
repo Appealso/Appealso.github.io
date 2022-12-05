@@ -6,7 +6,25 @@
     <description>Recent content in Posts on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Oct 2022 17:08:44 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Dec 2022 20:04:14 +0900</lastBuildDate><atom:link href="https://appealso.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[WEB Hacking] CSS injection</title>
+      <link>https://appealso.github.io/p/web-hacking-css-injection/</link>
+      <pubDate>Mon, 05 Dec 2022 20:04:14 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/web-hacking-css-injection/</guid>
+      <description>CSS Injection? CSS Injection은 악의적인 문자열을 삽입하여 악의적인 동작을 이끄공격 CSS 속성을 삽입해 웹페이지의 UI (생김새)를 변조하거나 CSS 속성의 다양한 기능을</description>
+    </item>
+    
+    <item>
+      <title>[WEB Hacking] Relative Path OverWrite</title>
+      <link>https://appealso.github.io/p/web-hacking-relative-path-overwrite/</link>
+      <pubDate>Mon, 05 Dec 2022 20:04:14 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/web-hacking-relative-path-overwrite/</guid>
+      <description>Relative Path Overwrite? Relative Path Overwrite (RPO)는 일반적으로 서버와 브라우저가 상대 경로를 해석하는 과정에서 발생하는 차이점을 이용한 공격 임포트 하는 페이지를 조작할 수 있으면, 공격</description>
+    </item>
+    
     <item>
       <title>pwnable.kr input</title>
       <link>https://appealso.github.io/p/pwnable.kr-input/</link>
