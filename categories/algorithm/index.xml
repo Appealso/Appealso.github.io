@@ -6,7 +6,43 @@
     <description>Recent content in Algorithm on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Mar 2022 10:12:19 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jan 2023 20:57:38 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 백준 14889번 스타트와 링크</title>
+      <link>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-14889%EB%B2%88-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%99%80-%EB%A7%81%ED%81%AC/</link>
+      <pubDate>Mon, 02 Jan 2023 20:57:38 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-14889%EB%B2%88-%EC%8A%A4%ED%83%80%ED%8A%B8%EC%99%80-%EB%A7%81%ED%81%AC/</guid>
+      <description>문제 오늘은 스타트링크에 다니는 사람들이 모여서 축구를 해보려고 한다. 축구는 평일 오후에 하고 의무 참석도 아니다. 축구를 하기 위해 모인 사람은 총 N명이고 신기하</description>
+    </item>
+    
+    <item>
+      <title>[Java] 백준 14890번 경사로</title>
+      <link>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-14890%EB%B2%88-%EA%B2%BD%EC%82%AC%EB%A1%9C/</link>
+      <pubDate>Mon, 02 Jan 2023 20:52:50 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-14890%EB%B2%88-%EA%B2%BD%EC%82%AC%EB%A1%9C/</guid>
+      <description>문제 크기가 N×N인 지도가 있다. 지도의 각 칸에는 그 곳의 높이가 적혀져 있다. 오늘은 이 지도에서 지나갈 수 있는 길이 몇 개 있는지 알아보려고 한다. 길이란 한 행 또는</description>
+    </item>
+    
+    <item>
+      <title>[Java] 백준 14891번 톱니바퀴</title>
+      <link>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-14891%EB%B2%88-%ED%86%B1%EB%8B%88%EB%B0%94%ED%80%B4/</link>
+      <pubDate>Mon, 02 Jan 2023 20:48:33 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-14891%EB%B2%88-%ED%86%B1%EB%8B%88%EB%B0%94%ED%80%B4/</guid>
+      <description>문제 총 8개의 톱니를 가지고 있는 톱니바퀴 4개가 아래 그림과 같이 일렬로 놓여져 있다. 또, 톱니는 N극 또는 S극 중 하나를 나타내고 있다. 톱니바퀴에는 번호가 매겨</description>
+    </item>
+    
+    <item>
+      <title>[Java] swea 2105 디저트 카페</title>
+      <link>https://appealso.github.io/p/java-swea-2105-%EB%94%94%EC%A0%80%ED%8A%B8-%EC%B9%B4%ED%8E%98/</link>
+      <pubDate>Mon, 02 Jan 2023 20:46:21 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/java-swea-2105-%EB%94%94%EC%A0%80%ED%8A%B8-%EC%B9%B4%ED%8E%98/</guid>
+      <description>문제 https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5VwAr6APYDFAWu&amp;categoryId=AV5VwAr6APYDFAWu&amp;categoryType=CODE? 코드 import java.util.*; public class Solution { static int[][] map; static boolean[][] visited; static boolean[] check; static int N,max,startx,starty; public static void main(String[] args) { Scanner sc = new Scanner(System.in); int T = sc.nextInt(); for(int t = 0;t&amp;lt;T;t++) { N = sc.nextInt(); map = new int[N][N]; visited = new boolean[N][N]; check = new boolean[101]; for(int i=0;i&amp;lt;N;i++) for(int j=0;j&amp;lt;N;j++) map[i][j]=sc.nextInt(); max = -1; for(int i=0;i&amp;lt;N;i++) { for(int</description>
+    </item>
+    
     <item>
       <title>[Java] 백준 1525 퍼즐</title>
       <link>https://appealso.github.io/p/java-%EB%B0%B1%EC%A4%80-1525-%ED%8D%BC%EC%A6%90/</link>
