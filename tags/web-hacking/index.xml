@@ -6,7 +6,16 @@
     <description>Recent content in Web Hacking on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Dec 2022 20:04:14 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/web-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Apr 2023 10:11:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/web-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deeplink</title>
+      <link>https://appealso.github.io/p/deeplink/</link>
+      <pubDate>Sun, 02 Apr 2023 10:11:00 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/deeplink/</guid>
+      <description>딥링크(Deep Link?)란? 딥링크는 URL 링크의 일종입니다. 웹이 아닌 앱 내의 특정 페이지로 직접 연결시킵니다. 딥링크는 커스텀 URL 스킴(iOS Universal Lin</description>
+    </item>
+    
     <item>
       <title>[WEB Hacking] CSS injection</title>
       <link>https://appealso.github.io/p/web-hacking-css-injection/</link>
