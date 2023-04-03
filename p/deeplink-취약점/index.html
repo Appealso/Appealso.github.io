@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='딥링크(Deep Link?)란? 딥링크는 URL 링크의 일종입니다. 웹이 아닌 앱 내의 특정 페이지로 직접 연결시킵니다. 딥링크는 커스텀 URL 스킴(iOS Universal Lin'><title>Deeplink 취약점</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<meta name="naver-site-verification" content="66737462d26ac026782cf58694d2b5efcf6ed19f" />
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2H7Y6XC3K');
+</script><meta property='og:title' content='Deeplink 취약점'>
+<meta property='og:description' content='딥링크(Deep Link?)란? 딥링크는 URL 링크의 일종입니다. 웹이 아닌 앱 내의 특정 페이지로 직접 연결시킵니다. 딥링크는 커스텀 URL 스킴(iOS Universal Lin'>
+<meta property='og:url' content='https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Web Hacking' /><meta property='article:tag' content='Deep Link' /><meta property='article:tag' content='Security' /><meta property='article:published_time' content='2023-04-02T10:11:00&#43;09:00'/><meta property='article:modified_time' content='2023-04-02T10:11:00&#43;09:00'/><meta property='og:image' content='https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/security.jpg' />
+<meta name="twitter:title" content="Deeplink 취약점">
+<meta name="twitter:description" content="딥링크(Deep Link?)란? 딥링크는 URL 링크의 일종입니다. 웹이 아닌 앱 내의 특정 페이지로 직접 연결시킵니다. 딥링크는 커스텀 URL 스킴(iOS Universal Lin"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/security.jpg' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/">
+                <img src="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/security_hua86146557b2012f829fdc26a39bf75dc_509252_800x0_resize_q75_box.jpg"
+                        srcset="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/security_hua86146557b2012f829fdc26a39bf75dc_509252_800x0_resize_q75_box.jpg 800w, /p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/security_hua86146557b2012f829fdc26a39bf75dc_509252_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="533" 
+                        loading="lazy"
+                        alt="Featured image of post Deeplink 취약점" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/security/" style="background-color: #2a9d8f; color: #fff;">
+                Security
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/">Deeplink 취약점</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 02, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    4 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="딥링크deep-link란">딥링크(Deep Link?)란?</h2>
+<p>딥링크는 URL 링크의 일종입니다. 웹이 아닌 앱 내의 특정 페이지로 직접 연결시킵니다.
+딥링크는 커스텀 URL 스킴(iOS Universal Link)이나 Intent URL(Android 기기)을 사용하여 설치된 앱을 시작합니다.
+모바일 딥링크는 일반적으로 Scheme://Path의 형태를 갖습니다. 웹에서 사용되는 http://, https://와는 다르게 모바일 어플리케이션마다 각자 생성한 프로토콜을 사용하고 있어 검증이 미흡한 경우 취약점이 발생 가능합니다.</p>
+<pre tabindex="0"><code class="language-url" data-lang="url">[deep링크 구성 예시]
+schema://host.name/path/to/endpoint?
+</code></pre><h3 id="딥링크deeplink의-취약점">딥링크(Deeplink)의 취약점</h3>
+<p>개발자가 생성한 딥링크에 대한 검증이 없을 경우 외부 악의적인 사용자가 임의로 조적이 가능합니다.
+관련 앱 자바 스크립트가 권한인증 없이 자동으로 실행시킬수 있으며, 의도치 않은 악성 사이트에 접속시켜 개인정보(카드,비밀번호, 주민번호 등)가 유출 될 수 있습니다.</p>
+<h3 id="딥링크deeplink-취약점-예시">딥링크(Deeplink) 취약점 예시</h3>
+<ol start="0">
+<li>
+<p>테스트 용 앱
+<a class="link" href="https://github.com/optiv/InsecureShop"  target="_blank" rel="noopener"
+    >https://github.com/optiv/InsecureShop</a></p>
+</li>
+<li>
+<p>AndroidManifest.xml 분석
+InsecureShop.apk 파일을 디컴파일 해보면 AndroidManifest.xml 파일에서 data 태그에 host가 com.insecureshop, scheme이 insecureshop으로 정의된 것을 알 수 있습니다.</p>
+<p><figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 443; 
+			flex-basis: 1064px"
+	>
+	<a href="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink1.png" data-size="572x129">
+		<img src="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink1.png"
+			width="572"
+			height="129"
+			srcset="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink1_hu4949d7a5348aafb8c82708e1990fb38a_36657_480x0_resize_box_3.png 480w, /p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink1_hu4949d7a5348aafb8c82708e1990fb38a_36657_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="deeplink">
+	</a>
+	
+	<figcaption>deeplink</figcaption>
+	
+</figure></p>
+</li>
+<li>
+<p>com.insecureshop.WebViewActivity 분석
+아래 코드를 분석해 보면 /web, /webview 가 있는지 확인하고 url 파라미터 값을 data에 저장합니다. 그리고 data가 null이 아닌경우 url을 호출하는 것을 확인할 수 있습니다.
+<figure 
+	
+		class="gallery-image" 
+		style="
+			flex-grow: 122; 
+			flex-basis: 294px"
+	>
+	<a href="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink2.png" data-size="849x692">
+		<img src="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink2.png"
+			width="849"
+			height="692"
+			srcset="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink2_huf94a06a68f53ac06dd71873c78f8b59e_137081_480x0_resize_box_3.png 480w, /p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink2_huf94a06a68f53ac06dd71873c78f8b59e_137081_1024x0_resize_box_3.png 1024w"
+			loading="lazy"
+			alt="deeplink">
+	</a>
+	
+	<figcaption>deeplink</figcaption>
+	
+</figure></p>
+</li>
+<li>
+<p>POC 코드 작성 및 실행 확인<br>
+(1) POC 코드 작성</p>
+<pre tabindex="0"><code>#1 deeplink 작성
+insecureshop://com.insecureshop/web?url=www.google.com
+
+#2 adb 실행 명령어
+adb shell am start -W -a android.intent.action.VIEW -d &quot;insecureshop://com.insecureshop/web?url=www.google.com/&quot;
+</code></pre></li>
+</ol>
+<p>(2) 앱 실행 확인</p>
+<!-- raw HTML omitted -->
+<p>(3) adb 명령어 실행</p>
+<!-- raw HTML omitted -->
+<p>(4) 웹 이동 확인</p>
+<!-- raw HTML omitted -->
+<h4 id="번외-딥링크-실행-방법">[번외] 딥링크 실행 방법</h4>
+<p>(1) 딥링크 테스트 사이트 이용
+(2) 단말기 내에서 html 파일 생성 후 a 태그로 딥링크를 작성하여 요청
+(3) adb 명령어 이용( adb shell am start -W -a android.intent.action.VIEW -d &ldquo;deeplink&rdquo; 패키지명
+ex) adb shell am start -W -a android.intent.action.VIEW -d &ldquo;app://deeplink/load.jsp?Url=javascript:Android.getGPSLocation()&rdquo;</p>
+<h3 id="딥링크deeplink의-취약점-조치방안">딥링크(Deeplink)의 취약점 조치방안</h3>
+<ol>
+<li>딥링크 URI 파싱 시 취약점 함수 사용 금지
+(1) 취약점
+substring 메소드로 받은 딥링크 파라미터는 사용자 어플리케이션 자바스크립트 권한을 받아 결과 값(어플리케이션 내 카드번호, 주소 등 민감한 개인 정보)을 공격자 사이트에 반환
+(2) 조치방안
+URI 파싱 시 getHost, substring, split 함수를 통해 필터링 없이 값을 가져오지 말아야 하며, getQueryParameter 등의 함수를 활용하여 사전에 정의된 인자 값을 파싱하도록 권장
+※ 직접 동적으로 파싱하지 않도록 개발</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">  <span class="n">Uri</span> <span class="n">data</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getdata</span><span class="o">();</span>
+  <span class="n">data</span><span class="o">.</span><span class="na">getQueryParameter</span><span class="o">(</span><span class="err">“</span><span class="n">type</span><span class="err">”</span><span class="o">);</span> <span class="n">data</span><span class="o">.</span><span class="na">getQueryParameter</span><span class="o">(</span><span class="err">“</span><span class="n">actionUrl</span><span class="err">”</span><span class="o">);</span>
+</code></pre></div><ol start="2">
+<li>
+<p>인가된 URI에만 자바인터페이스 권한 부여
+(1) 취약점
+외부 사이트에서 접속 시 검증 없이 자바인터페이스 권한을 줄 때 이를 악용하여 개인정보 유출(세션값, 전화번호, 카드번호, 주소 등)
+(2) 조치방안
+외부 사이트에서 자바인터페이스 권한을 허용하여 세션, 위치정보 등 개인정보가 유출되지 않도록 제한 필요
+ex) 외부 사이트에서의 임의 스크립트 실행 방지 구문 예시코드</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">  <span class="k">if</span><span class="o">(</span><span class="n">HPCUtil</span><span class="o">.</span><span class="na">Attack</span><span class="o">(</span><span class="n">uri</span><span class="o">)){</span> 
+    <span class="n">webview</span><span class="o">.</span><span class="na">getSettings</span><span class="o">().</span><span class="na">setJavaScriptEnabled</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+    <span class="c1">//자바스크립트 허용하지 않음 
+</span><span class="c1"></span>    <span class="n">webview</span><span class="o">.</span><span class="na">removeJavascriptInterface</span><span class="o">(</span><span class="n">SCRIPT_NAME</span><span class="o">);</span>
+    <span class="c1">//자바인터페이스 객체 제거 
+</span><span class="c1"></span>  <span class="o">}</span>
+  <span class="n">layoutWebview</span><span class="o">.</span><span class="na">loadurl</span><span class="o">(</span><span class="n">uri</span><span class="o">);</span>
+</code></pre></div></li>
+<li>
+<p>도메인 검증을 이용한 우회 방지
+(1) 취약점
+도메인 뒤 또는 앞에 attacker.net과 같은 서브 도메인을 추가하여 실질적으로 관련 앱의 권한을 받음
+(2) 조치방안</p>
+</li>
+</ol>
+<ul>
+<li>하드코딩 된 일부 string 구문 비교를 통해 파싱할 경우 취약점을 유발할 수 있으므로 검증된 도메인에서 함수 호출, 정보 반환, 웹뷰를 출력하도록 검증된 도메인 리스트 설정 필요
+▶ 검증된 도메인 리스트 설정 및 uri.startsWith 함수를 통해 URI 확인
+ex1) uri.startswith 사용예시</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">  <span class="n">uri</span><span class="o">=</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.origin.com/” 
+</span><span class="c1"></span>  <span class="n">uri</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.origin.com/”)//true 
+</span><span class="c1"></span>  <span class="n">uri</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.attacker.net/”)//false
+</span></code></pre></div><p>ex2) whitedomainlist를 활용한 startsWith 사용예시</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">whitedomainlist</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">startsWith</span> <span class="o">:</span> <span class="n">whitedomainlist</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="n">startsWith</span><span class="o">)))</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="k">return</span> <span class="kc">false</span><span class="o">;</span> 
+<span class="o">}</span>
+</code></pre></div><ul>
+<li>서브 도메인 악용을 막기 위해 슬래쉬(/)로 끝나도록 명확한 검증 도메인명 작성
+ex) <a class="link" href="https://www.orgin.com"  target="_blank" rel="noopener"
+    >https://www.orgin.com</a> // 해당 도메인으로 검증할 경우 우회 가능
+<a class="link" href="https://www.origin.com/"  target="_blank" rel="noopener"
+    >https://www.origin.com/</a> // 서브 도메인으로 우회 어려움</li>
+</ul>
+<ol start="4">
+<li>URI.parse 함수 사용 시 특수문자 필터링 필요
+(1) 취약점
+URI.parse 함수 사용 시 특정 특수문자 문자열을 삽입하여 URI 인증을 우회, 앱의 권한을 받음
+(2) 조치방안
+필터링을 통해 우회하지 못하도록 특수문자 검증 등의 조치 권장
+ex) var Filter = @#$%&amp;
+return uri.replaceAll(Filter,“”);
+URI.parse 함수는 getdata 등의 대체 함수 사용 권장
+ex) Uri uri = intent.getdata();</li>
+</ol>
+<h2 id="출처-및-참고자료">출처 및 참고자료</h2>
+<p>&lt;안드로이드 어플리케이션 딥링크(Deeplink) 취약점관련 보안조치안내 - 한국인터넷 진흥원&gt;
+<a class="link" href="https://jacobwoo.tistory.com/entry/%EB%94%A5%EB%A7%81%ED%81%ACDeeplink%EB%9E%80"  target="_blank" rel="noopener"
+    >https://jacobwoo.tistory.com/entry/%EB%94%A5%EB%A7%81%ED%81%ACDeeplink%EB%9E%80</a>
+<a class="link" href="https://jdh5202.tistory.com/954"  target="_blank" rel="noopener"
+    >https://jdh5202.tistory.com/954</a>
+<a class="link" href="https://prod.velog.io/@silver35/Android-Open-redirect-vulnerability-Using-Deeplink"  target="_blank" rel="noopener"
+    >https://prod.velog.io/@silver35/Android-Open-redirect-vulnerability-Using-Deeplink</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/web-hacking/">Web Hacking</a>
+        
+            <a href="/tags/deep-link/">Deep Link</a>
+        
+            <a href="/tags/security/">Security</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/web-hacking-css-injection/">
+        
+        
+            <div class="article-image">
+                <img src="/p/web-hacking-css-injection/security.d51859d8670fa595c8ca803db2a5aece_hua86146557b2012f829fdc26a39bf75dc_509252_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post [WEB Hacking] CSS injection"
+                        
+                        data-hash="md5-1RhZ2GcPpZXIyoA9sqWuzg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">[WEB Hacking] CSS injection</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/web-hacking-relative-path-overwrite/">
+        
+        
+            <div class="article-image">
+                <img src="/p/web-hacking-relative-path-overwrite/security.d51859d8670fa595c8ca803db2a5aece_hua86146557b2012f829fdc26a39bf75dc_509252_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post [WEB Hacking] Relative Path OverWrite"
+                        
+                        data-hash="md5-1RhZ2GcPpZXIyoA9sqWuzg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">[WEB Hacking] Relative Path OverWrite</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/confluence-%EC%9B%90%EA%B2%A9-%EC%BD%94%EB%93%9C-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%ACcve-2022-26134/">
+        
+        
+            <div class="article-image">
+                <img src="/p/confluence-%EC%9B%90%EA%B2%A9-%EC%BD%94%EB%93%9C-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%ACcve-2022-26134/cover.1b2003002da8d5ab50f58cde6aa03b1a_hu1005bdd5c596c9079be58a4576d39e30_5440_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Confluence 원격 코드 취약점 정리(CVE-2022-26134)"
+                        
+                        data-hash="md5-GyADAC2o1atQ9YzeaqA7Gg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Confluence 원격 코드 취약점 정리(CVE-2022-26134)</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/markdown-xss/">
+        
+        
+            <div class="article-image">
+                <img src="/p/markdown-xss/cover.28bbcf7c9e948b771941de198f5ee426_hu161303a9df718806f0c2007593d7c416_48810_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Markdown XSS"
+                        
+                        data-hash="md5-KLvPfJ6Ui3cZQd4Zj17kJg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Markdown XSS</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/">
+        
+        
+            <div class="article-image">
+                <img src="/p/spring4shell-%EC%B7%A8%EC%95%BD%EC%A0%90-%EC%A0%95%EB%A6%AC/spring4shell.e8a5152709a78c4fdf125416603d6c6f_hu0e74430e5160ec4f6e5bf648835c9515_5679_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Spring4Shell 취약점 정리"
+                        
+                        data-hash="md5-6KUVJwmnjE/fElQWYD1sbw==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Spring4Shell 취약점 정리</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2023 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789"
+     crossorigin="anonymous"></script>
+
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#딥링크deep-link란">딥링크(Deep Link?)란?</a>
+      <ol>
+        <li><a href="#딥링크deeplink의-취약점">딥링크(Deeplink)의 취약점</a></li>
+        <li><a href="#딥링크deeplink-취약점-예시">딥링크(Deeplink) 취약점 예시</a>
+          <ol>
+            <li><a href="#번외-딥링크-실행-방법">[번외] 딥링크 실행 방법</a></li>
+          </ol>
+        </li>
+        <li><a href="#딥링크deeplink의-취약점-조치방안">딥링크(Deeplink)의 취약점 조치방안</a></li>
+      </ol>
+    </li>
+    <li><a href="#출처-및-참고자료">출처 및 참고자료</a></li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -7,12 +7,12 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Sun, 02 Apr 2023 10:11:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Deeplink</title>
-        <link>https://appealso.github.io/p/deeplink/</link>
+        <title>Deeplink 취약점</title>
+        <link>https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/</link>
         <pubDate>Sun, 02 Apr 2023 10:11:00 +0900</pubDate>
         
-        <guid>https://appealso.github.io/p/deeplink/</guid>
-        <description>&lt;img src="https://appealso.github.io/p/deeplink/security.jpg" alt="Featured image of post Deeplink" /&gt;&lt;h2 id=&#34;딥링크deep-link란&#34;&gt;딥링크(Deep Link?)란?&lt;/h2&gt;
+        <guid>https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/security.jpg" alt="Featured image of post Deeplink 취약점" /&gt;&lt;h2 id=&#34;딥링크deep-link란&#34;&gt;딥링크(Deep Link?)란?&lt;/h2&gt;
 &lt;p&gt;딥링크는 URL 링크의 일종입니다. 웹이 아닌 앱 내의 특정 페이지로 직접 연결시킵니다.
 딥링크는 커스텀 URL 스킴(iOS Universal Link)이나 Intent URL(Android 기기)을 사용하여 설치된 앱을 시작합니다.
 모바일 딥링크는 일반적으로 Scheme://Path의 형태를 갖습니다. 웹에서 사용되는 http://, https://와는 다르게 모바일 어플리케이션마다 각자 생성한 프로토콜을 사용하고 있어 검증이 미흡한 경우 취약점이 발생 가능합니다.&lt;/p&gt;
@@ -38,11 +38,11 @@ InsecureShop.apk 파일을 디컴파일 해보면 AndroidManifest.xml 파일에�
 			flex-grow: 443; 
 			flex-basis: 1064px&#34;
 	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/deeplink/deeplink1.png&#34; data-size=&#34;572x129&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/deeplink/deeplink1.png&#34;
+	&lt;a href=&#34;https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink1.png&#34; data-size=&#34;572x129&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink1.png&#34;
 			width=&#34;572&#34;
 			height=&#34;129&#34;
-			srcset=&#34;https://appealso.github.io/p/deeplink/deeplink1_hu4949d7a5348aafb8c82708e1990fb38a_36657_480x0_resize_box_3.png 480w, https://appealso.github.io/p/deeplink/deeplink1_hu4949d7a5348aafb8c82708e1990fb38a_36657_1024x0_resize_box_3.png 1024w&#34;
+			srcset=&#34;https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink1_hu4949d7a5348aafb8c82708e1990fb38a_36657_480x0_resize_box_3.png 480w, https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink1_hu4949d7a5348aafb8c82708e1990fb38a_36657_1024x0_resize_box_3.png 1024w&#34;
 			loading=&#34;lazy&#34;
 			alt=&#34;deeplink&#34;&gt;
 	&lt;/a&gt;
@@ -61,11 +61,11 @@ InsecureShop.apk 파일을 디컴파일 해보면 AndroidManifest.xml 파일에�
 			flex-grow: 122; 
 			flex-basis: 294px&#34;
 	&gt;
-	&lt;a href=&#34;https://appealso.github.io/p/deeplink/deeplink2.png&#34; data-size=&#34;849x692&#34;&gt;
-		&lt;img src=&#34;https://appealso.github.io/p/deeplink/deeplink2.png&#34;
+	&lt;a href=&#34;https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink2.png&#34; data-size=&#34;849x692&#34;&gt;
+		&lt;img src=&#34;https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink2.png&#34;
 			width=&#34;849&#34;
 			height=&#34;692&#34;
-			srcset=&#34;https://appealso.github.io/p/deeplink/deeplink2_huf94a06a68f53ac06dd71873c78f8b59e_137081_480x0_resize_box_3.png 480w, https://appealso.github.io/p/deeplink/deeplink2_huf94a06a68f53ac06dd71873c78f8b59e_137081_1024x0_resize_box_3.png 1024w&#34;
+			srcset=&#34;https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink2_huf94a06a68f53ac06dd71873c78f8b59e_137081_480x0_resize_box_3.png 480w, https://appealso.github.io/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/deeplink2_huf94a06a68f53ac06dd71873c78f8b59e_137081_1024x0_resize_box_3.png 1024w&#34;
 			loading=&#34;lazy&#34;
 			alt=&#34;deeplink&#34;&gt;
 	&lt;/a&gt;
