@@ -52,7 +52,7 @@ InsecureShop.apk 파일을 디컴파일 해보면 AndroidManifest.xml 파일에�
 &lt;/figure&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;com.insecureshop.WebViewActivity 분석
+&lt;p&gt;com.insecureshop.WebViewActivity 분석&lt;br&gt;
 아래 코드를 분석해 보면 /web, /webview 가 있는지 확인하고 url 파라미터 값을 data에 저장합니다. 그리고 data가 null이 아닌경우 url을 호출하는 것을 확인할 수 있습니다.
 &lt;figure 
 	
@@ -91,17 +91,17 @@ adb shell am start -W -a android.intent.action.VIEW -d &amp;quot;insecureshop://
 &lt;p&gt;(4) 웹 이동 확인&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;h4 id=&#34;번외-딥링크-실행-방법&#34;&gt;[번외] 딥링크 실행 방법&lt;/h4&gt;
-&lt;p&gt;(1) 딥링크 테스트 사이트 이용
-(2) 단말기 내에서 html 파일 생성 후 a 태그로 딥링크를 작성하여 요청
-(3) adb 명령어 이용( adb shell am start -W -a android.intent.action.VIEW -d &amp;ldquo;deeplink&amp;rdquo; 패키지명
+&lt;p&gt;(1) 딥링크 테스트 사이트 이용&lt;br&gt;
+(2) 단말기 내에서 html 파일 생성 후 a 태그로 딥링크를 작성하여 요청&lt;br&gt;
+(3) adb 명령어 이용( adb shell am start -W -a android.intent.action.VIEW -d &amp;ldquo;deeplink&amp;rdquo; 패키지명&lt;br&gt;
 ex) adb shell am start -W -a android.intent.action.VIEW -d &amp;ldquo;app://deeplink/load.jsp?Url=javascript:Android.getGPSLocation()&amp;rdquo;&lt;/p&gt;
 &lt;h3 id=&#34;딥링크deeplink의-취약점-조치방안&#34;&gt;딥링크(Deeplink)의 취약점 조치방안&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;딥링크 URI 파싱 시 취약점 함수 사용 금지
-(1) 취약점
-substring 메소드로 받은 딥링크 파라미터는 사용자 어플리케이션 자바스크립트 권한을 받아 결과 값(어플리케이션 내 카드번호, 주소 등 민감한 개인 정보)을 공격자 사이트에 반환
-(2) 조치방안
-URI 파싱 시 getHost, substring, split 함수를 통해 필터링 없이 값을 가져오지 말아야 하며, getQueryParameter 등의 함수를 활용하여 사전에 정의된 인자 값을 파싱하도록 권장
+&lt;li&gt;딥링크 URI 파싱 시 취약점 함수 사용 금지&lt;br&gt;
+(1) 취약점&lt;br&gt;
+substring 메소드로 받은 딥링크 파라미터는 사용자 어플리케이션 자바스크립트 권한을 받아 결과 값(어플리케이션 내 카드번호, 주소 등 민감한 개인 정보)을 공격자 사이트에 반환&lt;br&gt;
+(2) 조치방안&lt;br&gt;
+URI 파싱 시 getHost, substring, split 함수를 통해 필터링 없이 값을 가져오지 말아야 하며, getQueryParameter 등의 함수를 활용하여 사전에 정의된 인자 값을 파싱하도록 권장&lt;br&gt;
 ※ 직접 동적으로 파싱하지 않도록 개발&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;  &lt;span class=&#34;n&#34;&gt;Uri&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;intent&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getdata&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
@@ -123,20 +123,20 @@ ex) 외부 사이트에서의 임의 스크립트 실행 방지 구문 예시코
   &lt;span class=&#34;n&#34;&gt;layoutWebview&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;loadurl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;도메인 검증을 이용한 우회 방지
-(1) 취약점
-도메인 뒤 또는 앞에 attacker.net과 같은 서브 도메인을 추가하여 실질적으로 관련 앱의 권한을 받음
+&lt;p&gt;도메인 검증을 이용한 우회 방지&lt;br&gt;
+(1) 취약점&lt;br&gt;
+도메인 뒤 또는 앞에 attacker.net과 같은 서브 도메인을 추가하여 실질적으로 관련 앱의 권한을 받음&lt;br&gt;
 (2) 조치방안&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;하드코딩 된 일부 string 구문 비교를 통해 파싱할 경우 취약점을 유발할 수 있으므로 검증된 도메인에서 함수 호출, 정보 반환, 웹뷰를 출력하도록 검증된 도메인 리스트 설정 필요
-▶ 검증된 도메인 리스트 설정 및 uri.startsWith 함수를 통해 URI 확인
+&lt;li&gt;하드코딩 된 일부 string 구문 비교를 통해 파싱할 경우 취약점을 유발할 수 있으므로 검증된 도메인에서 함수 호출, 정보 반환, 웹뷰를 출력하도록 검증된 도메인 리스트 설정 필요&lt;br&gt;
+▶ 검증된 도메인 리스트 설정 및 uri.startsWith 함수를 통해 URI 확인&lt;br&gt;
 ex1) uri.startswith 사용예시&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;  &lt;span class=&#34;n&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//www.origin.com/” 
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;startsWith&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//www.origin.com/”)//true 
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;startsWith&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//www.attacker.net/”)//false
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;  &lt;span class=&#34;n&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//www.origin.com/”     
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;startsWith&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//www.origin.com/”)//true   
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;uri&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;startsWith&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;“&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//www.attacker.net/”)//false  
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ex2) whitedomainlist를 활용한 startsWith 사용예시&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;boolean&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;whitedomainlist&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;startsWith&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;whitedomainlist&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
@@ -147,29 +147,33 @@ ex1) uri.startswith 사용예시&lt;/li&gt;
   &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; 
 &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;서브 도메인 악용을 막기 위해 슬래쉬(/)로 끝나도록 명확한 검증 도메인명 작성
-ex) &lt;a class=&#34;link&#34; href=&#34;https://www.orgin.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.orgin.com&lt;/a&gt; // 해당 도메인으로 검증할 경우 우회 가능
+&lt;li&gt;서브 도메인 악용을 막기 위해 슬래쉬(/)로 끝나도록 명확한 검증 도메인명 작성&lt;br&gt;
+[예시]&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.orgin.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.orgin.com&lt;/a&gt; // 해당 도메인으로 검증할 경우 우회 가능&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.origin.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.origin.com/&lt;/a&gt; // 서브 도메인으로 우회 어려움&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;URI.parse 함수 사용 시 특수문자 필터링 필요
-(1) 취약점
-URI.parse 함수 사용 시 특정 특수문자 문자열을 삽입하여 URI 인증을 우회, 앱의 권한을 받음
+&lt;li&gt;URI.parse 함수 사용 시 특수문자 필터링 필요&lt;br&gt;
+(1) 취약점&lt;br&gt;
+URI.parse 함수 사용 시 특정 특수문자 문자열을 삽입하여 URI 인증을 우회, 앱의 권한을 받음&lt;br&gt;
 (2) 조치방안
-필터링을 통해 우회하지 못하도록 특수문자 검증 등의 조치 권장
-ex) var Filter = @#$%&amp;amp;
-return uri.replaceAll(Filter,“”);
-URI.parse 함수는 getdata 등의 대체 함수 사용 권장
+&lt;ul&gt;
+&lt;li&gt;필터링을 통해 우회하지 못하도록 특수문자 검증 등의 조치 권장&lt;br&gt;
+ex) var Filter = @#$%&amp;amp;&lt;br&gt;
+return uri.replaceAll(Filter,“”);&lt;/li&gt;
+&lt;li&gt;URI.parse 함수는 getdata 등의 대체 함수 사용 권장&lt;br&gt;
 ex) Uri uri = intent.getdata();&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;출처-및-참고자료&#34;&gt;출처 및 참고자료&lt;/h2&gt;
-&lt;p&gt;&amp;lt;안드로이드 어플리케이션 딥링크(Deeplink) 취약점관련 보안조치안내 - 한국인터넷 진흥원&amp;gt;
+&lt;p&gt;&amp;lt;안드로이드 어플리케이션 딥링크(Deeplink) 취약점관련 보안조치안내 - 한국인터넷 진흥원&amp;gt;&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://jacobwoo.tistory.com/entry/%EB%94%A5%EB%A7%81%ED%81%ACDeeplink%EB%9E%80&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://jacobwoo.tistory.com/entry/%EB%94%A5%EB%A7%81%ED%81%ACDeeplink%EB%9E%80&lt;/a&gt;
+    &gt;https://jacobwoo.tistory.com/entry/%EB%94%A5%EB%A7%81%ED%81%ACDeeplink%EB%9E%80&lt;/a&gt;&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://jdh5202.tistory.com/954&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://jdh5202.tistory.com/954&lt;/a&gt;
+    &gt;https://jdh5202.tistory.com/954&lt;/a&gt;&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://prod.velog.io/@silver35/Android-Open-redirect-vulnerability-Using-Deeplink&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://prod.velog.io/@silver35/Android-Open-redirect-vulnerability-Using-Deeplink&lt;/a&gt;&lt;/p&gt;
 </description>

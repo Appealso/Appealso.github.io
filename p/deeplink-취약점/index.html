@@ -187,7 +187,7 @@ InsecureShop.apk 파일을 디컴파일 해보면 AndroidManifest.xml 파일에�
 </figure></p>
 </li>
 <li>
-<p>com.insecureshop.WebViewActivity 분석
+<p>com.insecureshop.WebViewActivity 분석<br>
 아래 코드를 분석해 보면 /web, /webview 가 있는지 확인하고 url 파라미터 값을 data에 저장합니다. 그리고 data가 null이 아닌경우 url을 호출하는 것을 확인할 수 있습니다.
 <figure 
 	
@@ -226,17 +226,17 @@ adb shell am start -W -a android.intent.action.VIEW -d &quot;insecureshop://com.
 <p>(4) 웹 이동 확인</p>
 <!-- raw HTML omitted -->
 <h4 id="번외-딥링크-실행-방법">[번외] 딥링크 실행 방법</h4>
-<p>(1) 딥링크 테스트 사이트 이용
-(2) 단말기 내에서 html 파일 생성 후 a 태그로 딥링크를 작성하여 요청
-(3) adb 명령어 이용( adb shell am start -W -a android.intent.action.VIEW -d &ldquo;deeplink&rdquo; 패키지명
+<p>(1) 딥링크 테스트 사이트 이용<br>
+(2) 단말기 내에서 html 파일 생성 후 a 태그로 딥링크를 작성하여 요청<br>
+(3) adb 명령어 이용( adb shell am start -W -a android.intent.action.VIEW -d &ldquo;deeplink&rdquo; 패키지명<br>
 ex) adb shell am start -W -a android.intent.action.VIEW -d &ldquo;app://deeplink/load.jsp?Url=javascript:Android.getGPSLocation()&rdquo;</p>
 <h3 id="딥링크deeplink의-취약점-조치방안">딥링크(Deeplink)의 취약점 조치방안</h3>
 <ol>
-<li>딥링크 URI 파싱 시 취약점 함수 사용 금지
-(1) 취약점
-substring 메소드로 받은 딥링크 파라미터는 사용자 어플리케이션 자바스크립트 권한을 받아 결과 값(어플리케이션 내 카드번호, 주소 등 민감한 개인 정보)을 공격자 사이트에 반환
-(2) 조치방안
-URI 파싱 시 getHost, substring, split 함수를 통해 필터링 없이 값을 가져오지 말아야 하며, getQueryParameter 등의 함수를 활용하여 사전에 정의된 인자 값을 파싱하도록 권장
+<li>딥링크 URI 파싱 시 취약점 함수 사용 금지<br>
+(1) 취약점<br>
+substring 메소드로 받은 딥링크 파라미터는 사용자 어플리케이션 자바스크립트 권한을 받아 결과 값(어플리케이션 내 카드번호, 주소 등 민감한 개인 정보)을 공격자 사이트에 반환<br>
+(2) 조치방안<br>
+URI 파싱 시 getHost, substring, split 함수를 통해 필터링 없이 값을 가져오지 말아야 하며, getQueryParameter 등의 함수를 활용하여 사전에 정의된 인자 값을 파싱하도록 권장<br>
 ※ 직접 동적으로 파싱하지 않도록 개발</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">  <span class="n">Uri</span> <span class="n">data</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getdata</span><span class="o">();</span>
@@ -258,20 +258,20 @@ ex) 외부 사이트에서의 임의 스크립트 실행 방지 구문 예시코
   <span class="n">layoutWebview</span><span class="o">.</span><span class="na">loadurl</span><span class="o">(</span><span class="n">uri</span><span class="o">);</span>
 </code></pre></div></li>
 <li>
-<p>도메인 검증을 이용한 우회 방지
-(1) 취약점
-도메인 뒤 또는 앞에 attacker.net과 같은 서브 도메인을 추가하여 실질적으로 관련 앱의 권한을 받음
+<p>도메인 검증을 이용한 우회 방지<br>
+(1) 취약점<br>
+도메인 뒤 또는 앞에 attacker.net과 같은 서브 도메인을 추가하여 실질적으로 관련 앱의 권한을 받음<br>
 (2) 조치방안</p>
 </li>
 </ol>
 <ul>
-<li>하드코딩 된 일부 string 구문 비교를 통해 파싱할 경우 취약점을 유발할 수 있으므로 검증된 도메인에서 함수 호출, 정보 반환, 웹뷰를 출력하도록 검증된 도메인 리스트 설정 필요
-▶ 검증된 도메인 리스트 설정 및 uri.startsWith 함수를 통해 URI 확인
+<li>하드코딩 된 일부 string 구문 비교를 통해 파싱할 경우 취약점을 유발할 수 있으므로 검증된 도메인에서 함수 호출, 정보 반환, 웹뷰를 출력하도록 검증된 도메인 리스트 설정 필요<br>
+▶ 검증된 도메인 리스트 설정 및 uri.startsWith 함수를 통해 URI 확인<br>
 ex1) uri.startswith 사용예시</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">  <span class="n">uri</span><span class="o">=</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.origin.com/” 
-</span><span class="c1"></span>  <span class="n">uri</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.origin.com/”)//true 
-</span><span class="c1"></span>  <span class="n">uri</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.attacker.net/”)//false
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java">  <span class="n">uri</span><span class="o">=</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.origin.com/”     
+</span><span class="c1"></span>  <span class="n">uri</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.origin.com/”)//true   
+</span><span class="c1"></span>  <span class="n">uri</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="err">“</span><span class="n">https</span><span class="o">:</span><span class="c1">//www.attacker.net/”)//false  
 </span></code></pre></div><p>ex2) whitedomainlist를 활용한 startsWith 사용예시</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">whitedomainlist</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
   <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">startsWith</span> <span class="o">:</span> <span class="n">whitedomainlist</span><span class="o">)</span> <span class="o">{</span>
@@ -282,29 +282,33 @@ ex1) uri.startswith 사용예시</li>
   <span class="k">return</span> <span class="kc">false</span><span class="o">;</span> 
 <span class="o">}</span>
 </code></pre></div><ul>
-<li>서브 도메인 악용을 막기 위해 슬래쉬(/)로 끝나도록 명확한 검증 도메인명 작성
-ex) <a class="link" href="https://www.orgin.com"  target="_blank" rel="noopener"
-    >https://www.orgin.com</a> // 해당 도메인으로 검증할 경우 우회 가능
+<li>서브 도메인 악용을 막기 위해 슬래쉬(/)로 끝나도록 명확한 검증 도메인명 작성<br>
+[예시]<br>
+<a class="link" href="https://www.orgin.com"  target="_blank" rel="noopener"
+    >https://www.orgin.com</a> // 해당 도메인으로 검증할 경우 우회 가능<br>
 <a class="link" href="https://www.origin.com/"  target="_blank" rel="noopener"
     >https://www.origin.com/</a> // 서브 도메인으로 우회 어려움</li>
 </ul>
 <ol start="4">
-<li>URI.parse 함수 사용 시 특수문자 필터링 필요
-(1) 취약점
-URI.parse 함수 사용 시 특정 특수문자 문자열을 삽입하여 URI 인증을 우회, 앱의 권한을 받음
+<li>URI.parse 함수 사용 시 특수문자 필터링 필요<br>
+(1) 취약점<br>
+URI.parse 함수 사용 시 특정 특수문자 문자열을 삽입하여 URI 인증을 우회, 앱의 권한을 받음<br>
 (2) 조치방안
-필터링을 통해 우회하지 못하도록 특수문자 검증 등의 조치 권장
-ex) var Filter = @#$%&amp;
-return uri.replaceAll(Filter,“”);
-URI.parse 함수는 getdata 등의 대체 함수 사용 권장
+<ul>
+<li>필터링을 통해 우회하지 못하도록 특수문자 검증 등의 조치 권장<br>
+ex) var Filter = @#$%&amp;<br>
+return uri.replaceAll(Filter,“”);</li>
+<li>URI.parse 함수는 getdata 등의 대체 함수 사용 권장<br>
 ex) Uri uri = intent.getdata();</li>
+</ul>
+</li>
 </ol>
 <h2 id="출처-및-참고자료">출처 및 참고자료</h2>
-<p>&lt;안드로이드 어플리케이션 딥링크(Deeplink) 취약점관련 보안조치안내 - 한국인터넷 진흥원&gt;
+<p>&lt;안드로이드 어플리케이션 딥링크(Deeplink) 취약점관련 보안조치안내 - 한국인터넷 진흥원&gt;<br>
 <a class="link" href="https://jacobwoo.tistory.com/entry/%EB%94%A5%EB%A7%81%ED%81%ACDeeplink%EB%9E%80"  target="_blank" rel="noopener"
-    >https://jacobwoo.tistory.com/entry/%EB%94%A5%EB%A7%81%ED%81%ACDeeplink%EB%9E%80</a>
+    >https://jacobwoo.tistory.com/entry/%EB%94%A5%EB%A7%81%ED%81%ACDeeplink%EB%9E%80</a><br>
 <a class="link" href="https://jdh5202.tistory.com/954"  target="_blank" rel="noopener"
-    >https://jdh5202.tistory.com/954</a>
+    >https://jdh5202.tistory.com/954</a><br>
 <a class="link" href="https://prod.velog.io/@silver35/Android-Open-redirect-vulnerability-Using-Deeplink"  target="_blank" rel="noopener"
     >https://prod.velog.io/@silver35/Android-Open-redirect-vulnerability-Using-Deeplink</a></p>
 
