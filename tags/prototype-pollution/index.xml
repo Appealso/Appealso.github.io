@@ -6,11 +6,11 @@
     <description>Recent content in Prototype Pollution on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Apr 2023 10:11:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/prototype-pollution/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Apr 2023 10:11:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/prototype-pollution/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prototype Pollution 취약점</title>
       <link>https://appealso.github.io/p/prototype-pollution-%EC%B7%A8%EC%95%BD%EC%A0%90/</link>
-      <pubDate>Sun, 02 Apr 2023 10:11:00 +0900</pubDate>
+      <pubDate>Sun, 23 Apr 2023 10:11:00 +0900</pubDate>
       
       <guid>https://appealso.github.io/p/prototype-pollution-%EC%B7%A8%EC%95%BD%EC%A0%90/</guid>
       <description>Prototype Pollution ?? Prototype Pollution은 Javascript 처리 로직의 문제로 Object의 prototype을 수정할 수 있을 때 발생합니다. 방법에는 여러 가지 있겠지만 가장 기본은</description>
