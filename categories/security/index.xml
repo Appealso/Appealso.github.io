@@ -6,7 +6,16 @@
     <description>Recent content in Security on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Apr 2023 10:11:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jun 2023 10:01:15 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>APK-MITM (SSL-Pinning)</title>
+      <link>https://appealso.github.io/p/apk-mitm-ssl-pinning/</link>
+      <pubDate>Sun, 25 Jun 2023 10:01:15 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/apk-mitm-ssl-pinning/</guid>
+      <description>개요 Proxy툴로 패킷을 잡아야할 때 일반적으로 사용하는 툴의 인증서를 넣거나 Frida로 후킹을 해야한다. 하지만 이러한 방식은 루팅된 단말이 있어야 하기 때</description>
+    </item>
+    
     <item>
       <title>Prototype Pollution 취약점</title>
       <link>https://appealso.github.io/p/prototype-pollution-%EC%B7%A8%EC%95%BD%EC%A0%90/</link>
