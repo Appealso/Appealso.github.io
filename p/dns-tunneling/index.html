@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='DNS Tunneling 개요 DNS 터널링은 공격자가 네트워크의 보안 체계를 우회하여 데이터를 은밀하게 전송하거나 명령과 제어 트래픽을 숨기는 방법입니다. 이 방법은 주로 방화벽, ID'><title>DNS Tunneling</title>
+
+<link rel='canonical' href='https://appealso.github.io/p/dns-tunneling/'>
+
+<link rel="stylesheet" href="/scss/style.min.775dbd4fd34fda61c5273b4bc3415f7c9666414fb6c40aab164a7ded4397da98.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<meta name="naver-site-verification" content="66737462d26ac026782cf58694d2b5efcf6ed19f" />
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-J2H7Y6XC3K');
+</script><meta property='og:title' content='DNS Tunneling'>
+<meta property='og:description' content='DNS Tunneling 개요 DNS 터널링은 공격자가 네트워크의 보안 체계를 우회하여 데이터를 은밀하게 전송하거나 명령과 제어 트래픽을 숨기는 방법입니다. 이 방법은 주로 방화벽, ID'>
+<meta property='og:url' content='https://appealso.github.io/p/dns-tunneling/'>
+<meta property='og:site_name' content='SooHo&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='DNS Tunneling' /><meta property='article:tag' content='Security' /><meta property='article:published_time' content='2023-07-23T10:40:58&#43;09:00'/><meta property='article:modified_time' content='2023-07-23T10:40:58&#43;09:00'/><meta property='og:image' content='https://appealso.github.io/p/dns-tunneling/security.jpg' />
+<meta name="twitter:title" content="DNS Tunneling">
+<meta name="twitter:description" content="DNS Tunneling 개요 DNS 터널링은 공격자가 네트워크의 보안 체계를 우회하여 데이터를 은밀하게 전송하거나 명령과 제어 트래픽을 숨기는 방법입니다. 이 방법은 주로 방화벽, ID"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://appealso.github.io/p/dns-tunneling/security.jpg' />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2H7Y6XC3K"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-J2H7Y6XC3K', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page has-toc
+">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex 
+    
+        extended
+    
+">
+    
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+                <span>Back</span>
+            </a>
+        </div>
+    
+<main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/dns-tunneling/">
+                <img src="/p/dns-tunneling/security_hua86146557b2012f829fdc26a39bf75dc_509252_800x0_resize_q75_box.jpg"
+                        srcset="/p/dns-tunneling/security_hua86146557b2012f829fdc26a39bf75dc_509252_800x0_resize_q75_box.jpg 800w, /p/dns-tunneling/security_hua86146557b2012f829fdc26a39bf75dc_509252_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="533" 
+                        loading="lazy"
+                        alt="Featured image of post DNS Tunneling" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/security/" style="background-color: #2a9d8f; color: #fff;">
+                Security
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/dns-tunneling/">DNS Tunneling</a>
+    </h2>
+
+    
+
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 23, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+</div>
+</header>
+
+    <section class="article-content">
+    <h2 id="dns-tunneling">DNS Tunneling</h2>
+<h3 id="개요">개요</h3>
+<p>DNS 터널링은 공격자가 네트워크의 보안 체계를 우회하여 데이터를 은밀하게 전송하거나 명령과 제어 트래픽을 숨기는 방법입니다. 이 방법은 주로 방화벽, IDS(침입 탐지 시스템) 등을 우회하거나 데이터 유출, 악성 코드 전파 등에 사용됩니다.</p>
+<h3 id="dns-터널링-작동-원리">DNS 터널링 작동 원리</h3>
+<p>DNS(Domain Name System)는 도메인 이름을 IP 주소로 변환하는 시스템입니다. DNS 터널링은 DNS 요청과 응답을 데이터 전송 메커니즘으로 활용합니다. 이는 다음과 같은 단계로 이루어집니다:</p>
+<ol>
+<li>초기 요청: 공격자는 특수하게 조작된 DNS 쿼리를 생성하고 보냅니다. 이 쿼리에는 공격자가 전송하고자 하는 데이터가 포함되어 있습니다.</li>
+<li>서버 전송: 이 조작된 쿼리가 DNS 서버로 전송됩니다.</li>
+<li>응답 생성: DNS 서버가 요청을 받아 해석하고, 그에 맞는 응답을 생성하여 클라이언트에게 전송합니다.</li>
+<li>데이터 추출: 공격자는 DNS 응답을 받아들여 포함된 데이터를 추출합니다.</li>
+</ol>
+<h3 id="공격-대응-방법">공격 대응 방법</h3>
+<p>DNS 터널링 공격을 방지하거나 최소화하기 위한 방법에는 다음과 같은 것들이 있습니다:</p>
+<ul>
+<li>DNS 트래픽 모니터링: 정기적인 DNS 트래픽 모니터링 및 이상 탐지는 이상 행위를 조기에 찾아내는데 중요합니다.</li>
+<li>필터링: DNS 쿼리 및 응답에 대한 사전 필터링은 잠재적인 위협을 차단하는 데 도움이 됩니다.</li>
+<li>인증된 목록 관리: 암호화된 DNS 트래픽의 승인된 목록을 유지하고, 불필요한 트래픽을 차단합니다.</li>
+<li>DNSSEC 사용: DNS 보안 확장(DNSSEC)과 같은 프로토콜을 사용하여 DNS 트래픽의 무결성과 인증을 유지하는 것은 효과적인 대응 방법입니다.</li>
+</ul>
+<h3 id="결론">결론</h3>
+<p>DNS 터널링은 공격자가 보안 체계를 우회하여 은밀하게 데이터를 전송하거나 명령과 제어 트래픽을 숨기는 방법이며, 이는 심각한 보안 위협으로 작용할 수 있습니다.  이를 방지하고 위협을 최소화하기 위해서는 주기적인 모니터링, 필터링, 승인된 목록 관리 및 DNSSEC 등의 활용이 필요합니다.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/dns-tunneling/">DNS Tunneling</a>
+        
+            <a href="/tags/security/">Security</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">Related contents</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/prototype-pollution-%EC%B7%A8%EC%95%BD%EC%A0%90/">
+        
+        
+            <div class="article-image">
+                <img src="/p/prototype-pollution-%EC%B7%A8%EC%95%BD%EC%A0%90/security.d51859d8670fa595c8ca803db2a5aece_hua86146557b2012f829fdc26a39bf75dc_509252_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Prototype Pollution 취약점"
+                        
+                        data-hash="md5-1RhZ2GcPpZXIyoA9sqWuzg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Prototype Pollution 취약점</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/">
+        
+        
+            <div class="article-image">
+                <img src="/p/deeplink-%EC%B7%A8%EC%95%BD%EC%A0%90/security.d51859d8670fa595c8ca803db2a5aece_hua86146557b2012f829fdc26a39bf75dc_509252_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Deeplink 취약점"
+                        
+                        data-hash="md5-1RhZ2GcPpZXIyoA9sqWuzg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">Deeplink 취약점</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/apk-mitm-ssl-pinning/">
+        
+        
+            <div class="article-image">
+                <img src="/p/apk-mitm-ssl-pinning/security.d51859d8670fa595c8ca803db2a5aece_hua86146557b2012f829fdc26a39bf75dc_509252_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post APK-MITM (SSL-Pinning)"
+                        
+                        data-hash="md5-1RhZ2GcPpZXIyoA9sqWuzg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">APK-MITM (SSL-Pinning)</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/web-hacking-css-injection/">
+        
+        
+            <div class="article-image">
+                <img src="/p/web-hacking-css-injection/security.d51859d8670fa595c8ca803db2a5aece_hua86146557b2012f829fdc26a39bf75dc_509252_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post [WEB Hacking] CSS injection"
+                        
+                        data-hash="md5-1RhZ2GcPpZXIyoA9sqWuzg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">[WEB Hacking] CSS injection</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/web-hacking-relative-path-overwrite/">
+        
+        
+            <div class="article-image">
+                <img src="/p/web-hacking-relative-path-overwrite/security.d51859d8670fa595c8ca803db2a5aece_hua86146557b2012f829fdc26a39bf75dc_509252_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post [WEB Hacking] Relative Path OverWrite"
+                        
+                        data-hash="md5-1RhZ2GcPpZXIyoA9sqWuzg==">
+                
+            </div>
+        
+        <div class="article-details">
+            <h2 class="article-title">[WEB Hacking] Relative Path OverWrite</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "appealso-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2022 - 
+        
+        2023 SooHo&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        
+    </section>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789" crossorigin="anonymous"></script>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer="true"
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css"integrity="sha256-c0uckgykQ9v5k&#43;IqViZOZKc47Jn7KQil4/MP3ySA3F8="crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css"integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE="crossorigin="anonymous"
+            >
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1842197916935789"
+     crossorigin="anonymous"></script>
+
+
+            </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <h1 class="widget-title section-title" style="text-align:center">TABLE OF CONTENTS</h1>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#dns-tunneling">DNS Tunneling</a>
+      <ol>
+        <li><a href="#개요">개요</a></li>
+        <li><a href="#dns-터널링-작동-원리">DNS 터널링 작동 원리</a></li>
+        <li><a href="#공격-대응-방법">공격 대응 방법</a></li>
+        <li><a href="#결론">결론</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+                </div>
+            </section>
+        </aside>
+    
+
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g="crossorigin="anonymous"
+                defer="false"
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
