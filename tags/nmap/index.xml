@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nmap on SooHo&#39;s Blog</title>
+    <link>https://appealso.github.io/tags/nmap/</link>
+    <description>Recent content in Nmap on SooHo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Jul 2023 22:22:32 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/nmap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nmap</title>
+      <link>https://appealso.github.io/p/nmap/</link>
+      <pubDate>Sun, 23 Jul 2023 22:22:32 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/nmap/</guid>
+      <description>NMAP 개요 Nmap은 &amp;ldquo;Network Mapper&amp;quot;의 줄임말로, 네트워크를 스캔하고 보안 취약점을 식별하는 데 사용되는 강력한 보안 도구입니다. 주로 시스템 관리자</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,76 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 23 Jul 2023 10:40:58 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 23 Jul 2023 22:22:32 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Nmap</title>
+        <link>https://appealso.github.io/p/nmap/</link>
+        <pubDate>Sun, 23 Jul 2023 22:22:32 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/nmap/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/nmap/security.jpg" alt="Featured image of post Nmap" /&gt;&lt;h2 id=&#34;nmap&#34;&gt;NMAP&lt;/h2&gt;
+&lt;h3 id=&#34;개요&#34;&gt;개요&lt;/h3&gt;
+&lt;p&gt;Nmap은 &amp;ldquo;Network Mapper&amp;quot;의 줄임말로, 네트워크를 스캔하고 보안 취약점을 식별하는 데 사용되는 강력한 보안 도구입니다. 주로 시스템 관리자와 보안 전문가들이 네트워크를 분석하고 모니터링하는데 사용합니다. Nmap은 오픈 소스이며 다양한 운영 체제에서 실행될 수 있습니다.&lt;/p&gt;
+&lt;p&gt;Nmap은 네트워크에 연결된 호스트들과 그들이 오픈한 포트들을 스캔하여 네트워크 구성을 매핑합니다. 이렇게 얻은 정보는 보안 조치를 취할 수 있는데, 포트 스캔을 통해 노출된 취약점을 파악하고 보안 상태를 점검할 수 있습니다.&lt;/p&gt;
+&lt;h3 id=&#34;사용예시&#34;&gt;사용예시&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;포트 스캔 (Port Scanning): Nmap은 네트워크에 연결된 호스트들의 오픈 포트를 확인하는데 사용됩니다. 포트 스캔은 시스템의 취약성을 파악하는 데 중요한 역할을 합니다. 포트 스캔 결과는 보고서에 포트 번호, 프로토콜, 서비스 및 상태와 함께 기록됩니다.&lt;/li&gt;
+&lt;li&gt;운영 체제 감지 (Operating System Detection): Nmap은 타깃 시스템의 운영 체제를 추측하는 기능을 제공합니다. 이 정보는 보안 전문가들이 네트워크의 취약성을 이해하고, 악성 공격이 발생했을 때 대처하는 데 도움이 됩니다.&lt;/li&gt;
+&lt;li&gt;서비스 감지 (Service Detection): Nmap은 호스트에서 실행 중인 서비스들을 식별할 수 있습니다. 이는 시스템의 취약한 서비스를 식별하고 이를 보완하는 데 유용합니다.&lt;/li&gt;
+&lt;li&gt;스크립트 스캐닝 (Script Scanning): Nmap은 사용자 정의 스크립트를 활용하여 특정 취약점을 찾아낼 수 있습니다. 이는 특정 애플리케이션과 서비스에 대한 자동화된 취약점 분석을 가능케 합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;주요-옵션&#34;&gt;주요 옵션&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;기본 스캔 옵션:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;-sS (TCP SYN 스캔): 가장 일반적으로 사용되는 스캔 방법으로, TCP SYN 패킷을 보내고 연결을 설정하는 응답을 확인합니다. 이는 스캔되는 호스트에 대한 기본적인 정보를 얻는데 사용됩니다.&lt;/li&gt;
+&lt;li&gt;-sT (TCP 연결 스캔): 실제로 TCP 연결을 시도하여 호스트의 포트가 열려 있는지 확인합니다.&lt;/li&gt;
+&lt;li&gt;-sU (UDP 스캔): UDP 포트의 상태를 확인하기 위해 UDP 패킷을 보냅니다. UDP는 응답이 없을 수 있으므로 결과가 불확실할 수 있습니다.
+포트 지정 옵션:&lt;/li&gt;
+&lt;li&gt;-p &amp;lt;포트 범위&amp;gt;: 스캔할 포트 범위를 지정합니다. 예를 들어, -p 1-100은 포트 1에서 100까지를 스캔합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;스캔 속도 옵션:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;-T&amp;lt;0-5&amp;gt;: 스캔 속도를 지정합니다. -T5는 가장 빠른 스캔을 의미하고, -T0은 스캔 딜레이 없이 연속으로 스캔합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;출력 형식 옵션:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;-oN &amp;lt;파일명&amp;gt;: 결과를 일반 텍스트 형식으로 파일에 저장합니다.&lt;/li&gt;
+&lt;li&gt;-oX &amp;lt;파일명&amp;gt;: 결과를 XML 형식으로 파일에 저장합니다.&lt;/li&gt;
+&lt;li&gt;-oG &amp;lt;파일명&amp;gt;: 결과를 간단한 그리핀 형식으로 파일에 저장합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;스크립트 스캐닝 옵션:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;script &amp;lt;스크립트 이름&amp;gt;: 지정된 스크립트를 실행하여 취약점을 찾아냅니다.&lt;/li&gt;
+&lt;li&gt;&amp;ndash;script-args &amp;lt;인자&amp;gt;: 스크립트에 추가적인 인자를 전달합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;운영 체제 감지 옵션:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;-O: 호스트의 운영 체제를 추측합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;핑 스캔 옵션:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;-sn: 호스트가 온라인인지 확인하기 위해 ICMP 핑 스캔을 수행합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;스텔스(Stealth) 스캔 옵션:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;-sA (ACK 스캔): 호스트에 대해 ACK 패킷을 보내서 포트의 상태를 확인합니다. 필터링 장치를 우회하는 데 사용될 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>DNS Tunneling</title>
         <link>https://appealso.github.io/p/dns-tunneling/</link>
         <pubDate>Sun, 23 Jul 2023 10:40:58 +0900</pubDate>
