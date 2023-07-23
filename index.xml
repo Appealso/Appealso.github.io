@@ -6,7 +6,26 @@
         <description>Recent content on SooHo&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 23 Jul 2023 22:22:32 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 23 Jul 2023 23:00:10 +0900</lastBuildDate><atom:link href="https://appealso.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>dirb</title>
+        <link>https://appealso.github.io/p/dirb/</link>
+        <pubDate>Sun, 23 Jul 2023 23:00:10 +0900</pubDate>
+        
+        <guid>https://appealso.github.io/p/dirb/</guid>
+        <description>&lt;img src="https://appealso.github.io/p/dirb/security.jpg" alt="Featured image of post dirb" /&gt;&lt;h2 id=&#34;dirb&#34;&gt;dirb&lt;/h2&gt;
+&lt;h3 id=&#34;개요&#34;&gt;개요&lt;/h3&gt;
+&lt;p&gt;dirb 는 브루트 포싱 기법을 이용해 웹 서버의 히든 디렉토리와 파일을 찾아내는 펜테스트 도구입니다. 이 도구는 웹 서버에 존재하는 숨겨진 정보와 관리자 페이지를 찾아내는 데 주로 사용되며, 이를 통해 시스템의 취약점을 파악하고 보안을 강화하는 데 도움을 줍니다.&lt;/p&gt;
+&lt;h3 id=&#34;사용법&#34;&gt;사용법&lt;/h3&gt;
+&lt;p&gt;DIRB는 기본적으로 웹 서버 URL과 함께 실행됩니다. 아래의 예제는 &lt;a class=&#34;link&#34; href=&#34;http://example.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://example.com&lt;/a&gt;에 대해 스캔을 실행하는 방법입니다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;dirb http://example.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;DIRB는 기본적으로 알려진 디렉토리와 파일 목록을 이용해 브루트 포스 공격을 시도합니다. 사용자 지정 파일 목록을 사용하려면 다음과 같이 실행합니다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;dirb http://example.com /path/to/wordlist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;DIRB는 또한 특정 확장자에 대한 스캔도 지원합니다. 예를 들어, .php 확장자에 대해 스캔하려면 다음과 같이 실행합니다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;dirb http://example.com -X .php
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>Nmap</title>
         <link>https://appealso.github.io/p/nmap/</link>
         <pubDate>Sun, 23 Jul 2023 22:22:32 +0900</pubDate>

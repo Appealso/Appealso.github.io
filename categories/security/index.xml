@@ -6,7 +6,16 @@
     <description>Recent content in Security on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Jul 2023 22:22:32 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jul 2023 23:00:10 +0900</lastBuildDate><atom:link href="https://appealso.github.io/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dirb</title>
+      <link>https://appealso.github.io/p/dirb/</link>
+      <pubDate>Sun, 23 Jul 2023 23:00:10 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/dirb/</guid>
+      <description>dirb 개요 dirb 는 브루트 포싱 기법을 이용해 웹 서버의 히든 디렉토리와 파일을 찾아내는 펜테스트 도구입니다. 이 도구는 웹 서버에 존재하는 숨겨진 정보와 관리자 페이지를 찾</description>
+    </item>
+    
     <item>
       <title>Nmap</title>
       <link>https://appealso.github.io/p/nmap/</link>
