@@ -6,7 +6,16 @@
     <description>Recent content in Web Hacking on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Apr 2023 10:11:00 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/web-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Sep 2023 21:26:12 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/web-hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Thymeleaf SSTI</title>
+      <link>https://appealso.github.io/p/spring-thymeleaf-ssti/</link>
+      <pubDate>Sat, 09 Sep 2023 21:26:12 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/p/spring-thymeleaf-ssti/</guid>
+      <description>Spring SSTI Wargame 풀이 중 Spring에서 사용하는 Thymeleaf에서 SSTI 취약점이 발생하는 것을 보고 정리했습니다. Thymeleaf? Thymeleaf는 XML/XHTML/HTML5 구문을 기반으로 하는</description>
+    </item>
+    
     <item>
       <title>Prototype Pollution 취약점</title>
       <link>https://appealso.github.io/p/prototype-pollution-%EC%B7%A8%EC%95%BD%EC%A0%90/</link>

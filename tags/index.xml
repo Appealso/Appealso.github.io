@@ -6,7 +6,34 @@
     <description>Recent content in Tags on SooHo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Jul 2023 23:00:10 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Sep 2023 21:26:12 +0900</lastBuildDate><atom:link href="https://appealso.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring</title>
+      <link>https://appealso.github.io/tags/spring/</link>
+      <pubDate>Sat, 09 Sep 2023 21:26:12 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSTI</title>
+      <link>https://appealso.github.io/tags/ssti/</link>
+      <pubDate>Sat, 09 Sep 2023 21:26:12 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/ssti/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Hacking</title>
+      <link>https://appealso.github.io/tags/web-hacking/</link>
+      <pubDate>Sat, 09 Sep 2023 21:26:12 +0900</pubDate>
+      
+      <guid>https://appealso.github.io/tags/web-hacking/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dirb</title>
       <link>https://appealso.github.io/tags/dirb/</link>
@@ -67,15 +94,6 @@
       <pubDate>Sun, 23 Apr 2023 10:11:00 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/prototype-pollution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web Hacking</title>
-      <link>https://appealso.github.io/tags/web-hacking/</link>
-      <pubDate>Sun, 23 Apr 2023 10:11:00 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/tags/web-hacking/</guid>
       <description></description>
     </item>
     
@@ -517,15 +535,6 @@
       <pubDate>Tue, 01 Feb 2022 19:20:51 +0900</pubDate>
       
       <guid>https://appealso.github.io/tags/microsegmentation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SSTI</title>
-      <link>https://appealso.github.io/tags/ssti/</link>
-      <pubDate>Mon, 31 Jan 2022 16:13:01 +0900</pubDate>
-      
-      <guid>https://appealso.github.io/tags/ssti/</guid>
       <description></description>
     </item>
     
